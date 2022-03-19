@@ -6,9 +6,9 @@ import WorkExperience from "./components/WorkExperience/WorkExperience";
 
 function App() {
   return (
-    <div className="App">
+    <div className="bg-gray-900 min-h-screen">
       <HashRouter>
-        <ul className="header">
+        <ul className="flex flex-row justify-around m-auto w-1/4 py-12">
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
@@ -19,11 +19,13 @@ function App() {
             <NavLink to="/work-experience">Work experience</NavLink>
           </li>
         </ul>
-        <Routes className="content">
-          <Route exact path="/" element={<Intro />}></Route>
-          <Route path="/education" element={<Education />}></Route>
-          <Route path="/work-experience" element={<WorkExperience />}></Route>
-        </Routes>
+        <div className="content">
+          <Routes>
+            <Route exact path="/" element={<Intro />}></Route>
+            <Route path="/education" element={<Education />}></Route>
+            <Route path="/work-experience" element={<WorkExperience />}></Route>
+          </Routes>
+        </div>
       </HashRouter>
     </div>
   );
