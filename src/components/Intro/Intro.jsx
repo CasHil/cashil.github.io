@@ -4,7 +4,7 @@ import Heading from "../../Heading/Heading";
 export default function Intro() {
   return (
     <>
-      <Heading title="Introduction"></Heading>
+      <Heading title="Introduction" />
       <p>
         Hi! My name's Casper Hildebrand. I am currently a Computer Science
         student at the Delft University of Technology with a specialization in
@@ -13,6 +13,8 @@ export default function Intro() {
         science and teaching. In my free time, I am an avid musician and chess
         player. Feel free to reach out if you would like to chat!
       </p>
+      <Heading title="Technologies" size="h2" />
+      <p>Stuff</p>
     </>
   );
 }

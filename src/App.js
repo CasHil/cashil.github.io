@@ -3,6 +3,7 @@ import { Route, Routes, NavLink, HashRouter } from "react-router-dom";
 import Intro from "./components/Intro/Intro";
 import Education from "./components/Education/Education";
 import WorkExperience from "./components/WorkExperience/WorkExperience";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           </Routes>
         </div>
       </HashRouter>
+      <Footer></Footer>
     </div>
   );
 }
