@@ -1,5 +1,5 @@
 import React from "react";
-
+import Heading from "../../Heading/Heading";
 export default function WorkExperience() {
-  return <h1>Work experience</h1>;
+  return <Heading title="Work experience"></Heading>;
 }

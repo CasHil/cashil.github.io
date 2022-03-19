@@ -1,5 +1,6 @@
 import React from "react";
+import Heading from "../../Heading/Heading";
 
 export default function Education() {
-  return <h1>Education</h1>;
+  return <Heading title="Education"></Heading>;
 }
