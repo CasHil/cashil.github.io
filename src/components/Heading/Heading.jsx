@@ -1,12 +1,18 @@
 import React from "react";
+import "./Heading.css";
+
 export default function Heading(props) {
   function header(size) {
     if (size === "h1" || !size) {
       return (
         <>
-          <h1 className="text-5xl mt-5">{props.title}</h1>
-          <br />
-          <h1 className="text-5xl">-</h1>
+          <h1
+            className={`text-5xl mt-5 inline-block ${
+              props.animated ? "intro-animation" : ""
+            }`}
+          >
+            {props.title}
+          </h1>
         </>
       );
     } else if (size === "h2") {
