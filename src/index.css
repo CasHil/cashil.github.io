@@ -17,21 +17,11 @@ code {
 }
 
 a {
-  text-decoration: none;
   position: relative;
-  color: white;
-  font-size: 2rem;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-span,
-a {
-  color: white;
+nav a {
+  font-size: 2rem;
 }
 
 h1,
@@ -46,6 +36,6 @@ a {
 p,
 span {
   font-family: "Libre Franklin", sans-serif;
-  font-size: 20px;
+  font-size: 1rem;
   margin-top: 1rem;
 }

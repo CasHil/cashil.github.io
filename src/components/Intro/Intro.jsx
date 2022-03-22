@@ -2,6 +2,7 @@ import React from "react";
 import Heading from "../Heading/Heading";
 import TechonologyImage from "./TechonologyImage/TechonologyImage";
 import "./Intro.css";
+import TechnologyImageContainer from "./TechonologyImage/TechnologyImageContainer";
 
 export default function Intro() {
   return (
@@ -25,26 +26,50 @@ export default function Intro() {
         both backend and frontend development. A small selection of these
         technologies can be found below.
       </p>
-      <div className="flex flex-row flex-wrap gap-3 mt-5 pb-8">
-        <TechonologyImage src="javascript.svg" alt="JavaScript" />
-        <TechonologyImage src="typescript.svg" alt="TypeScript" />
-        <TechonologyImage src="react.svg" alt="React" />
-        <TechonologyImage src="vuedotjs.svg" alt="VueJS" />
-        <TechonologyImage src="vuetify.svg" alt="Vuetify" />
-        <TechonologyImage src="html5.svg" alt="HTML" />
-        <TechonologyImage src="css3.svg" alt="CSS" />
-        <TechonologyImage src="sass.svg" alt="SASS" />
-        <TechonologyImage src="tailwindcss.svg" alt="Tailwind CSS" />
-        <TechonologyImage src="python.svg" alt="Python" />
-        <TechonologyImage src="java.svg" alt="Java" />
-        <TechonologyImage src="csharp.svg" alt="CSharp" />
-        <TechonologyImage src="dotnet.svg" alt=".NET" />
-        <TechonologyImage src="postman.svg" alt="Postman" />
-        <TechonologyImage src="prismic.svg" alt="Prismic CMS" />
-        <TechonologyImage src="strapi.svg" alt="Strapi CMS" />
-        <TechonologyImage src="git.svg" alt="Git" />
-        <TechonologyImage src="github.svg" alt="GitHub" />
-        <TechonologyImage src="gitlab.svg" alt="GitLab" />
+      <div className="mt-5 pb-8">
+        <>
+          <Heading title="Frontend" size="h3" />
+          <br />
+          <TechnologyImageContainer>
+            <TechonologyImage src="javascript.svg" alt="JavaScript" />
+            <TechonologyImage src="typescript.svg" alt="TypeScript" />
+            <TechonologyImage src="react.svg" alt="React" />
+            <TechonologyImage src="vuedotjs.svg" alt="VueJS" />
+            <TechonologyImage src="vuetify.svg" alt="Vuetify" />
+            <TechonologyImage src="html5.svg" alt="HTML" />
+            <TechonologyImage src="css3.svg" alt="CSS" />
+            <TechonologyImage src="sass.svg" alt="SASS" />
+            <TechonologyImage src="tailwindcss.svg" alt="Tailwind CSS" />
+          </TechnologyImageContainer>
+        </>
+        <>
+          <Heading title="Backend" size="h3" />
+          <br />
+          <TechnologyImageContainer>
+            <TechonologyImage src="python.svg" alt="Python" />
+            <TechonologyImage src="java.svg" alt="Java" />
+            <TechonologyImage src="csharp.svg" alt="CSharp" />
+            <TechonologyImage src="dotnet.svg" alt=".NET" />
+            <TechonologyImage src="postman.svg" alt="Postman" />
+          </TechnologyImageContainer>
+        </>
+        <>
+          <Heading title="Source control" size="h3" />
+          <br />
+          <TechnologyImageContainer>
+            <TechonologyImage src="git.svg" alt="Git" />
+            <TechonologyImage src="github.svg" alt="GitHub" />
+            <TechonologyImage src="gitlab.svg" alt="GitLab" />
+          </TechnologyImageContainer>
+        </>
+        <>
+          <Heading title="CMS" size="h3" />
+          <br />
+          <TechnologyImageContainer>
+            <TechonologyImage src="prismic.svg" alt="Prismic CMS" />
+            <TechonologyImage src="strapi.svg" alt="Strapi CMS" />
+          </TechnologyImageContainer>
+        </>
       </div>
     </>
   );
