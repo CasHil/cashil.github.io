@@ -5,7 +5,7 @@ import Education from "../Education/Education";
 import WorkExperience from "../WorkExperience/WorkExperience";
 export default function Body() {
   return (
-    <div className="m-auto my-12 w-3/4 md:w-1/2 content">
+    <div className="m-auto my-12 pb-5 w-3/4 md:w-1/2 content">
       <img
         className="m-auto h-48 w-48 rounded-full mb-12"
         src={process.env.PUBLIC_URL + "/images/profile.jpg"}
