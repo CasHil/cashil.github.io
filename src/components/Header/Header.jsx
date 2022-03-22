@@ -4,13 +4,19 @@ export default function Header() {
   return (
     <nav className="flex flex-row justify-center m-auto w-auto py-12 gap-5">
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/" className="text-lg md:text-3xl">
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/education">Education</NavLink>
+        <NavLink to="/education" className="text-lg md:text-3xl">
+          Education
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/work-experience">Work experience</NavLink>
+        <NavLink to="/work-experience" className="text-lg md:text-3xl">
+          Work experience
+        </NavLink>
       </li>
     </nav>
   );
