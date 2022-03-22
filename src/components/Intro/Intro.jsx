@@ -60,7 +60,7 @@ export default function Intro() {
           </TechnologyImageContainer>
         </>
         <>
-          <Heading title="CMS" size="h3" />
+          <Heading title="Content Management Systems" size="h3" />
           <TechnologyImageContainer>
             <TechonologyImage src="prismic.svg" alt="Prismic CMS" />
             <TechonologyImage src="strapi.svg" alt="Strapi CMS" />

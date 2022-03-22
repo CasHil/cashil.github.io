@@ -7,7 +7,7 @@ export default function TimelineItem({ data }) {
     <div className="timeline-item">
       <div className="timeline-item-content">
         <div className="flex flex-row justify-around w-full">
-          <div className="w-4/5">
+          <div className="w-4/5 pr-2">
             <Heading size="h2" title={data.title} color="black"></Heading>
             <Heading size="h3" title={data.subtitle} color="black"></Heading>
             <span className="text-black">

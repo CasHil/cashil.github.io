@@ -85,7 +85,7 @@ const jobs = [
     },
     text: "Developed a governmental website which can be used to determine how to improve a house or building. I also did research into SEO for a customer and helped with tender writing.",
     startDate: "September 2021",
-    endDate: "February 2022",
+    endDate: "Present",
   },
 ];
 

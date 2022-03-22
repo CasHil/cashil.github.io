@@ -13,9 +13,9 @@ export default function Heading(props) {
       return (
         <>
           <h1
-            className={`text-5xl inline-block ${tailwindColor(props.color)} ${
-              props.animated ? "intro-animation" : ""
-            }`}
+            className={`text-3xl md:text-5xl inline-block ${tailwindColor(
+              props.color
+            )} ${props.animated ? "intro-animation" : ""}`}
           >
             {props.title}
           </h1>
@@ -24,13 +24,13 @@ export default function Heading(props) {
     } else if (size === "h2") {
       return (
         <>
-          <h2 className={`text-4xl ${tailwindColor(props.color)}`}>
+          <h2 className={`text-2xl md:text-4xl ${tailwindColor(props.color)}`}>
             {props.title}
           </h2>
           {props.divider && (
             <>
               <br />
-              <h2 className="text-4xl">-</h2>
+              <h2 className="text-2xl md:text-4xl">-</h2>
             </>
           )}
         </>
@@ -38,13 +38,13 @@ export default function Heading(props) {
     } else if (size === "h3") {
       return (
         <>
-          <h3 className={`text-xl ${tailwindColor(props.color)}`}>
+          <h3 className={`text-md md:text-xl ${tailwindColor(props.color)}`}>
             {props.title}
           </h3>
           {props.divider && (
             <>
               <br />
-              <h3 className="text-xl">-</h3>
+              <h3 className="text-md md:text-xl">-</h3>
             </>
           )}
         </>
