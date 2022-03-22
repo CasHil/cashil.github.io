@@ -21,6 +21,72 @@ const jobs = [
     startDate: "August 2020",
     endDate: "January 2021",
   },
+  {
+    title: "Junior Software Developer",
+    subtitle: "Bexter",
+    image: {
+      uri: "bexter.jpg",
+      alt: "Bexter",
+    },
+    text: "Worked on the backend of TrackOnline, an asset management application for assets such as containers or dollies.",
+    startDate: "September 2019",
+    endDate: "May 2020",
+  },
+  {
+    title: "Frontend Developer",
+    subtitle: "Bexter",
+    image: {
+      uri: "bexter.jpg",
+      alt: "Bexter",
+    },
+    text: "Responsible for the maintenance and development of Bexter's three websites.",
+    startDate: "March 2020",
+    endDate: "May 2021",
+  },
+  {
+    title: "Student Ambassador",
+    subtitle: "TU Delft",
+    image: {
+      uri: "tudelft.jpg",
+      alt: "Delft University of Technology",
+    },
+    text: "Representing the Computer Science & Engineering bachelor for upcoming students at events like the open days.",
+    startDate: "October 2018",
+    endDate: "Present",
+  },
+  {
+    title: "Board of Studies - Computer Science",
+    subtitle: "TU Delft",
+    image: {
+      uri: "tudelft.jpg",
+      alt: "Delft University of Technology",
+    },
+    text: "Discussing possible improvements to the Computer Science studies with professors and fellow students.",
+    startDate: "October 2021",
+    endDate: "Present",
+  },
+  {
+    title: "Software Consultant",
+    subtitle: "Netcompany",
+    image: {
+      uri: "netcompany.jpg",
+      alt: "Netcompany",
+    },
+    text: "Maintaining several websites and projects for one of our customers.",
+    startDate: "September 2021",
+    endDate: "February 2022",
+  },
+  {
+    title: "Developer",
+    subtitle: "Netcompany",
+    image: {
+      uri: "netcompany.jpg",
+      alt: "Netcompany",
+    },
+    text: "Developed a governmental website which can be used to determine how to improve a house or building. I also did research into SEO for a customer and helped with tender writing.",
+    startDate: "September 2021",
+    endDate: "February 2022",
+  },
 ];
 
 export default jobs;
