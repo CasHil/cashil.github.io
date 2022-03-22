@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TechonologyImage(props) {
+export default function TechnologyImage(props) {
   return (
     <a
       href={

@@ -3,8 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Intro from "../Intro/Intro";
 import Education from "../Education/Education";
 import WorkExperience from "../WorkExperience/WorkExperience";
-import FooterImage from "../Footer/FooterImage/FooterImage";
-import TechonologyImage from "../Intro/TechonologyImage/TechonologyImage";
+import TechnologyImage from "../Intro/TechnologyImage/TechnologyImage";
 export default function Body() {
   return (
     <div className="m-auto my-12 pb-5 w-3/4 md:w-1/2 content">
@@ -14,16 +13,16 @@ export default function Body() {
         alt="Profile"
       ></img>
       <nav className="flex justify-center gap-3 mb-12">
-        <TechonologyImage
+        <TechnologyImage
           src="linkedin.svg"
           alt="LinkedIn"
           link="https://www.linkedin.com/in/casper-hildebrand/"
-        ></TechonologyImage>
-        <TechonologyImage
+        ></TechnologyImage>
+        <TechnologyImage
           src="github.svg"
           alt="GitHub"
           link="https://github.com/CasHil"
-        ></TechonologyImage>
+        ></TechnologyImage>
       </nav>
       <Routes>
         <Route exact path="/" element={<Intro />}></Route>

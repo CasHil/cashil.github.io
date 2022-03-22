@@ -1,8 +1,8 @@
 import React from "react";
 import Heading from "../Heading/Heading";
-import TechonologyImage from "./TechonologyImage/TechonologyImage";
 import "./Intro.css";
-import TechnologyImageContainer from "./TechonologyImage/TechnologyImageContainer";
+import TechnologyImage from "./TechnologyImage/TechnologyImage";
+import TechnologyImageContainer from "./TechnologyImage/TechnologyImageContainer";
 
 export default function Intro() {
   return (
@@ -30,35 +30,35 @@ export default function Intro() {
         <>
           <Heading title="Frontend" size="h3" />
           <TechnologyImageContainer>
-            <TechonologyImage
+            <TechnologyImage
               src="javascript.svg"
               alt="JavaScript"
               wiki="JavaScript"
             />
-            <TechonologyImage
+            <TechnologyImage
               src="typescript.svg"
               alt="TypeScript"
               wiki="TypeScript"
             />
-            <TechonologyImage
+            <TechnologyImage
               src="react.svg"
               alt="React"
               wiki="React_(JavaScript_library)"
             />
-            <TechonologyImage src="vuedotjs.svg" alt="VueJS" wiki="Vue.js" />
-            <TechonologyImage
+            <TechnologyImage src="vuedotjs.svg" alt="VueJS" wiki="Vue.js" />
+            <TechnologyImage
               src="vuetify.svg"
               alt="Vuetify"
               link="https://vuetifyjs.com/en/"
             />
-            <TechonologyImage src="html5.svg" alt="HTML" wiki="HTML5" />
-            <TechonologyImage src="css3.svg" alt="CSS" wiki="CSS" />
-            <TechonologyImage
+            <TechnologyImage src="html5.svg" alt="HTML" wiki="HTML5" />
+            <TechnologyImage src="css3.svg" alt="CSS" wiki="CSS" />
+            <TechnologyImage
               src="sass.svg"
               alt="SASS"
               wiki="Sass_(stylesheet_language)"
             />
-            <TechonologyImage
+            <TechnologyImage
               src="tailwindcss.svg"
               alt="Tailwind CSS"
               link="https://tailwindcss.com/"
@@ -68,27 +68,27 @@ export default function Intro() {
         <>
           <Heading title="Backend" size="h3" />
           <TechnologyImageContainer>
-            <TechonologyImage
+            <TechnologyImage
               src="python.svg"
               alt="Python"
               wiki="Python_(programming_language)"
             />
-            <TechonologyImage
+            <TechnologyImage
               src="java.svg"
               alt="Java"
               wiki="Java_(programming_language)"
             />
-            <TechonologyImage
+            <TechnologyImage
               src="csharp.svg"
               alt="CSharp"
               wiki="C_Sharp_(programming_language)"
             />
-            <TechonologyImage
+            <TechnologyImage
               src="dotnet.svg"
               alt=".NET"
               wiki=".NET_Framework"
             />
-            <TechonologyImage
+            <TechnologyImage
               src="postman.svg"
               alt="Postman"
               wiki="Postman_(software)"
@@ -98,20 +98,20 @@ export default function Intro() {
         <>
           <Heading title="Source control" size="h3" />
           <TechnologyImageContainer>
-            <TechonologyImage src="git.svg" alt="Git" wiki="Git" />
-            <TechonologyImage src="github.svg" alt="GitHub" wiki="GitHub" />
-            <TechonologyImage src="gitlab.svg" alt="GitLab" wiki="GitLab" />
+            <TechnologyImage src="git.svg" alt="Git" wiki="Git" />
+            <TechnologyImage src="github.svg" alt="GitHub" wiki="GitHub" />
+            <TechnologyImage src="gitlab.svg" alt="GitLab" wiki="GitLab" />
           </TechnologyImageContainer>
         </>
         <>
           <Heading title="Content Management Systems" size="h3" />
           <TechnologyImageContainer>
-            <TechonologyImage
+            <TechnologyImage
               src="prismic.svg"
               alt="Prismic CMS"
               link="https://prismic.io/"
             />
-            <TechonologyImage
+            <TechnologyImage
               src="strapi.svg"
               alt="Strapi CMS"
               link="https://strapi.io/"
