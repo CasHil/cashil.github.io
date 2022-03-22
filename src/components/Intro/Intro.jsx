@@ -29,7 +29,6 @@ export default function Intro() {
       <div className="mt-5 pb-8">
         <>
           <Heading title="Frontend" size="h3" />
-          <br />
           <TechnologyImageContainer>
             <TechonologyImage src="javascript.svg" alt="JavaScript" />
             <TechonologyImage src="typescript.svg" alt="TypeScript" />
@@ -44,7 +43,6 @@ export default function Intro() {
         </>
         <>
           <Heading title="Backend" size="h3" />
-          <br />
           <TechnologyImageContainer>
             <TechonologyImage src="python.svg" alt="Python" />
             <TechonologyImage src="java.svg" alt="Java" />
@@ -55,7 +53,6 @@ export default function Intro() {
         </>
         <>
           <Heading title="Source control" size="h3" />
-          <br />
           <TechnologyImageContainer>
             <TechonologyImage src="git.svg" alt="Git" />
             <TechonologyImage src="github.svg" alt="GitHub" />
@@ -64,7 +61,6 @@ export default function Intro() {
         </>
         <>
           <Heading title="CMS" size="h3" />
-          <br />
           <TechnologyImageContainer>
             <TechonologyImage src="prismic.svg" alt="Prismic CMS" />
             <TechonologyImage src="strapi.svg" alt="Strapi CMS" />
