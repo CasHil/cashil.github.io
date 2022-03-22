@@ -1,6 +1,5 @@
 import "./App.css";
 import { HashRouter } from "react-router-dom";
-import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Body from "./components/Body/Body";
 
@@ -11,7 +10,6 @@ function App() {
         <Header />
         <Body />
       </HashRouter>
-      <Footer />
     </div>
   );
 }

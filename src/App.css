@@ -3,12 +3,12 @@
   min-height: 100vh;
 }
 
-nav a {
+header nav a {
   position: relative;
   color: white;
 }
 
-nav a::before {
+header nav a::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -20,7 +20,7 @@ nav a::before {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  nav a:hover::before {
+  header nav a:hover::before {
     left: 0;
     right: auto;
     width: 100%;
