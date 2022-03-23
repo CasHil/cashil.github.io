@@ -88,11 +88,6 @@ export default function Intro() {
               alt=".NET"
               wiki=".NET_Framework"
             />
-            <TechnologyImage
-              src="postman.svg"
-              alt="Postman"
-              wiki="Postman_(software)"
-            />
           </TechnologyImageContainer>
         </>
         <>
@@ -115,6 +110,47 @@ export default function Intro() {
               src="strapi.svg"
               alt="Strapi CMS"
               link="https://strapi.io/"
+            />
+          </TechnologyImageContainer>
+        </>
+        <>
+          <Heading title="Database Management Systems" size="h3" />
+          <TechnologyImageContainer>
+            <TechnologyImage src="mysql.svg" alt="MySQL" link="MySQL" />
+            <TechnologyImage
+              src="postgresql.svg"
+              alt="PostgresQL"
+              link="PostgresQL"
+            />
+          </TechnologyImageContainer>
+        </>
+        <>
+          <Heading title="Development tools" size="h3" />
+          <TechnologyImageContainer>
+            <TechnologyImage
+              src="docker.svg"
+              alt="Docker"
+              wiki="Docker_(software)"
+            />
+            <TechnologyImage
+              src="visualstudiocode.svg"
+              alt="Visual Studio Code"
+              wiki="Visual_Studio_Code"
+            />
+            <TechnologyImage
+              src="visualstudio.svg"
+              alt="Visual Studio"
+              wiki="Visual_Studio"
+            />
+            <TechnologyImage
+              src="diagramsdotnet.svg"
+              alt="diagrams.net"
+              wiki="Diagrams.net"
+            />
+            <TechnologyImage
+              src="postman.svg"
+              alt="Postman"
+              wiki="Postman_(software)"
             />
           </TechnologyImageContainer>
         </>
