@@ -13,7 +13,7 @@ export default function Heading(props) {
       return (
         <>
           <h1
-            className={`text-3xl md:text-5xl inline-block ${tailwindColor(
+            className={`text-3xl md:text-5xl mb-5 inline-block ${tailwindColor(
               props.color
             )} ${props.animated ? "intro-animation" : ""}`}
           >
@@ -24,7 +24,11 @@ export default function Heading(props) {
     } else if (size === "h2") {
       return (
         <>
-          <h2 className={`text-2xl md:text-4xl ${tailwindColor(props.color)}`}>
+          <h2
+            className={`text-2xl md:text-4xl mb-5 ${tailwindColor(
+              props.color
+            )}`}
+          >
             {props.title}
           </h2>
           {props.divider && (

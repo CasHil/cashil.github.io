@@ -3,6 +3,10 @@
   min-height: 100vh;
 }
 
+header nav {
+  list-style: none;
+}
+
 header nav a {
   position: relative;
   color: white;
