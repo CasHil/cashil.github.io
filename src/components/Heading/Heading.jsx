@@ -8,8 +8,8 @@ export default function Heading(props) {
     }
     return "text-" + color;
   }
-  function header(size) {
-    if (size === "h1" || !size) {
+  function header() {
+    if (props.size === "h1" || !props.size) {
       return (
         <>
           <h1
@@ -21,13 +21,13 @@ export default function Heading(props) {
           </h1>
         </>
       );
-    } else if (size === "h2") {
+    } else if (props.size === "h2") {
       return (
         <>
           <h2
-            className={`text-2xl md:text-4xl mb-5 ${tailwindColor(
-              props.color
-            )}`}
+            className={`text-2xl md:text-4xl mb-5 ${
+              props.alignment === "center" ? "text-center" : ""
+            } ${tailwindColor(props.color)}`}
           >
             {props.title}
           </h2>
@@ -39,10 +39,14 @@ export default function Heading(props) {
           )}
         </>
       );
-    } else if (size === "h3") {
+    } else if (props.size === "h3") {
       return (
         <>
-          <h3 className={`text-md md:text-xl ${tailwindColor(props.color)}`}>
+          <h3
+            className={`text-md md:text-xl ${
+              props.alignment === "center" ? "text-center" : ""
+            } ${tailwindColor(props.color)}`}
+          >
             {props.title}
           </h3>
           {props.divider && (
@@ -56,5 +60,5 @@ export default function Heading(props) {
     }
   }
 
-  return header(props.size);
+  return header();
 }

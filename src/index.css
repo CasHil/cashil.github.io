@@ -30,13 +30,15 @@ h3,
 h4,
 h5,
 a {
-  font-family: "Abril Fatface", cursive;
+  font-family: "League Spartan", sans-serif;
+  font-weight: bold;
 }
 
 p,
-span {
-  font-family: "Libre Franklin", sans-serif;
-  font-size: 1rem;
+span,
+a {
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.2rem;
   margin-top: 1rem;
 }
 

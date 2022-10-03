@@ -9,7 +9,7 @@ export default function IntroLinks() {
         src={process.env.PUBLIC_URL + "/images/profile.jpg"}
         alt="Profile"
       ></img>
-      <Heading title="Casper Hildebrand" size="h2"></Heading>
+      <Heading title="Casper Hildebrand" size="h2" alignment="center"></Heading>
       <nav className="flex justify-center gap-3 mb-12">
         <TechnologyImage
           src="linkedin.svg"

@@ -28,7 +28,7 @@ export default function Body() {
         initial={states.hidden}
         animate={states.show}
         exit={states.exit}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.4 }}
       >
         {element}
       </motion.div>
