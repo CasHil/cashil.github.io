@@ -9,13 +9,13 @@ function App() {
     <div className="bg-gray-900 min-h-screen">
       <BrowserRouter>
         <div className="flex flex-row flex-wrap py-12">
-          <aside className="w-full sm:w-1/4 md:w-1/4 px-2">
+          <aside className="w-full lg:w-1/4 sm:w-full px-2">
             <div className="sticky top-0 p-4 w-full">
-              <Header />
               <IntroLinks />
+              <Header />
             </div>
           </aside>
-          <div className="w-full sm:w-3/4 md:w-3/4 pt-1 px-2">
+          <div className="w-full lg:w-3/4 sm:w-4/4 pt-1 px-2">
             <Body />
           </div>
         </div>

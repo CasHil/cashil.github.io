@@ -42,7 +42,7 @@ a {
   margin-top: 1rem;
 }
 
-.content p {
+.content > p {
   color: white;
   margin-bottom: 1rem;
 }

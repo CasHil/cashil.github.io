@@ -25,7 +25,7 @@ export default function Heading(props) {
       return (
         <>
           <h2
-            className={`text-2xl md:text-4xl mb-5 ${
+            className={`text-2xl md:text-4xl sm:text-2xl mb-5 ${
               props.alignment === "center" ? "text-center" : ""
             } ${tailwindColor(props.color)}`}
           >

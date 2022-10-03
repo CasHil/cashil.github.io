@@ -35,7 +35,7 @@ export default function Body() {
     );
   }
   return (
-    <main className="m-auto pb-5 w-5/6 lg:w-2/3 content flex justify-center flex-col md:block">
+    <main className="m-auto pb-5 w-5/6 lg:w-3/4 flex justify-center flex-col md:block">
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.pathname}>
           <Route exact path="/" element={wrapMotionDiv(<Intro />)}></Route>

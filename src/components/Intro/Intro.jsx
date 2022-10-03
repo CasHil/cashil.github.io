@@ -4,7 +4,7 @@ import "./Intro.css";
 
 export default function Intro() {
   return (
-    <>
+    <div className="content">
       <Heading title="Hi 👋! I'm Casper Hildebrand" animated></Heading>
       <p>
         I am currently a MSc. Computer Science student at the Delft University
@@ -16,6 +16,6 @@ export default function Intro() {
         </a>{" "}
         if you would like to chat!
       </p>
-    </>
+    </div>
   );
 }
