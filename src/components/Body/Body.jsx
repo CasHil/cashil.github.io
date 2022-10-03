@@ -25,9 +25,6 @@ export default function Body() {
     };
     return (
       <motion.div
-        // initial={states.hidden}
-        // animate={states.show}
-        // exit={states.exit}
         initial={states.hidden}
         animate={states.show}
         exit={states.exit}

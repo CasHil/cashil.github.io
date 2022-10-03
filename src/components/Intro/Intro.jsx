@@ -10,10 +10,9 @@ export default function Intro() {
       <Heading title="Hi 👋! I'm Casper Hildebrand" animated></Heading>
       <p>
         I am currently a MSc. Computer Science student at the Delft University
-        of Technology with a specialization in Data Science. Next to my studies,
-        I am also working as a software developer at Netcompany. My main
-        interests lie in web development, data science and teaching. In my free
-        time, I am an avid musician and chess player. Feel free to{" "}
+        of Technology with a specialization in Data Science. My main interests
+        lie in web development, data science and teaching. In my free time, I
+        enjoy making music and playing chess. Feel free to{" "}
         <a className="intro-email" href="mailto:casperhildebrand@gmail.com">
           reach out
         </a>{" "}
