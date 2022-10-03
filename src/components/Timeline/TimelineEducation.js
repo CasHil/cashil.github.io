@@ -32,6 +32,17 @@ const education = [
     endDate: "January 2021",
   },
   {
+    title: "Exchange",
+    subtitle: "Royal Institute of Technology",
+    image: {
+      uri: "kth.png",
+      alt: "Royal Institute of Technology",
+    },
+    text: "I am taking courses in UX/UI design, Human-Computer Interaction and Swedish.",
+    startDate: "August 2022",
+    endDate: "Present",
+  },
+  {
     title: "MSc Computer Science",
     subtitle: "TU Delft",
     image: {

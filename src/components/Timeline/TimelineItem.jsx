@@ -1,7 +1,6 @@
 import Heading from "../Heading/Heading";
 
 export default function TimelineItem({ data }) {
-  console.log(data);
   return (
     <>
       <div className="bg-white p-5 my-5 shadow-xl shadow-black">
