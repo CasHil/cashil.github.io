@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="bg-gray-900 min-h-screen">
       <BrowserRouter>
-        <div className="flex flex-row flex-wrap py-4">
+        <div className="flex flex-row flex-wrap py-12">
           <aside className="w-full sm:w-1/4 md:w-1/4 px-2">
             <div className="sticky top-0 p-4 w-full">
               <Header />
