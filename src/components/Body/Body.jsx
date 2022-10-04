@@ -3,11 +3,10 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Intro from "../Intro/Intro";
 import Education from "../Education/Education";
 import WorkExperience from "../WorkExperience/WorkExperience";
-import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Body() {
   const location = useLocation();
-  const control = useAnimation();
   const goToTop = () => {
     window.scrollTo({
       top: 0,
