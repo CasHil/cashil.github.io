@@ -3,7 +3,6 @@ import TimelineItem from "./TimelineItem";
 
 export default function Timeline(props) {
   const reverseTimeline = props.data.slice().reverse();
-  console.log(reverseTimeline);
 
   return (
     props.data &&
