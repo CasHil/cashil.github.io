@@ -9,7 +9,7 @@ import { useState } from "react";
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleCloseMenu = () => {
+  const handleMenuClickSidebar = () => {
     setIsMenuOpen(false);
   };
   const handleStateChange = (state) => {
@@ -24,12 +24,12 @@ function App() {
             <b>Casper Hildebrand's portfolio</b>
           </div>
           <Menu isOpen={isMenuOpen} onStateChange={handleStateChange}>
-            <Header handleClick={() => handleCloseMenu()} />
+            <Header handleClick={() => handleMenuClickSidebar()} />
           </Menu>
         </div>
         <div className="flex flex-row flex-wrap py-12" id="page-wrap">
           <aside className="w-full lg:w-1/4 sm:w-full px-2">
-            <div className="sticky top-0 p-4 w-full">
+            <div className="sticky top-6 p-4 w-full">
               <IntroLinks />
               <div className="hidden lg:block">
                 <Header />

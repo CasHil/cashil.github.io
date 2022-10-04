@@ -3,24 +3,31 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Intro from "../Intro/Intro";
 import Education from "../Education/Education";
 import WorkExperience from "../WorkExperience/WorkExperience";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 
 export default function Body() {
   const location = useLocation();
+  const control = useAnimation();
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   function wrapMotionDiv(element) {
     const states = {
       hidden: {
         opacity: 0,
-        x: 100,
+        y: 100,
       },
       show: {
         opacity: 1,
-        x: 0,
+        y: 0,
       },
       exit: {
         opacity: 0,
-        x: -100,
+        y: -100,
       },
     };
     return (
@@ -29,6 +36,7 @@ export default function Body() {
         animate={states.show}
         exit={states.exit}
         transition={{ duration: 0.4 }}
+        onAnimationStart={goToTop}
       >
         {element}
       </motion.div>
