@@ -5,7 +5,7 @@ import "./Intro.css";
 export default function Intro() {
   return (
     <div className="content">
-      <Heading title="Hi 👋! I'm Casper Hildebrand" animated></Heading>
+      <Heading title="Hi 👋! I'm Casper" animated></Heading>
       <p>
         I am currently a MSc. Computer Science student at the Delft University
         of Technology with a specialization in Data Science. My main interests
