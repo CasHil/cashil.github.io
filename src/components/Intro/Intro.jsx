@@ -7,14 +7,14 @@ export default function Intro() {
     <div className="content">
       <Heading title="Hi 👋! I'm Casper" animated></Heading>
       <p>
-        I am currently a MSc. Computer Science student at the Delft University
-        of Technology with a specialization in Data Science. My main interests
-        lie in web development, data science and teaching. In my free time, I
-        enjoy making music and playing chess. Feel free to{" "}
+        I'm a MSc. Computer Science student at the Delft University of
+        Technology where I'm doing a specialization in Data Science. I ❤️
+        working with React and Vue, together with JavaScript or TypeScript. In
+        my free time, I enjoy making music and playing chess. Feel free to{" "}
         <a className="intro-email" href="mailto:casperhildebrand@gmail.com">
           reach out
-        </a>{" "}
-        if you would like to chat!
+        </a>
+        !
       </p>
     </div>
   );
