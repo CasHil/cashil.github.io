@@ -20,7 +20,7 @@ function App() {
     <div className="bg-gray-900 min-h-screen" id="outer-container">
       <BrowserRouter>
         <div className="block lg:hidden">
-          <div className="flex flex-row text-white justify-end items-center pr-5 bg-black w-full h-14 fixed z-10 opacity-95">
+          <div className="flex flex-row text-white justify-end items-center pr-5 bg-gray-800 w-full h-14 fixed z-10 opacity-95">
             <b>Casper Hildebrand's portfolio</b>
           </div>
           <Menu isOpen={isMenuOpen} onStateChange={handleStateChange}>

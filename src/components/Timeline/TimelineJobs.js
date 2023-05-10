@@ -87,6 +87,17 @@ const jobs = [
     startDate: "October 2018",
     endDate: "Present",
   },
+  {
+    title: "Founder",
+    subtitle: "Bitsized",
+    image: {
+      uri: "bitsized.jpg",
+      alt: "Bitsized",
+    },
+    text: "Bitsized is an online learning platform for teaching computer science to high school students. I am responsible for developing teaching materials and marketing.",
+    startDate: "January 2023",
+    endDate: "Present",
+  },
 ];
 
 export default jobs;

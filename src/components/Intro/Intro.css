@@ -1,10 +1,10 @@
-.intro-email {
+.content a {
   color: white;
   font-weight: bold;
   cursor: pointer;
   transition: 0.2s color ease;
 }
 
-.intro-email:hover {
-  color: rgba(0, 43, 170, 0.61);
+.content a:hover {
+  color: rgba(105, 225, 255, 0.61);
 }
