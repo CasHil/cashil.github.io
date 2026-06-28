@@ -6,13 +6,14 @@ import IntroLinks from "./components/Intro/IntroLinks/IntroLinks";
 import { slide as Menu } from "react-burger-menu";
 import { useState } from "react";
 
-function App() {
+export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuClickSidebar = () => {
     setIsMenuOpen(false);
   };
-  const handleStateChange = (state) => {
+
+  const handleStateChange = (state: { isOpen: boolean }) => {
     setIsMenuOpen(state.isOpen);
   };
 
@@ -24,7 +25,7 @@ function App() {
             <b>Casper Hildebrand's portfolio</b>
           </div>
           <Menu isOpen={isMenuOpen} onStateChange={handleStateChange}>
-            <Header handleClick={() => handleMenuClickSidebar()} />
+            <Header handleClick={handleMenuClickSidebar} />
           </Menu>
         </div>
         <div className="flex flex-row flex-wrap py-12" id="page-wrap">
@@ -44,5 +45,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

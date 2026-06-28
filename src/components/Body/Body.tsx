@@ -1,4 +1,4 @@
-import React from "react";
+import { ReactNode } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Intro from "../Intro/Intro";
 import Education from "../Education/Education";
@@ -7,27 +7,16 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export default function Body() {
   const location = useLocation();
+
   const goToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  function wrapMotionDiv(element) {
+  const wrapMotionDiv = (element: ReactNode) => {
     const states = {
-      hidden: {
-        opacity: 0,
-        y: 100,
-      },
-      show: {
-        opacity: 1,
-        y: 0,
-      },
-      exit: {
-        opacity: 0,
-        y: -100,
-      },
+      hidden: { opacity: 0, y: 100 },
+      show: { opacity: 1, y: 0 },
+      exit: { opacity: 0, y: -100 },
     };
     return (
       <motion.div
@@ -40,20 +29,18 @@ export default function Body() {
         {element}
       </motion.div>
     );
-  }
+  };
+
   return (
     <main className="m-auto pb-5 w-5/6 lg:w-3/4 flex justify-center flex-col md:block">
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence>
         <Routes location={location} key={location.pathname}>
-          <Route exact path="/" element={wrapMotionDiv(<Intro />)}></Route>
-          <Route
-            path="/education"
-            element={wrapMotionDiv(<Education />)}
-          ></Route>
+          <Route path="/" element={wrapMotionDiv(<Intro />)} />
+          <Route path="/education" element={wrapMotionDiv(<Education />)} />
           <Route
             path="/work-experience"
             element={wrapMotionDiv(<WorkExperience />)}
-          ></Route>
+          />
         </Routes>
       </AnimatePresence>
     </main>

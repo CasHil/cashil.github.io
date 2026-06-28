@@ -1,4 +1,3 @@
-import React from "react";
 import FooterImage from "./FooterImage/FooterImage";
 
 export default function Footer() {
@@ -8,12 +7,12 @@ export default function Footer() {
         src="github.svg"
         alt="GitHub"
         href="https://github.com/CasHil"
-      ></FooterImage>
+      />
       <FooterImage
         src="linkedin.svg"
         alt="LinkedIn"
         href="https://www.linkedin.com/in/casper-hildebrand/"
-      ></FooterImage>
+      />
     </div>
   );
 }

@@ -1,15 +1,15 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
-export default function Header(props) {
+
+interface HeaderProps {
+  handleClick?: () => void;
+}
+
+export default function Header({ handleClick }: HeaderProps) {
   return (
     <header>
       <nav className="grid place-content-center grid-columns-3 grid-rows-1 justify-center m-auto w-auto gap-5 mb-4">
         <li>
-          <NavLink
-            to="/"
-            className="text-2xl md:text-3xl"
-            onClick={props.handleClick ? props.handleClick : ""}
-          >
+          <NavLink to="/" className="text-2xl md:text-3xl" onClick={handleClick}>
             Home
           </NavLink>
         </li>
@@ -17,7 +17,7 @@ export default function Header(props) {
           <NavLink
             to="/education"
             className="text-2xl md:text-3xl"
-            onClick={props.handleClick ? props.handleClick : ""}
+            onClick={handleClick}
           >
             Education
           </NavLink>
@@ -26,7 +26,7 @@ export default function Header(props) {
           <NavLink
             to="/work-experience"
             className="text-2xl md:text-3xl"
-            onClick={props.handleClick ? props.handleClick : ""}
+            onClick={handleClick}
           >
             Work experience
           </NavLink>
