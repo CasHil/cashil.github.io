@@ -15,7 +15,7 @@ export default function TechnologyImage({
   return (
     <a href={href}>
       <img
-        src={process.env.PUBLIC_URL + "/images/" + src}
+        src={"/images/" + src}
         alt={alt}
         className="w-10 h-10"
         style={{ filter: "invert(1)" }}

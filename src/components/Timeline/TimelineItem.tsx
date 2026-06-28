@@ -18,7 +18,7 @@ export default function TimelineItem({ data }: TimelineItemProps) {
         </div>
         {data.image && (
           <img
-            src={`${process.env.PUBLIC_URL}/images/${data.image.uri}`}
+            src={`/images/${data.image.uri}`}
             alt={data.image.alt}
             className="w-20 h-20 block float-right"
           />

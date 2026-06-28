@@ -6,7 +6,7 @@ export default function IntroLinks() {
     <>
       <img
         className="m-auto h-48 w-48 rounded-full mb-1"
-        src={process.env.PUBLIC_URL + "/images/profile.jpg"}
+        src="/images/profile.jpg"
         alt="Profile"
       />
       <Heading title="Casper Hildebrand" size="h2" alignment="center" />

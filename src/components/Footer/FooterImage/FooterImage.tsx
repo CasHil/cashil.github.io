@@ -9,7 +9,7 @@ export default function FooterImage({ src, alt, href }: FooterImageProps) {
     <a href={href}>
       <img
         className="w-10 h-10"
-        src={process.env.PUBLIC_URL + "/images/" + src}
+        src={"/images/" + src}
         alt={alt}
         style={{ filter: "invert(1)" }}
       />
