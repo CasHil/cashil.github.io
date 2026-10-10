@@ -11,9 +11,9 @@ export default function Timeline({ data }: TimelineProps) {
   const reversed = [...data].reverse();
 
   return (
-    <div>
+    <div className="relative space-y-3">
       {reversed.map((item, idx) => (
-        <TimelineItem data={item} key={idx} />
+        <TimelineItem data={item} key={idx} index={idx} />
       ))}
     </div>
   );

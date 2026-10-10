@@ -8,23 +8,13 @@ import { AnimatePresence, motion } from "framer-motion";
 export default function Body() {
   const location = useLocation();
 
-  const goToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   const wrapMotionDiv = (element: ReactNode) => {
-    const states = {
-      hidden: { opacity: 0, y: 100 },
-      show: { opacity: 1, y: 0 },
-      exit: { opacity: 0, y: -100 },
-    };
     return (
       <motion.div
-        initial={states.hidden}
-        animate={states.show}
-        exit={states.exit}
-        transition={{ duration: 0.4 }}
-        onAnimationStart={goToTop}
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -12 }}
+        transition={{ duration: 0.25, ease: [0.25, 1, 0.5, 1] }}
       >
         {element}
       </motion.div>
@@ -32,8 +22,8 @@ export default function Body() {
   };
 
   return (
-    <main className="m-auto pb-5 w-5/6 lg:w-3/4 flex justify-center flex-col md:block">
-      <AnimatePresence>
+    <main className="w-full">
+      <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={wrapMotionDiv(<Intro />)} />
           <Route path="/education" element={wrapMotionDiv(<Education />)} />
