@@ -31,9 +31,16 @@ jobs:
       - name: Build
         run: pnpm run build
 
+      - name: Ensure production branch is main
+        run: |
+          curl -s -X PATCH "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/pages/projects/casperhildebrand" \
+            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"production_branch": "main"}' || true
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=casperhildebrand
+          command: pages deploy dist --project-name=casperhildebrand --branch=main
