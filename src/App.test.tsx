@@ -21,4 +21,19 @@ test("renders accessible main landmark with id", () => {
   expect(main).toBeInTheDocument();
   expect(main).toHaveAttribute("id", "main-content");
 });
+test("renders theme toggle button", () => {
+  render(<App />);
+  const toggleButtons = screen.getAllByRole("button", {
+    name: /switch to (light|dark) theme/i,
+  });
+  expect(toggleButtons.length).toBeGreaterThan(0);
+});
+
+test("renders ambient sound toggle button", () => {
+  render(<App />);
+  const soundButtons = screen.getAllByRole("button", {
+    name: /ambient synthesizer audio/i,
+  });
+  expect(soundButtons.length).toBeGreaterThan(0);
+});
 

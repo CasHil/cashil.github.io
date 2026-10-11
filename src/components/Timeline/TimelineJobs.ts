@@ -124,7 +124,7 @@ const jobs: TimelineItemData[] = [
   {
     title: "Full Stack Software Engineer",
     subtitle: "Tikkie",
-    text: "Building Tikkie Business. Interested in agentic engineering and working towards an AI-enabled SDLC.",
+    text: "Building Tikkie Business, developing full-stack features and internal tools.",
     startDate: "March 2026",
     endDate: "Present",
   },

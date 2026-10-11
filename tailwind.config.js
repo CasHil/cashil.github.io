@@ -6,11 +6,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["'DM Sans'", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
-        display: ["'Newsreader'", "Georgia", "serif"],
-        mono: ["'Space Mono'", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+        sans: ["'Geist'", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        display: ["'Cabinet Grotesk'", "'Plus Jakarta Sans'", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        mono: ["'Geist Mono'", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       colors: {
+        pastel: {
+          red: { bg: "#FDEBEC", text: "#9F2F2D", darkBg: "rgba(159, 47, 45, 0.18)", darkText: "#FCA5A5" },
+          blue: { bg: "#E1F3FE", text: "#1F6C9F", darkBg: "rgba(31, 108, 159, 0.18)", darkText: "#93C5FD" },
+          green: { bg: "#EDF3EC", text: "#346538", darkBg: "rgba(52, 101, 56, 0.18)", darkText: "#86EFAC" },
+          yellow: { bg: "#FBF3DB", text: "#956400", darkBg: "rgba(149, 100, 0, 0.18)", darkText: "#FCD34D" },
+        },
         studio: {
           950: "#0c0b0a",
           900: "#141210",

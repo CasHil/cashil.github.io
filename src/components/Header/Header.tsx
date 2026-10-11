@@ -10,9 +10,9 @@ export default function Header({
   orientation = "vertical",
 }: HeaderProps) {
   const navItems = [
-    { to: "/", label: "01. HOME" },
-    { to: "/education", label: "02. EDUCATION" },
-    { to: "/work-experience", label: "03. EXPERIENCE" },
+    { to: "/", label: "Home" },
+    { to: "/work-experience", label: "Experience" },
+    { to: "/education", label: "Education" },
   ];
 
   const isHoriz = orientation === "horizontal";
@@ -25,8 +25,8 @@ export default function Header({
       <ul
         className={`flex ${
           isHoriz
-            ? "flex-row items-center gap-1.5 p-1.5 bg-[#141210]/90 border border-[#2b2722] rounded-xl backdrop-blur-md shadow-xl"
-            : "flex-col gap-1.5 w-full"
+            ? "flex-row items-center gap-1 p-1 bg-[#ffffff] dark:bg-[#141210] border border-[#eaeaea] dark:border-[#24211d] rounded-lg"
+            : "flex-col gap-1 w-full"
         }`}
       >
         {navItems.map((item) => (
@@ -35,10 +35,10 @@ export default function Header({
               to={item.to}
               onClick={handleClick}
               className={({ isActive }) =>
-                `block w-full px-3.5 py-2 rounded-lg text-xs font-mono font-bold tracking-wider transition-colors duration-200 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141210] ${
+                `block w-full px-3 py-2 rounded-md text-sm transition-colors duration-150 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 ${
                   isActive
-                    ? "bg-amber-500/15 text-amber-400 border border-amber-500/30 shadow-sm"
-                    : "text-[#a1998b] hover:text-[#f4f1ea] hover:bg-[#1c1916] border border-transparent"
+                    ? "font-semibold text-[#111111] dark:text-[#ffffff] bg-[#eaeaea]/60 dark:bg-[#1a1815]"
+                    : "text-[#5a5a57] dark:text-[#8a8376] hover:text-[#111111] dark:hover:text-[#f4f1ea] hover:bg-[#eaeaea]/40 dark:hover:bg-[#1a1815]/60"
                 }`
               }
             >

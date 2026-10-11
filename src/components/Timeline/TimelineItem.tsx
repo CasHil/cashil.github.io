@@ -5,63 +5,54 @@ interface TimelineItemProps {
   index: number;
 }
 
-export default function TimelineItem({ data, index }: TimelineItemProps) {
+export default function TimelineItem({ data }: TimelineItemProps) {
   const isPresent = data.endDate.toLowerCase().includes("present");
-  const trackNumber = String(index + 1).padStart(2, "0");
 
   return (
-    <article className="group relative p-5 sm:p-6 my-4 rounded-2xl bg-[#141210]/80 border border-[#2b2722] hover:border-amber-500/40 transition-[border-color,box-shadow] duration-200 backdrop-blur-md shadow-xl shadow-black/40">
+    <article className="group relative p-5 sm:p-6 my-4 rounded-xl bg-[#ffffff] dark:bg-[#141210] border border-[#eaeaea] dark:border-[#24211d] hover:border-[#dedede] dark:hover:border-[#332f29] transition-all duration-150">
       <div className="flex flex-col-reverse sm:flex-row sm:items-start justify-between gap-4">
         <div className="space-y-1.5 flex-1">
-          {/* Track Number & Timecode */}
-          <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-[#a1998b]">
-            <span className="font-bold text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-              TRACK {trackNumber}
-            </span>
-            <span aria-hidden="true">•</span>
-            <span className="text-stone-400">
+          {/* Date range */}
+          <div className="flex flex-wrap items-center gap-2 text-xs text-[#787774] dark:text-[#8a8376]">
+            <span>
               {data.startDate} — {data.endDate}
             </span>
             {isPresent && (
-              <span className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-400 uppercase tracking-wider">
-                <span
-                  className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse motion-reduce:animate-none"
-                  aria-hidden="true"
-                />
-                LIVE
+              <span className="text-emerald-700 dark:text-emerald-400 font-medium">
+                • Current
               </span>
             )}
           </div>
 
-          {/* Role Title */}
-          <h2 className="font-display text-xl sm:text-2xl font-bold text-[#f4f1ea] group-hover:text-amber-300 transition-colors">
+          {/* Role Title in Geist */}
+          <h2 className="text-lg sm:text-xl font-semibold text-[#111111] dark:text-[#f4f1ea] leading-snug">
             {data.title}
           </h2>
 
-          {/* Organization / Studio Label */}
-          <div className="text-sm font-mono text-amber-400 font-medium">
+          {/* Organization / Subtitle */}
+          <div className="text-sm text-[#5a5a57] dark:text-[#b5af9f]">
             {data.subtitle}
           </div>
         </div>
 
-        {/* Company / Studio Badge */}
+        {/* Company Logo Badge */}
         {data.image && (
           <div className="self-start sm:self-auto shrink-0">
             <img
               src={`/images/${data.image.uri}`}
               alt={data.image.alt || `${data.subtitle} logo`}
-              className="h-12 w-12 sm:h-14 sm:w-14 rounded-xl object-contain bg-[#1c1916] p-1.5 border border-[#38342e] shadow-md"
+              className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg object-contain bg-[#ffffff] dark:bg-[#1a1815] p-1 border border-[#eaeaea] dark:border-[#24211d]"
               loading="lazy"
-              width="56"
-              height="56"
+              width="48"
+              height="48"
             />
           </div>
         )}
       </div>
 
-      {/* Liner Notes description */}
+      {/* Description */}
       {data.text && (
-        <p className="mt-4 pt-3.5 border-t border-[#24211d] text-[#c7c1b5] text-sm sm:text-base leading-relaxed">
+        <p className="mt-4 pt-3.5 border-t border-[#eaeaea] dark:border-[#24211d] text-[#5a5a57] dark:text-[#b5af9f] text-sm sm:text-base leading-relaxed">
           {data.text}
         </p>
       )}
