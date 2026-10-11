@@ -2,7 +2,7 @@ import FooterImage from "./FooterImage/FooterImage";
 
 export default function Footer() {
   return (
-    <div className="bg-amber-50 fixed left-0 bottom-0 w-screen flex flex-row p-2 gap-3 z-20">
+    <footer className="mt-8 py-4 border-t border-[#24211d] flex items-center justify-center gap-3 text-stone-400">
       <FooterImage
         src="github.svg"
         alt="GitHub"
@@ -13,6 +13,6 @@ export default function Footer() {
         alt="LinkedIn"
         href="https://www.linkedin.com/in/casper-hildebrand/"
       />
-    </div>
+    </footer>
   );
 }

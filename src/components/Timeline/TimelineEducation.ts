@@ -6,7 +6,7 @@ const education: TimelineItemData[] = [
     subtitle: "Stedelijk Gymnasium Leiden",
     image: {
       uri: "sgl.jpg",
-      alt: "Stedelijk Gymnasium Leiden",
+      alt: "Stedelijk Gymnasium Leiden logo",
     },
     startDate: "September 2012",
     endDate: "July 2018",
@@ -16,7 +16,7 @@ const education: TimelineItemData[] = [
     subtitle: "TU Delft",
     image: {
       uri: "tudelft.jpg",
-      alt: "Delft University of Technology",
+      alt: "Delft University of Technology logo",
     },
     text: "Followed the data track, with courses specialising in big data, data mining and machine learning. Minor in Education included a teaching internship at a Dutch high school.",
     startDate: "September 2018",
@@ -27,7 +27,7 @@ const education: TimelineItemData[] = [
     subtitle: "KTH Royal Institute of Technology",
     image: {
       uri: "kth.png",
-      alt: "KTH Royal Institute of Technology",
+      alt: "KTH Royal Institute of Technology logo",
     },
     text: "Took courses related to Human-Computer Interaction and UX Design, and achieved A1 Swedish.",
     startDate: "August 2022",
@@ -38,7 +38,7 @@ const education: TimelineItemData[] = [
     subtitle: "TU Delft",
     image: {
       uri: "tudelft.jpg",
-      alt: "Delft University of Technology",
+      alt: "Delft University of Technology logo",
     },
     text: "Specialised in Data Science. Thesis on Hedy, a gradual programming language designed to make learning to code more accessible for beginners.",
     startDate: "September 2021",
@@ -49,7 +49,7 @@ const education: TimelineItemData[] = [
     subtitle: "TU Delft",
     image: {
       uri: "tudelft.jpg",
-      alt: "Delft University of Technology",
+      alt: "Delft University of Technology logo",
     },
     text: "First degree (eerstegraads) computer science high school teacher qualification.",
     startDate: "August 2024",

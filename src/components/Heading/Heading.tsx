@@ -16,59 +16,56 @@ export default function Heading({
   title,
   size,
   color,
-  animated,
-  alignment,
+  alignment = "left",
   divider,
 }: HeadingProps) {
-  const tailwindColor = (c?: string) => (c ? `text-${c}` : "text-white");
+  const alignClass = alignment === "center" ? "text-center" : "text-left";
 
   if (size === "h2") {
     return (
-      <>
+      <div className={`mb-1 ${alignClass}`}>
         <h2
-          className={`text-2xl md:text-4xl sm:text-2xl mb-1 ${
-            alignment === "center" ? "text-center" : ""
-          } ${tailwindColor(color)}`}
+          className={`font-display text-2xl sm:text-3xl font-bold tracking-tight ${
+            color === "black" ? "text-stone-900" : "text-[#f4f1ea]"
+          }`}
         >
           {title}
         </h2>
         {divider && (
-          <>
-            <br />
-            <h2 className="text-2xl md:text-4xl">-</h2>
-          </>
+          <div
+            aria-hidden="true"
+            className="h-px w-12 bg-amber-500/40 my-3"
+          />
         )}
-      </>
+      </div>
     );
   }
 
   if (size === "h3") {
     return (
-      <>
+      <div className={`mb-0.5 ${alignClass}`}>
         <h3
-          className={`text-md md:text-xl ${
-            alignment === "center" ? "text-center" : ""
-          } ${tailwindColor(color)}`}
+          className={`text-sm sm:text-base font-mono font-medium ${
+            color === "black" ? "text-stone-600" : "text-amber-400"
+          }`}
         >
           {title}
         </h3>
         {divider && (
-          <>
-            <br />
-            <h3 className="text-md md:text-xl">-</h3>
-          </>
+          <div
+            aria-hidden="true"
+            className="h-px w-8 bg-amber-500/30 my-2"
+          />
         )}
-      </>
+      </div>
     );
   }
 
   return (
-    <h1
-      className={`text-3xl md:text-5xl mb-5 inline-block ${tailwindColor(
-        color
-      )} ${animated ? "intro-animation" : ""}`}
-    >
-      {title}
-    </h1>
+    <div className={`mb-6 ${alignClass}`}>
+      <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#f4f1ea]">
+        {title}
+      </h1>
+    </div>
   );
 }
