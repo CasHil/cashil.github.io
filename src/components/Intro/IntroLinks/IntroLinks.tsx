@@ -7,14 +7,17 @@ export default function IntroLinks() {
       <div className="relative mb-5 w-full max-w-[200px] sm:max-w-[220px]">
         <div className="relative aspect-square rounded-2xl overflow-hidden border-2 border-[#38342e] bg-[#141210] shadow-2xl group">
           <img
-            className="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105 motion-reduce:transform-none"
             src="/images/profile.jpg"
-            alt="Casper Hildebrand"
+            alt="Portrait of Casper Hildebrand"
             width="220"
             height="220"
           />
           {/* Subtle vinyl badge */}
-          <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-[#0c0b0a]/80 backdrop-blur-md border border-[#38342e] text-[10px] font-mono text-amber-400">
+          <div
+            aria-hidden="true"
+            className="absolute top-2 left-2 px-2 py-0.5 rounded bg-[#0c0b0a]/80 backdrop-blur-md border border-[#38342e] text-[10px] font-mono text-amber-400"
+          >
             SIDE A
           </div>
         </div>
@@ -33,9 +36,10 @@ export default function IntroLinks() {
       {/* Studio Status Tape */}
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-[11px] font-mono bg-[#1b1916] text-[#c7c1b5] border border-[#38342e] mb-5">
         <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+          <span className="animate-ping motion-reduce:animate-none absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
         </span>
+        <span className="sr-only">Current status: </span>
         <span>REC: TIKKIE BUSINESS // FULL STACK</span>
       </div>
 
@@ -56,7 +60,7 @@ export default function IntroLinks() {
       </div>
 
       {/* Social Profiles */}
-      <nav className="flex justify-center items-center gap-2.5" aria-label="Social Profiles">
+      <nav className="flex justify-center items-center gap-2.5" aria-label="Social and contact links">
         <TechnologyImage
           src="linkedin.svg"
           alt="LinkedIn"
@@ -69,8 +73,8 @@ export default function IntroLinks() {
         />
         <a
           href="mailto:casperhildebrand@gmail.com"
-          aria-label="Email Casper"
-          className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#1b1916] border border-[#38342e] hover:border-amber-500/50 hover:bg-[#24211d] transition-all duration-200 group"
+          aria-label="Send email to Casper Hildebrand"
+          className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#1b1916] border border-[#38342e] hover:border-amber-500/50 hover:bg-[#24211d] transition-colors duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141210]"
           title="Email casperhildebrand@gmail.com"
         >
           <svg
@@ -78,6 +82,7 @@ export default function IntroLinks() {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"

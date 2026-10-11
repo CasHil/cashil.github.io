@@ -31,7 +31,12 @@ export default function Heading({
         >
           {title}
         </h2>
-        {divider && <div className="h-px w-12 bg-amber-500/40 my-3" />}
+        {divider && (
+          <div
+            aria-hidden="true"
+            className="h-px w-12 bg-amber-500/40 my-3"
+          />
+        )}
       </div>
     );
   }
@@ -46,7 +51,12 @@ export default function Heading({
         >
           {title}
         </h3>
-        {divider && <div className="h-px w-8 bg-amber-500/30 my-2" />}
+        {divider && (
+          <div
+            aria-hidden="true"
+            className="h-px w-8 bg-amber-500/30 my-2"
+          />
+        )}
       </div>
     );
   }

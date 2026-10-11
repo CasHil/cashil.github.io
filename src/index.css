@@ -11,6 +11,22 @@ html {
   background-color: #0c0b0a;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a,
+input {
+  touch-action: manipulation;
+}
+
 body {
   margin: 0;
   font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",

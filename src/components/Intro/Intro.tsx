@@ -18,17 +18,17 @@ export default function Intro() {
 
       <div className="space-y-4 text-base sm:text-lg text-[#c7c1b5] leading-relaxed mb-6">
         <p>
-          I'm a Full Stack Software Engineer at{" "}
+          I’m a Full Stack Software Engineer at{" "}
           <a
             href="https://www.tikkie.me/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-amber-400 hover:text-amber-300 font-semibold underline underline-offset-4 decoration-amber-500/40 hover:decoration-amber-400 transition-colors"
+            className="text-amber-400 hover:text-amber-300 font-semibold underline underline-offset-4 decoration-amber-500/40 hover:decoration-amber-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141210] rounded-sm"
           >
             Tikkie
           </a>
           , where I build <strong>Tikkie Business</strong>. My academic background spans a
-          Master's in Computer Science (Data Science) and a Master's in Science Education &amp;
+          Master’s in Computer Science (Data Science) and a Master’s in Science Education &amp;
           Communication from{" "}
           <span className="text-[#f4f1ea] font-medium">Delft University of Technology</span>,
           alongside Human-Computer Interaction research at{" "}
@@ -50,19 +50,19 @@ export default function Intro() {
       <div className="pt-4 flex flex-wrap items-center gap-3">
         <NavLink
           to="/work-experience"
-          className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-mono font-bold bg-amber-500 text-stone-950 hover:bg-amber-400 shadow-lg shadow-amber-500/20 transition-all duration-200"
+          className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-mono font-bold bg-amber-500 text-stone-950 hover:bg-amber-400 shadow-lg shadow-amber-500/20 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141210]"
         >
-          EXPLORE TRACKS // EXPERIENCE &rarr;
+          EXPLORE TRACKS // EXPERIENCE →
         </NavLink>
         <NavLink
           to="/education"
-          className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-mono font-bold bg-[#1b1916] hover:bg-[#24211d] text-[#e6e2d8] border border-[#38342e] transition-all duration-200"
+          className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-mono font-bold bg-[#1b1916] hover:bg-[#24211d] text-[#e6e2d8] border border-[#38342e] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141210]"
         >
           FOUNDATIONS // EDUCATION
         </NavLink>
         <a
           href="mailto:casperhildebrand@gmail.com"
-          className="px-4 py-2 text-xs sm:text-sm font-mono text-stone-400 hover:text-[#f4f1ea] transition-colors"
+          className="px-4 py-2 text-xs sm:text-sm font-mono text-stone-400 hover:text-[#f4f1ea] transition-colors duration-200 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141210]"
         >
           casperhildebrand@gmail.com
         </a>

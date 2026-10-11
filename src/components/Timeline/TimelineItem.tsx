@@ -10,7 +10,7 @@ export default function TimelineItem({ data, index }: TimelineItemProps) {
   const trackNumber = String(index + 1).padStart(2, "0");
 
   return (
-    <article className="group relative p-5 sm:p-6 my-4 rounded-2xl bg-[#141210]/80 border border-[#2b2722] hover:border-amber-500/40 transition-all duration-300 backdrop-blur-md shadow-xl shadow-black/40">
+    <article className="group relative p-5 sm:p-6 my-4 rounded-2xl bg-[#141210]/80 border border-[#2b2722] hover:border-amber-500/40 transition-[border-color,box-shadow] duration-200 backdrop-blur-md shadow-xl shadow-black/40">
       <div className="flex flex-col-reverse sm:flex-row sm:items-start justify-between gap-4">
         <div className="space-y-1.5 flex-1">
           {/* Track Number & Timecode */}
@@ -18,13 +18,16 @@ export default function TimelineItem({ data, index }: TimelineItemProps) {
             <span className="font-bold text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
               TRACK {trackNumber}
             </span>
-            <span>•</span>
+            <span aria-hidden="true">•</span>
             <span className="text-stone-400">
               {data.startDate} — {data.endDate}
             </span>
             {isPresent && (
               <span className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-400 uppercase tracking-wider">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                <span
+                  className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse motion-reduce:animate-none"
+                  aria-hidden="true"
+                />
                 LIVE
               </span>
             )}
@@ -46,7 +49,7 @@ export default function TimelineItem({ data, index }: TimelineItemProps) {
           <div className="self-start sm:self-auto shrink-0">
             <img
               src={`/images/${data.image.uri}`}
-              alt={data.image.alt}
+              alt={data.image.alt || `${data.subtitle} logo`}
               className="h-12 w-12 sm:h-14 sm:w-14 rounded-xl object-contain bg-[#1c1916] p-1.5 border border-[#38342e] shadow-md"
               loading="lazy"
               width="56"
