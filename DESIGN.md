@@ -1,7 +1,5 @@
 # Design System
 
-<!-- impeccable:design-schema 1 -->
-
 ## Design Philosophy
 
 - **Concept**: Acoustic & Algorithmic — A bespoke intersection of Music Composition and Computer Science.
