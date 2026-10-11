@@ -1,6 +1,6 @@
-const colors = require("tailwindcss/colors");
+import colors from "tailwindcss/colors.js";
 
-module.exports = {
+export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
   theme: {
