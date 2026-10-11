@@ -203,6 +203,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.7
         version: 18.3.7(@types/react@18.3.31)
+      '@types/testing-library__jest-dom':
+        specifier: ^5.14.9
+        version: 5.14.9
       '@vitejs/plugin-react':
         specifier: ^6.0.3
         version: 6.0.3(vite@8.1.0(@types/node@26.0.1)(esbuild@0.28.1))
@@ -921,8 +924,8 @@ packages:
   '@types/react@18.3.31':
     resolution: {integrity: sha512-vfEqpXTvwT91yhmwdfouStN2hSKwTvyRs8qpLfADyrq/kxDw0hZM7Wk9Ug1FELj8hIby+S/+kQCSRFF32nv2Qw==}
 
-  '@types/testing-library__jest-dom@5.14.3':
-    resolution: {integrity: sha512-oKZe+Mf4ioWlMuzVBaXQ9WDnEm1+umLx0InILg+yvZVBBDmzV5KfZyLrCvadtWcx8+916jLmHafcmqqffl+iIw==}
+  '@types/testing-library__jest-dom@5.14.9':
+    resolution: {integrity: sha512-FSYhIjFlfOpGSRyVoMBMuS3ws5ehFQODymf3vlI7U1K8c7PHwWwFY7VREfmsuzHSOnoKs/9/Y983ayOs7eRzqw==}
 
   '@vitejs/plugin-react@6.0.3':
     resolution: {integrity: sha512-vmFvco5/QuC2f9Oj+wTk0+9XeDFkHxSamwZKYc7MxYwKICfvUvlMhqKI0VuICPltGqh1neqBKDvO4kes1ya8vg==}
@@ -2426,7 +2429,7 @@ snapshots:
   '@testing-library/jest-dom@5.16.2':
     dependencies:
       '@babel/runtime': 7.17.8
-      '@types/testing-library__jest-dom': 5.14.3
+      '@types/testing-library__jest-dom': 5.14.9
       aria-query: 5.0.0
       chalk: 3.0.0
       css: 3.0.0
@@ -2492,7 +2495,7 @@ snapshots:
       '@types/prop-types': 15.7.15
       csstype: 3.2.3
 
-  '@types/testing-library__jest-dom@5.14.3':
+  '@types/testing-library__jest-dom@5.14.9':
     dependencies:
       '@types/jest': 27.4.1
 
