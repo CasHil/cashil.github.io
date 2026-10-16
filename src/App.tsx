@@ -28,7 +28,7 @@ function AppContent() {
   }, [mobileMenuOpen]);
 
   return (
-    <BrowserRouter>
+    <>
       {/* Skip link for keyboard accessibility */}
       <a
         href="#main-content"
@@ -142,7 +142,7 @@ function AppContent() {
           </footer>
         </div>
       </div>
-    </BrowserRouter>
+    </>
   );
 }
 
@@ -150,7 +150,9 @@ export default function App() {
   return (
     <ThemeProvider>
       <AudioProvider>
-        <AppContent />
+        <BrowserRouter>
+          <AppContent />
+        </BrowserRouter>
       </AudioProvider>
     </ThemeProvider>
   );

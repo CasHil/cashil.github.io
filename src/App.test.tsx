@@ -37,3 +37,20 @@ test("renders ambient sound toggle button", () => {
   expect(soundButtons.length).toBeGreaterThan(0);
 });
 
+test("renders interactive algorithmic synthesizer console and keys", () => {
+  render(<App />);
+  const consoleHeading = screen.getByText(/MODEL CH-01 \/\/ ALGORITHMIC SYNTHESIZER/i);
+  expect(consoleHeading).toBeInTheDocument();
+
+  // Playable keys C4 through C5
+  const c4Key = screen.getByRole("button", { name: /play note C4/i });
+  expect(c4Key).toBeInTheDocument();
+});
+
+test("renders engineering highlights bento", () => {
+  render(<App />);
+  expect(screen.getByText(/High-Concurrency Payments/i)).toBeInTheDocument();
+  expect(screen.getByText(/Gradual Compilers & Hedy/i)).toBeInTheDocument();
+  expect(screen.getByText(/Haptic & Tangible UX/i)).toBeInTheDocument();
+});
+
