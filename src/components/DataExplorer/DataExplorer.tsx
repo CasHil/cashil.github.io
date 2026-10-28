@@ -42,11 +42,11 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
 
   const clusterData = [
     {
-      name: d.clusters.completersName,
-      share: "8.4%",
-      behavior: d.clusters.completersBehavior,
-      description: d.clusters.completersDesc,
-      indicatorColor: "bg-emerald-500",
+      name: d.clusters.samplersName,
+      share: "47.4%",
+      behavior: d.clusters.samplersBehavior,
+      description: d.clusters.samplersDesc,
+      indicatorColor: "bg-amber-500",
     },
     {
       name: d.clusters.auditorsName,
@@ -56,11 +56,11 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
       indicatorColor: "bg-sky-500",
     },
     {
-      name: d.clusters.samplersName,
-      share: "47.4%",
-      behavior: d.clusters.samplersBehavior,
-      description: d.clusters.samplersDesc,
-      indicatorColor: "bg-amber-500",
+      name: d.clusters.completersName,
+      share: "8.4%",
+      behavior: d.clusters.completersBehavior,
+      description: d.clusters.completersDesc,
+      indicatorColor: "bg-emerald-500",
     },
   ];
 
@@ -106,7 +106,7 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
         <button
           type="button"
           onClick={() => setActiveTab("motivations")}
-          className={`relative px-3 py-1.5 text-xs sm:text-sm font-medium rounded-full transition-colors duration-200 ${
+          className={`relative px-4 py-2.5 min-h-[44px] text-xs sm:text-sm font-medium rounded-full transition-colors duration-200 ${
             activeTab === "motivations"
               ? "text-zinc-950 dark:text-white"
               : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100"
@@ -124,7 +124,7 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
         <button
           type="button"
           onClick={() => setActiveTab("clusters")}
-          className={`relative px-3 py-1.5 text-xs sm:text-sm font-medium rounded-full transition-colors duration-200 ${
+          className={`relative px-4 py-2.5 min-h-[44px] text-xs sm:text-sm font-medium rounded-full transition-colors duration-200 ${
             activeTab === "clusters"
               ? "text-zinc-950 dark:text-white"
               : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100"
@@ -278,8 +278,15 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
 
       {/* Thesis Reference Footer */}
       <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-zinc-200 dark:border-white/10 text-xs font-mono text-zinc-500 dark:text-zinc-400">
-        <span>{d.authorLabel}</span>
-        <span>{d.facultyLabel}</span>
+        <span>{d.authorLabel} · {d.facultyLabel}</span>
+        <a
+          href={d.repositoryLink}
+          target="_blank"
+          rel="noreferrer"
+          className="text-emerald-700 dark:text-emerald-400 hover:underline font-semibold transition-colors"
+        >
+          {d.repositoryText}
+        </a>
       </div>
     </div>
   );

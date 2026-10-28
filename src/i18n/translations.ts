@@ -15,6 +15,7 @@ export interface TranslationDictionary {
     coreDomainsLabel: string;
     coreDomains: string[];
     year: string;
+    cvDownload: string;
   };
   intro: {
     heroTitle: string;
@@ -24,6 +25,7 @@ export interface TranslationDictionary {
     exploreWork: string;
     exploreEdu: string;
     getInTouch: string;
+    downloadCv: string;
     featuredHeading: string;
     featuredSubtitle: string;
     tikkieTag: string;
@@ -36,6 +38,7 @@ export interface TranslationDictionary {
     thesisSubtitle: string;
     thesisDescription: string;
     thesisLink: string;
+    thesisSkills: string[];
     bitsizedTag: string;
     bitsizedTitle: string;
     bitsizedSubtitle: string;
@@ -84,6 +87,8 @@ export interface TranslationDictionary {
     methodologyText: string;
     authorLabel: string;
     facultyLabel: string;
+    repositoryLink: string;
+    repositoryText: string;
   };
   workExperience: {
     title: string;
@@ -135,6 +140,12 @@ export interface TranslationDictionary {
     paragraph1: string;
     paragraph2: string;
     paragraph3: string;
+    principlesHeading: string;
+    principles: {
+      number: string;
+      title: string;
+      description: string;
+    }[];
     beyondHeading: string;
     beyondSubtitle: string;
     interests: {
@@ -142,6 +153,12 @@ export interface TranslationDictionary {
       subtitle: string;
       description: string;
     }[];
+  };
+  outreach: {
+    heading: string;
+    subheading: string;
+    emailBtn: string;
+    cvBtn: string;
   };
 }
 
@@ -167,6 +184,7 @@ export const translations: Record<Language, TranslationDictionary> = {
         "Data Science & Analytics",
       ],
       year: "Casper Hildebrand • 2026",
+      cvDownload: "CV (PDF)",
     },
     intro: {
       heroTitle: "Software engineer building high-throughput merchant payment rails at Tikkie.",
@@ -178,6 +196,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       exploreWork: "Explore Work Experience",
       exploreEdu: "Education & Degrees",
       getInTouch: "Get in touch →",
+      downloadCv: "Download CV (PDF)",
       featuredHeading: "Selected Work",
       featuredSubtitle: "",
       tikkieTag: "Production Systems",
@@ -190,8 +209,9 @@ export const translations: Record<Language, TranslationDictionary> = {
       thesisTitle: "Debugging the Divide: 174,988 CS MOOC Learners",
       thesisSubtitle: "Clickstream Telemetry & Vocational Motivation",
       thesisDescription:
-        "Empirical thesis analyzing gender participation across TU Delft CS MOOCs. Revealed women enroll with +16.7% higher career advancement intent than men, who engage primarily for leisure.",
+        "Empirical thesis analyzing gender participation across TU Delft CS MOOCs. Revealed women enroll with +16.7 pp higher career advancement intent than men, who engage primarily for leisure.",
       thesisLink: "Explore research telemetry →",
+      thesisSkills: ["k-Means Clustering", "Clickstream Telemetry", "Python / Pandas"],
       bitsizedTag: "Co-Founder & Lead Engineer",
       bitsizedTitle: "Bitsized",
       bitsizedSubtitle: "Interactive Code Execution Engine",
@@ -209,28 +229,28 @@ export const translations: Record<Language, TranslationDictionary> = {
       statRuns: "Course iterations",
       statCourses: "TU Delft MOOCs",
       statIntent: "Women career intent",
-      statIntentValue: "+16.7%",
+      statIntentValue: "+16.7 pp",
       tabMotivations: "1. Motivations by Gender",
       tabClusters: "2. Engagement Clusters (k-Means)",
       womenLabel: "Women",
       menLabel: "Men",
       motivations: {
         careerLabel: "Career Advancement & Transition",
-        careerDelta: "+16.7% for women",
+        careerDelta: "+16.7 pp for women",
         careerExplanation:
           "Women enrolled with explicit vocational intent to transition into tech roles or upskill for promotions.",
         leisureLabel: "Hobby, Curiosity & Leisure",
-        leisureDelta: "+21.0% for men",
+        leisureDelta: "+21.0 pp for men",
         leisureExplanation:
           "Men were more than twice as likely to engage as recreational learners without immediate vocational stakes.",
         degreeLabel: "Formal Degree & Coursework Prep",
-        degreeDelta: "+4.3% for women",
+        degreeDelta: "+4.3 pp for women",
         degreeExplanation:
           "Enrollment as supplementary study material alongside formal university degree coursework.",
       },
       researchTakeawayTitle: "Key Finding:",
       researchTakeawayText:
-        "Women enrolled with high vocational urgency (+16.7% career transition), whereas men engaged recreationally (+21.0% hobby). Early course onboarding must scaffold explicit career pathways.",
+        "Women enrolled with high vocational urgency (+16.7 pp career transition), whereas men engaged recreationally (+21.0 pp hobby). Early course onboarding must scaffold explicit career pathways.",
       clusters: {
         completersName: "Completers",
         completersBehavior: "High submission density",
@@ -250,6 +270,8 @@ export const translations: Record<Language, TranslationDictionary> = {
         "k-means clustering across normalized Open edX event logs: session frequency, submission cadence, and video interactions.",
       authorLabel: "Author: Casper W. R. Hildebrand",
       facultyLabel: "TU Delft Faculty of EEMCS / EWI",
+      repositoryLink: "https://repository.tudelft.nl/record/uuid/53e18584-6997-4089-94b6-dc7bc4c59f2a",
+      repositoryText: "View published thesis at TU Delft Repository ↗",
     },
     workExperience: {
       title: "Work Experience",
@@ -268,21 +290,29 @@ export const translations: Record<Language, TranslationDictionary> = {
         {
           title: "Full Stack Software Engineer",
           subtitle: "Tikkie (ABN AMRO)",
+          image: {
+            uri: "tikkie.svg",
+            alt: "Tikkie (ABN AMRO)",
+          },
           startDate: "Mar 2026",
           endDate: "Present",
           current: true,
           category: "engineering",
-          text: "Engineering merchant-facing payment infrastructure powering thousands of Dutch businesses and millions of transactions. Building resilient API endpoints, merchant settlement workflows, and zero-downtime reliability for Tikkie Business.",
+          text: "• **Merchant Infrastructure**: Engineered merchant payment rails powering thousands of Dutch enterprises and millions of real-time transactions.\n• **API Reliability**: Built fault-tolerant settlement pipelines, idempotent partner endpoints, and zero-downtime releases.\n• **Frontend Dashboards**: Developed merchant portals with React, TypeScript, and AWS cloud infrastructure.",
           skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Fintech Scale"],
         },
         {
           title: "Software Engineer | Young Talent",
           subtitle: "Harvest",
+          image: {
+            uri: "harvest.svg",
+            alt: "Harvest Young Talent",
+          },
           startDate: "Feb 2026",
           endDate: "Present",
           current: true,
           category: "engineering",
-          text: "Engineering fellowship running parallel to production at Tikkie. Bi-weekly intensive labs on distributed systems, event-driven design, and resilience engineering.",
+          text: "• **Distributed Architecture**: Selective engineering fellowship running parallel to production at Tikkie.\n• **Resilience Engineering**: Bi-weekly intensive labs on event-driven design, fault isolation, and high-concurrency systems.",
           skills: ["Distributed Systems", "Software Architecture", "Leadership"],
         },
         {
@@ -491,6 +521,27 @@ export const translations: Record<Language, TranslationDictionary> = {
         "Holding dual Master's degrees in Computer Science and Science Education gives me a distinctive approach to engineering teams: I treat system architecture and technical communication as the same discipline. Great engineers don't just write robust code; they write crisp documentation, mentor relentlessly, and build shared mental models.",
       paragraph3:
         "Outside production, I study distributed systems, play electric bass, and analyze chess endgames—disciplines rooted in rhythm, invariants, and eliminating unnecessary noise.",
+      principlesHeading: "Engineering Principles",
+      principles: [
+        {
+          number: "01",
+          title: "Invariants Over Assumptions",
+          description:
+            "Payment networks and distributed systems fail in creative ways. We enforce strict transactional boundaries, idempotent state transitions, and explicit failure modes over optimistic happy paths.",
+        },
+        {
+          number: "02",
+          title: "Communication is System Architecture",
+          description:
+            "A system's long-term resilience is bounded by how well the team understands it. Crisp interfaces, typed schemas, and lucid documentation prevent architectural drift far better than verbal consensus.",
+        },
+        {
+          number: "03",
+          title: "Simplicity Under Pressure",
+          description:
+            "Avoid premature abstraction. The most robust operational components are small, deterministic, thoroughly tested, and trivial to reason about during a 2 AM production incident.",
+        },
+      ],
       beyondHeading: "Beyond the Terminal",
       beyondSubtitle:
         "Disciplines and creative pursuits that inform how I approach focus, rhythm, and complex systems.",
@@ -515,6 +566,13 @@ export const translations: Record<Language, TranslationDictionary> = {
         },
       ],
     },
+    outreach: {
+      heading: "Building resilient systems together.",
+      subheading:
+        "Available for staff engineering, fintech architecture, and technical advisory discussions.",
+      emailBtn: "Email Casper",
+      cvBtn: "Download Full CV (PDF)",
+    },
   },
   nl: {
     nav: {
@@ -537,6 +595,7 @@ export const translations: Record<Language, TranslationDictionary> = {
         "Data Science & Analytics",
       ],
       year: "Casper Hildebrand • 2026",
+      cvDownload: "CV (PDF)",
     },
     intro: {
       heroTitle: "Software engineer voor hoog-volume betaalinfrastructuur bij Tikkie.",
@@ -548,6 +607,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       exploreWork: "Bekijk werkervaring",
       exploreEdu: "Opleidingen & Titels",
       getInTouch: "Neem contact op →",
+      downloadCv: "Download CV (PDF)",
       featuredHeading: "Uitgewerkt Werk",
       featuredSubtitle: "",
       tikkieTag: "Productiesystemen",
@@ -560,8 +620,9 @@ export const translations: Record<Language, TranslationDictionary> = {
       thesisTitle: "Debugging the Divide: 174.988 Cursisten",
       thesisSubtitle: "Telemetrie & Beroepsmatige Motivatie",
       thesisDescription:
-        "Empirisch onderzoek naar genderverschillen in TU Delft informatica-MOOCs. Vrouwen starten met +16,7% hogere loopbaandoelen dan mannen, die primair voor de hobby meedoen.",
+        "Empirisch onderzoek naar genderverschillen in TU Delft informatica-MOOCs. Vrouwen starten met +16,7 pp hogere loopbaandoelen dan mannen, die primair voor de hobby meedoen.",
       thesisLink: "Bekijk onderzoeksdata →",
+      thesisSkills: ["k-Means Clustering", "Clickstream Telemetrie", "Python / Pandas"],
       bitsizedTag: "Mede-oprichter & Lead Engineer",
       bitsizedTitle: "Bitsized",
       bitsizedSubtitle: "Interactieve Code Execution Engine",
@@ -579,28 +640,28 @@ export const translations: Record<Language, TranslationDictionary> = {
       statRuns: "Cursusedities",
       statCourses: "TU Delft MOOCs",
       statIntent: "Vrouwen loopbaanfocus",
-      statIntentValue: "+16,7%",
+      statIntentValue: "+16,7 pp",
       tabMotivations: "1. Motivaties naar Geslacht",
       tabClusters: "2. Gedragsclusters (k-Means)",
       womenLabel: "Vrouwen",
       menLabel: "Mannen",
       motivations: {
         careerLabel: "Loopbaangroei & Baanswitch",
-        careerDelta: "+16,7% bij vrouwen",
+        careerDelta: "+16,7 pp bij vrouwen",
         careerExplanation:
           "Vrouwen schreven zich in met een expliciet beroepsdoel: instromen in de techsector of doorgroeien in hun functie.",
         leisureLabel: "Hobby, Nieuwsgierigheid & Vrije tijd",
-        leisureDelta: "+21,0% bij mannen",
+        leisureDelta: "+21,0 pp bij mannen",
         leisureExplanation:
           "Mannen namen meer dan twee keer zo vaak deel uit recreatieve interesse zonder direct professioneel belang.",
         degreeLabel: "Universitaire Voorbereiding & Studie",
-        degreeDelta: "+4,3% bij vrouwen",
+        degreeDelta: "+4,3 pp bij vrouwen",
         degreeExplanation:
           "Deelname ter ondersteuning van een formele universitaire bachelor- of masteropleiding.",
       },
       researchTakeawayTitle: "Kerninzicht:",
       researchTakeawayText:
-        "Vrouwen starten met een hoge beroepsmatige urgentie (+16,7% loopbaanswitch), terwijl mannen recreatief deelnemen (+21,0% hobby). Cursus-onboarding dient gerichte loopbaanpaden te bieden.",
+        "Vrouwen starten met een hoge beroepsmatige urgentie (+16,7 pp loopbaanswitch), terwijl mannen recreatief deelnemen (+21,0 pp hobby). Cursus-onboarding dient gerichte loopbaanpaden te bieden.",
       clusters: {
         completersName: "Afronders",
         completersBehavior: "Hoge inleverfrequentie",
@@ -620,6 +681,8 @@ export const translations: Record<Language, TranslationDictionary> = {
         "k-means clustering op genormaliseerde Open edX logs: sessiefrequentie, inleverritme en video-interacties.",
       authorLabel: "Auteur: Casper W. R. Hildebrand",
       facultyLabel: "TU Delft Faculteit EWI",
+      repositoryLink: "https://repository.tudelft.nl/record/uuid/53e18584-6997-4089-94b6-dc7bc4c59f2a",
+      repositoryText: "Bekijk de afstudeerscriptie in de TU Delft Repository ↗",
     },
     workExperience: {
       title: "Werkervaring",
@@ -638,21 +701,29 @@ export const translations: Record<Language, TranslationDictionary> = {
         {
           title: "Full Stack Software Engineer",
           subtitle: "Tikkie (ABN AMRO)",
+          image: {
+            uri: "tikkie.svg",
+            alt: "Tikkie (ABN AMRO)",
+          },
           startDate: "mrt 2026",
           endDate: "Heden",
           current: true,
           category: "engineering",
-          text: "Ontwikkeling van zakelijke betaalinfrastructuur voor Tikkie Zakelijk, voor duizenden bedrijven en miljoenen transacties. Bouwen van veerkrachtige API-koppelingen, settlement flows en zero-downtime releases voor hoog-volume betaalstromen.",
+          text: "• **Betaalinfrastructuur**: Ontwikkeling van zakelijke betaalinfrastructuur voor duizenden bedrijven en miljoenen transacties via Tikkie Zakelijk.\n• **API Betrouwbaarheid**: Bouwen van veerkrachtige settlement-pipelines, partner-integraties en zero-downtime releases.\n• **Merchant Dashboards**: Ontwikkeling van zakelijke dashboards met React, TypeScript en AWS cloudarchitectuur.",
           skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Fintech Schaal"],
         },
         {
           title: "Software Engineer | Young Talent",
           subtitle: "Harvest",
+          image: {
+            uri: "harvest.svg",
+            alt: "Harvest Young Talent",
+          },
           startDate: "feb 2026",
           endDate: "Heden",
           current: true,
           category: "engineering",
-          text: "Engineering fellowship parallel aan productiewerk bij Tikkie. Tweewekelijkse labs over gedistribueerde systemen, event-driven architectuur en resilience engineering.",
+          text: "• **Gedistribueerde Architectuur**: Selectief engineering fellowship parallel aan productiewerk bij Tikkie.\n• **Resilience Engineering**: Tweewekelijkse intensieve labs over event-driven architecturen, foutisolatie en concurrency.",
           skills: ["Gedistribueerde Systemen", "Softwarearchitectuur", "Leiderschap"],
         },
         {
@@ -861,6 +932,27 @@ export const translations: Record<Language, TranslationDictionary> = {
         "Mijn dubbele Master in Computer Science en Science Education geeft mij een duidelijke voorsprong in engineering teams: ik zie systeemarchitectuur en technische communicatie als één discipline. Goede engineers schrijven niet alleen robuuste code; ze schrijven heldere documentatie, begeleiden collega's en bouwen gedeelde mentale modellen.",
       paragraph3:
         "Buiten productie verdiep ik me in gedistribueerde systemen, speel ik elektrische basgitaar en analyseer ik schaakeindspelen—disciplines die draaien om ritme, invarianten en het elimineren van ruis.",
+      principlesHeading: "Engineering Principes",
+      principles: [
+        {
+          number: "01",
+          title: "Invarianten Boven Aannames",
+          description:
+            "Betaalnetwerken en gedistribueerde systemen falen onverwacht. We bouwen strikte transactionele grenzen, idempotente statusovergangen en expliciete foutafhandeling in plaats van te hopen op het 'happy path'.",
+        },
+        {
+          number: "02",
+          title: "Communicatie is Systeemarchitectuur",
+          description:
+            "De betrouwbaarheid van een systeem wordt begrensd door het begrip binnen het team. Scherpe interfaces, getypte schema's en heldere documentatie voorkomen architectonische erosie.",
+        },
+        {
+          number: "03",
+          title: "Eenvoud Onder Druk",
+          description:
+            "Vermijd overmatige abstracties. De meest robuuste onderdelen zijn klein, deterministisch, grondig getest en intuïtief te doorgronden tijdens een nachtelijke productie-storing.",
+        },
+      ],
       beyondHeading: "Buiten de Terminal",
       beyondSubtitle:
         "Disciplines en creatieve bezigheden die invloed hebben op hoe ik denk over focus, ritme en complexe systemen.",
@@ -884,6 +976,13 @@ export const translations: Record<Language, TranslationDictionary> = {
             "Lokale tools, build-optimalisaties en automatische verificatie die de feedbackcyclus van het team meetbaar verkorten.",
         },
       ],
+    },
+    outreach: {
+      heading: "Samen robuuste systemen bouwen.",
+      subheading:
+        "Beschikbaar voor staff engineering, fintech architectuur en technisch advies.",
+      emailBtn: "E-mail Casper",
+      cvBtn: "Download Volledig CV (PDF)",
     },
   },
 };
