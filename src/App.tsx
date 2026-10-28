@@ -1,21 +1,101 @@
-import { useState } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Body from "./components/Body/Body";
-import IntroLinks from "./components/Intro/IntroLinks/IntroLinks";
 import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 import LanguageToggle from "./components/LanguageToggle/LanguageToggle";
 import { ThemeProvider } from "./context/ThemeContext";
 import { LanguageProvider, useLanguage } from "./context/LanguageContext";
 import "./App.css";
 
-function AppContent() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+function Masthead() {
   const { t } = useLanguage();
 
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-  };
+  return (
+    <header className="pt-8 sm:pt-14 pb-8 space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        {/* Identity */}
+        <Link to="/" className="group flex items-center gap-3.5 focus:outline-none">
+          <div className="relative shrink-0">
+            <img
+              src="/images/profile.jpg"
+              alt="Casper Hildebrand"
+              className="h-11 w-11 rounded-full object-cover ring-1 ring-zinc-300 dark:ring-white/20 transition-transform duration-200 group-hover:scale-105"
+            />
+            <span
+              className="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-canvas"
+              title="Building Tikkie Business"
+            >
+              <span className="h-2 w-2 rounded-full bg-emerald-500 ring-2 ring-canvas" />
+            </span>
+          </div>
+          <div>
+            <div className="font-display font-bold text-base sm:text-lg text-zinc-900 dark:text-white tracking-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+              {t.sidebar.name}
+            </div>
+            <p className="text-xs font-mono text-emerald-800 dark:text-emerald-400">
+              {t.sidebar.role}
+            </p>
+          </div>
+        </Link>
+
+        {/* Action Controls & Social */}
+        <div className="flex items-center gap-3 self-start sm:self-auto">
+          {/* Social Profiles */}
+          <nav aria-label="Social Profiles" className="flex items-center gap-1.5 text-zinc-500 dark:text-zinc-400">
+            <a
+              href="https://github.com/CasHil"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 hover:text-zinc-900 dark:hover:text-white transition-colors"
+              aria-label="GitHub profile"
+            >
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/casper-hildebrand/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 hover:text-zinc-900 dark:hover:text-white transition-colors"
+              aria-label="LinkedIn profile"
+            >
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+            <a
+              href="mailto:casperhildebrand@gmail.com"
+              className="p-1.5 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+              aria-label="Email Casper"
+              title="casperhildebrand@gmail.com"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </a>
+          </nav>
+
+          <span className="h-4 w-[1px] bg-zinc-200 dark:bg-white/10" aria-hidden="true" />
+
+          {/* Toggles */}
+          <div className="flex items-center gap-1.5">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
+        </div>
+      </div>
+
+      {/* Primary Navigation */}
+      <div className="border-b border-zinc-200/80 dark:border-white/10 pb-3">
+        <Header orientation="horizontal" />
+      </div>
+    </header>
+  );
+}
+
+function AppContent() {
+  const { t } = useLanguage();
 
   return (
     <div className="relative min-h-screen bg-canvas text-zinc-900 dark:text-gray-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-800 dark:selection:text-emerald-300 transition-colors">
@@ -33,115 +113,22 @@ function AppContent() {
           Skip to main content
         </a>
 
-        {/* Mobile Sticky Top Bar */}
-        <div className="sticky top-0 z-40 flex items-center justify-between px-4 py-3 bg-canvas/90 backdrop-blur-md border-b border-zinc-200 dark:border-white/10 lg:hidden">
-          <Link
-            to="/"
-            onClick={closeMobileMenu}
-            className="flex items-center gap-2.5"
-          >
-            <img
-              src="/images/profile.jpg"
-              alt="Casper Hildebrand"
-              className="h-8 w-8 rounded-full object-cover ring-1 ring-zinc-300 dark:ring-white/20"
-            />
-            <div className="flex flex-col text-left">
-              <span className="font-display font-bold text-sm text-zinc-900 dark:text-white tracking-tight leading-tight">
-                Casper Hildebrand
-              </span>
-              <span className="text-xs font-mono text-emerald-700 dark:text-emerald-400 leading-tight">
-                Full Stack @ Tikkie
-              </span>
-            </div>
-          </Link>
+        {/* Centered Single-Column Editorial Canvas */}
+        <div className="relative z-10 max-w-2xl sm:max-w-3xl mx-auto px-6 sm:px-8">
+          <Masthead />
+          <Body />
 
-          <div className="flex items-center gap-2">
-            <LanguageToggle />
-            <ThemeToggle />
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center p-1.5 rounded-[2px] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 border border-zinc-300 dark:border-zinc-700 transition-colors"
-              aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-              aria-expanded={mobileMenuOpen}
-            >
-              {mobileMenuOpen ? (
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Dropdown Menu Drawer */}
-        {mobileMenuOpen && (
-          <div className="fixed inset-x-0 top-[57px] bottom-0 z-30 bg-canvas/95 backdrop-blur-lg border-b border-zinc-200 dark:border-white/10 p-6 flex flex-col justify-between overflow-y-auto lg:hidden animate-in fade-in duration-150">
-            <div className="space-y-6">
-              <Header handleClick={closeMobileMenu} orientation="vertical" />
+          {/* Subtle Monograph Colophon Footer */}
+          <footer className="mt-20 pt-8 pb-12 border-t border-zinc-200/80 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+            <div>
+              <span>Casper Hildebrand</span>
+              <span className="mx-2">·</span>
+              <span>Rotterdam / Amsterdam</span>
             </div>
-            <div className="pt-6 border-t border-zinc-200 dark:border-white/10">
-              <div className="flex items-center justify-center gap-4 text-xs font-mono text-zinc-500 dark:text-zinc-400">
-                <a
-                  href="https://github.com/CasHil"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-zinc-900 dark:hover:text-white transition-colors"
-                >
-                  GitHub
-                </a>
-                <span>•</span>
-                <a
-                  href="https://www.linkedin.com/in/casper-hildebrand/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-zinc-900 dark:hover:text-white transition-colors"
-                >
-                  LinkedIn
-                </a>
-                <span>•</span>
-                <a
-                  href="mailto:casperhildebrand@gmail.com"
-                  className="hover:text-emerald-700 dark:text-emerald-400 transition-colors"
-                >
-                  Email
-                </a>
-              </div>
+            <div>
+              {t.sidebar.year}
             </div>
-          </div>
-        )}
-
-        {/* Main Desktop & Responsive Grid */}
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start">
-            {/* Desktop Sidebar */}
-            <aside className="hidden lg:block lg:col-span-4 sticky top-12">
-              <div className="rounded-[4px] border border-zinc-200 dark:border-white/10 bg-white dark:bg-surface p-6 shadow-sm dark:shadow-xl space-y-6">
-                <div className="flex items-center justify-between pb-4 border-b border-zinc-200/80 dark:border-white/5">
-                  <LanguageToggle />
-                  <ThemeToggle />
-                </div>
-                <IntroLinks />
-                <div className="pt-5 border-t border-zinc-200 dark:border-white/10">
-                  <Header orientation="vertical" />
-                </div>
-                <div className="pt-4 border-t border-zinc-200/80 dark:border-white/5 text-center">
-                  <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
-                    {t.sidebar.year}
-                  </p>
-                </div>
-              </div>
-            </aside>
-
-            {/* Content Column */}
-            <div className="lg:col-span-8">
-              <Body />
-            </div>
-          </div>
+          </footer>
         </div>
       </BrowserRouter>
     </div>

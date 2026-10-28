@@ -64,65 +64,71 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
   ];
 
   return (
-    <div className="rounded-[4px] border border-zinc-200 dark:border-white/10 bg-white dark:bg-surface p-5 sm:p-6 shadow-sm dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] space-y-6">
+    <div className="space-y-6">
       {/* Header and Context */}
       <div className="space-y-2">
         <div className="flex flex-wrap items-baseline justify-between gap-3">
-          <HeadingTag className="text-lg sm:text-xl font-bold text-zinc-900 dark:text-white tracking-tight">
+          <HeadingTag className="text-xl sm:text-2xl font-bold text-zinc-950 dark:text-white tracking-tight">
             {d.title}
           </HeadingTag>
           <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
             {d.badge}
           </span>
         </div>
-        <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[65ch]">
+        <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[65ch]">
           {d.subtitle}
         </p>
       </div>
 
-      {/* High-Level Overview Metrics (Flat Editorial Grid, No Nested Cards) */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-4 border-y border-zinc-200 dark:border-white/10">
+      {/* High-Level Overview Metrics (Flat Editorial Grid, Zero Box Enclosures) */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 py-5 border-y border-zinc-200/80 dark:border-white/10">
         <div>
-          <span className="block text-2xl font-bold font-mono text-zinc-900 dark:text-white">{d.statLearnersValue}</span>
-          <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">{d.statLearners}</span>
+          <span className="block text-2xl sm:text-3xl font-bold font-mono tracking-tight text-zinc-950 dark:text-white">{d.statLearnersValue}</span>
+          <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-1">{d.statLearners}</span>
         </div>
         <div>
-          <span className="block text-2xl font-bold font-mono text-emerald-800 dark:text-emerald-400">14</span>
-          <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">{d.statRuns}</span>
+          <span className="block text-2xl sm:text-3xl font-bold font-mono tracking-tight text-emerald-700 dark:text-emerald-400">14</span>
+          <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-1">{d.statRuns}</span>
         </div>
         <div>
-          <span className="block text-2xl font-bold font-mono text-sky-800 dark:text-sky-400">4</span>
-          <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">{d.statCourses}</span>
+          <span className="block text-2xl sm:text-3xl font-bold font-mono tracking-tight text-sky-700 dark:text-sky-400">4</span>
+          <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-1">{d.statCourses}</span>
         </div>
         <div>
-          <span className="block text-2xl font-bold font-mono text-amber-800 dark:text-amber-400">{d.statIntentValue}</span>
-          <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">{d.statIntent}</span>
+          <span className="block text-2xl sm:text-3xl font-bold font-mono tracking-tight text-amber-700 dark:text-amber-400">{d.statIntentValue}</span>
+          <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-1">{d.statIntent}</span>
         </div>
       </div>
 
-      {/* Tab Navigation */}
-      <div className="flex items-center gap-2 border-b border-zinc-200 dark:border-white/10 pb-2">
+      {/* Tab Navigation (Understated Editorial Switcher) */}
+      <div className="flex items-center gap-3 border-b border-zinc-200/80 dark:border-white/10 pb-2.5">
         <button
           type="button"
           onClick={() => setActiveTab("motivations")}
-          className={`px-3 py-1 rounded-[2px] text-xs font-medium font-mono uppercase tracking-wider transition-colors ${
+          className={`relative text-xs sm:text-sm font-medium transition-colors ${
             activeTab === "motivations"
-              ? "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900"
-              : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5"
+              ? "text-zinc-950 dark:text-white font-semibold"
+              : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
           }`}
         >
           {d.tabMotivations}
+          {activeTab === "motivations" && (
+            <span className="absolute -bottom-2.5 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-emerald-400" />
+          )}
         </button>
         <button
           type="button"
           onClick={() => setActiveTab("clusters")}
-          className={`px-3 py-1 rounded-[2px] text-xs font-medium font-mono uppercase tracking-wider transition-colors ${
+          className={`relative text-xs sm:text-sm font-medium transition-colors ml-3 ${
             activeTab === "clusters"
-              ? "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900"
-              : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5"
+              ? "text-zinc-950 dark:text-white font-semibold"
+              : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
           }`}
         >
           {d.tabClusters}
+          {activeTab === "clusters" && (
+            <span className="absolute -bottom-2.5 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-emerald-400" />
+          )}
         </button>
       </div>
 
@@ -153,9 +159,9 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
                     <span className="w-16 text-xs font-mono text-zinc-600 dark:text-zinc-300">
                       {d.womenLabel}
                     </span>
-                    <div className="flex-1 h-3 rounded-full bg-zinc-200/80 dark:bg-canvas border border-zinc-300/60 dark:border-white/5 overflow-hidden">
+                    <div className="flex-1 h-2 rounded-full bg-zinc-100 dark:bg-zinc-800/80 overflow-hidden">
                       <div
-                        className="h-full rounded-full bg-emerald-700 dark:bg-emerald-500/80 transition-all duration-500"
+                        className="h-full rounded-full bg-emerald-700 dark:bg-emerald-400 transition-all duration-500"
                         style={{ width: `${item.women}%` }}
                       />
                     </div>
@@ -168,9 +174,9 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
                     <span className="w-16 text-xs font-mono text-zinc-600 dark:text-zinc-300">
                       {d.menLabel}
                     </span>
-                    <div className="flex-1 h-3 rounded-full bg-zinc-200/80 dark:bg-canvas border border-zinc-300/60 dark:border-white/5 overflow-hidden">
+                    <div className="flex-1 h-2 rounded-full bg-zinc-100 dark:bg-zinc-800/80 overflow-hidden">
                       <div
-                        className="h-full rounded-full bg-sky-700 dark:bg-sky-500/70 transition-all duration-500"
+                        className="h-full rounded-full bg-sky-700 dark:bg-sky-400 transition-all duration-500"
                         style={{ width: `${item.men}%` }}
                       />
                     </div>

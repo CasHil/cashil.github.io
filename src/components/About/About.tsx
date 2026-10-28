@@ -5,10 +5,10 @@ export default function About() {
   const { t } = useLanguage();
 
   return (
-    <div className="space-y-10 max-w-[58ch]">
+    <div className="space-y-12">
       <div className="space-y-4">
         <Heading title={t.about.title} size="h1" />
-        <div className="space-y-4 text-base text-zinc-600 dark:text-zinc-300 leading-relaxed mt-4">
+        <div className="space-y-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed mt-4 max-w-[65ch]">
           <p>{t.about.paragraph1}</p>
           <p>{t.about.paragraph2}</p>
           <p>{t.about.paragraph3}</p>
@@ -39,7 +39,7 @@ export default function About() {
                   {item.subtitle}
                 </p>
               </div>
-              <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[65ch]">
                 {item.description}
               </p>
             </div>

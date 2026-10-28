@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import Heading from "../Heading/Heading";
-import DataExplorer from "../DataExplorer/DataExplorer";
 import { useLanguage } from "../../context/LanguageContext";
 import "./Intro.css";
 
@@ -8,52 +6,58 @@ export default function Intro() {
   const { t } = useLanguage();
 
   const tikkieSkills = ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Fintech Scale"];
-  const bitsizedSkills = ["Product Engineering", "React", "Node.js", "EdTech", "Curriculum"];
+  const bitsizedSkills = ["Product Engineering", "React", "Node.js", "EdTech Platform"];
 
   return (
-    <div className="space-y-12 max-w-[65ch]">
+    <div className="space-y-16">
       {/* Editorial Hero Statement */}
       <div className="space-y-6">
-        <Heading
-          title={t.intro.heroTitle}
-          animated
-          size="h1"
-        />
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-zinc-950 dark:text-white leading-[1.18]">
+          {t.intro.heroTitle}
+        </h1>
 
-        <div className="space-y-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed">
+        <div className="space-y-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[65ch]">
           <p>{t.intro.bioParagraph1}</p>
           <p>{t.intro.bioParagraph2}</p>
           {t.intro.bioParagraph3 && <p>{t.intro.bioParagraph3}</p>}
         </div>
 
-        {/* Action Controls (Sharp Swiss Editorial Controls, Zero Bubbly Pills) */}
-        <div className="flex flex-wrap items-center gap-3 pt-2">
+        {/* Kinetic Editorial Links (Zero Bubbly Pills, Sleek Text Kinetics) */}
+        <div className="flex flex-wrap items-center gap-6 pt-2 text-sm">
           <Link
             to="/work-experience"
-            className="inline-flex items-center gap-2 px-4 py-2 border border-zinc-900 bg-zinc-900 text-white hover:bg-transparent hover:text-zinc-900 dark:border-zinc-200 dark:bg-zinc-200 dark:text-zinc-900 dark:hover:bg-transparent dark:hover:text-white rounded-[2px] font-mono text-xs uppercase tracking-wider transition-all shadow-sm"
+            className="group inline-flex items-center gap-1.5 font-medium text-zinc-950 dark:text-white hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
           >
             <span>{t.intro.exploreWork}</span>
-            <span aria-hidden="true">→</span>
+            <span className="font-mono transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
+              →
+            </span>
           </Link>
           <Link
             to="/education"
-            className="inline-flex items-center gap-2 px-4 py-2 border border-zinc-300 dark:border-zinc-700 text-zinc-800 dark:text-zinc-200 hover:border-zinc-900 dark:hover:border-zinc-300 rounded-[2px] font-mono text-xs uppercase tracking-wider transition-all"
+            className="group inline-flex items-center gap-1.5 font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors"
           >
             <span>{t.intro.exploreEdu}</span>
+            <span className="font-mono transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
+              →
+            </span>
           </Link>
           <a
             href="mailto:casperhildebrand@gmail.com"
-            className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-emerald-800 dark:text-emerald-400 hover:underline tracking-wider uppercase transition-colors pl-1"
+            className="group inline-flex items-center gap-1.5 font-medium text-emerald-800 dark:text-emerald-400 hover:underline transition-colors"
           >
             <span>{t.intro.getInTouch}</span>
+            <span className="font-mono transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true">
+              ↗
+            </span>
           </a>
         </div>
       </div>
 
-      {/* Featured Engineering & Research */}
-      <div className="pt-8 border-t border-zinc-200 dark:border-white/10 space-y-6">
+      {/* Featured Engineering & Research (Open Editorial Layout, Zero Nested Box Cards) */}
+      <div className="pt-10 border-t border-zinc-200/80 dark:border-white/10 space-y-10">
         <div>
-          <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">
+          <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-zinc-950 dark:text-white">
             {t.intro.featuredHeading}
           </h2>
           {t.intro.featuredSubtitle && (
@@ -63,15 +67,15 @@ export default function Intro() {
           )}
         </div>
 
-        <div className="space-y-6 divide-y divide-zinc-200 dark:divide-zinc-800/80">
+        <div className="space-y-10 divide-y divide-zinc-200/80 dark:divide-zinc-800/80">
           {/* 1. Tikkie Business Editorial Section */}
-          <div className="pt-6 first:pt-0 space-y-3">
-            <div className="flex flex-wrap items-center justify-between gap-2">
+          <div className="pt-8 first:pt-0 space-y-3">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
               <div>
                 <span className="text-xs font-mono text-emerald-800 dark:text-emerald-400 font-semibold uppercase tracking-wider">
                   {t.intro.tikkieTag}
                 </span>
-                <h3 className="text-lg sm:text-xl font-bold text-zinc-900 dark:text-white mt-0.5">
+                <h3 className="text-lg sm:text-xl font-bold text-zinc-950 dark:text-white mt-0.5">
                   {t.intro.tikkieTitle}
                 </h3>
                 <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
@@ -80,13 +84,14 @@ export default function Intro() {
               </div>
               <Link
                 to="/work-experience"
-                className="text-xs font-medium text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white underline underline-offset-4 transition-colors"
+                className="group inline-flex items-center gap-1 text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors"
               >
-                {t.intro.tikkieLink}
+                <span>{t.intro.tikkieLink}</span>
+                <span className="font-mono transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
               </Link>
             </div>
 
-            <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[65ch]">
               {t.intro.tikkieDescription}
             </p>
 
@@ -96,19 +101,50 @@ export default function Intro() {
             </p>
           </div>
 
-          {/* 2. Interactive Master's Thesis Telemetry Console */}
-          <div className="pt-6">
-            <DataExplorer headingLevel="h3" />
+          {/* 2. Master's Thesis Research Insight */}
+          <div className="pt-8 space-y-3">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <div>
+                <span className="text-xs font-mono text-emerald-800 dark:text-emerald-400 font-semibold uppercase tracking-wider">
+                  TU Delft · Master's Research
+                </span>
+                <h3 className="text-lg sm:text-xl font-bold text-zinc-950 dark:text-white mt-0.5">
+                  Debugging the Divide: 174,988 CS MOOC Learners
+                </h3>
+                <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
+                  Data Science Specialization · 14 Course Iterations
+                </p>
+              </div>
+              <Link
+                to="/education"
+                className="group inline-flex items-center gap-1 text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors"
+              >
+                <span>Explore telemetry & clusters</span>
+                <span className="font-mono transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
+              </Link>
+            </div>
+
+            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[65ch]">
+              Empirical thesis analyzing gender participation gaps across TU Delft CS MOOCs. Revealed that women enroll with a <strong>+16.7% higher career advancement intent</strong> compared to men, who engage primarily for hobby and leisure (+21.0%).
+            </p>
+
+            <div className="flex items-center gap-4 text-xs font-mono text-zinc-500 dark:text-zinc-400 pt-1">
+              <span>k-Means Clustering</span>
+              <span>·</span>
+              <span>Clickstream Telemetry</span>
+              <span>·</span>
+              <span>Python / Pandas</span>
+            </div>
           </div>
 
           {/* 3. Bitsized Platform Editorial Section */}
-          <div className="pt-6 space-y-3">
-            <div className="flex flex-wrap items-center justify-between gap-2">
+          <div className="pt-8 space-y-3">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
               <div>
                 <span className="text-xs font-mono text-emerald-800 dark:text-emerald-400 font-semibold uppercase tracking-wider">
                   {t.intro.bitsizedTag}
                 </span>
-                <h3 className="text-lg sm:text-xl font-bold text-zinc-900 dark:text-white mt-0.5">
+                <h3 className="text-lg sm:text-xl font-bold text-zinc-950 dark:text-white mt-0.5">
                   {t.intro.bitsizedTitle}
                 </h3>
                 <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
@@ -117,13 +153,14 @@ export default function Intro() {
               </div>
               <Link
                 to="/work-experience"
-                className="text-xs font-medium text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white underline underline-offset-4 transition-colors"
+                className="group inline-flex items-center gap-1 text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors"
               >
-                {t.intro.bitsizedLink}
+                <span>{t.intro.bitsizedLink}</span>
+                <span className="font-mono transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
               </Link>
             </div>
 
-            <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[65ch]">
               {t.intro.bitsizedDescription}
             </p>
 
