@@ -55,15 +55,19 @@
     overflow-y: scroll;
   }
 
+  body {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-family: "League Spartan", -apple-system, sans-serif;
+    font-family: "Instrument Sans", -apple-system, sans-serif;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     color: var(--text-primary);
     text-wrap: balance;
   }
@@ -79,8 +83,12 @@
     color: var(--text-secondary);
   }
 
-  code {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+  code,
+  .font-mono,
+  [data-tabular] {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-feature-settings: "tnum" 1, "zero" 1;
+    font-variant-numeric: tabular-nums;
   }
 }
 

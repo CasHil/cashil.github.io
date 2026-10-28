@@ -95,10 +95,17 @@ export default function Intro() {
               {t.intro.tikkieDescription}
             </p>
 
-            <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400 pt-1">
-              <span className="font-semibold text-zinc-700 dark:text-zinc-300">Stack:</span>{" "}
-              {tikkieSkills.join(" · ")}
-            </p>
+            <div className="flex flex-wrap items-center gap-1.5 pt-1">
+              <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400 mr-1">Stack:</span>
+              {tikkieSkills.map((skill) => (
+                <span
+                  key={skill}
+                  className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono bg-zinc-100 dark:bg-zinc-800/70 text-zinc-600 dark:text-zinc-300 border border-zinc-200/50 dark:border-white/5"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* 2. Master's Thesis Research Insight */}
@@ -128,12 +135,15 @@ export default function Intro() {
               {t.intro.thesisDescription}
             </p>
 
-            <div className="flex items-center gap-4 text-xs font-mono text-zinc-500 dark:text-zinc-400 pt-1">
-              <span>k-Means Clustering</span>
-              <span>·</span>
-              <span>Clickstream Telemetry</span>
-              <span>·</span>
-              <span>Python / Pandas</span>
+            <div className="flex flex-wrap items-center gap-1.5 pt-1">
+              {["k-Means Clustering", "Clickstream Telemetry", "Python / Pandas"].map((item) => (
+                <span
+                  key={item}
+                  className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono bg-zinc-100 dark:bg-zinc-800/70 text-zinc-600 dark:text-zinc-300 border border-zinc-200/50 dark:border-white/5"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
 
@@ -164,10 +174,17 @@ export default function Intro() {
               {t.intro.bitsizedDescription}
             </p>
 
-            <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400 pt-1">
-              <span className="font-semibold text-zinc-700 dark:text-zinc-300">Stack:</span>{" "}
-              {bitsizedSkills.join(" · ")}
-            </p>
+            <div className="flex flex-wrap items-center gap-1.5 pt-1">
+              <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400 mr-1">Stack:</span>
+              {bitsizedSkills.map((skill) => (
+                <span
+                  key={skill}
+                  className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono bg-zinc-100 dark:bg-zinc-800/70 text-zinc-600 dark:text-zinc-300 border border-zinc-200/50 dark:border-white/5"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

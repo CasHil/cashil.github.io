@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Heading from "../Heading/Heading";
 import Timeline from "../Timeline/Timeline";
 import { useLanguage } from "../../context/LanguageContext";
@@ -136,25 +136,42 @@ export default function WorkExperience() {
                   </div>
 
                   <div className="flex items-center gap-2.5 self-end sm:self-auto shrink-0">
-                    <span className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono font-medium uppercase tracking-wider bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-400 border border-zinc-200/50 dark:border-white/5">
                       {item.category === "engineering" ? "Systems" : "Pedagogy"}
                     </span>
-                    <span className="text-xs font-mono text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-transform duration-150">
-                      {isExpanded ? "−" : "+"}
+                    <span className={`inline-flex items-center justify-center h-5 w-5 rounded-full bg-zinc-100 dark:bg-zinc-800/80 text-zinc-500 dark:text-zinc-400 border border-zinc-200/50 dark:border-white/5 text-xs font-mono transition-transform duration-200 ${isExpanded ? "rotate-45" : "rotate-0"}`}>
+                      +
                     </span>
                   </div>
                 </button>
 
-                {isExpanded && (
-                  <div className="mt-3 pl-0 sm:pl-[124px] space-y-2 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed animate-in fade-in duration-150">
-                    <p>{item.text}</p>
-                    {item.skills && item.skills.length > 0 && (
-                      <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400 pt-1">
-                        {item.skills.join(" · ")}
-                      </p>
-                    )}
-                  </div>
-                )}
+                <AnimatePresence initial={false}>
+                  {isExpanded && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ type: "spring", stiffness: 450, damping: 35 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="mt-3 pl-0 sm:pl-[124px] pr-2 pb-2 space-y-2.5 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                        <p className="max-w-[58ch]">{item.text}</p>
+                        {item.skills && item.skills.length > 0 && (
+                          <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                            {item.skills.map((s) => (
+                              <span
+                                key={s}
+                                className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono bg-zinc-100 dark:bg-zinc-800/70 text-zinc-600 dark:text-zinc-300 border border-zinc-200/50 dark:border-white/5"
+                              >
+                                {s}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             );
           })}
