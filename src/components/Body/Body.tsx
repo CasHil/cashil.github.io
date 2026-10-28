@@ -1,39 +1,32 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Intro from "../Intro/Intro";
 import Education from "../Education/Education";
 import WorkExperience from "../WorkExperience/WorkExperience";
+import About from "../About/About";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function Body() {
   const location = useLocation();
 
-  const goToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+  }, [location.pathname]);
 
-  const wrapMotionDiv = (element: ReactNode) => {
-    const states = {
-      hidden: { opacity: 0, y: 100 },
-      show: { opacity: 1, y: 0 },
-      exit: { opacity: 0, y: -100 },
-    };
-    return (
-      <motion.div
-        initial={states.hidden}
-        animate={states.show}
-        exit={states.exit}
-        transition={{ duration: 0.4 }}
-        onAnimationStart={goToTop}
-      >
-        {element}
-      </motion.div>
-    );
-  };
+  const wrapMotionDiv = (element: ReactNode) => (
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -6 }}
+      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+    >
+      {element}
+    </motion.div>
+  );
 
   return (
-    <main className="m-auto pb-5 w-5/6 lg:w-3/4 flex justify-center flex-col md:block">
-      <AnimatePresence>
+    <main className="w-full max-w-3xl pb-16">
+      <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={wrapMotionDiv(<Intro />)} />
           <Route path="/education" element={wrapMotionDiv(<Education />)} />
@@ -41,6 +34,7 @@ export default function Body() {
             path="/work-experience"
             element={wrapMotionDiv(<WorkExperience />)}
           />
+          <Route path="/about" element={wrapMotionDiv(<About />)} />
         </Routes>
       </AnimatePresence>
     </main>
