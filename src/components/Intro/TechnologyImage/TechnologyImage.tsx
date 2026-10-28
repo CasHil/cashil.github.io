@@ -19,15 +19,12 @@ export default function TechnologyImage({
       rel="noopener noreferrer"
       aria-label={alt}
       title={alt}
-      className="flex items-center justify-center w-9 h-9 rounded-md bg-[#ffffff] dark:bg-[#141210] border border-[#eaeaea] dark:border-[#24211d] hover:border-[#dedede] dark:hover:border-[#332f29] hover:bg-[#f7f6f3] dark:hover:bg-[#1a1815] transition-all duration-150 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400"
+      className="inline-flex h-8 w-8 items-center justify-center rounded-[2px] bg-zinc-100 dark:bg-surface border border-zinc-200 dark:border-white/10 hover:border-zinc-400 dark:hover:border-white/20 hover:bg-zinc-200/60 dark:hover:bg-surface-hover transition-all duration-150 shadow-sm"
     >
       <img
         src={"/images/" + src}
-        alt=""
-        aria-hidden="true"
-        className="w-4 h-4 opacity-75 group-hover:opacity-100 transition-opacity dark:filter dark:invert"
-        width="16"
-        height="16"
+        alt={alt}
+        className="w-4 h-4 opacity-75 hover:opacity-100 transition-opacity dark:invert"
       />
     </a>
   );

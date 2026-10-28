@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
 type Theme = "light" | "dark";
 
@@ -10,23 +10,13 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() => {
-    if (typeof window !== "undefined") {
-      const savedTheme = localStorage.getItem("portfolio-theme") as Theme | null;
-      if (savedTheme === "light" || savedTheme === "dark") {
-        return savedTheme;
-      }
-      if (
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: light)").matches
-      ) {
-        return "light";
-      }
-    }
-    return "dark";
+    if (typeof window === "undefined") return "light";
+    const saved = localStorage.getItem("theme") as Theme | null;
+    if (saved === "light" || saved === "dark") return saved;
+    // Default to light mode as requested by user
+    return "light";
   });
 
   useEffect(() => {
@@ -38,15 +28,15 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
       root.classList.remove("dark");
       root.style.colorScheme = "light";
     }
-    localStorage.setItem("portfolio-theme", theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {
     setThemeState((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
-  const setTheme = (newTheme: Theme) => {
-    setThemeState(newTheme);
+  const setTheme = (next: Theme) => {
+    setThemeState(next);
   };
 
   return (
@@ -54,12 +44,12 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
       {children}
     </ThemeContext.Provider>
   );
-};
+}
 
-export const useTheme = () => {
+export function useTheme(): ThemeContextType {
   const context = useContext(ThemeContext);
   if (!context) {
     throw new Error("useTheme must be used within a ThemeProvider");
   }
   return context;
-};
+}

@@ -10,62 +10,57 @@ interface HeadingProps {
   animated?: boolean;
   alignment?: HeadingAlignment;
   divider?: boolean;
+  className?: string;
 }
 
 export default function Heading({
   title,
-  size,
+  size = "h1",
   color,
+  animated,
   alignment = "left",
   divider,
+  className = "",
 }: HeadingProps) {
   const alignClass = alignment === "center" ? "text-center" : "text-left";
+  const colorClass = color ? color : "text-zinc-900 dark:text-white";
 
   if (size === "h2") {
     return (
-      <div className={`mb-1 ${alignClass}`}>
+      <div className={alignClass}>
         <h2
-          className={`font-display text-2xl sm:text-3xl font-bold tracking-tight ${
-            color === "black" ? "text-stone-900" : "text-[#f4f1ea]"
-          }`}
+          className={`font-display text-2xl sm:text-3xl font-bold tracking-tight ${colorClass} ${className}`}
         >
           {title}
         </h2>
-        {divider && (
-          <div
-            aria-hidden="true"
-            className="h-px w-12 bg-amber-500/40 my-3"
-          />
-        )}
+        {divider && <hr className="my-3 border-zinc-200 dark:border-white/10" />}
       </div>
     );
   }
 
   if (size === "h3") {
     return (
-      <div className={`mb-0.5 ${alignClass}`}>
+      <div className={alignClass}>
         <h3
-          className={`text-sm sm:text-base font-mono font-medium ${
-            color === "black" ? "text-stone-600" : "text-amber-400"
-          }`}
+          className={`font-display text-lg sm:text-xl font-bold ${colorClass} ${className}`}
         >
           {title}
         </h3>
-        {divider && (
-          <div
-            aria-hidden="true"
-            className="h-px w-8 bg-amber-500/30 my-2"
-          />
-        )}
+        {divider && <hr className="my-2 border-zinc-200 dark:border-white/10" />}
       </div>
     );
   }
 
   return (
-    <div className={`mb-6 ${alignClass}`}>
-      <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#f4f1ea]">
+    <div className={alignClass}>
+      <h1
+        className={`font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight ${colorClass} ${
+          animated ? "intro-heading-animation" : ""
+        } ${className}`}
+      >
         {title}
       </h1>
+      {divider && <hr className="my-4 border-zinc-200 dark:border-white/10" />}
     </div>
   );
 }

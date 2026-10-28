@@ -1,157 +1,159 @@
-import "./App.css";
+import { useState } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Body from "./components/Body/Body";
 import IntroLinks from "./components/Intro/IntroLinks/IntroLinks";
 import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
-import SoundToggle from "./components/Audio/SoundToggle";
-import BackgroundSynth from "./components/Audio/BackgroundSynth";
+import LanguageToggle from "./components/LanguageToggle/LanguageToggle";
 import { ThemeProvider } from "./context/ThemeContext";
-import { AudioProvider } from "./context/AudioContext";
-import { useEffect, useState } from "react";
+import { LanguageProvider, useLanguage } from "./context/LanguageContext";
+import "./App.css";
 
 function AppContent() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && mobileMenuOpen) {
-        setMobileMenuOpen(false);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [mobileMenuOpen]);
-
   return (
-    <BrowserRouter>
-      {/* Skip link for keyboard accessibility */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#111111] focus:text-[#ffffff] dark:focus:bg-[#ffffff] dark:focus:text-[#111111] focus:font-mono focus:font-medium focus:text-xs focus:rounded focus:outline-none focus:ring-2 focus:ring-stone-400"
-      >
-        Skip to main content
-      </a>
+    <div className="relative min-h-screen bg-canvas text-zinc-900 dark:text-gray-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-800 dark:selection:text-emerald-300 transition-colors">
+      {/* Ambient Lighting Gradient */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(16,185,129,0.06),transparent)] dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(16,185,129,0.09),transparent)]"
+        aria-hidden="true"
+      />
 
-      <div className="relative min-h-screen bg-[#f7f6f3] dark:bg-[#0c0b0a] text-[#111111] dark:text-[#f4f1ea] overflow-x-hidden selection:bg-[#fbf3db] selection:text-[#956400] dark:selection:bg-amber-950/40 dark:selection:text-amber-200 transition-colors duration-200">
-        {/* Ambient background synthesizer & oscilloscope */}
-        <BackgroundSynth />
-        <div className="ambient-studio-glow-1" aria-hidden="true" />
-        <div className="ambient-studio-glow-2" aria-hidden="true" />
+      <BrowserRouter>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-emerald-700 text-white rounded-[2px] font-mono text-xs shadow-md focus:outline-none focus:ring-2 focus:ring-emerald-400"
+        >
+          Skip to main content
+        </a>
 
-        {/* Mobile Navigation Header */}
-        <header className="sticky top-0 z-40 lg:hidden bg-[#ffffff]/95 dark:bg-[#141210]/95 backdrop-blur-md border-b border-[#eaeaea] dark:border-[#24211d] transition-colors duration-200">
-          <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-            <Link
-              to="/"
-              onClick={closeMobileMenu}
-              className="flex items-center gap-2.5 group rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400"
-            >
-              <img
-                src="/images/profile.jpg"
-                alt=""
-                aria-hidden="true"
-                width="30"
-                height="30"
-                className="w-7 h-7 rounded object-cover border border-[#eaeaea] dark:border-[#2b2722]"
-              />
-              <span className="font-mono font-medium text-xs tracking-wider text-[#111111] dark:text-[#f4f1ea] uppercase">
-                CASPER HILDEBRAND
+        {/* Mobile Sticky Top Bar */}
+        <div className="sticky top-0 z-40 flex items-center justify-between px-4 py-3 bg-canvas/90 backdrop-blur-md border-b border-zinc-200 dark:border-white/10 lg:hidden">
+          <Link
+            to="/"
+            onClick={closeMobileMenu}
+            className="flex items-center gap-2.5"
+          >
+            <img
+              src="/images/profile.jpg"
+              alt="Casper Hildebrand"
+              className="h-8 w-8 rounded-full object-cover ring-1 ring-zinc-300 dark:ring-white/20"
+            />
+            <div className="flex flex-col text-left">
+              <span className="font-display font-bold text-sm text-zinc-900 dark:text-white tracking-tight leading-tight">
+                Casper Hildebrand
               </span>
-            </Link>
-
-            <div className="flex items-center gap-2">
-              <SoundToggle />
-              <ThemeToggle />
-              <button
-                type="button"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-1.5 rounded text-[#5a5a57] dark:text-[#8a8376] hover:text-[#111111] dark:hover:text-[#f4f1ea] hover:bg-[#eaeaea]/50 dark:hover:bg-[#1a1815] border border-[#eaeaea] dark:border-[#24211d] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400"
-                aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-                aria-expanded={mobileMenuOpen}
-                aria-controls="mobile-navigation-menu"
-              >
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.75}
-                  aria-hidden="true"
-                >
-                  {mobileMenuOpen ? (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  ) : (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  )}
-                </svg>
-              </button>
+              <span className="text-xs font-mono text-emerald-700 dark:text-emerald-400 leading-tight">
+                Full Stack @ Tikkie
+              </span>
             </div>
-          </div>
+          </Link>
 
-          {/* Mobile dropdown drawer */}
-          {mobileMenuOpen && (
-            <div
-              id="mobile-navigation-menu"
-              className="px-4 pb-4 pt-2 border-t border-[#eaeaea] dark:border-[#24211d] bg-[#ffffff] dark:bg-[#141210] animate-in fade-in slide-in-from-top-2 duration-150"
+          <div className="flex items-center gap-2">
+            <LanguageToggle />
+            <ThemeToggle />
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="inline-flex items-center justify-center p-1.5 rounded-[2px] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 border border-zinc-300 dark:border-zinc-700 transition-colors"
+              aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={mobileMenuOpen}
             >
+              {mobileMenuOpen ? (
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Dropdown Menu Drawer */}
+        {mobileMenuOpen && (
+          <div className="fixed inset-x-0 top-[57px] bottom-0 z-30 bg-canvas/95 backdrop-blur-lg border-b border-zinc-200 dark:border-white/10 p-6 flex flex-col justify-between overflow-y-auto lg:hidden animate-in fade-in duration-150">
+            <div className="space-y-6">
               <Header handleClick={closeMobileMenu} orientation="vertical" />
             </div>
-          )}
-        </header>
-
-        {/* Main Editorial Container */}
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
-          {/* Top Bar for Desktop */}
-          <div className="hidden lg:flex justify-end items-center gap-2 mb-6">
-            <SoundToggle />
-            <ThemeToggle />
+            <div className="pt-6 border-t border-zinc-200 dark:border-white/10">
+              <div className="flex items-center justify-center gap-4 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+                <a
+                  href="https://github.com/CasHil"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-zinc-900 dark:hover:text-white transition-colors"
+                >
+                  GitHub
+                </a>
+                <span>•</span>
+                <a
+                  href="https://www.linkedin.com/in/casper-hildebrand/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-zinc-900 dark:hover:text-white transition-colors"
+                >
+                  LinkedIn
+                </a>
+                <span>•</span>
+                <a
+                  href="mailto:casperhildebrand@gmail.com"
+                  className="hover:text-emerald-700 dark:text-emerald-400 transition-colors"
+                >
+                  Email
+                </a>
+              </div>
+            </div>
           </div>
+        )}
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Sidebar Column */}
-            <aside className="lg:col-span-4" aria-label="Author and navigation">
-              <div className="lg:sticky lg:top-8 p-6 sm:p-7 rounded-xl bg-[#ffffff] dark:bg-[#141210] border border-[#eaeaea] dark:border-[#24211d] shadow-[0_2px_8px_rgba(0,0,0,0.02)] dark:shadow-none transition-colors duration-200">
+        {/* Main Desktop & Responsive Grid */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start">
+            {/* Desktop Sidebar */}
+            <aside className="hidden lg:block lg:col-span-4 sticky top-12">
+              <div className="rounded-[4px] border border-zinc-200 dark:border-white/10 bg-white dark:bg-surface p-6 shadow-sm dark:shadow-xl space-y-6">
+                <div className="flex items-center justify-between pb-4 border-b border-zinc-200/80 dark:border-white/5">
+                  <LanguageToggle />
+                  <ThemeToggle />
+                </div>
                 <IntroLinks />
-                <div className="hidden lg:block mt-6 pt-6 border-t border-[#eaeaea] dark:border-[#24211d]">
+                <div className="pt-5 border-t border-zinc-200 dark:border-white/10">
                   <Header orientation="vertical" />
+                </div>
+                <div className="pt-4 border-t border-zinc-200/80 dark:border-white/5 text-center">
+                  <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
+                    {t.sidebar.year}
+                  </p>
                 </div>
               </div>
             </aside>
 
-            {/* Main Content Column */}
-            <div className="lg:col-span-8 p-6 sm:p-8 md:p-10 rounded-xl bg-[#ffffff] dark:bg-[#141210] border border-[#eaeaea] dark:border-[#24211d] shadow-[0_2px_8px_rgba(0,0,0,0.02)] dark:shadow-none transition-colors duration-200">
+            {/* Content Column */}
+            <div className="lg:col-span-8">
               <Body />
             </div>
           </div>
-
-          {/* Footer */}
-          <footer className="mt-16 pt-6 border-t border-[#eaeaea] dark:border-[#24211d] transition-colors duration-200">
-          </footer>
         </div>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 }
 
 export default function App() {
   return (
     <ThemeProvider>
-      <AudioProvider>
+      <LanguageProvider>
         <AppContent />
-      </AudioProvider>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

@@ -1,35 +1,38 @@
-import colors from "tailwindcss/colors.js";
+const colors = require("tailwindcss/colors");
 
-export default {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   darkMode: "class",
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["'Geist'", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
-        display: ["'Cabinet Grotesk'", "'Plus Jakarta Sans'", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
-        mono: ["'Geist Mono'", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
-      },
       colors: {
-        pastel: {
-          red: { bg: "#FDEBEC", text: "#9F2F2D", darkBg: "rgba(159, 47, 45, 0.18)", darkText: "#FCA5A5" },
-          blue: { bg: "#E1F3FE", text: "#1F6C9F", darkBg: "rgba(31, 108, 159, 0.18)", darkText: "#93C5FD" },
-          green: { bg: "#EDF3EC", text: "#346538", darkBg: "rgba(52, 101, 56, 0.18)", darkText: "#86EFAC" },
-          yellow: { bg: "#FBF3DB", text: "#956400", darkBg: "rgba(149, 100, 0, 0.18)", darkText: "#FCD34D" },
+        canvas: "var(--canvas)",
+        surface: {
+          DEFAULT: "var(--surface)",
+          hover: "var(--surface-hover)",
+          subtle: "var(--surface-subtle)",
         },
-        studio: {
-          950: "#0c0b0a",
-          900: "#141210",
-          850: "#1b1916",
-          800: "#24211d",
-          700: "#38342e",
-          600: "#524d44",
-          500: "#756e62",
-          400: "#a1998b",
-          300: "#c7c1b5",
-          200: "#e6e2d8",
-          100: "#f4f1ea",
+        border: {
+          subtle: "var(--border-subtle)",
+          hover: "var(--border-hover)",
         },
+      },
+      fontFamily: {
+        display: ['"League Spartan"', "sans-serif"],
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"Segoe UI"',
+          "Roboto",
+          '"Oxygen"',
+          '"Ubuntu"',
+          '"Cantarell"',
+          '"Fira Sans"',
+          '"Droid Sans"',
+          '"Helvetica Neue"',
+          "sans-serif",
+        ],
       },
     },
     colors: {
@@ -38,27 +41,15 @@ export default {
       black: colors.black,
       white: colors.white,
       gray: colors.gray,
-      stone: colors.stone,
       zinc: colors.zinc,
       slate: colors.slate,
-      amber: colors.amber,
-      orange: colors.orange,
       emerald: colors.emerald,
       indigo: colors.indigo,
+      yellow: colors.yellow,
+      amber: colors.amber,
+      cyan: colors.cyan,
       sky: colors.sky,
-      studio: {
-        950: "#0c0b0a",
-        900: "#141210",
-        850: "#1b1916",
-        800: "#24211d",
-        700: "#38342e",
-        600: "#524d44",
-        500: "#756e62",
-        400: "#a1998b",
-        300: "#c7c1b5",
-        200: "#e6e2d8",
-        100: "#f4f1ea",
-      },
+      teal: colors.teal,
     },
   },
   plugins: [],

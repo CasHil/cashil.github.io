@@ -1,54 +1,53 @@
+import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "../../context/ThemeContext";
 
-interface ThemeToggleProps {
-  className?: string;
-}
-
-export default function ThemeToggle({ className = "" }: ThemeToggleProps) {
+export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
 
   return (
-    <button
+    <motion.button
       type="button"
       onClick={toggleTheme}
-      aria-label={
-        isDark
-          ? "Switch to light theme (currently dark)"
-          : "Switch to dark theme (currently light)"
-      }
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.88 }}
+      className="relative inline-flex items-center justify-center h-6 w-6 rounded-[2px] border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       title={isDark ? "Switch to light theme" : "Switch to dark theme"}
-      className={`group relative flex items-center gap-2 px-2.5 py-1.5 rounded-md border transition-all duration-150 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 ${
-        isDark
-          ? "bg-[#141210] border-[#24211d] text-[#b5af9f] hover:text-[#f4f1ea] hover:border-[#332f29]"
-          : "bg-[#ffffff] border-[#eaeaea] text-[#5a5a57] hover:text-[#111111] hover:border-[#dedede]"
-      } ${className}`}
     >
-      <div className="relative w-3.5 h-3.5 flex items-center justify-center">
+      <AnimatePresence mode="wait" initial={false}>
         {isDark ? (
-          // Sun Icon (suggests switching to light)
-          <svg
-            className="w-3.5 h-3.5 text-[#e6e2d8]"
+          <motion.svg
+            key="sun"
+            initial={{ rotate: -90, scale: 0.4, opacity: 0 }}
+            animate={{ rotate: 0, scale: 1, opacity: 1 }}
+            exit={{ rotate: 90, scale: 0.4, opacity: 0 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            className="w-3.5 h-3.5 text-amber-400"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            strokeWidth={1.75}
+            strokeWidth={2}
             aria-hidden="true"
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="M12 3v1m0 16v1m9-9h-1M4 9h1m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
             />
-          </svg>
+          </motion.svg>
         ) : (
-          // Moon Icon (suggests switching to dark)
-          <svg
-            className="w-3.5 h-3.5 text-[#5a5a57]"
+          <motion.svg
+            key="moon"
+            initial={{ rotate: 90, scale: 0.4, opacity: 0 }}
+            animate={{ rotate: 0, scale: 1, opacity: 1 }}
+            exit={{ rotate: -90, scale: 0.4, opacity: 0 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            className="w-3.5 h-3.5 text-zinc-700"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            strokeWidth={1.75}
+            strokeWidth={2}
             aria-hidden="true"
           >
             <path
@@ -56,12 +55,9 @@ export default function ThemeToggle({ className = "" }: ThemeToggleProps) {
               strokeLinejoin="round"
               d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
             />
-          </svg>
+          </motion.svg>
         )}
-      </div>
-      <span className="text-[11px] font-mono font-medium tracking-wider uppercase">
-        {isDark ? "Light" : "Dark"}
-      </span>
-    </button>
+      </AnimatePresence>
+    </motion.button>
   );
 }

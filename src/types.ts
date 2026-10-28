@@ -10,4 +10,9 @@ export interface TimelineItemData {
   text?: string;
   startDate: string;
   endDate: string;
+  skills?: string[];
+  current?: boolean;
+  location?: string;
+  link?: string;
+  category?: "engineering" | "education";
 }

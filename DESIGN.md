@@ -1,55 +1,70 @@
-# Design System
+# Design System & Visual Guidelines: Casper Hildebrand Portfolio
 
-## Design Philosophy
+This document establishes the design principles, tokens, typography scale, and layout hierarchy for Casper Hildebrand's personal portfolio, adhering strictly to **Impeccable design principles** (clean, distinctive, high-craft, anti-slop).
 
-- **Concept**: Acoustic & Algorithmic — A bespoke intersection of Music Composition and Computer Science.
-- **Mode**: Experience / Persuade (Interactive Studio Portfolio)
-- **Aesthetic**: Warm analog recording console, modular synthesizers, and clean computational rigor.
-- **Tone**: Creative, articulate, tactile, human.
+---
 
-## Color System
+## 1. Core Principles
 
-- **Background & Ground**:
-  - Base: `#0c0b0a` (Obsidian amber ground)
-  - Console surface: `rgba(20, 18, 16, 0.85)` with `backdrop-filter: blur(14px)`
-  - Elevated card: `#141210`
-  - Subtle borders: `#2b2722` / `rgba(255, 240, 220, 0.08)`
-  - Hover border: `#f59e0b` / `rgba(245, 158, 11, 0.35)`
-- **Text & Foreground**:
-  - Primary text: `#f4f1ea` (Warm parchment white)
-  - Secondary text: `#c7c1b5` (Warm chalk)
-  - Console metadata: `#a1998b` / `#756e62` (Subtle studio stone)
-- **Accents**:
-  - Warm Amber: `#f59e0b` / `rgb(245, 158, 11)`
-  - Copper / Deep Amber: `#d97706` / `rgb(217, 119, 6)`
-  - Console Status LED: `#10b981` (Emerald active indicator)
+- **Authenticity over Cliché**: Eliminate AI tropes (e.g. waving hands `👋`, generic buzzwords like "AI-enabled SDLC", stark pure-white cards floating on pitch black). Voice is confident, direct, and first-person.
+- **Calibrated Dark Mode**: Avoid raw `#111827` (gray-900) and pure-black `#000000`. Use deep, warm obsidian/slate tones with subtle hue harmony.
+- **Surface Elevation Hierarchy**: Surfaces are distinguished through subtle lightness shifts and hairline borders (`rgba(255, 255, 255, 0.08)`), not heavy blurry black drop shadows.
+- **Typographic Hierarchy**: Bold editorial display type is strictly preserved for titles and focal accents; all body copy, dates, metadata, and tags use a readable, neutral system sans stack with balanced leading and tracking.
+- **Deliberate Craft Details**: Purposeful indicators (live pulse dot for current fintech role, subtle skill chips, elegant chess & audio motifs, fluid responsive transitions).
 
-## Typography
+---
 
-- **Headings & Display**:
-  - Family: `'Fraunces', Georgia, serif`
-  - Weights: `600` (SemiBold), `700` (Bold)
-  - Optical Size: Auto variable
-  - Tracking: `-0.02em`
-  - Wrap: `text-wrap: balance`
-- **Technical Readouts & Stems**:
-  - Family: `'Space Mono', monospace`
-  - Weights: `400` (Regular), `700` (Bold)
-  - Purpose: Track numbers, timecodes, frequencies, audio parameters, system stems
-- **Body**:
-  - Family: `'DM Sans', system-ui, -apple-system, sans-serif`
-  - Weights: `400` (Regular), `500` (Medium)
-  - Line-height: `1.7`
-  - Measure: `max-width: 68ch`
-  - Wrap: `text-wrap: pretty`
+## 2. Color Palette & Tokens
 
-## Interactive Sound & Synthesis
+| Token Name | Value | Usage |
+| :--- | :--- | :--- |
+| **`canvas`** | `#0b0c0e` | Deep obsidian base background |
+| **`surface`** | `#13151a` | Primary card, sidebar, and elevated panel background |
+| **`surface-hover`** | `#1a1d24` | Interactive hover and active card states |
+| **`surface-subtle`** | `#1e222b` | Tag pills, badge backgrounds, and secondary interactive areas |
+| **`border-subtle`** | `rgba(255, 255, 255, 0.08)` | Standard hairline borders on cards and dividers |
+| **`border-active`** | `rgba(255, 255, 255, 0.16)` | Hovered and focused element borders |
+| **`text-primary`** | `#f3f4f6` (gray-100) | Main headlines, titles, and high-emphasis text |
+| **`text-secondary`** | `#9ca3af` (gray-400) | Body paragraphs, descriptions, and standard labels |
+| **`text-muted`** | `#6b7280` (gray-500) | Timestamps, dates, location, secondary metadata |
+| **`accent-emerald`**| `#10b981` (emerald-500) | Tikkie / Fintech active indicators, current status dot |
+| **`accent-cyan`** | `#06b6d4` (cyan-500) | Interactive link hover states, accents |
+| **`accent-amber`** | `#f59e0b` (amber-500) | Education & creative craft accents |
 
-- **Engine**: Web Audio API with pentatonic harmonic tuning (C4, D4, E4, G4, A4, C5).
-- **Oscilloscope**: Real-time canvas wave calculation with amplitude decay and sine/tri harmonic rendering.
-- **Interaction Rules**: Strictly user-gesture initiated, muted by default with explicit `AUDIO [ON / OFF]` toggle.
+---
 
-## Spatial System & Track Arrangement
+## 3. Typography Hierarchy
 
-- **Arranger Format**: DAW session timeline with track indicators (`TRACK 01`), timecodes, and liner notes.
-- **Radius**: `12px` to `16px` for modules, `8px` for console buttons.
+### Font Families
+- **Display**: `"League Spartan"`, -apple-system, sans-serif
+  - *Usage*: Section titles, hero name, high-impact numbers, editorial emphasis.
+- **Sans / Body**: `ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif`
+  - *Usage*: All body paragraphs, timeline descriptions, metadata, navigation, skill tags.
+- **Mono**: `ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace`
+  - *Usage*: Code snippets, status tags, tech pills.
+
+### Typographic Scale
+- **Display 1 (Hero)**: `text-3xl md:text-5xl font-bold tracking-tight text-primary` (League Spartan)
+- **Heading 2 (Section)**: `text-xl md:text-2xl font-bold tracking-tight text-primary` (League Spartan)
+- **Heading 3 (Card Titles)**: `text-lg md:text-xl font-semibold text-primary` (League Spartan or Sans)
+- **Body Large**: `text-base md:text-lg text-secondary leading-relaxed`
+- **Body Standard**: `text-sm md:text-base text-secondary leading-relaxed`
+- **Metadata / Timestamps**: `text-xs md:text-sm text-muted font-medium`
+- **Skill / Status Tags**: `text-xs font-medium tracking-wide uppercase`
+
+---
+
+## 4. Spacing, Radii & Elevation
+
+### Spacing Scale
+- `p-2` (8px), `p-3` (12px), `p-4` (16px), `p-6` (24px), `p-8` (32px), `p-12` (48px)
+- Max content width: `max-w-4xl` for reading comfort, `max-w-6xl` for full layout.
+
+### Border Radii
+- Cards & Modals: `rounded-xl` (12px) or `rounded-2xl` (16px)
+- Chips & Badges: `rounded-md` (6px) or `rounded-full` (9999px)
+- Profile Avatar: `rounded-full` with `ring-2 ring-white/10 ring-offset-2 ring-offset-canvas`
+
+### Elevation & Shadows
+- **Card**: `border border-white/8 bg-surface shadow-[0_4px_20px_-2px_rgba(0,0,0,0.4)]`
+- **Hover**: `border-white/15 bg-surface-hover transition-all duration-200`

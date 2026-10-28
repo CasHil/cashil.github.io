@@ -1,21 +1,30 @@
+import Heading from "../Heading/Heading";
 import Timeline from "../Timeline/Timeline";
-import education from "../Timeline/TimelineEducation";
+import DataExplorer from "../DataExplorer/DataExplorer";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function Education() {
-  return (
-    <div className="content">
-      <div className="mb-8">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#111111] dark:text-[#f4f1ea] mb-3 leading-tight">
-          Education
-        </h1>
+  const { t } = useLanguage();
 
-        <p className="text-[#5a5a57] dark:text-[#b5af9f] text-base sm:text-lg leading-relaxed mb-6">
-          Degrees and coursework in Computer Science, Data Science, Human-Computer Interaction,
-          and Science Education from Delft University of Technology and KTH Royal Institute of Technology.
+  return (
+    <div className="space-y-8 max-w-[65ch]">
+      <div>
+        <Heading title={t.education.title} size="h1" />
+        <p className="text-base text-zinc-600 dark:text-zinc-300 leading-relaxed mt-2">
+          {t.education.intro}
         </p>
       </div>
 
-      <Timeline data={education} />
+      <DataExplorer headingLevel="h2" />
+
+      <div className="pt-6 border-t border-zinc-200 dark:border-white/10 space-y-4">
+        <h2 className="text-xl font-bold text-zinc-900 dark:text-white">
+          {t.education.thesisTitle}
+        </h2>
+        <div className="border-t border-zinc-200 dark:border-zinc-800/80">
+          <Timeline data={t.education.items} />
+        </div>
+      </div>
     </div>
   );
 }
