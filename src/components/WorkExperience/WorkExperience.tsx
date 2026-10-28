@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Heading from "../Heading/Heading";
 import Timeline from "../Timeline/Timeline";
@@ -8,8 +9,28 @@ type FilterType = "all" | "engineering" | "education";
 
 export default function WorkExperience() {
   const { t } = useLanguage();
-  const [filter, setFilter] = useState<FilterType>("all");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const trackParam = searchParams.get("track") as FilterType | null;
+
+  const validFilter = trackParam === "engineering" || trackParam === "education" ? trackParam : "all";
+  const [filter, setFilterState] = useState<FilterType>(validFilter);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (trackParam && (trackParam === "engineering" || trackParam === "education" || trackParam === "all")) {
+      setFilterState(trackParam);
+    }
+  }, [trackParam]);
+
+  const handleFilterChange = (newFilter: FilterType) => {
+    setFilterState(newFilter);
+    setExpandedIndex(null);
+    if (newFilter === "all") {
+      setSearchParams({});
+    } else {
+      setSearchParams({ track: newFilter });
+    }
+  };
 
   const filteredItems = t.workExperience.items.filter((item) => {
     if (filter === "all") return true;
@@ -32,6 +53,7 @@ export default function WorkExperience() {
   // Featured deep dives (Top 3 for all/engineering, top 2 for education)
   const featuredCutoff = filter === "education" ? 2 : 3;
   const featuredRoles = filteredItems.slice(0, featuredCutoff);
+  const archiveItems = filteredItems.filter((item) => !featuredRoles.includes(item));
 
   const toggleExpand = (idx: number) => {
     setExpandedIndex(expandedIndex === idx ? null : idx);
@@ -55,10 +77,7 @@ export default function WorkExperience() {
             <button
               key={f.key}
               type="button"
-              onClick={() => {
-                setFilter(f.key);
-                setExpandedIndex(null);
-              }}
+              onClick={() => handleFilterChange(f.key)}
               className={`relative px-3 py-1.5 text-xs sm:text-sm font-medium rounded-full transition-colors duration-200 ${
                 isActive
                   ? "text-zinc-950 dark:text-white"
@@ -111,7 +130,7 @@ export default function WorkExperience() {
         </div>
 
         <div className="divide-y divide-zinc-200/70 dark:divide-zinc-800/70 border-y border-zinc-200/70 dark:border-zinc-800/70">
-          {filteredItems.map((item, idx) => {
+          {archiveItems.map((item, idx) => {
             const isExpanded = expandedIndex === idx;
             return (
               <div key={`${item.title}-${item.startDate}-${idx}`} className="py-3.5 group">

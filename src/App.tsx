@@ -40,14 +40,27 @@ function Masthead() {
         </Link>
 
         {/* Action Controls & Social */}
-        <div className="flex items-center gap-3 self-start sm:self-auto">
-          {/* Social Profiles */}
-          <nav aria-label="Social Profiles" className="flex items-center gap-1 text-zinc-500 dark:text-zinc-400">
+        <div className="flex items-center gap-2 sm:gap-3 self-start sm:self-auto">
+          {/* CV Direct Download Pill */}
+          <a
+            href="/cv/Casper_Hildebrand_CV.pdf"
+            download="Casper_Hildebrand_CV.pdf"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-medium border border-zinc-300 dark:border-zinc-700 hover:border-emerald-600 dark:hover:border-emerald-400 text-zinc-700 dark:text-zinc-300 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+            title="Download Casper's CV as PDF"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            <span>{t.sidebar.cvDownload}</span>
+          </a>
+
+          <span className="hidden sm:inline-block h-4 w-[1px] bg-zinc-200 dark:bg-white/10" aria-hidden="true" />
+
+          {/* Social Profiles with Accessible 44px Touch Targets */}
+          <nav aria-label="Social Profiles" className="flex items-center text-zinc-500 dark:text-zinc-400">
             <a
               href="https://github.com/CasHil"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 rounded-full hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-zinc-950 dark:hover:text-white transition-colors"
+              className="w-9 h-9 sm:w-8 sm:h-8 flex items-center justify-center rounded-full hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-zinc-950 dark:hover:text-white transition-colors"
               aria-label="GitHub profile"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -58,7 +71,7 @@ function Masthead() {
               href="https://www.linkedin.com/in/casper-hildebrand/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 rounded-full hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-zinc-950 dark:hover:text-white transition-colors"
+              className="w-9 h-9 sm:w-8 sm:h-8 flex items-center justify-center rounded-full hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-zinc-950 dark:hover:text-white transition-colors"
               aria-label="LinkedIn profile"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -67,7 +80,7 @@ function Masthead() {
             </a>
             <a
               href="mailto:casperhildebrand@gmail.com"
-              className="p-1.5 rounded-full hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+              className="w-9 h-9 sm:w-8 sm:h-8 flex items-center justify-center rounded-full hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
               aria-label="Email Casper"
               title="casperhildebrand@gmail.com"
             >
@@ -122,8 +135,40 @@ function AppContent() {
           <Masthead />
           <Body />
 
+          {/* Closing Outreach Banner (Recruiter Conversion & Peak-End Rule) */}
+          <section aria-labelledby="outreach-heading" className="mt-16 pt-10 border-t border-zinc-200/80 dark:border-white/10 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <h2 id="outreach-heading" className="font-display text-lg sm:text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
+                  {t.outreach.heading}
+                </h2>
+                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1 max-w-[50ch] leading-relaxed">
+                  {t.outreach.subheading}
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center gap-3 shrink-0">
+                <a
+                  href="mailto:casperhildebrand@gmail.com"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-medium text-xs sm:text-sm hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors shadow-xs"
+                >
+                  <span>{t.outreach.emailBtn}</span>
+                  <span className="font-mono" aria-hidden="true">→</span>
+                </a>
+                <a
+                  href="/cv/Casper_Hildebrand_CV.pdf"
+                  download="Casper_Hildebrand_CV.pdf"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-zinc-300 dark:border-zinc-700 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                  <span>{t.outreach.cvBtn}</span>
+                  <span className="font-mono text-zinc-400" aria-hidden="true">↓</span>
+                </a>
+              </div>
+            </div>
+          </section>
+
           {/* Subtle Monograph Colophon Footer */}
-          <footer className="mt-20 pt-8 pb-12 border-t border-zinc-200/80 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+          <footer className="mt-12 pt-8 pb-12 border-t border-zinc-200/80 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500 dark:text-zinc-400">
             <div>
               <span>Casper Hildebrand</span>
               <span className="mx-2">·</span>

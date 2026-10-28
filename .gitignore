@@ -28,3 +28,7 @@ yarn-error.log*
 
 pnpm-debug.log*
 screenshots/
+scripts/tools/
+*.aux
+*.log
+*.out

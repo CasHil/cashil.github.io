@@ -49,9 +49,33 @@ export default function TimelineItem({ data }: TimelineItemProps) {
 
       {/* Narrative / Achievements */}
       {data.text && (
-        <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[58ch] pt-1">
-          {data.text}
-        </p>
+        data.text.includes("\n") ? (
+          <ul className="space-y-1.5 pt-1 text-sm sm:text-base text-zinc-600 dark:text-zinc-300 max-w-[58ch]">
+            {data.text.split("\n").map((line, idx) => {
+              const clean = line.replace(/^[•\-*]\s*/, "");
+              const match = clean.match(/^\*\*(.*?)\*\*:\s*(.*)$/);
+              return (
+                <li key={idx} className="flex items-start gap-2 leading-relaxed">
+                  <span className="text-emerald-700 dark:text-emerald-400 font-bold shrink-0 mt-0.5">•</span>
+                  <span>
+                    {match ? (
+                      <>
+                        <strong className="font-semibold text-zinc-900 dark:text-zinc-100">{match[1]}:</strong>{" "}
+                        {match[2]}
+                      </>
+                    ) : (
+                      clean
+                    )}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[58ch] pt-1">
+            {data.text}
+          </p>
+        )
       )}
 
       {/* Tech Stack / Skills (Tactile Micro-Pills) */}

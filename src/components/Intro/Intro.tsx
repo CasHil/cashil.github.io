@@ -22,20 +22,31 @@ export default function Intro() {
           {t.intro.bioParagraph3 && <p>{t.intro.bioParagraph3}</p>}
         </div>
 
-        {/* Kinetic Editorial Links (Zero Bubbly Pills, Sleek Text Kinetics) */}
-        <div className="flex flex-wrap items-center gap-6 pt-2 text-sm">
+        {/* Kinetic Editorial Links */}
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2 text-sm">
           <Link
             to="/work-experience"
-            className="group inline-flex items-center gap-1.5 font-medium text-zinc-950 dark:text-white hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-medium text-xs sm:text-sm hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors shadow-xs"
           >
             <span>{t.intro.exploreWork}</span>
-            <span className="font-mono transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
+            <span className="font-mono" aria-hidden="true">
               →
             </span>
           </Link>
+          <a
+            href="/cv/Casper_Hildebrand_CV.pdf"
+            download="Casper_Hildebrand_CV.pdf"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-zinc-300 dark:border-zinc-700 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            <span>{t.intro.downloadCv}</span>
+            <span className="font-mono text-zinc-400" aria-hidden="true">
+              ↓
+            </span>
+          </a>
           <Link
             to="/education"
-            className="group inline-flex items-center gap-1.5 font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors"
+            className="group inline-flex items-center gap-1.5 font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors px-2 py-2"
           >
             <span>{t.intro.exploreEdu}</span>
             <span className="font-mono transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
@@ -44,7 +55,7 @@ export default function Intro() {
           </Link>
           <a
             href="mailto:casperhildebrand@gmail.com"
-            className="group inline-flex items-center gap-1.5 font-medium text-emerald-800 dark:text-emerald-400 hover:underline transition-colors"
+            className="group inline-flex items-center gap-1.5 font-medium text-emerald-800 dark:text-emerald-400 hover:underline transition-colors px-2 py-2"
           >
             <span>{t.intro.getInTouch}</span>
             <span className="font-mono transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true">
@@ -136,7 +147,8 @@ export default function Intro() {
             </p>
 
             <div className="flex flex-wrap items-center gap-1.5 pt-1">
-              {["k-Means Clustering", "Clickstream Telemetry", "Python / Pandas"].map((item) => (
+              <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400 mr-1">Methods:</span>
+              {t.intro.thesisSkills.map((item) => (
                 <span
                   key={item}
                   className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono bg-zinc-100 dark:bg-zinc-800/70 text-zinc-600 dark:text-zinc-300 border border-zinc-200/50 dark:border-white/5"
