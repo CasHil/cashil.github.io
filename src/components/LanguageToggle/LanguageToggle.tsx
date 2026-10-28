@@ -8,15 +8,15 @@ export default function LanguageToggle() {
     <div
       role="group"
       aria-label="Language selection"
-      className="relative inline-flex items-center text-xs font-mono border border-zinc-300 dark:border-zinc-700 rounded-[2px] bg-zinc-100 dark:bg-zinc-900/90 p-[2px]"
+      className="relative inline-flex items-center text-xs font-mono rounded-full bg-zinc-200/60 dark:bg-zinc-800/60 p-0.5 border border-zinc-200/80 dark:border-white/10"
     >
       <button
         type="button"
         onClick={() => setLanguage("en")}
-        className={`relative z-10 px-2 py-0.5 font-semibold rounded-[2px] transition-colors duration-150 active:scale-95 ${
+        className={`relative z-10 px-2.5 py-0.5 font-semibold rounded-full transition-colors duration-200 ${
           language === "en"
-            ? "bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 shadow-sm"
-            : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+            ? "text-zinc-950 dark:text-white"
+            : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
         }`}
         aria-pressed={language === "en"}
         aria-label="Switch language to English"
@@ -24,8 +24,8 @@ export default function LanguageToggle() {
         {language === "en" && (
           <motion.span
             layoutId="activeLangIndicator"
-            className="absolute inset-0 bg-zinc-900 dark:bg-white rounded-[2px] shadow-sm -z-10"
-            transition={{ type: "spring", stiffness: 500, damping: 35 }}
+            className="absolute inset-0 bg-white dark:bg-zinc-700/90 rounded-full shadow-xs -z-10"
+            transition={{ type: "spring", stiffness: 500, damping: 32 }}
           />
         )}
         EN
@@ -34,10 +34,10 @@ export default function LanguageToggle() {
       <button
         type="button"
         onClick={() => setLanguage("nl")}
-        className={`relative z-10 px-2 py-0.5 font-semibold rounded-[2px] transition-colors duration-150 active:scale-95 ${
+        className={`relative z-10 px-2.5 py-0.5 font-semibold rounded-full transition-colors duration-200 ${
           language === "nl"
-            ? "bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 shadow-sm"
-            : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+            ? "text-zinc-950 dark:text-white"
+            : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
         }`}
         aria-pressed={language === "nl"}
         aria-label="Switch taal naar Nederlands"
@@ -45,8 +45,8 @@ export default function LanguageToggle() {
         {language === "nl" && (
           <motion.span
             layoutId="activeLangIndicator"
-            className="absolute inset-0 bg-zinc-900 dark:bg-white rounded-[2px] shadow-sm -z-10"
-            transition={{ type: "spring", stiffness: 500, damping: 35 }}
+            className="absolute inset-0 bg-white dark:bg-zinc-700/90 rounded-full shadow-xs -z-10"
+            transition={{ type: "spring", stiffness: 500, damping: 32 }}
           />
         )}
         NL

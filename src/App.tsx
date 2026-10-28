@@ -26,10 +26,7 @@ function Masthead() {
               className="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-canvas"
               title="Building Tikkie Business"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 ring-2 ring-canvas" />
-              </span>
+              <span className="h-2 w-2 rounded-full bg-emerald-500 ring-2 ring-canvas" />
             </span>
           </div>
           <div>
@@ -45,12 +42,12 @@ function Masthead() {
         {/* Action Controls & Social */}
         <div className="flex items-center gap-3 self-start sm:self-auto">
           {/* Social Profiles */}
-          <nav aria-label="Social Profiles" className="flex items-center gap-1.5 text-zinc-500 dark:text-zinc-400">
+          <nav aria-label="Social Profiles" className="flex items-center gap-1 text-zinc-500 dark:text-zinc-400">
             <a
               href="https://github.com/CasHil"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 hover:text-zinc-900 dark:hover:text-white transition-colors"
+              className="p-1.5 rounded-full hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-zinc-950 dark:hover:text-white transition-colors"
               aria-label="GitHub profile"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -61,7 +58,7 @@ function Masthead() {
               href="https://www.linkedin.com/in/casper-hildebrand/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 hover:text-zinc-900 dark:hover:text-white transition-colors"
+              className="p-1.5 rounded-full hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-zinc-950 dark:hover:text-white transition-colors"
               aria-label="LinkedIn profile"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -70,7 +67,7 @@ function Masthead() {
             </a>
             <a
               href="mailto:casperhildebrand@gmail.com"
-              className="p-1.5 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+              className="p-1.5 rounded-full hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
               aria-label="Email Casper"
               title="casperhildebrand@gmail.com"
             >

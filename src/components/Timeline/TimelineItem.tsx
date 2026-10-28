@@ -19,7 +19,7 @@ export default function TimelineItem({ data }: TimelineItemProps) {
             <img
               src={`/images/${data.image.uri}`}
               alt={data.image.alt}
-              className="h-7 w-7 rounded-[2px] object-contain bg-white p-0.5 border border-zinc-200 dark:border-zinc-700 shadow-xs shrink-0 mt-0.5"
+              className="h-8 w-8 rounded-lg object-contain bg-white p-1 ring-1 ring-zinc-200/80 dark:ring-white/10 shadow-xs shrink-0 mt-0.5"
               loading="lazy"
             />
           )}
@@ -34,13 +34,14 @@ export default function TimelineItem({ data }: TimelineItemProps) {
         </div>
 
         {/* Date & Status Meta */}
-        <div className="flex items-center gap-2 text-xs font-mono text-zinc-600 dark:text-zinc-400 sm:text-right shrink-0">
+        <div className="flex items-center gap-2 text-xs font-mono text-zinc-600 dark:text-zinc-400 sm:text-right shrink-0" data-tabular>
           <span>
             {data.startDate} {toLabel} {data.endDate}
           </span>
           {data.current && (
-            <span className="text-emerald-700 dark:text-emerald-400 font-semibold">
-              • {currentLabel}
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-mono font-medium bg-emerald-500/10 dark:bg-emerald-500/15 text-emerald-800 dark:text-emerald-400 border border-emerald-500/20">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              {currentLabel}
             </span>
           )}
         </div>
@@ -48,16 +49,23 @@ export default function TimelineItem({ data }: TimelineItemProps) {
 
       {/* Narrative / Achievements */}
       {data.text && (
-        <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[65ch] pt-1">
+        <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[58ch] pt-1">
           {data.text}
         </p>
       )}
 
-      {/* Tech Stack / Skills (Quiet Monospace Inline) */}
+      {/* Tech Stack / Skills (Tactile Micro-Pills) */}
       {data.skills && data.skills.length > 0 && (
-        <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400 pt-0.5">
-          {data.skills.join(" · ")}
-        </p>
+        <div className="flex flex-wrap items-center gap-1.5 pt-1.5">
+          {data.skills.map((skill) => (
+            <span
+              key={skill}
+              className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono bg-zinc-100 dark:bg-zinc-800/70 text-zinc-600 dark:text-zinc-300 border border-zinc-200/50 dark:border-white/5 hover:border-zinc-300 dark:hover:border-white/20 transition-colors"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
       )}
     </article>
   );

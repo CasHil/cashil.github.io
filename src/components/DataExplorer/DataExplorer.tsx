@@ -82,7 +82,7 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
       </div>
 
       {/* High-Level Overview Metrics (Flat Editorial Grid, Zero Box Enclosures) */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 py-5 border-y border-zinc-200/80 dark:border-white/10">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 py-5 border-y border-zinc-200/80 dark:border-white/10" data-tabular>
         <div>
           <span className="block text-2xl sm:text-3xl font-bold font-mono tracking-tight text-zinc-950 dark:text-white">{d.statLearnersValue}</span>
           <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-1">{d.statLearners}</span>
@@ -202,7 +202,7 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
             ))}
           </div>
 
-          <div className="border-l-2 border-emerald-700 dark:border-emerald-400 pl-4 py-1 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-[65ch]">
+          <div className="border-l-2 border-emerald-700 dark:border-emerald-400 pl-4 py-1 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-[58ch]">
             <strong className="text-zinc-900 dark:text-white font-semibold">{d.researchTakeawayTitle}</strong>{" "}
             {d.researchTakeawayText}
           </div>
@@ -211,7 +211,7 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
         <div className="space-y-6">
           {/* Organic Density Distribution Spline */}
           <div className="pt-2 pb-1" aria-hidden="true">
-            <div className="flex items-center justify-between text-[11px] font-mono text-zinc-500 dark:text-zinc-400 mb-2">
+            <div className="flex items-center justify-between text-xs font-mono text-zinc-500 dark:text-zinc-400 mb-2">
               <span>Samplers (47.4%)</span>
               <span>Auditors (44.2%)</span>
               <span>Completers (8.4%)</span>
@@ -246,19 +246,19 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
             {clusterData.map((cluster) => (
               <div
                 key={cluster.name}
-                className="space-y-1.5 border-t border-zinc-200 dark:border-zinc-800/80 pt-3"
+                className="space-y-2 border-t border-zinc-200 dark:border-zinc-800/80 pt-3"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-bold text-zinc-900 dark:text-white">
                     {cluster.name}
                   </span>
-                  <span className="text-xs font-mono font-bold text-zinc-700 dark:text-zinc-300">
+                  <span className="text-xs font-mono font-bold text-zinc-700 dark:text-zinc-300" data-tabular>
                     {cluster.share}
                   </span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className={`w-2 h-2 rounded-full ${cluster.indicatorColor}`} />
-                  <span className="text-xs font-mono text-zinc-600 dark:text-zinc-400">
+                <div className="pt-0.5">
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-mono font-medium bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-400 border border-zinc-200/50 dark:border-white/5">
+                    <span className={`w-1.5 h-1.5 rounded-full ${cluster.indicatorColor}`} />
                     {cluster.behavior}
                   </span>
                 </div>
@@ -269,7 +269,7 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
             ))}
           </div>
 
-          <div className="border-l-2 border-zinc-400 dark:border-zinc-600 pl-4 py-1 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-[65ch]">
+          <div className="border-l-2 border-zinc-400 dark:border-zinc-600 pl-4 py-1 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-[58ch]">
             <strong className="text-zinc-900 dark:text-white font-semibold">{d.methodologyTitle}</strong>{" "}
             {d.methodologyText}
           </div>
