@@ -100,3 +100,36 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-hover);
 }
+
+/* Organic Ambient Aura Animation */
+@keyframes organicFloatSlow {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.06);
+  }
+  66% {
+    transform: translate(-20px, 25px) scale(0.95);
+  }
+}
+
+@keyframes organicFloatAlt {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-25px, 20px) scale(0.95);
+  }
+  66% {
+    transform: translate(20px, -25px) scale(1.05);
+  }
+}
+
+.animate-organic-aura {
+  animation: organicFloatSlow 24s ease-in-out infinite;
+}
+
+.animate-organic-aura-alt {
+  animation: organicFloatAlt 28s ease-in-out infinite;
+}
