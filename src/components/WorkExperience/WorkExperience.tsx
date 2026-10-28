@@ -6,8 +6,9 @@ import { useLanguage } from "../../context/LanguageContext";
 type FilterType = "all" | "engineering" | "education";
 
 export default function WorkExperience() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [filter, setFilter] = useState<FilterType>("all");
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const filteredItems = t.workExperience.items.filter((item) => {
     if (filter === "all") return true;
@@ -27,41 +28,136 @@ export default function WorkExperience() {
     { key: "education", label: t.workExperience.filterEducation, count: educationCount },
   ];
 
+  // Featured deep dives (Top 3 for all/engineering, top 2 for education)
+  const featuredCutoff = filter === "education" ? 2 : 3;
+  const featuredRoles = filteredItems.slice(0, featuredCutoff);
+
+  const toggleExpand = (idx: number) => {
+    setExpandedIndex(expandedIndex === idx ? null : idx);
+  };
+
+  const isNL = language === "nl";
+
   return (
-    <div className="space-y-6 max-w-[65ch]">
-      <div>
+    <div className="space-y-12">
+      {/* Header */}
+      <div className="space-y-3">
         <Heading title={t.workExperience.title} size="h1" />
-        <p className="text-base text-zinc-600 dark:text-zinc-300 leading-relaxed mt-2">
+        <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[65ch]">
           {t.workExperience.intro}
         </p>
       </div>
 
-      {/* Recruiter Dual-Track Filter */}
-      <div className="flex flex-wrap gap-2 pt-2">
+      {/* Recruiter Dual-Track Filter (Borderless Editorial Tabs) */}
+      <div className="flex flex-wrap items-center gap-6 border-b border-zinc-200/80 dark:border-white/10 pb-3">
         {filters.map((f) => {
           const isActive = filter === f.key;
           return (
             <button
               key={f.key}
               type="button"
-              onClick={() => setFilter(f.key)}
-              className={`relative px-3 py-1.5 rounded-[2px] font-mono text-xs uppercase tracking-wider transition-all duration-150 active:scale-95 border ${
+              onClick={() => {
+                setFilter(f.key);
+                setExpandedIndex(null);
+              }}
+              className={`relative py-1 text-xs sm:text-sm font-medium transition-colors ${
                 isActive
-                  ? "border-zinc-900 bg-zinc-900 text-white dark:border-white dark:bg-white dark:text-zinc-900 font-semibold shadow-sm"
-                  : "border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-900/60 text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:border-zinc-500"
+                  ? "text-zinc-950 dark:text-white font-semibold"
+                  : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
               }`}
             >
               <span>{f.label}</span>{" "}
-              <span className="text-xs ml-1 font-mono opacity-80">
+              <span className="text-xs font-mono text-zinc-600 dark:text-zinc-400">
                 ({f.count})
               </span>
+              {isActive && (
+                <span className="absolute -bottom-3 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-emerald-400" />
+              )}
             </button>
           );
         })}
       </div>
 
-      <div className="border-t border-zinc-200 dark:border-white/10 mt-6">
-        <Timeline data={filteredItems} />
+      {/* Tier 1: Featured Core Roles (Spacious Case Studies) */}
+      <div className="space-y-6">
+        <div>
+          <h2 className="font-display text-lg sm:text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
+            {isNL ? "Kernfocus & Uitgelichte Ervaring" : "Core Focus & Signature Roles"}
+          </h2>
+          <p className="text-xs font-mono text-zinc-600 dark:text-zinc-400 mt-0.5">
+            {isNL
+              ? "Diepgaande technische realisaties en architectuur"
+              : "In-depth systems architecture and engineering scale"}
+          </p>
+        </div>
+
+        <div className="pt-2">
+          <Timeline data={featuredRoles} />
+        </div>
+      </div>
+
+      {/* Tier 2: Career Index & Trajectory (Minimalist Monograph Index) */}
+      <div className="pt-10 border-t border-zinc-200/80 dark:border-white/10 space-y-6">
+        <div>
+          <h2 className="font-display text-lg sm:text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
+            {isNL ? "Volledig Carrièreoverzicht" : "Career Index & Trajectory"}
+          </h2>
+          <p className="text-xs font-mono text-zinc-600 dark:text-zinc-400 mt-0.5">
+            {isNL
+              ? "Klik op een functie voor details en stack"
+              : "Click any role to inspect scope and technical stack"}
+          </p>
+        </div>
+
+        <div className="divide-y divide-zinc-200/70 dark:divide-zinc-800/70 border-y border-zinc-200/70 dark:border-zinc-800/70">
+          {filteredItems.map((item, idx) => {
+            const isExpanded = expandedIndex === idx;
+            return (
+              <div key={`${item.title}-${item.startDate}-${idx}`} className="py-3.5 group">
+                <button
+                  type="button"
+                  onClick={() => toggleExpand(idx)}
+                  className="w-full flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 text-left focus:outline-none"
+                  aria-expanded={isExpanded}
+                >
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-xs font-mono text-zinc-600 dark:text-zinc-400 w-28 shrink-0">
+                      {item.startDate} - {item.endDate}
+                    </span>
+                    <div>
+                      <span className="text-sm font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                        {item.title}
+                      </span>
+                      <span className="text-xs text-zinc-600 dark:text-zinc-400 ml-2">
+                        {item.subtitle}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2.5 self-end sm:self-auto shrink-0">
+                    <span className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">
+                      {item.category === "engineering" ? "Systems" : "Pedagogy"}
+                    </span>
+                    <span className="text-xs font-mono text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-transform duration-150">
+                      {isExpanded ? "−" : "+"}
+                    </span>
+                  </div>
+                </button>
+
+                {isExpanded && (
+                  <div className="mt-3 pl-0 sm:pl-[124px] space-y-2 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed animate-in fade-in duration-150">
+                    <p>{item.text}</p>
+                    {item.skills && item.skills.length > 0 && (
+                      <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400 pt-1">
+                        {item.skills.join(" · ")}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
