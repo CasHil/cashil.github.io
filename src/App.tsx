@@ -26,6 +26,13 @@ function AppContent() {
       />
 
       <BrowserRouter>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-emerald-700 text-white rounded-[2px] font-mono text-xs shadow-md focus:outline-none focus:ring-2 focus:ring-emerald-400"
+        >
+          Skip to main content
+        </a>
+
         {/* Mobile Sticky Top Bar */}
         <div className="sticky top-0 z-40 flex items-center justify-between px-4 py-3 bg-canvas/90 backdrop-blur-md border-b border-zinc-200 dark:border-white/10 lg:hidden">
           <Link
