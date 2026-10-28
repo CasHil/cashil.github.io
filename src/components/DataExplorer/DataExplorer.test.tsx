@@ -18,5 +18,5 @@ test("renders DataExplorer with initial metrics and handles tab switching", () =
   fireEvent.click(clustersTabBtn);
 
   // Verify cluster content rendered
-  expect(screen.getByText(/Completers|Afronders/i)).toBeDefined();
+  expect(screen.getAllByText(/Completers|Afronders/i).length).toBeGreaterThan(0);
 });

@@ -16,16 +16,20 @@ function Masthead() {
         {/* Identity */}
         <Link to="/" className="group flex items-center gap-3.5 focus:outline-none">
           <div className="relative shrink-0">
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-emerald-500/30 via-teal-500/20 to-transparent blur-sm opacity-60 group-hover:opacity-100 transition-opacity" />
             <img
               src="/images/profile.jpg"
               alt="Casper Hildebrand"
-              className="h-11 w-11 rounded-full object-cover ring-1 ring-zinc-300 dark:ring-white/20 transition-transform duration-200 group-hover:scale-105"
+              className="relative h-11 w-11 rounded-full object-cover ring-1 ring-zinc-300 dark:ring-white/20 transition-transform duration-200 group-hover:scale-105"
             />
             <span
               className="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-canvas"
               title="Building Tikkie Business"
             >
-              <span className="h-2 w-2 rounded-full bg-emerald-500 ring-2 ring-canvas" />
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 ring-2 ring-canvas" />
+              </span>
             </span>
           </div>
           <div>
@@ -99,11 +103,14 @@ function AppContent() {
 
   return (
     <div className="relative min-h-screen bg-canvas text-zinc-900 dark:text-gray-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-800 dark:selection:text-emerald-300 transition-colors">
-      {/* Ambient Lighting Gradient */}
+      {/* Ambient Organic Aura Mesh */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(16,185,129,0.06),transparent)] dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(16,185,129,0.09),transparent)]"
+        className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
         aria-hidden="true"
-      />
+      >
+        <div className="absolute -top-36 left-1/2 -translate-x-1/2 w-[720px] h-[440px] bg-gradient-to-tr from-emerald-500/10 via-teal-400/8 to-transparent rounded-[45%_55%_65%_35%/50%_60%_40%_50%] blur-3xl animate-organic-aura dark:from-emerald-500/15 dark:via-teal-400/10" />
+        <div className="absolute top-1/3 -right-32 w-[520px] h-[520px] bg-gradient-to-bl from-teal-500/8 via-emerald-600/6 to-transparent rounded-[60%_40%_50%_50%/40%_50%_60%_50%] blur-3xl animate-organic-aura-alt dark:from-teal-500/12 dark:via-emerald-600/8" />
+      </div>
 
       <BrowserRouter>
         <a

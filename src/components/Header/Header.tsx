@@ -39,21 +39,21 @@ export default function Header({
                 to={item.to}
                 onClick={handleClick}
                 className={({ isActive }) =>
-                  `relative px-2.5 py-1 text-sm font-medium transition-colors duration-150 inline-block ${
+                  `relative px-3 py-1.5 text-sm font-medium rounded-full transition-colors duration-200 inline-block ${
                     isActive
-                      ? "text-zinc-950 dark:text-white font-semibold"
-                      : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+                      ? "text-zinc-950 dark:text-white"
+                      : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100"
                   }`
                 }
               >
                 {({ isActive }) => (
                   <>
-                    <span>{item.label}</span>
+                    <span className="relative z-10">{item.label}</span>
                     {isActive && (
                       <motion.div
-                        layoutId="activeNavLine"
-                        className="absolute bottom-0 left-2.5 right-2.5 h-[1.5px] bg-zinc-900 dark:bg-emerald-400"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        layoutId="activeNavPill"
+                        className="absolute inset-0 rounded-full bg-zinc-200/80 dark:bg-zinc-800/90 shadow-sm"
+                        transition={{ type: "spring", stiffness: 400, damping: 32 }}
                       />
                     )}
                   </>

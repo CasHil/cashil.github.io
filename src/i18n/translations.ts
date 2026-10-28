@@ -31,6 +31,11 @@ export interface TranslationDictionary {
     tikkieSubtitle: string;
     tikkieDescription: string;
     tikkieLink: string;
+    thesisTag: string;
+    thesisTitle: string;
+    thesisSubtitle: string;
+    thesisDescription: string;
+    thesisLink: string;
     bitsizedTag: string;
     bitsizedTitle: string;
     bitsizedSubtitle: string;
@@ -88,6 +93,10 @@ export interface TranslationDictionary {
     filterAll: string;
     filterEngineering: string;
     filterEducation: string;
+    primaryHeading: string;
+    primarySubtitle: string;
+    archiveHeading: string;
+    archiveSubtitle: string;
     items: {
       title: string;
       subtitle: string;
@@ -146,9 +155,9 @@ export const translations: Record<Language, TranslationDictionary> = {
     },
     sidebar: {
       name: "Casper Hildebrand",
-      role: "Full Stack Engineer @ Tikkie",
+      role: "Full-Stack Engineer · Tikkie",
       degrees: "Double MSc • TU Delft",
-      location: "Tikkie Business • Amsterdam / Delft",
+      location: "Amsterdam, Netherlands",
       coreDomainsLabel: "Core Domains",
       coreDomains: [
         "Full Stack Engineering",
@@ -160,35 +169,41 @@ export const translations: Record<Language, TranslationDictionary> = {
       year: "Casper Hildebrand • 2026",
     },
     intro: {
-      heroTitle: "Full Stack Software Engineer building merchant payment infrastructure at Tikkie.",
+      heroTitle: "Software engineer building high-throughput merchant payment rails at Tikkie.",
       bioParagraph1:
-        "I engineer high-throughput merchant payment flows for Tikkie Business at Tikkie (ABN AMRO) and participate in the Harvest Young Talent engineering program.",
+        "I engineer merchant payment systems for Tikkie Business (ABN AMRO), building resilient settlement workflows and high-throughput APIs powering millions of Dutch transactions.",
       bioParagraph2:
-        "I hold two Master's degrees from Delft University of Technology: an MSc in Computer Science (Data Science specialization) with thesis research on 174,988 learners across 4 CS MOOCs, and an MSc in Science Education & Communication.",
+        "Double Master's from TU Delft in Computer Science (Data Science) and Science Education. Thesis researched clickstream telemetry across 175k learners. Co-founded Bitsized.",
       bioParagraph3: "",
       exploreWork: "Explore Work Experience",
       exploreEdu: "Education & Degrees",
       getInTouch: "Get in touch →",
-      featuredHeading: "Featured Engineering & Research",
+      featuredHeading: "Selected Work",
       featuredSubtitle: "",
-      tikkieTag: "Current Role",
+      tikkieTag: "Production Systems",
       tikkieTitle: "Tikkie Business",
-      tikkieSubtitle: "High-Throughput Fintech Payment Flows",
+      tikkieSubtitle: "Merchant Settlement & Payment Rails",
       tikkieDescription:
-        "Engineering merchant-facing payment infrastructure powering thousands of Dutch businesses and millions of transactions: resilient settlement workflows, merchant APIs, and high availability.",
+        "Resilient merchant payment rails powering millions of Dutch transactions: fault-tolerant settlement pipelines, partner APIs, and zero-downtime reliability.",
       tikkieLink: "View career history →",
-      bitsizedTag: "Co-Founder",
+      thesisTag: "TU Delft · Research",
+      thesisTitle: "Debugging the Divide: 174,988 CS MOOC Learners",
+      thesisSubtitle: "Clickstream Telemetry & Vocational Motivation",
+      thesisDescription:
+        "Empirical thesis analyzing gender participation across TU Delft CS MOOCs. Revealed women enroll with +16.7% higher career advancement intent than men, who engage primarily for leisure.",
+      thesisLink: "Explore research telemetry →",
+      bitsizedTag: "Co-Founder & Lead Engineer",
       bitsizedTitle: "Bitsized",
-      bitsizedSubtitle: "Educational Platform",
+      bitsizedSubtitle: "Interactive Code Execution Engine",
       bitsizedDescription:
-        "Co-founded an interactive educational platform for Dutch secondary school students, engineering real-time in-browser code execution and curriculum management tooling.",
+        "Built browser-based code execution sandboxes and interactive CS curriculum tooling adopted by Dutch secondary schools.",
       bitsizedLink: "View experience →",
     },
     dataExplorer: {
       badge: "TU Delft • 2024",
-      title: "Research Telemetry: Debugging the Divide",
+      title: "Debugging the Divide · Telemetry",
       subtitle:
-        "Empirical findings from Casper's analysis of 174,988 learners across 14 TU Delft Computer Science MOOC runs.",
+        "Telemetry analysis of 174,988 learners across 14 TU Delft Computer Science MOOC runs.",
       statLearners: "Learners analyzed",
       statLearnersValue: "174,988",
       statRuns: "Course iterations",
@@ -213,9 +228,9 @@ export const translations: Record<Language, TranslationDictionary> = {
         degreeExplanation:
           "Enrollment as supplementary study material alongside formal university degree coursework.",
       },
-      researchTakeawayTitle: "Research Takeaway:",
+      researchTakeawayTitle: "Key Finding:",
       researchTakeawayText:
-        "Women entering CS MOOCs are driven by decisive career mobility and professional transition, whereas male participation exhibits higher hobbyist leisure dynamics. Instructional retention initiatives must focus on career pathway scaffolding early in the course lifecycle.",
+        "Women enrolled with high vocational urgency (+16.7% career transition), whereas men engaged recreationally (+21.0% hobby). Early course onboarding must scaffold explicit career pathways.",
       clusters: {
         completersName: "Completers",
         completersBehavior: "High submission density",
@@ -230,21 +245,25 @@ export const translations: Record<Language, TranslationDictionary> = {
         samplersDesc:
           "High activity during initial weeks or specific technical modules before disengaging.",
       },
-      methodologyTitle: "Methodology Note:",
+      methodologyTitle: "Methodology:",
       methodologyText:
-        "Clusters were derived via k-means segmentation across normalized session frequency, problem submission timestamps, and video interaction event logs extracted from Open edX tracking data.",
+        "k-means clustering across normalized Open edX event logs: session frequency, submission cadence, and video interactions.",
       authorLabel: "Author: Casper W. R. Hildebrand",
       facultyLabel: "TU Delft Faculty of EEMCS / EWI",
     },
     workExperience: {
       title: "Work Experience",
       intro:
-        "Engineering track across high-throughput fintech payment infrastructure at Tikkie, cloud consultancy, educational software platforms, and computer science pedagogy.",
+        "Production fintech infrastructure at Tikkie, cloud architecture, browser sandboxes, and computer science pedagogy.",
       currentBadge: "Current",
       to: "to",
       filterAll: "All Roles",
       filterEngineering: "Engineering & Systems",
       filterEducation: "Pedagogy & Leadership",
+      primaryHeading: "Primary Experience",
+      primarySubtitle: "High-throughput fintech and product systems",
+      archiveHeading: "Archive & Trajectory",
+      archiveSubtitle: "Full chronological index across systems, consulting, and pedagogy",
       items: [
         {
           title: "Full Stack Software Engineer",
@@ -263,7 +282,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Present",
           current: true,
           category: "engineering",
-          text: "Selected for the selective Harvest engineering talent development program alongside production engineering work at Tikkie. Attending bi-weekly intensive masterclasses in distributed architecture, systems design, and technical leadership.",
+          text: "Engineering fellowship running parallel to production at Tikkie. Bi-weekly intensive labs on distributed systems, event-driven design, and resilience engineering.",
           skills: ["Distributed Systems", "Software Architecture", "Leadership"],
         },
         {
@@ -272,7 +291,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Feb 2025",
           endDate: "Jul 2025",
           category: "education",
-          text: "Led the entire computer science section across 10 classes, including 4 graduation examination classes totalling ~200 students. Supervised senior capstone projects and authored the multi-year Programme of Tests and Examinations (PTA).",
+          text: "Directed the CS department across 10 cohorts (~200 students), designing graduation examination standards and mentoring capstone software engineering projects.",
           skills: ["CS Pedagogy", "Curriculum Design", "Examination Standards"],
         },
         {
@@ -311,7 +330,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Feb 2022",
           endDate: "Jun 2022",
           category: "engineering",
-          text: "Developed and maintained public sector applications for Vervangingsfonds and Participatiefonds. Facilitated technical clarification workshops and authored system requirements and user stories for the rebuild of Arbomeester.",
+          text: "Re-architected data migration flows and technical specifications for national public sector enterprise applications (Vervangingsfonds, Participatiefonds).",
           skills: ["Systems Analysis", "Requirements Engineering", "Public Sector IT"],
         },
         {
@@ -324,7 +343,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Sep 2021",
           endDate: "Feb 2022",
           category: "engineering",
-          text: "Engineered a governmental platform enabling property owners to evaluate sustainability improvements, energy efficiency metrics, and environmental regulations.",
+          text: "Built full-stack evaluation tools modeling commercial property energy metrics and governmental compliance regulations.",
           skills: ["Full Stack Development", "Governmental IT", "Sustainability Metrics"],
         },
         {
@@ -363,7 +382,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "May 2020",
           endDate: "Jul 2020",
           category: "engineering",
-          text: "Engineered an automated data ingestion pipeline integrating the Discogs API to reconcile and import missing album discography metadata, complete with an administrative review interface.",
+          text: "Automated data ingestion pipeline reconciling 100k+ discography records via the Discogs API with verification UI.",
           skills: ["Discogs API", "Data Ingestion Pipeline", "UI Verification"],
         },
         {
@@ -465,13 +484,13 @@ export const translations: Record<Language, TranslationDictionary> = {
       ],
     },
     about: {
-      title: "About & Background",
+      title: "About & Engineering Philosophy",
       paragraph1:
-        "I am a software engineer based in the Netherlands, building merchant payment infrastructure for Tikkie Business at Tikkie (part of ABN AMRO) and participating in the Harvest Young Talent engineering program.",
+        "I believe the best software engineering is defined by clarity: clear domain models, resilient API contracts, and predictable operational boundaries. At Tikkie, I build financial rails where correctness and zero downtime are table stakes.",
       paragraph2:
-        "My academic journey at Delft University of Technology culminated in two Master's degrees: an MSc in Computer Science (Data Science specialization, with thesis research analyzing clickstream data from 174,988 learners) and an MSc in Science Education & Communication (qualifying as a certified first-degree computer science educator).",
+        "Holding dual Master's degrees in Computer Science and Science Education gives me a distinctive approach to engineering teams: I treat system architecture and technical communication as the same discipline. Great engineers don't just write robust code; they write crisp documentation, mentor relentlessly, and build shared mental models.",
       paragraph3:
-        "In production, I prioritize resilient API contracts, automated integration testing, and maintainable systems that scale predictably without operational surprises.",
+        "Outside production, I study distributed systems, play electric bass, and analyze chess endgames—disciplines rooted in rhythm, invariants, and eliminating unnecessary noise.",
       beyondHeading: "Beyond the Terminal",
       beyondSubtitle:
         "Disciplines and creative pursuits that inform how I approach focus, rhythm, and complex systems.",
@@ -506,9 +525,9 @@ export const translations: Record<Language, TranslationDictionary> = {
     },
     sidebar: {
       name: "Casper Hildebrand",
-      role: "Full Stack Engineer @ Tikkie",
+      role: "Full-Stack Engineer · Tikkie",
       degrees: "Dubbele Master • TU Delft",
-      location: "Tikkie Zakelijk • Amsterdam / Delft",
+      location: "Amsterdam, Nederland",
       coreDomainsLabel: "Expertises",
       coreDomains: [
         "Full Stack Softwareontwikkeling",
@@ -520,35 +539,41 @@ export const translations: Record<Language, TranslationDictionary> = {
       year: "Casper Hildebrand • 2026",
     },
     intro: {
-      heroTitle: "Full Stack Software Engineer en bouwer van betaalinfrastructuur bij Tikkie.",
+      heroTitle: "Software engineer voor hoog-volume betaalinfrastructuur bij Tikkie.",
       bioParagraph1:
-        "Ik ontwikkel schaalbare betaalstromen voor Tikkie Zakelijk bij Tikkie (ABN AMRO) en neem deel aan het Harvest Young Talent engineeringprogramma.",
+        "Ik ontwikkel betaalinfrastructuur voor Tikkie Zakelijk (ABN AMRO): veerkrachtige settlement flows en high-throughput API's voor miljoenen Nederlandse transacties.",
       bioParagraph2:
-        "Ik behaalde twee mastertitels aan de TU Delft: MSc Computer Science (Data Science specialisatie) met scriptieonderzoek naar 174.988 cursisten over 4 informatica-MOOCs, en MSc Science Education & Communication (eerstegraads onderwijsbevoegdheid Informatica).",
+        "Dubbele Master aan de TU Delft in Computer Science (Data Science) en Science Education. Scriptieonderzoek naar telemetrie van 175k cursisten. Mede-oprichter van Bitsized.",
       bioParagraph3: "",
       exploreWork: "Bekijk werkervaring",
       exploreEdu: "Opleidingen & Titels",
       getInTouch: "Neem contact op →",
-      featuredHeading: "Uitgelichte Projecten & Onderzoek",
+      featuredHeading: "Uitgewerkt Werk",
       featuredSubtitle: "",
-      tikkieTag: "Huidige Functie",
+      tikkieTag: "Productiesystemen",
       tikkieTitle: "Tikkie Zakelijk",
-      tikkieSubtitle: "Hoog-Volume Fintech Betaalstromen",
+      tikkieSubtitle: "Merchant Settlement & Betaalrails",
       tikkieDescription:
-        "Ontwikkeling van zakelijke betaalinfrastructuur voor duizenden Nederlandse bedrijven en miljoenen transacties: settlement workflows, merchant APIs en hoge beschikbaarheid.",
+        "Veerkrachtige zakelijke betaalinfrastructuur voor miljoenen Nederlandse transacties: fouttolerante settlement-pipelines, partner-API's en hoge beschikbaarheid.",
       tikkieLink: "Bekijk werkervaring →",
-      bitsizedTag: "Mede-oprichter",
+      thesisTag: "TU Delft · Onderzoek",
+      thesisTitle: "Debugging the Divide: 174.988 Cursisten",
+      thesisSubtitle: "Telemetrie & Beroepsmatige Motivatie",
+      thesisDescription:
+        "Empirisch onderzoek naar genderverschillen in TU Delft informatica-MOOCs. Vrouwen starten met +16,7% hogere loopbaandoelen dan mannen, die primair voor de hobby meedoen.",
+      thesisLink: "Bekijk onderzoeksdata →",
+      bitsizedTag: "Mede-oprichter & Lead Engineer",
       bitsizedTitle: "Bitsized",
-      bitsizedSubtitle: "Educatief Platform",
+      bitsizedSubtitle: "Interactieve Code Execution Engine",
       bitsizedDescription:
-        "Mede-oprichter van een programmeerplatform voor middelbare scholieren, met een in-browser code-omgeving en tools voor docenten.",
+        "In-browser code execution sandboxes en interactieve informatica-curriculumtools ontwikkeld voor Nederlandse middelbare scholen.",
       bitsizedLink: "Bekijk ervaring →",
     },
     dataExplorer: {
       badge: "TU Delft • 2024",
-      title: "Onderzoeksdata: Debugging the Divide",
+      title: "Debugging the Divide · Telemetrie",
       subtitle:
-        "Empirische inzichten uit Caspers analyse van 174.988 cursisten over 14 TU Delft Computer Science MOOC-edities.",
+        "Telemetrie-analyse van 174.988 cursisten over 14 TU Delft Computer Science MOOC-edities.",
       statLearners: "Cursisten geanalyseerd",
       statLearnersValue: "174.988",
       statRuns: "Cursusedities",
@@ -573,9 +598,9 @@ export const translations: Record<Language, TranslationDictionary> = {
         degreeExplanation:
           "Deelname ter ondersteuning van een formele universitaire bachelor- of masteropleiding.",
       },
-      researchTakeawayTitle: "Onderzoeksconclusie:",
+      researchTakeawayTitle: "Kerninzicht:",
       researchTakeawayText:
-        "Vrouwen die deelnemen aan CS MOOCs worden gedreven door concrete loopbaanambities, terwijl mannen vaker uit recreatieve interesse deelnemen. Didactische retentie-initiatieven moeten zich vroeg in de cursus richten op gerichte loopbaanondersteuning.",
+        "Vrouwen starten met een hoge beroepsmatige urgentie (+16,7% loopbaanswitch), terwijl mannen recreatief deelnemen (+21,0% hobby). Cursus-onboarding dient gerichte loopbaanpaden te bieden.",
       clusters: {
         completersName: "Afronders",
         completersBehavior: "Hoge inleverfrequentie",
@@ -592,19 +617,23 @@ export const translations: Record<Language, TranslationDictionary> = {
       },
       methodologyTitle: "Methodologie:",
       methodologyText:
-        "Clusters zijn vastgesteld met behulp van k-means clustering op genormaliseerde sessiefrequenties, inlevertijdstippen en video-interactielogs uit Open edX-trackinggegevens.",
+        "k-means clustering op genormaliseerde Open edX logs: sessiefrequentie, inleverritme en video-interacties.",
       authorLabel: "Auteur: Casper W. R. Hildebrand",
       facultyLabel: "TU Delft Faculteit EWI",
     },
     workExperience: {
       title: "Werkervaring",
       intro:
-        "Carrièretraject binnen betaalinfrastructuur bij Tikkie, cloud consultancy, educatieve softwareplatforms en informatica-onderwijs.",
+        "Fintech-infrastructuur bij Tikkie, cloudarchitectuur, browser sandboxes en informatica-didactiek.",
       currentBadge: "Huidig",
       to: "tot",
       filterAll: "Alle Functies",
       filterEngineering: "Engineering & Systemen",
       filterEducation: "Onderwijs & Leiderschap",
+      primaryHeading: "Primaire Ervaring",
+      primarySubtitle: "Hoog-volume fintech en platform architecturen",
+      archiveHeading: "Carrière Archief",
+      archiveSubtitle: "Volledig chronologisch overzicht over engineering, consulting en onderwijs",
       items: [
         {
           title: "Full Stack Software Engineer",
@@ -623,7 +652,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Heden",
           current: true,
           category: "engineering",
-          text: "Geselecteerd voor het Harvest engineering talentprogramma parallel aan softwareontwikkeling bij Tikkie. Tweewekelijkse intensieve masterclasses in gedistribueerde architecturen, systeemontwerp en technisch leiderschap.",
+          text: "Engineering fellowship parallel aan productiewerk bij Tikkie. Tweewekelijkse labs over gedistribueerde systemen, event-driven architectuur en resilience engineering.",
           skills: ["Gedistribueerde Systemen", "Softwarearchitectuur", "Leiderschap"],
         },
         {
@@ -632,7 +661,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "feb 2025",
           endDate: "jul 2025",
           category: "education",
-          text: "Verantwoordelijk voor de gehele informaticasectie over 10 klassen, inclusief 4 examenklassen met circa 200 leerlingen. Begeleiding van profielwerkstukken en het opstellen van het meerjarige Programma van Toetsing en Afsluiting (PTA).",
+          text: "Leiding over de informaticasectie over 10 klassen (~200 leerlingen), verantwoordelijk voor examennormen en begeleiding van profielwerkstukken.",
           skills: ["Informatica Didactiek", "Curriculumontwikkeling", "Exameneisen"],
         },
         {
@@ -671,7 +700,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "feb 2022",
           endDate: "jun 2022",
           category: "engineering",
-          text: "Ontwikkeling en onderhoud van overheidsprojecten voor het Vervangingsfonds en Participatiefonds. Begeleiden van verhelderingsworkshops en opstellen van functionele eisen en user stories voor de herbouw van Arbomeester.",
+          text: "Herontwerp van datamigraties en technische specificaties voor publieke enterprise-applicaties (Vervangingsfonds, Participatiefonds).",
           skills: ["Systeemanalyse", "Requirements Engineering", "Overheids-IT"],
         },
         {
@@ -684,7 +713,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "sep 2021",
           endDate: "feb 2022",
           category: "engineering",
-          text: "Bouw van een overheidsplatform waarmee gebouweigenaren verduurzamingsmogelijkheden, energielabels en milieuregels inzichtelijk konden maken.",
+          text: "Full-stack rekentools ontwikkeld voor duurzaamheidsstatistieken en milieuregels voor vastgoedeigenaren.",
           skills: ["Softwareontwikkeling", "Overheids-IT", "Duurzaamheidsdata"],
         },
         {
@@ -723,7 +752,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "mei 2020",
           endDate: "jul 2020",
           category: "engineering",
-          text: "Geautomatiseerd data-innameplatform gebouwd dat via de Discogs API ontbrekende albummetadata synchroniseerde met de Muziekweb-catalogus, inclusief verificatie-UI.",
+          text: "Geautomatiseerde data-ingestie pipeline gebouwd die 100k+ discografie-records via de Discogs API verifieerde en importeerde.",
           skills: ["Discogs API", "Data-inname", "UI Verificatie"],
         },
         {
@@ -825,34 +854,34 @@ export const translations: Record<Language, TranslationDictionary> = {
       ],
     },
     about: {
-      title: "Over mij & Achtergrond",
+      title: "Over mij & Engineering Filosofie",
       paragraph1:
-        "Ik ben een software engineer gevestigd in Nederland. Ik bouw aan zakelijke betaalinfrastructuur voor Tikkie Zakelijk bij Tikkie (ABN AMRO) en neem deel aan het Harvest Young Talent programma.",
+        "De beste software engineering wordt gekenmerkt door helderheid: scherpe domeinmodellen, veerkrachtige API-contracten en voorspelbare operationele grenzen. Bij Tikkie bouw ik aan financiële rails waar correctheid en zero downtime de standaard zijn.",
       paragraph2:
-        "Mijn studie aan de TU Delft leidde tot twee mastertitels: een MSc in Computer Science (Data Science specialisatie, met scriptieonderzoek naar klikdata van 174.988 cursisten) en een MSc in Science Education & Communication (eerstegraads bevoegd docent Informatica).",
+        "Mijn dubbele Master in Computer Science en Science Education geeft mij een duidelijke voorsprong in engineering teams: ik zie systeemarchitectuur en technische communicatie als één discipline. Goede engineers schrijven niet alleen robuuste code; ze schrijven heldere documentatie, begeleiden collega's en bouwen gedeelde mentale modellen.",
       paragraph3:
-        "In productie geef ik prioriteit aan betrouwbare API-koppelingen, geautomatiseerde integratietests en onderhoudbare systemen die voorspelbaar schalen.",
+        "Buiten productie verdiep ik me in gedistribueerde systemen, speel ik elektrische basgitaar en analyseer ik schaakeindspelen—disciplines die draaien om ritme, invarianten en het elimineren van ruis.",
       beyondHeading: "Buiten de Terminal",
       beyondSubtitle:
         "Disciplines en creatieve bezigheden die invloed hebben op hoe ik denk over focus, ritme en complexe systemen.",
       interests: [
         {
           title: "Basgitaar",
-          subtitle: "Groove, Ritme & Klankkleur",
+          subtitle: "Groove, Timing & Harmonisch Fundament",
           description:
-            "Elektrische basgitaar spelen is al jarenlang mijn voornaamste creatieve uitlaatklep. De bassist verankert het ensemble: zorgen voor timing, houvast en een hechte harmonische basis.",
+            "De bassist verankert de band: timing bewaren, harmonische stabiliteit bieden en zorgen dat complexe arrangementen natuurlijk blijven aanvoelen.",
         },
         {
           title: "Schaken",
-          subtitle: "Tactiek & Invariante Strategie",
+          subtitle: "Structurele Invarianten & Eindspelen",
           description:
-            "Klassieke openingstheorie en tactische berekeningen bestuderen. Schaken beloont geduld, diepe analyse van kandidaat-zetten en gedisciplineerd anticiperen op vervolgzetten.",
+            "Schaken traint strategisch rekenen, discipline in kandidaat-zetten en structurele patroonherkenning onder tijdsdruk.",
         },
         {
-          title: "Developer Tooling & Automatisering",
-          subtitle: "Pragmatische Engineering Omgevingen",
+          title: "Developer Ervaring & Tooling",
+          subtitle: "Ontwikkelsnelheid & Verificatie",
           description:
-            "Experimenteren met ontwikkelaarstools, geautomatiseerde testopstellingen en workflow-automatisering die softwareontwikkeling meetbaar versnellen zonder in te leveren op verificatie.",
+            "Lokale tools, build-optimalisaties en automatische verificatie die de feedbackcyclus van het team meetbaar verkorten.",
         },
       ],
     },

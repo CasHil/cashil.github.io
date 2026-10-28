@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Heading from "../Heading/Heading";
 import Timeline from "../Timeline/Timeline";
 import { useLanguage } from "../../context/LanguageContext";
@@ -6,7 +7,7 @@ import { useLanguage } from "../../context/LanguageContext";
 type FilterType = "all" | "engineering" | "education";
 
 export default function WorkExperience() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const [filter, setFilter] = useState<FilterType>("all");
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
@@ -36,8 +37,6 @@ export default function WorkExperience() {
     setExpandedIndex(expandedIndex === idx ? null : idx);
   };
 
-  const isNL = language === "nl";
-
   return (
     <div className="space-y-12">
       {/* Header */}
@@ -48,8 +47,8 @@ export default function WorkExperience() {
         </p>
       </div>
 
-      {/* Recruiter Dual-Track Filter (Borderless Editorial Tabs) */}
-      <div className="flex flex-wrap items-center gap-6 border-b border-zinc-200/80 dark:border-white/10 pb-3">
+      {/* Recruiter Dual-Track Filter (Fluid Sliding Pills) */}
+      <div className="flex flex-wrap items-center gap-2 border-b border-zinc-200/80 dark:border-white/10 pb-4">
         {filters.map((f) => {
           const isActive = filter === f.key;
           return (
@@ -60,18 +59,24 @@ export default function WorkExperience() {
                 setFilter(f.key);
                 setExpandedIndex(null);
               }}
-              className={`relative py-1 text-xs sm:text-sm font-medium transition-colors ${
+              className={`relative px-3 py-1.5 text-xs sm:text-sm font-medium rounded-full transition-colors duration-200 ${
                 isActive
-                  ? "text-zinc-950 dark:text-white font-semibold"
-                  : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+                  ? "text-zinc-950 dark:text-white"
+                  : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100"
               }`}
             >
-              <span>{f.label}</span>{" "}
-              <span className="text-xs font-mono text-zinc-600 dark:text-zinc-400">
-                ({f.count})
+              <span className="relative z-10 flex items-center gap-1.5">
+                <span>{f.label}</span>
+                <span className="text-xs font-mono opacity-60">
+                  {f.count}
+                </span>
               </span>
               {isActive && (
-                <span className="absolute -bottom-3 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-emerald-400" />
+                <motion.div
+                  layoutId="workFilterPill"
+                  className="absolute inset-0 rounded-full bg-zinc-200/80 dark:bg-zinc-800/90 shadow-sm"
+                  transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                />
               )}
             </button>
           );
@@ -82,12 +87,10 @@ export default function WorkExperience() {
       <div className="space-y-6">
         <div>
           <h2 className="font-display text-lg sm:text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
-            {isNL ? "Kernfocus & Uitgelichte Ervaring" : "Core Focus & Signature Roles"}
+            {t.workExperience.primaryHeading}
           </h2>
           <p className="text-xs font-mono text-zinc-600 dark:text-zinc-400 mt-0.5">
-            {isNL
-              ? "Diepgaande technische realisaties en architectuur"
-              : "In-depth systems architecture and engineering scale"}
+            {t.workExperience.primarySubtitle}
           </p>
         </div>
 
@@ -100,12 +103,10 @@ export default function WorkExperience() {
       <div className="pt-10 border-t border-zinc-200/80 dark:border-white/10 space-y-6">
         <div>
           <h2 className="font-display text-lg sm:text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
-            {isNL ? "Volledig Carrièreoverzicht" : "Career Index & Trajectory"}
+            {t.workExperience.archiveHeading}
           </h2>
           <p className="text-xs font-mono text-zinc-600 dark:text-zinc-400 mt-0.5">
-            {isNL
-              ? "Klik op een functie voor details en stack"
-              : "Click any role to inspect scope and technical stack"}
+            {t.workExperience.archiveSubtitle}
           </p>
         </div>
 

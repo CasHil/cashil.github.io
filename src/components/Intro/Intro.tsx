@@ -16,7 +16,7 @@ export default function Intro() {
           {t.intro.heroTitle}
         </h1>
 
-        <div className="space-y-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[65ch]">
+        <div className="space-y-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[56ch]">
           <p>{t.intro.bioParagraph1}</p>
           <p>{t.intro.bioParagraph2}</p>
           {t.intro.bioParagraph3 && <p>{t.intro.bioParagraph3}</p>}
@@ -91,7 +91,7 @@ export default function Intro() {
               </Link>
             </div>
 
-            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[65ch]">
+            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[58ch]">
               {t.intro.tikkieDescription}
             </p>
 
@@ -106,26 +106,26 @@ export default function Intro() {
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <div>
                 <span className="text-xs font-mono text-emerald-800 dark:text-emerald-400 font-semibold uppercase tracking-wider">
-                  TU Delft · Master's Research
+                  {t.intro.thesisTag}
                 </span>
                 <h3 className="text-lg sm:text-xl font-bold text-zinc-950 dark:text-white mt-0.5">
-                  Debugging the Divide: 174,988 CS MOOC Learners
+                  {t.intro.thesisTitle}
                 </h3>
                 <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
-                  Data Science Specialization · 14 Course Iterations
+                  {t.intro.thesisSubtitle}
                 </p>
               </div>
               <Link
                 to="/education"
                 className="group inline-flex items-center gap-1 text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors"
               >
-                <span>Explore telemetry & clusters</span>
+                <span>{t.intro.thesisLink}</span>
                 <span className="font-mono transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
               </Link>
             </div>
 
-            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[65ch]">
-              Empirical thesis analyzing gender participation gaps across TU Delft CS MOOCs. Revealed that women enroll with a <strong>+16.7% higher career advancement intent</strong> compared to men, who engage primarily for hobby and leisure (+21.0%).
+            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[58ch]">
+              {t.intro.thesisDescription}
             </p>
 
             <div className="flex items-center gap-4 text-xs font-mono text-zinc-500 dark:text-zinc-400 pt-1">
@@ -160,7 +160,7 @@ export default function Intro() {
               </Link>
             </div>
 
-            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[65ch]">
+            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[58ch]">
               {t.intro.bitsizedDescription}
             </p>
 

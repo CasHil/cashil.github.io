@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
 
 interface DataExplorerProps {
@@ -100,34 +101,42 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
         </div>
       </div>
 
-      {/* Tab Navigation (Understated Editorial Switcher) */}
-      <div className="flex items-center gap-3 border-b border-zinc-200/80 dark:border-white/10 pb-2.5">
+      {/* Tab Navigation (Fluid Organic Pill Switcher) */}
+      <div className="flex items-center gap-1.5 border-b border-zinc-200/80 dark:border-white/10 pb-3">
         <button
           type="button"
           onClick={() => setActiveTab("motivations")}
-          className={`relative text-xs sm:text-sm font-medium transition-colors ${
+          className={`relative px-3 py-1.5 text-xs sm:text-sm font-medium rounded-full transition-colors duration-200 ${
             activeTab === "motivations"
-              ? "text-zinc-950 dark:text-white font-semibold"
-              : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+              ? "text-zinc-950 dark:text-white"
+              : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100"
           }`}
         >
-          {d.tabMotivations}
+          <span className="relative z-10">{d.tabMotivations}</span>
           {activeTab === "motivations" && (
-            <span className="absolute -bottom-2.5 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-emerald-400" />
+            <motion.div
+              layoutId="dataExplorerTabPill"
+              className="absolute inset-0 rounded-full bg-zinc-200/80 dark:bg-zinc-800/90 shadow-sm"
+              transition={{ type: "spring", stiffness: 400, damping: 32 }}
+            />
           )}
         </button>
         <button
           type="button"
           onClick={() => setActiveTab("clusters")}
-          className={`relative text-xs sm:text-sm font-medium transition-colors ml-3 ${
+          className={`relative px-3 py-1.5 text-xs sm:text-sm font-medium rounded-full transition-colors duration-200 ${
             activeTab === "clusters"
-              ? "text-zinc-950 dark:text-white font-semibold"
-              : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+              ? "text-zinc-950 dark:text-white"
+              : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100"
           }`}
         >
-          {d.tabClusters}
+          <span className="relative z-10">{d.tabClusters}</span>
           {activeTab === "clusters" && (
-            <span className="absolute -bottom-2.5 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-emerald-400" />
+            <motion.div
+              layoutId="dataExplorerTabPill"
+              className="absolute inset-0 rounded-full bg-zinc-200/80 dark:bg-zinc-800/90 shadow-sm"
+              transition={{ type: "spring", stiffness: 400, damping: 32 }}
+            />
           )}
         </button>
       </div>
@@ -199,7 +208,40 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
           </div>
         </div>
       ) : (
-        <div className="space-y-5">
+        <div className="space-y-6">
+          {/* Organic Density Distribution Spline */}
+          <div className="pt-2 pb-1" aria-hidden="true">
+            <div className="flex items-center justify-between text-[11px] font-mono text-zinc-500 dark:text-zinc-400 mb-2">
+              <span>Samplers (47.4%)</span>
+              <span>Auditors (44.2%)</span>
+              <span>Completers (8.4%)</span>
+            </div>
+            <svg viewBox="0 0 400 48" className="w-full h-12 overflow-visible" fill="none">
+              <defs>
+                <linearGradient id="densityGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.25" />
+                  <stop offset="50%" stopColor="#0284c7" stopOpacity="0.25" />
+                  <stop offset="100%" stopColor="#10b981" stopOpacity="0.35" />
+                </linearGradient>
+                <linearGradient id="densityStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#f59e0b" />
+                  <stop offset="50%" stopColor="#0284c7" />
+                  <stop offset="100%" stopColor="#10b981" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M 0 44 C 60 10, 140 14, 200 24 C 270 34, 330 42, 370 44 C 385 45, 395 46, 400 46 L 400 48 L 0 48 Z"
+                fill="url(#densityGrad)"
+              />
+              <path
+                d="M 0 44 C 60 10, 140 14, 200 24 C 270 34, 330 42, 370 44 C 385 45, 395 46, 400 46"
+                stroke="url(#densityStroke)"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {clusterData.map((cluster) => (
               <div
