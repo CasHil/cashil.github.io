@@ -1,67 +1,17 @@
-import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import Heading from "../Heading/Heading";
 import Timeline from "../Timeline/Timeline";
 import { useLanguage } from "../../context/LanguageContext";
 
-type FilterType = "all" | "engineering" | "education";
-
 export default function WorkExperience() {
-  const { t } = useLanguage();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const trackParam = searchParams.get("track") as FilterType | null;
+  const { t, language } = useLanguage();
 
-  const validFilter = trackParam === "engineering" || trackParam === "education" ? trackParam : "all";
-  const [filter, setFilterState] = useState<FilterType>(validFilter);
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    if (trackParam && (trackParam === "engineering" || trackParam === "education" || trackParam === "all")) {
-      setFilterState(trackParam);
-    }
-  }, [trackParam]);
-
-  const handleFilterChange = (newFilter: FilterType) => {
-    setFilterState(newFilter);
-    setExpandedIndex(null);
-    if (newFilter === "all") {
-      setSearchParams({});
-    } else {
-      setSearchParams({ track: newFilter });
-    }
-  };
-
-  const filteredItems = t.workExperience.items.filter((item) => {
-    if (filter === "all") return true;
-    return item.category === filter;
-  });
-
-  const engineeringCount = t.workExperience.items.filter(
-    (i) => i.category === "engineering"
-  ).length;
-  const educationCount = t.workExperience.items.filter(
-    (i) => i.category === "education"
-  ).length;
-
-  const filters: { key: FilterType; label: string; count: number }[] = [
-    { key: "all", label: t.workExperience.filterAll, count: t.workExperience.items.length },
-    { key: "engineering", label: t.workExperience.filterEngineering, count: engineeringCount },
-    { key: "education", label: t.workExperience.filterEducation, count: educationCount },
-  ];
-
-  // Curate featured roles: ensure high-impact engineering systems lead in 'all' and 'engineering'
-  const featuredRoles =
-    filter === "education"
-      ? filteredItems.slice(0, 2)
-      : [
-          ...filteredItems.filter((i) => i.category === "engineering"),
-        ].slice(0, 3);
-  const archiveItems = filteredItems.filter((item) => !featuredRoles.includes(item));
-
-  const toggleExpand = (idx: number) => {
-    setExpandedIndex(expandedIndex === idx ? null : idx);
-  };
+  const engineeringRoles = t.workExperience.items.filter(
+    (item) => item.category === "engineering"
+  );
+  const educationRoles = t.workExperience.items.filter(
+    (item) => item.category === "education"
+  );
 
   return (
     <div className="space-y-12">
@@ -73,40 +23,7 @@ export default function WorkExperience() {
         </p>
       </div>
 
-      {/* Recruiter Dual-Track Filter (Fluid Sliding Pills) */}
-      <div className="flex flex-wrap items-center gap-2 border-b border-zinc-200/80 dark:border-white/10 pb-4">
-        {filters.map((f) => {
-          const isActive = filter === f.key;
-          return (
-            <button
-              key={f.key}
-              type="button"
-              onClick={() => handleFilterChange(f.key)}
-              className={`relative px-3 py-1.5 text-xs sm:text-sm font-medium rounded-full transition-colors duration-200 ${
-                isActive
-                  ? "text-zinc-950 dark:text-white"
-                  : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100"
-              }`}
-            >
-              <span className="relative z-10 flex items-center gap-1.5">
-                <span>{f.label}</span>
-                <span className="text-xs font-mono opacity-60">
-                  {f.count}
-                </span>
-              </span>
-              {isActive && (
-                <motion.div
-                  layoutId="workFilterPill"
-                  className="absolute inset-0 rounded-full bg-zinc-200/80 dark:bg-zinc-800/90 shadow-sm"
-                  transition={{ type: "spring", stiffness: 400, damping: 32 }}
-                />
-              )}
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Tier 1: Featured Core Roles (Spacious Case Studies) */}
+      {/* Section 1: Software Engineering & Production Systems */}
       <div className="space-y-6">
         <div>
           <h2 className="font-display text-lg sm:text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
@@ -118,87 +35,45 @@ export default function WorkExperience() {
         </div>
 
         <div className="pt-2">
-          <Timeline data={featuredRoles} />
+          <Timeline data={engineeringRoles} />
         </div>
       </div>
 
-      {/* Tier 2: Career Index & Trajectory (Minimalist Monograph Index) */}
-      <div className="pt-10 border-t border-zinc-200/80 dark:border-white/10 space-y-6">
-        <div>
-          <h2 className="font-display text-lg sm:text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
-            {t.workExperience.archiveHeading}
-          </h2>
-          <p className="text-xs font-mono text-zinc-600 dark:text-zinc-400 mt-0.5">
-            {t.workExperience.archiveSubtitle}
-          </p>
+      {/* Section 2: Teaching & Academic Experience */}
+      {educationRoles.length > 0 && (
+        <div className="pt-10 border-t border-zinc-200/80 dark:border-white/10 space-y-6">
+          <div>
+            <h2 className="font-display text-lg sm:text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
+              {t.workExperience.archiveHeading}
+            </h2>
+            <p className="text-xs font-mono text-zinc-600 dark:text-zinc-400 mt-0.5">
+              {t.workExperience.archiveSubtitle}
+            </p>
+          </div>
+
+          <div className="pt-2">
+            <Timeline data={educationRoles} />
+          </div>
         </div>
+      )}
 
-        <div className="divide-y divide-zinc-200/70 dark:divide-zinc-800/70 border-y border-zinc-200/70 dark:border-zinc-800/70">
-          {archiveItems.map((item, idx) => {
-            const isExpanded = expandedIndex === idx;
-            return (
-              <div key={`${item.title}-${item.startDate}-${idx}`} className="py-3.5 group">
-                <button
-                  type="button"
-                  onClick={() => toggleExpand(idx)}
-                  className="w-full flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 text-left focus:outline-none"
-                  aria-expanded={isExpanded}
-                >
-                  <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
-                    <span className="text-xs font-mono text-zinc-600 dark:text-zinc-400 sm:w-36 shrink-0 whitespace-nowrap">
-                      {item.startDate} - {item.endDate}
-                    </span>
-                    <div>
-                      <span className="text-sm font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
-                        {item.title}
-                      </span>
-                      <span className="text-xs text-zinc-600 dark:text-zinc-400 sm:ml-2 block sm:inline">
-                        {item.subtitle}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-2.5 self-end sm:self-auto shrink-0">
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono font-medium uppercase tracking-wider bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-400 border border-zinc-200/50 dark:border-white/5">
-                      {item.category === "engineering" ? "Engineering" : "Education"}
-                    </span>
-                    <span className={`inline-flex items-center justify-center h-5 w-5 rounded-full bg-zinc-100 dark:bg-zinc-800/80 text-zinc-500 dark:text-zinc-400 border border-zinc-200/50 dark:border-white/5 text-xs font-mono transition-transform duration-200 ${isExpanded ? "rotate-45" : "rotate-0"}`}>
-                      +
-                    </span>
-                  </div>
-                </button>
-
-                <AnimatePresence initial={false}>
-                  {isExpanded && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ type: "spring", stiffness: 450, damping: 35 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="mt-3 pl-0 sm:pl-40 pr-2 pb-2 space-y-2.5 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                        <p className="max-w-[58ch]">{item.text}</p>
-                        {item.skills && item.skills.length > 0 && (
-                          <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                            {item.skills.map((s) => (
-                              <span
-                                key={s}
-                                className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono bg-zinc-100 dark:bg-zinc-800/70 text-zinc-600 dark:text-zinc-300 border border-zinc-200/50 dark:border-white/5"
-                              >
-                                {s}
-                              </span>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
-        </div>
+      {/* Strict 2-CTA Hierarchy: 1 Primary + 1 Secondary */}
+      <div className="pt-8 border-t border-zinc-200/80 dark:border-white/10 flex flex-wrap items-center gap-3">
+        <Link
+          to="/cv"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-medium text-xs sm:text-sm hover:bg-emerald-800 dark:hover:bg-emerald-300 dark:hover:text-zinc-950 transition-colors shadow-xs"
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+          <span>{language === "nl" ? "Bekijk Curriculum Vitae" : "View Curriculum Vitae"}</span>
+          <span className="font-mono text-zinc-400 dark:text-zinc-500" aria-hidden="true">→</span>
+        </Link>
+        <Link
+          to="/education"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-zinc-300 dark:border-zinc-700 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-emerald-600 dark:hover:border-emerald-400 transition-colors"
+        >
+          <span>{language === "nl" ? "Opleiding & Onderzoek" : "Education & Research"}</span>
+          <span className="font-mono text-zinc-400" aria-hidden="true">→</span>
+        </Link>
       </div>
     </div>
   );

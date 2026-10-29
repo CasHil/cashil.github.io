@@ -4,36 +4,36 @@
 
 :root {
   color-scheme: light;
-  --canvas: #fafafa;
+  --canvas: #fafbf9;
   --surface: #ffffff;
-  --surface-hover: #f4f4f5;
-  --surface-subtle: #f4f4f5;
-  --border-subtle: #e4e4e7;
-  --border-hover: #d4d4d8;
-  --text-primary: #18181b;
-  --text-secondary: #52525b;
-  --text-muted: #71717a;
-  --dot-color: rgba(0, 0, 0, 0.05);
-  --scrollbar-track: #fafafa;
-  --scrollbar-thumb: rgba(0, 0, 0, 0.15);
-  --scrollbar-thumb-hover: rgba(0, 0, 0, 0.25);
+  --surface-hover: #f3f5f1;
+  --surface-subtle: #f0f3ee;
+  --border-subtle: #e2e6e0;
+  --border-hover: #cfd6cd;
+  --text-primary: #191c1a;
+  --text-secondary: #4c544e;
+  --text-muted: #707972;
+  --dot-color: rgba(16, 80, 50, 0.04);
+  --scrollbar-track: #fafbf9;
+  --scrollbar-thumb: rgba(16, 80, 50, 0.15);
+  --scrollbar-thumb-hover: rgba(16, 80, 50, 0.25);
 }
 
 .dark {
   color-scheme: dark;
-  --canvas: #090a0c;
-  --surface: #111215;
-  --surface-hover: #17191e;
-  --surface-subtle: #1a1d24;
+  --canvas: #090c0a;
+  --surface: #101512;
+  --surface-hover: #151c17;
+  --surface-subtle: #19211c;
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.16);
-  --text-primary: #f4f4f5;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
-  --dot-color: rgba(255, 255, 255, 0.05);
-  --scrollbar-track: #090a0c;
-  --scrollbar-thumb: rgba(255, 255, 255, 0.14);
-  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.24);
+  --border-hover: rgba(52, 211, 153, 0.22);
+  --text-primary: #f2f5f3;
+  --text-secondary: #9da7a0;
+  --text-muted: #6e7872;
+  --dot-color: rgba(52, 211, 153, 0.04);
+  --scrollbar-track: #090c0a;
+  --scrollbar-thumb: rgba(52, 211, 153, 0.14);
+  --scrollbar-thumb-hover: rgba(52, 211, 153, 0.24);
 }
 
 @layer base {
