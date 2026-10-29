@@ -79,3 +79,40 @@ This document archives the comprehensive reviews and ruthless critiques conducte
    - Screen readers and accessibility checkers flag this heading collision; job titles must semantically be `<h3>`.
 5. **Primary CTA Disconnect**:
    - High-contrast black button on home page directed users to `/cv` (an iframe PDF viewer that fails on mobile), while exploring actual interactive software engineering was demoted to a ghost button.
+
+---
+
+## 4. Round 2 Criticisms & Ruthless Pruning
+
+Conducted after the initial typography cleanup to eliminate subtle AI tells, prune irrelevant experience, remove inaccurate hobbies, and add organic visual depth.
+
+### 4.1 "Green Dots & Live Indicators" as AI Tells
+- **Criticism**: Tiny green dots (`bg-emerald-500 rounded-full`) next to buttons, avatars, and timeline items, along with `animate-ping` pulsing badges, are quintessential AI portfolio tropes. They scream "AI template" and distract from actual technical gravitas.
+- **Fix**: Completely eliminated all green indicator dots from avatars, CTA buttons, and status labels. Current employment is communicated strictly via quiet, high-legibility typographic badges (`CURRENT` / `HUIDIG`).
+
+### 4.2 Artificial Titles & Buzzword Jargon
+- **Criticism**:
+  - Titles like `"EdTech · Co-Founder"` felt artificial and self-important.
+  - Academic terminology in DataExplorer like `"Front-loaded exploration"` or `"High submission density"` read like dense paper jargon rather than clear, punchy behavioral observations.
+- **Fix**:
+  - Replaced artificial overlines with grounded provenance and timeline metadata: `"ABN AMRO · 2026 – Present"`, `"Co-Founder & Lead Engineer · 2023 – 2025"`, `"TU Delft MSc Thesis · 2024"`.
+  - Replaced DataExplorer jargon with direct behavioral descriptions: `"Drop-off after week 1"`, `"Consistent weekly submissions"`, `"Video lectures only, no submissions"`.
+
+### 4.3 Information Overload & Progressive Disclosure
+- **Criticism**: Showing all 11 past roles (6 engineering jobs + 5 teaching/academic positions) created a massive wall of text that diluted Casper's core profile as a high-throughput systems engineer at Tikkie. Recruiters skimmed past early internships (Bexter 2019, Muziekweb 2020) and high school teaching practicums.
+- **Fix**: Implemented accessible progressive disclosure (`DisclosureSection.tsx`):
+  - **Core Engineering**: Directly displays the 4 marquee roles: Tikkie, Harvest, Bitsized, Netcompany.
+  - **Foundational Engineering Drawer**: Collapses Bexter (2019) and Muziekweb (2020) behind an informative summary drawer (`Show prior engineering roles (2)`).
+  - **Academic & Teaching Drawer**: Collapses all 5 university and high school teaching roles behind a clean summary card with badge (`5 Positions · 2018–2025`) and dual toggle triggers.
+
+### 4.4 Inaccurate Creative Pursuits
+- **Criticism**: "Synthesizers & Audio" was included on the About page despite Casper having no connection to synthesizers.
+- **Fix**: Completely purged all synthesizer copy in both EN and NL. The "Outside of Work" section now strictly features authentic passions: Electric Bass Guitar and Chess.
+
+### 4.5 Visual Flatness & Organic Depth
+- **Criticism**: The previous design felt flat and mechanical—relying on a rigid 24px Cartesian dot grid background that looked like a generic Tailwind sandbox template.
+- **Fix**:
+  - Replaced the mechanical Cartesian grid with bespoke SVG topographic elevation contour lines that subtly suggest data landscapes and organic flow.
+  - Elevated the Selected Work items from flat text blocks into tactile editorial panels (`bg-white/60 dark:bg-zinc-900/40 backdrop-blur-xs border border-zinc-200/80 dark:border-white/[0.08] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)]`).
+  - Calibrated a warmer, richer canvas token (`#faf8f5` light / `#0b0d0c` dark) with warm obsidian and bone surfaces.
+  - Added double-ring photographic frame to the avatar and tapered gradient section dividers.

@@ -28,7 +28,6 @@ export default function Intro() {
             to="/cv"
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-medium text-xs sm:text-sm hover:bg-emerald-800 dark:hover:bg-emerald-300 dark:hover:text-zinc-950 transition-colors shadow-xs"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
             <span>{t.intro.viewCv}</span>
             <span className="font-mono text-zinc-400 dark:text-zinc-500" aria-hidden="true">
               →
@@ -46,8 +45,8 @@ export default function Intro() {
         </div>
       </div>
 
-      {/* Featured Engineering & Research (Open Editorial Layout, Zero Nested Box Cards) */}
-      <div className="pt-10 border-t border-zinc-200/80 dark:border-white/10 space-y-10">
+      {/* Featured Engineering & Research (Tactile Editorial Panels) */}
+      <div className="pt-10 border-t border-zinc-200/80 dark:border-white/10 space-y-8">
         <div>
           <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-zinc-950 dark:text-white">
             {t.intro.featuredHeading}
@@ -59,9 +58,9 @@ export default function Intro() {
           )}
         </div>
 
-        <div className="space-y-10 divide-y divide-zinc-200/80 dark:divide-zinc-800/80">
-          {/* 1. Tikkie Business Editorial Section */}
-          <div className="pt-8 first:pt-0 space-y-3">
+        <div className="space-y-6">
+          {/* 1. Tikkie Business Editorial Card */}
+          <div className="rounded-2xl p-6 sm:p-7 bg-white/60 dark:bg-zinc-900/40 backdrop-blur-xs border border-zinc-200/80 dark:border-white/[0.08] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:border-emerald-600/30 dark:hover:border-emerald-400/20 transition-all space-y-3">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <div>
                 <span className="text-xs font-sans font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
@@ -100,8 +99,8 @@ export default function Intro() {
             </div>
           </div>
 
-          {/* 2. Bitsized Platform Editorial Section (0-to-1 Systems Engineering) */}
-          <div className="pt-8 space-y-3">
+          {/* 2. Bitsized Platform Editorial Card (0-to-1 Systems Engineering) */}
+          <div className="rounded-2xl p-6 sm:p-7 bg-white/60 dark:bg-zinc-900/40 backdrop-blur-xs border border-zinc-200/80 dark:border-white/[0.08] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:border-emerald-600/30 dark:hover:border-emerald-400/20 transition-all space-y-3">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <div>
                 <span className="text-xs font-sans font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
@@ -141,7 +140,7 @@ export default function Intro() {
           </div>
 
           {/* 3. Master's Thesis Research Insight (Quantitative Data Rigor) */}
-          <div className="pt-8 space-y-3">
+          <div className="rounded-2xl p-6 sm:p-7 bg-white/60 dark:bg-zinc-900/40 backdrop-blur-xs border border-zinc-200/80 dark:border-white/[0.08] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:border-emerald-600/30 dark:hover:border-emerald-400/20 transition-all space-y-3">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <div>
                 <span className="text-xs font-sans font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">

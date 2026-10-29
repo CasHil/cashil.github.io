@@ -14,7 +14,7 @@ test("renders DataExplorer with initial metrics and handles tab switching", () =
   expect(screen.getAllByText(/174,988/i).length).toBeGreaterThan(0);
 
   // Switch to Engagement Clusters tab
-  const clustersTabBtn = screen.getByText(/2. /i);
+  const clustersTabBtn = screen.getByText(/Clusters/i);
   fireEvent.click(clustersTabBtn);
 
   // Verify cluster content rendered
