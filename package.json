@@ -15,7 +15,10 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "build:cv": "tectonic cv/Casper_Hildebrand_CV.tex -o public/cv",
+    "lint:copy": "node scripts/lint-copy.js",
+    "build:cv": "powershell -ExecutionPolicy Bypass -File scripts/build-cv.ps1",
+    "audit:ux": "impeccable detect dist",
+    "check": "node scripts/lint-copy.js && tsc && vitest run",
     "deploy": "wrangler pages deploy dist --project-name casperhildebrand"
   },
   "devDependencies": {
