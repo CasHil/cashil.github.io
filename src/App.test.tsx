@@ -55,3 +55,9 @@ test("renders theme toggle button", () => {
   expect(toggleButtons.length).toBeGreaterThan(0);
 });
 
+test("renders CV navigation link", () => {
+  render(<App />);
+  const cvLinks = screen.getAllByRole("link", { name: /cv/i });
+  expect(cvLinks.length).toBeGreaterThan(0);
+});
+
