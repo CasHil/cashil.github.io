@@ -33,7 +33,7 @@ function Masthead() {
             <div className="font-display font-bold text-base sm:text-lg text-zinc-900 dark:text-white tracking-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
               {t.sidebar.name}
             </div>
-            <p className="text-xs font-mono text-emerald-800 dark:text-emerald-400">
+            <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
               {t.sidebar.role}
             </p>
           </div>

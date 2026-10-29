@@ -29,9 +29,11 @@ export default function WorkExperience() {
           <h2 className="font-display text-lg sm:text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
             {t.workExperience.primaryHeading}
           </h2>
-          <p className="text-xs font-mono text-zinc-600 dark:text-zinc-400 mt-0.5">
-            {t.workExperience.primarySubtitle}
-          </p>
+          {t.workExperience.primarySubtitle && (
+            <p className="text-xs font-normal text-zinc-500 dark:text-zinc-400 mt-0.5">
+              {t.workExperience.primarySubtitle}
+            </p>
+          )}
         </div>
 
         <div className="pt-2">
@@ -46,9 +48,11 @@ export default function WorkExperience() {
             <h2 className="font-display text-lg sm:text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
               {t.workExperience.archiveHeading}
             </h2>
-            <p className="text-xs font-mono text-zinc-600 dark:text-zinc-400 mt-0.5">
-              {t.workExperience.archiveSubtitle}
-            </p>
+            {t.workExperience.archiveSubtitle && (
+              <p className="text-xs font-normal text-zinc-500 dark:text-zinc-400 mt-0.5">
+                {t.workExperience.archiveSubtitle}
+              </p>
+            )}
           </div>
 
           <div className="pt-2">

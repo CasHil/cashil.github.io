@@ -192,7 +192,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     },
     cv: {
       title: "Curriculum Vitae",
-      subtitle: "Single-Page ATS Format • Full-Stack Software Engineer",
+      subtitle: "Full-Stack Software Engineer · Amsterdam, Netherlands",
       openNewTab: "Open in New Tab",
       downloadPdf: "Download PDF",
       mobilePrompt: "Viewing on a mobile device? Open fullscreen for the optimal reading experience.",
@@ -201,7 +201,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     intro: {
       heroTitle: "Full-stack software engineer building payment services and web applications at Tikkie.",
       bioParagraph1:
-        "Full-stack software engineer at Tikkie (ABN AMRO), developing merchant payment APIs and business portals used across the Netherlands.",
+        "At Tikkie (ABN AMRO), I build merchant-facing payment infrastructure, idempotent settlement APIs, and real-time business portals supporting thousands of enterprise merchants.",
       bioParagraph2:
         "Double Master's from TU Delft in Computer Science (Data Science) and Science Education. Co-founded Bitsized, built software for the public sector, and published research analyzing 175k online learners.",
       bioParagraph3: "",
@@ -212,25 +212,25 @@ export const translations: Record<Language, TranslationDictionary> = {
       viewCv: "Curriculum Vitae",
       featuredHeading: "Selected Work",
       featuredSubtitle: "",
-      tikkieTag: "Production Systems",
+      tikkieTag: "Fintech · Payments",
       tikkieTitle: "Tikkie Business",
-      tikkieSubtitle: "Merchant Payment Services & Portals",
+      tikkieSubtitle: "Enterprise Payment APIs & Business Portals",
       tikkieDescription:
         "Merchant payment APIs and business dashboards for Tikkie Business: idempotent partner endpoints, payment status webhooks, and reporting tools for Dutch enterprises.",
-      tikkieLink: "View career history →",
-      thesisTag: "TU Delft · Research",
+      tikkieLink: "View role details →",
+      thesisTag: "Data Science · Research",
       thesisTitle: "Debugging the Divide: 174,988 CS MOOC Learners",
-      thesisSubtitle: "Student Engagement & Learning Patterns",
+      thesisSubtitle: "Clickstream Telemetry & Behavioral Clustering",
       thesisDescription:
         "Large-scale study analyzing learning patterns and engagement trajectories across 174,988 Open edX students using clustering and statistical regression in Python and Pandas.",
       thesisLink: "Explore research telemetry →",
       thesisSkills: ["Python", "Pandas", "Scikit-learn", "Open edX"],
-      bitsizedTag: "Co-Founder & Lead Engineer",
+      bitsizedTag: "EdTech · Co-Founder",
       bitsizedTitle: "Bitsized",
-      bitsizedSubtitle: "Interactive Code Execution Engine",
+      bitsizedSubtitle: "In-Browser Execution Sandboxes & CS Curricula",
       bitsizedDescription:
         "Browser-based execution sandboxes and interactive curriculum tools adopted by Dutch secondary school computer science departments.",
-      bitsizedLink: "View experience →",
+      bitsizedLink: "View platform details →",
     },
     dataExplorer: {
       badge: "TU Delft • 2024",
@@ -289,16 +289,16 @@ export const translations: Record<Language, TranslationDictionary> = {
     workExperience: {
       title: "Work Experience",
       intro:
-        "Software engineering at Tikkie, cloud architecture, browser sandboxes, and computer science education.",
+        "Production engineering at Tikkie, cloud architecture, browser sandbox design, enterprise data migrations, and computer science education.",
       currentBadge: "Current",
       to: "to",
       filterAll: "All Roles",
       filterEngineering: "Engineering & Systems",
       filterEducation: "Education & Teaching",
-      primaryHeading: "Featured Experience",
-      primarySubtitle: "Production software and platforms",
-      archiveHeading: "Prior Experience",
-      archiveSubtitle: "Chronological history across engineering, consulting, and education",
+      primaryHeading: "Software Engineering",
+      primarySubtitle: "",
+      archiveHeading: "Teaching & Academic Work",
+      archiveSubtitle: "",
       items: [
         {
           title: "Full Stack Software Engineer",
@@ -311,7 +311,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Present",
           current: true,
           category: "engineering",
-          text: "• **Merchant Infrastructure**: Engineered merchant payment endpoints and services powering thousands of Dutch enterprises.\n• **API Reliability**: Implemented idempotent payment processing workflows, partner webhooks, and automated error recovery routines.\n• **Merchant Portals**: Developed merchant analytics dashboards and reporting portals with React, TypeScript, Node.js, and AWS serverless infrastructure.",
+          text: "• **Merchant Infrastructure**: Engineered high-throughput payment endpoints and settlement pipelines processing merchant transactions across thousands of Dutch businesses.\n• **API Reliability**: Implemented idempotent payment processing workflows, partner webhooks, and automated error recovery routines.\n• **Merchant Portals**: Developed merchant analytics dashboards and reporting portals with React, TypeScript, Node.js, and AWS serverless infrastructure.",
           skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL"],
         },
         {
@@ -325,7 +325,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Present",
           current: true,
           category: "engineering",
-          text: "• Engineering development program running alongside production work at Tikkie.\n• Completed practical modules covering cloud architecture, event-driven design, and system reliability.",
+          text: "• Engineering talent program running alongside production work at Tikkie, focusing on distributed systems design, event-driven architecture, and cloud reliability patterns.",
           skills: ["Cloud Architecture", "Distributed Systems", "Event-Driven Design"],
         },
         {
@@ -503,14 +503,13 @@ export const translations: Record<Language, TranslationDictionary> = {
     about: {
       title: "About",
       paragraph1:
-        "I am a full-stack software engineer based in Amsterdam, currently working at Tikkie (ABN AMRO). I build merchant-facing payment services and business portals where reliability, security, and clear data models matter every day.",
+        "I am a full-stack software engineer based in Amsterdam, currently working at Tikkie (ABN AMRO). I build merchant-facing payment infrastructure and business portals where reliability, security, and clear data models matter every day.",
       paragraph2:
-        "With a double Master's degree from TU Delft in Computer Science and Science Education, I bridge technical depth with clear communication. In software teams, I prioritize readable code, well-typed API boundaries, thorough reviews, and accessible documentation.",
+        "My second Master's — in Science Education from TU Delft — shapes how I work on engineering teams. I treat API design as a communication problem, invest in explicit type boundaries and clear RFCs, and believe that structured documentation is a force multiplier for team velocity.",
       paragraph3:
-        "Prior to Tikkie, I co-founded Bitsized (an interactive coding sandbox for secondary education), worked as an IT consultant on public sector data systems, and taught computer science in high schools.",
+        "Prior to Tikkie, I co-founded Bitsized (an interactive coding sandbox for secondary education), built ETL data migrations at Netcompany, and taught computer science across senior secondary school cohorts.",
       beyondHeading: "Outside of Work",
-      beyondSubtitle:
-        "Interests and creative pursuits outside software engineering.",
+      beyondSubtitle: "",
       interests: [
         {
           title: "Bass Guitar",
@@ -563,7 +562,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     },
     cv: {
       title: "Curriculum Vitae",
-      subtitle: "Enkelzijdig ATS-Formaat • Full-Stack Software Engineer",
+      subtitle: "Full-Stack Software Engineer · Amsterdam, Nederland",
       openNewTab: "Openen in nieuw tabblad",
       downloadPdf: "Download PDF",
       mobilePrompt: "Bekijk je dit op mobiel? Open op volledig scherm voor de beste leeservaring.",
@@ -572,7 +571,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     intro: {
       heroTitle: "Full-stack software engineer voor zakelijke betaaldiensten en webapplicaties bij Tikkie.",
       bioParagraph1:
-        "Full-stack software engineer bij Tikkie (ABN AMRO), waar ik werk aan zakelijke betaal-API's en portals voor ondernemers in Nederland.",
+        "Bij Tikkie (ABN AMRO) ontwikkel ik zakelijke betaalinfrastructuur, idempotente API-koppelingen en dashboards voor duizenden Nederlandse ondernemers.",
       bioParagraph2:
         "Dubbele Master aan de TU Delft in Technische Informatica en Didactiek. Mede-oprichter van Bitsized, ervaring in de publieke sector en auteur van onderzoek onder 175k online cursisten.",
       bioParagraph3: "",
@@ -583,25 +582,25 @@ export const translations: Record<Language, TranslationDictionary> = {
       viewCv: "Curriculum Vitae",
       featuredHeading: "Uitgewerkt Werk",
       featuredSubtitle: "",
-      tikkieTag: "Productiesystemen",
+      tikkieTag: "Fintech · Betalingen",
       tikkieTitle: "Tikkie Zakelijk",
-      tikkieSubtitle: "Zakelijke Betaaldiensten & Portals",
+      tikkieSubtitle: "Enterprise Betaal-API's & Ondernemersportals",
       tikkieDescription:
         "Betaal-API's en dashboards voor Tikkie Zakelijk: idempotente partner-endpoints, webhook-notificaties en rapportagetools voor ondernemers.",
-      tikkieLink: "Bekijk werkervaring →",
-      thesisTag: "TU Delft · Onderzoek",
+      tikkieLink: "Bekijk functiedetails →",
+      thesisTag: "Data Science · Onderzoek",
       thesisTitle: "Debugging the Divide: 174.988 Cursisten",
-      thesisSubtitle: "Betrokkenheid & Leerpatronen",
+      thesisSubtitle: "Klikstream-telemetrie & Gedragsclustering",
       thesisDescription:
         "Grootschalig onderzoek naar leerpatronen en betrokkenheid onder 174.988 Open edX-cursisten via clustering en regressieanalyse in Python en Pandas.",
       thesisLink: "Bekijk onderzoeksdata →",
       thesisSkills: ["Python", "Pandas", "Scikit-learn", "Open edX"],
-      bitsizedTag: "Mede-oprichter & Lead Engineer",
+      bitsizedTag: "EdTech · Mede-oprichter",
       bitsizedTitle: "Bitsized",
-      bitsizedSubtitle: "Interactieve Code Execution Engine",
+      bitsizedSubtitle: "In-Browser Execution Sandboxes & Lesmateriaal",
       bitsizedDescription:
         "In-browser code-executie sandboxes en interactieve lesmaterialen ontworpen voor informaticasecties in het voortgezet onderwijs.",
-      bitsizedLink: "Bekijk ervaring →",
+      bitsizedLink: "Bekijk platformdetails →",
     },
     dataExplorer: {
       badge: "TU Delft • 2024",
@@ -660,16 +659,16 @@ export const translations: Record<Language, TranslationDictionary> = {
     workExperience: {
       title: "Werkervaring",
       intro:
-        "Softwareontwikkeling bij Tikkie, cloudarchitectuur, browser sandboxes en informaticaonderwijs.",
+        "Productie-engineering bij Tikkie, cloudarchitectuur, browser-sandbox design, enterprise datamigraties en informaticaonderwijs.",
       currentBadge: "Huidig",
       to: "tot",
       filterAll: "Alle Functies",
       filterEngineering: "Engineering & Systemen",
       filterEducation: "Onderwijs & Didactiek",
-      primaryHeading: "Uitgelichte Ervaring",
-      primarySubtitle: "Productiesoftware en platforms",
-      archiveHeading: "Eerdere Ervaring",
-      archiveSubtitle: "Chronologisch overzicht van functies in softwareontwikkeling, consultancy en onderwijs",
+      primaryHeading: "Softwareontwikkeling",
+      primarySubtitle: "",
+      archiveHeading: "Onderwijs & Academisch Werk",
+      archiveSubtitle: "",
       items: [
         {
           title: "Full Stack Software Engineer",
@@ -682,7 +681,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Heden",
           current: true,
           category: "engineering",
-          text: "• **Zakelijke Infrastructuur**: Ontwikkeling van zakelijke betaal-API's en diensten voor duizenden Nederlandse ondernemers.\n• **API-Betrouwbaarheid**: Implementatie van idempotente betaalprocessen, partner-webhooks en foutafhandeling.\n• **Ondernemersportals**: Bouw van dashboards en rapportagetools met React, TypeScript, Node.js en AWS serverless infrastructuur.",
+          text: "• **Zakelijke Infrastructuur**: Ontwikkeling van bedrijfskritische betaal-endpoints en verwerkingspipelines voor duizenden aangesloten ondernemingen.\n• **API-Betrouwbaarheid**: Implementatie van idempotente betaalprocessen, partner-webhooks en foutafhandeling.\n• **Ondernemersportals**: Bouw van dashboards en rapportagetools met React, TypeScript, Node.js en AWS serverless infrastructuur.",
           skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL"],
         },
         {
@@ -696,7 +695,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Heden",
           current: true,
           category: "engineering",
-          text: "• Professioneel ontwikkelprogramma parallel aan werkzaamheden bij Tikkie.\n• Praktijkgerichte modules afgerond in cloudarchitectuur, event-driven design en systeembetrouwbaarheid.",
+          text: "• Professioneel ontwikkelprogramma parallel aan productiewerkzaamheden bij Tikkie, gericht op gedistribueerde systeemarchitectuur, event-driven design en cloudbetrouwbaarheid.",
           skills: ["Cloud Architecture", "Distributed Systems", "Event-Driven Design"],
         },
         {
@@ -876,12 +875,11 @@ export const translations: Record<Language, TranslationDictionary> = {
       paragraph1:
         "Ik ben een full-stack software engineer in Amsterdam, momenteel werkzaam bij Tikkie (ABN AMRO). Ik bouw aan zakelijke betaaldiensten en portals voor ondernemers, waar betrouwbaarheid, security en duidelijke datamodellen dagelijks centraal staan.",
       paragraph2:
-        "Dankzij mijn dubbele Master aan de TU Delft in Technische Informatica en Didactiek combineer ik technische diepgang met heldere communicatie. Binnen softwareteams hecht ik veel waarde aan leesbare code, goed getypte API's, grondige reviews en duidelijke documentatie.",
+        "Mijn tweede Master — Didactiek aan de TU Delft — beïnvloedt hoe ik in softwareteams werk. Ik beschouw API-ontwerp als een communicatieprobleem, investeer in expliciete typegrenzen en heldere RFC's, en geloof dat gestructureerde documentatie een krachtige vermenigvuldiger is voor teamsnelheid.",
       paragraph3:
-        "Vóór Tikkie richtte ik Bitsized op (een interactieve programmeer-sandbox voor het voortgezet onderwijs), werkte ik als IT-consultant aan datasystemen in de publieke sector en gaf ik informatica op de middelbare school.",
+        "Vóór Tikkie richtte ik Bitsized op (een interactieve programmeer-sandbox voor het voortgezet onderwijs), bouwde ik ETL-datamigraties bij Netcompany en gaf ik informatica in de bovenbouw van het voortgezet onderwijs.",
       beyondHeading: "Buiten het werk",
-      beyondSubtitle:
-        "Interesses en creatieve bezigheden buiten softwareontwikkeling.",
+      beyondSubtitle: "",
       interests: [
         {
           title: "Basgitaar",

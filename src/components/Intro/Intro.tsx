@@ -64,13 +64,13 @@ export default function Intro() {
           <div className="pt-8 first:pt-0 space-y-3">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <div>
-                <span className="text-xs font-mono text-emerald-800 dark:text-emerald-400 font-semibold uppercase tracking-wider">
+                <span className="text-xs font-sans font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
                   {t.intro.tikkieTag}
                 </span>
                 <h3 className="text-lg sm:text-xl font-bold text-zinc-950 dark:text-white mt-0.5">
                   {t.intro.tikkieTitle}
                 </h3>
-                <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
+                <p className="text-xs sm:text-sm font-normal text-zinc-500 dark:text-zinc-400">
                   {t.intro.tikkieSubtitle}
                 </p>
               </div>
@@ -87,9 +87,9 @@ export default function Intro() {
               {t.intro.tikkieDescription}
             </p>
 
-            <div className="pt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 font-mono text-xs">
-              <span className="text-zinc-600 dark:text-zinc-400 uppercase tracking-widest text-[10px] font-semibold">Stack:</span>
-              <span className="text-zinc-700 dark:text-zinc-300">
+            <div className="pt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-xs">
+              <span className="font-sans text-zinc-500 dark:text-zinc-400 font-medium">Stack:</span>
+              <span className="font-mono text-zinc-700 dark:text-zinc-300">
                 {tikkieSkills.map((skill, idx) => (
                   <span key={skill}>
                     {idx > 0 && <span className="mx-1.5 text-emerald-600/40 dark:text-emerald-400/40">·</span>}
@@ -100,57 +100,17 @@ export default function Intro() {
             </div>
           </div>
 
-          {/* 2. Master's Thesis Research Insight */}
+          {/* 2. Bitsized Platform Editorial Section (0-to-1 Systems Engineering) */}
           <div className="pt-8 space-y-3">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <div>
-                <span className="text-xs font-mono text-emerald-800 dark:text-emerald-400 font-semibold uppercase tracking-wider">
-                  {t.intro.thesisTag}
-                </span>
-                <h3 className="text-lg sm:text-xl font-bold text-zinc-950 dark:text-white mt-0.5">
-                  {t.intro.thesisTitle}
-                </h3>
-                <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
-                  {t.intro.thesisSubtitle}
-                </p>
-              </div>
-              <Link
-                to="/education"
-                className="group inline-flex items-center gap-1 text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors"
-              >
-                <span>{t.intro.thesisLink}</span>
-                <span className="font-mono transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
-              </Link>
-            </div>
-
-            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[58ch]">
-              {t.intro.thesisDescription}
-            </p>
-
-            <div className="pt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 font-mono text-xs">
-              <span className="text-zinc-600 dark:text-zinc-400 uppercase tracking-widest text-[10px] font-semibold">Methods:</span>
-              <span className="text-zinc-700 dark:text-zinc-300">
-                {t.intro.thesisSkills.map((item, idx) => (
-                  <span key={item}>
-                    {idx > 0 && <span className="mx-1.5 text-emerald-600/40 dark:text-emerald-400/40">·</span>}
-                    <span className="hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">{item}</span>
-                  </span>
-                ))}
-              </span>
-            </div>
-          </div>
-
-          {/* 3. Bitsized Platform Editorial Section */}
-          <div className="pt-8 space-y-3">
-            <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <div>
-                <span className="text-xs font-mono text-emerald-800 dark:text-emerald-400 font-semibold uppercase tracking-wider">
+                <span className="text-xs font-sans font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
                   {t.intro.bitsizedTag}
                 </span>
                 <h3 className="text-lg sm:text-xl font-bold text-zinc-950 dark:text-white mt-0.5">
                   {t.intro.bitsizedTitle}
                 </h3>
-                <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
+                <p className="text-xs sm:text-sm font-normal text-zinc-500 dark:text-zinc-400">
                   {t.intro.bitsizedSubtitle}
                 </p>
               </div>
@@ -167,13 +127,53 @@ export default function Intro() {
               {t.intro.bitsizedDescription}
             </p>
 
-            <div className="pt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 font-mono text-xs">
-              <span className="text-zinc-600 dark:text-zinc-400 uppercase tracking-widest text-[10px] font-semibold">Stack:</span>
-              <span className="text-zinc-700 dark:text-zinc-300">
+            <div className="pt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-xs">
+              <span className="font-sans text-zinc-500 dark:text-zinc-400 font-medium">Stack:</span>
+              <span className="font-mono text-zinc-700 dark:text-zinc-300">
                 {bitsizedSkills.map((skill, idx) => (
                   <span key={skill}>
                     {idx > 0 && <span className="mx-1.5 text-emerald-600/40 dark:text-emerald-400/40">·</span>}
                     <span className="hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">{skill}</span>
+                  </span>
+                ))}
+              </span>
+            </div>
+          </div>
+
+          {/* 3. Master's Thesis Research Insight (Quantitative Data Rigor) */}
+          <div className="pt-8 space-y-3">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <div>
+                <span className="text-xs font-sans font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+                  {t.intro.thesisTag}
+                </span>
+                <h3 className="text-lg sm:text-xl font-bold text-zinc-950 dark:text-white mt-0.5">
+                  {t.intro.thesisTitle}
+                </h3>
+                <p className="text-xs sm:text-sm font-normal text-zinc-500 dark:text-zinc-400">
+                  {t.intro.thesisSubtitle}
+                </p>
+              </div>
+              <Link
+                to="/education#telemetry"
+                className="group inline-flex items-center gap-1 text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors"
+              >
+                <span>{t.intro.thesisLink}</span>
+                <span className="font-mono transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
+              </Link>
+            </div>
+
+            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[58ch]">
+              {t.intro.thesisDescription}
+            </p>
+
+            <div className="pt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-xs">
+              <span className="font-sans text-zinc-500 dark:text-zinc-400 font-medium">Methods:</span>
+              <span className="font-mono text-zinc-700 dark:text-zinc-300">
+                {t.intro.thesisSkills.map((item, idx) => (
+                  <span key={item}>
+                    {idx > 0 && <span className="mx-1.5 text-emerald-600/40 dark:text-emerald-400/40">·</span>}
+                    <span className="hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">{item}</span>
                   </span>
                 ))}
               </span>
