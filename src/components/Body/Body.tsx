@@ -4,6 +4,7 @@ import Intro from "../Intro/Intro";
 import Education from "../Education/Education";
 import WorkExperience from "../WorkExperience/WorkExperience";
 import About from "../About/About";
+import Cv from "../Cv/Cv";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function Body() {
@@ -29,11 +30,9 @@ export default function Body() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={wrapMotionDiv(<Intro />)} />
+          <Route path="/cv" element={wrapMotionDiv(<Cv />)} />
+          <Route path="/work-experience" element={wrapMotionDiv(<WorkExperience />)} />
           <Route path="/education" element={wrapMotionDiv(<Education />)} />
-          <Route
-            path="/work-experience"
-            element={wrapMotionDiv(<WorkExperience />)}
-          />
           <Route path="/about" element={wrapMotionDiv(<About />)} />
         </Routes>
       </AnimatePresence>

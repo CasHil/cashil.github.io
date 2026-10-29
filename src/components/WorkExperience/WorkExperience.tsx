@@ -50,9 +50,13 @@ export default function WorkExperience() {
     { key: "education", label: t.workExperience.filterEducation, count: educationCount },
   ];
 
-  // Featured deep dives (Top 3 for all/engineering, top 2 for education)
-  const featuredCutoff = filter === "education" ? 2 : 3;
-  const featuredRoles = filteredItems.slice(0, featuredCutoff);
+  // Curate featured roles: ensure high-impact engineering systems lead in 'all' and 'engineering'
+  const featuredRoles =
+    filter === "education"
+      ? filteredItems.slice(0, 2)
+      : [
+          ...filteredItems.filter((i) => i.category === "engineering"),
+        ].slice(0, 3);
   const archiveItems = filteredItems.filter((item) => !featuredRoles.includes(item));
 
   const toggleExpand = (idx: number) => {
@@ -140,15 +144,15 @@ export default function WorkExperience() {
                   className="w-full flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 text-left focus:outline-none"
                   aria-expanded={isExpanded}
                 >
-                  <div className="flex items-baseline gap-3">
-                    <span className="text-xs font-mono text-zinc-600 dark:text-zinc-400 w-28 shrink-0">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+                    <span className="text-xs font-mono text-zinc-600 dark:text-zinc-400 sm:w-36 shrink-0 whitespace-nowrap">
                       {item.startDate} - {item.endDate}
                     </span>
                     <div>
                       <span className="text-sm font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                         {item.title}
                       </span>
-                      <span className="text-xs text-zinc-600 dark:text-zinc-400 ml-2">
+                      <span className="text-xs text-zinc-600 dark:text-zinc-400 sm:ml-2 block sm:inline">
                         {item.subtitle}
                       </span>
                     </div>
@@ -173,7 +177,7 @@ export default function WorkExperience() {
                       transition={{ type: "spring", stiffness: 450, damping: 35 }}
                       className="overflow-hidden"
                     >
-                      <div className="mt-3 pl-0 sm:pl-[124px] pr-2 pb-2 space-y-2.5 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                      <div className="mt-3 pl-0 sm:pl-40 pr-2 pb-2 space-y-2.5 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
                         <p className="max-w-[58ch]">{item.text}</p>
                         {item.skills && item.skills.length > 0 && (
                           <div className="flex flex-wrap items-center gap-1.5 pt-1">

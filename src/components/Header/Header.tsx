@@ -15,6 +15,7 @@ export default function Header({
 
   const navItems = [
     { to: "/", label: t.nav.overview },
+    { to: "/cv", label: t.nav.cv },
     { to: "/work-experience", label: t.nav.workExperience },
     { to: "/education", label: t.nav.education },
     { to: "/about", label: t.nav.about },
@@ -30,7 +31,7 @@ export default function Header({
           className={
             isVertical
               ? "flex flex-col space-y-1"
-              : "flex flex-wrap items-center gap-1 sm:gap-2 -ml-2"
+              : "flex flex-wrap items-center gap-1 sm:gap-2"
           }
         >
           {navItems.map((item) => (
@@ -39,7 +40,7 @@ export default function Header({
                 to={item.to}
                 onClick={handleClick}
                 className={({ isActive }) =>
-                  `relative px-3 py-1.5 text-sm font-medium rounded-full transition-colors duration-200 inline-block ${
+                  `relative px-2.5 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm font-medium rounded-full transition-colors duration-200 inline-block ${
                     isActive
                       ? "text-zinc-950 dark:text-white"
                       : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100"

@@ -3,6 +3,7 @@ export type Language = "en" | "nl";
 export interface TranslationDictionary {
   nav: {
     overview: string;
+    cv: string;
     workExperience: string;
     education: string;
     about: string;
@@ -17,6 +18,14 @@ export interface TranslationDictionary {
     year: string;
     cvDownload: string;
   };
+  cv: {
+    title: string;
+    subtitle: string;
+    openNewTab: string;
+    downloadPdf: string;
+    mobilePrompt: string;
+    viewFullscreen: string;
+  };
   intro: {
     heroTitle: string;
     bioParagraph1: string;
@@ -26,6 +35,7 @@ export interface TranslationDictionary {
     exploreEdu: string;
     getInTouch: string;
     downloadCv: string;
+    viewCv: string;
     featuredHeading: string;
     featuredSubtitle: string;
     tikkieTag: string;
@@ -166,6 +176,7 @@ export const translations: Record<Language, TranslationDictionary> = {
   en: {
     nav: {
       overview: "Overview",
+      cv: "CV",
       workExperience: "Work Experience",
       education: "Education",
       about: "About",
@@ -186,37 +197,46 @@ export const translations: Record<Language, TranslationDictionary> = {
       year: "Casper Hildebrand • 2026",
       cvDownload: "CV (PDF)",
     },
+    cv: {
+      title: "Curriculum Vitae",
+      subtitle: "Single-Page ATS Format • Full-Stack & Distributed Systems",
+      openNewTab: "Open in New Tab",
+      downloadPdf: "Download PDF",
+      mobilePrompt: "Viewing on a mobile device? Open fullscreen for the optimal reading experience.",
+      viewFullscreen: "View Fullscreen PDF",
+    },
     intro: {
-      heroTitle: "Software engineer building high-throughput merchant payment rails at Tikkie.",
+      heroTitle: "Full-stack engineer building high-throughput merchant payment rails at Tikkie.",
       bioParagraph1:
-        "I engineer merchant payment systems for Tikkie Business (ABN AMRO), building resilient settlement workflows and high-throughput APIs powering millions of Dutch transactions.",
+        "Full-stack software engineer at Tikkie (ABN AMRO) specializing in resilient payment settlement workflows and event-driven merchant APIs powering millions of Dutch transactions.",
       bioParagraph2:
         "Double Master's from TU Delft in Computer Science (Data Science) and Science Education. Thesis researched clickstream telemetry across 175k learners. Co-founded Bitsized.",
       bioParagraph3: "",
       exploreWork: "Explore Work Experience",
       exploreEdu: "Education & Degrees",
-      getInTouch: "Get in touch →",
+      getInTouch: "Get in touch",
       downloadCv: "Download CV (PDF)",
+      viewCv: "Curriculum Vitae",
       featuredHeading: "Selected Work",
       featuredSubtitle: "",
       tikkieTag: "Production Systems",
       tikkieTitle: "Tikkie Business",
       tikkieSubtitle: "Merchant Settlement & Payment Rails",
       tikkieDescription:
-        "Resilient merchant payment rails powering millions of Dutch transactions: fault-tolerant settlement pipelines, partner APIs, and zero-downtime reliability.",
+        "High-concurrency merchant payment rails for Tikkie Business: idempotent partner endpoints, resilient settlement pipelines, and real-time transaction telemetry.",
       tikkieLink: "View career history →",
       thesisTag: "TU Delft · Research",
       thesisTitle: "Debugging the Divide: 174,988 CS MOOC Learners",
       thesisSubtitle: "Clickstream Telemetry & Vocational Motivation",
       thesisDescription:
-        "Empirical thesis analyzing gender participation across TU Delft CS MOOCs. Revealed women enroll with +16.7 pp higher career advancement intent than men, who engage primarily for leisure.",
+        "Large-scale telemetry study analyzing clickstream logs and engagement trajectories across 174,988 Open edX learners using k-means clustering and statistical regression in Python/Pandas.",
       thesisLink: "Explore research telemetry →",
       thesisSkills: ["k-Means Clustering", "Clickstream Telemetry", "Python / Pandas"],
       bitsizedTag: "Co-Founder & Lead Engineer",
       bitsizedTitle: "Bitsized",
       bitsizedSubtitle: "Interactive Code Execution Engine",
       bitsizedDescription:
-        "Built browser-based code execution sandboxes and interactive CS curriculum tooling adopted by Dutch secondary schools.",
+        "Architected isolated browser-based execution sandboxes and interactive curriculum tooling adopted by Dutch secondary school CS departments.",
       bitsizedLink: "View experience →",
     },
     dataExplorer: {
@@ -298,22 +318,74 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Present",
           current: true,
           category: "engineering",
-          text: "• **Merchant Infrastructure**: Engineered merchant payment rails powering thousands of Dutch enterprises and millions of real-time transactions.\n• **API Reliability**: Built fault-tolerant settlement pipelines, idempotent partner endpoints, and zero-downtime releases.\n• **Frontend Dashboards**: Developed merchant portals with React, TypeScript, and AWS cloud infrastructure.",
+          text: "• **Merchant Infrastructure**: Engineered merchant payment rails powering thousands of Dutch enterprises and millions of real-time transactions for Tikkie Business.\n• **API Reliability**: Designed fault-tolerant payment settlement workflows, idempotent partner APIs, and resilient transactional pipelines.\n• **Merchant Telemetry**: Developed merchant analytics portals with React, TypeScript, Node.js, and AWS serverless infrastructure.",
           skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Fintech Scale"],
         },
         {
-          title: "Software Engineer | Young Talent",
+          title: "Software Engineer -- Distributed Systems Fellowship",
           subtitle: "Harvest",
           image: {
             uri: "harvest.svg",
-            alt: "Harvest Young Talent",
+            alt: "Harvest Fellowship",
           },
           startDate: "Feb 2026",
           endDate: "Present",
           current: true,
           category: "engineering",
-          text: "• **Distributed Architecture**: Selective engineering fellowship running parallel to production at Tikkie.\n• **Resilience Engineering**: Bi-weekly intensive labs on event-driven design, fault isolation, and high-concurrency systems.",
-          skills: ["Distributed Systems", "Software Architecture", "Leadership"],
+          text: "• **Distributed Systems Fellowship**: Advanced engineering labs parallel to production at Tikkie.\n• **Resilience Engineering**: Deep dives into event-driven design, fault isolation, backpressure strategies, and high-concurrency systems.",
+          skills: ["Distributed Systems", "Software Architecture", "Resilience Engineering"],
+        },
+        {
+          title: "Platform Co-Founder & Lead Engineer",
+          subtitle: "Bitsized",
+          image: {
+            uri: "bitsized.jpg",
+            alt: "Bitsized",
+          },
+          startDate: "Jan 2023",
+          endDate: "Feb 2025",
+          category: "engineering",
+          text: "Co-founded an interactive educational coding platform adopted by Dutch secondary school CS departments. Engineered isolated in-browser code execution sandboxes, real-time code evaluation, and teacher assignment management tooling.",
+          skills: ["TypeScript", "React", "Node.js", "Docker", "Sandboxed Execution"],
+        },
+        {
+          title: "Software Analyst & Consultant",
+          subtitle: "Netcompany",
+          image: {
+            uri: "netcompany.jpg",
+            alt: "Netcompany",
+          },
+          startDate: "Sep 2021",
+          endDate: "Jun 2022",
+          category: "engineering",
+          text: "Re-architected enterprise data migration workflows and specifications for Dutch public sector enterprise systems (Vervangingsfonds & Participatiefonds), and built full-stack commercial property energy modeling tools.",
+          skills: ["Systems Analysis", "Full Stack Development", "Public Sector IT"],
+        },
+        {
+          title: "Software Developer (Backend & Frontend)",
+          subtitle: "Bexter",
+          image: {
+            uri: "bexter.jpg",
+            alt: "Bexter",
+          },
+          startDate: "Sep 2019",
+          endDate: "May 2021",
+          category: "engineering",
+          text: "Engineered backend services and modernized responsive web portals for TrackOnline, an enterprise asset logistics platform managing reusable supply chain containers.",
+          skills: ["Backend Development", "Frontend Engineering", "JavaScript", "Logistics Systems"],
+        },
+        {
+          title: "Developer",
+          subtitle: "Muziekweb",
+          image: {
+            uri: "muziekweb.jpg",
+            alt: "Muziekweb",
+          },
+          startDate: "May 2020",
+          endDate: "Jul 2020",
+          category: "engineering",
+          text: "Automated data ingestion pipeline reconciling 100k+ discography records via the Discogs API with verification UI.",
+          skills: ["Python", "REST APIs", "Data Ingestion Pipeline"],
         },
         {
           title: "Computer Science Teacher",
@@ -338,45 +410,6 @@ export const translations: Record<Language, TranslationDictionary> = {
           skills: ["Computer Architecture", "HTML/CSS", "Pedagogy"],
         },
         {
-          title: "Platform Co-Founder & Engineer",
-          subtitle: "Bitsized",
-          image: {
-            uri: "bitsized.jpg",
-            alt: "Bitsized",
-          },
-          startDate: "Jan 2023",
-          endDate: "Feb 2025",
-          category: "engineering",
-          text: "Co-founded an interactive educational coding platform used by Dutch secondary school students. Engineered real-time in-browser code execution sandboxes and curriculum management tooling with fellow TU Delft students.",
-          skills: ["React", "Node.js", "EdTech Platform", "Product Engineering"],
-        },
-        {
-          title: "Software Analyst",
-          subtitle: "Netcompany",
-          image: {
-            uri: "netcompany.jpg",
-            alt: "Netcompany",
-          },
-          startDate: "Feb 2022",
-          endDate: "Jun 2022",
-          category: "engineering",
-          text: "Re-architected data migration flows and technical specifications for national public sector enterprise applications (Vervangingsfonds, Participatiefonds).",
-          skills: ["Systems Analysis", "Requirements Engineering", "Public Sector IT"],
-        },
-        {
-          title: "Software Consultant",
-          subtitle: "Netcompany",
-          image: {
-            uri: "netcompany.jpg",
-            alt: "Netcompany",
-          },
-          startDate: "Sep 2021",
-          endDate: "Feb 2022",
-          category: "engineering",
-          text: "Built full-stack evaluation tools modeling commercial property energy metrics and governmental compliance regulations.",
-          skills: ["Full Stack Development", "Governmental IT", "Sustainability Metrics"],
-        },
-        {
           title: "BSc CS&E Board of Studies Member",
           subtitle: "Delft University of Technology",
           image: {
@@ -390,32 +423,6 @@ export const translations: Record<Language, TranslationDictionary> = {
           skills: ["Curriculum Quality", "Academic Governance"],
         },
         {
-          title: "Frontend Developer",
-          subtitle: "Bexter",
-          image: {
-            uri: "bexter.jpg",
-            alt: "Bexter",
-          },
-          startDate: "Mar 2020",
-          endDate: "May 2021",
-          category: "engineering",
-          text: "Maintained and modernized frontend features across Bexter's three client web portals and marketing platforms.",
-          skills: ["Frontend Engineering", "JavaScript", "Web Portals"],
-        },
-        {
-          title: "Developer",
-          subtitle: "Muziekweb",
-          image: {
-            uri: "muziekweb.jpg",
-            alt: "Muziekweb",
-          },
-          startDate: "May 2020",
-          endDate: "Jul 2020",
-          category: "engineering",
-          text: "Automated data ingestion pipeline reconciling 100k+ discography records via the Discogs API with verification UI.",
-          skills: ["Discogs API", "Data Ingestion Pipeline", "UI Verification"],
-        },
-        {
           title: "Computer Science Teacher",
           subtitle: "Pieter Groen",
           image: {
@@ -425,21 +432,8 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Aug 2020",
           endDate: "Jan 2021",
           category: "education",
-          text: "Taught high school computer science cohorts introductory programming principles (variables, control flow, functions, basic algorithms) and visual computing with Tinkercad.",
-          skills: ["Introductory CS", "Algorithms", "Tinkercad"],
-        },
-        {
-          title: "Junior Software Developer",
-          subtitle: "Bexter",
-          image: {
-            uri: "bexter.jpg",
-            alt: "Bexter",
-          },
-          startDate: "Sep 2019",
-          endDate: "Mar 2020",
-          category: "engineering",
-          text: "Engineered backend services for TrackOnline, an asset management platform managing reusable logistics assets (containers, roll cages, dollies).",
-          skills: ["Backend Development", "Asset Management", "Logistics Systems"],
+          text: "Taught high school computer science cohorts introductory programming principles (variables, control flow, functions, basic algorithms) and visual logic.",
+          skills: ["Introductory CS", "Algorithms", "Visual Logic"],
         },
         {
           title: "Student Ambassador & Teaching Assistant",
@@ -460,7 +454,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       title: "Education & Research",
       intro:
         "Double Master's graduate from Delft University of Technology across Computer Science (Data Science specialization) and Science Education & Communication, with international exchange studies at KTH Royal Institute of Technology.",
-      thesisTitle: "Academic Milestones",
+      thesisTitle: "Degrees & Academic Credentials",
       to: "to",
       items: [
         {
@@ -559,24 +553,25 @@ export const translations: Record<Language, TranslationDictionary> = {
             "Studying classical opening theory and tactical calculation. Chess rewards patience, disciplined calculation of candidate moves, and strict consideration of downstream consequences.",
         },
         {
-          title: "Developer Tooling & Automation",
-          subtitle: "Pragmatic Engineering Tooling",
+          title: "Modular Synthesizers & Audio",
+          subtitle: "Signal Processing & Sound Design",
           description:
-            "Experimenting with developer tools, automated test suites, and workflow tooling that measurably accelerate real software production without sacrificing verification.",
+            "Exploring sound synthesis and signal routing. Patching analog and digital synthesizers mirrors distributed architecture: discrete nodes, explicit signal contracts, feedback loops, and deterministic transformations.",
         },
       ],
     },
     outreach: {
       heading: "Building resilient systems together.",
       subheading:
-        "Available for staff engineering, fintech architecture, and technical advisory discussions.",
+        "Available for backend systems, distributed architecture, and fintech platform engineering discussions.",
       emailBtn: "Email Casper",
-      cvBtn: "Download Full CV (PDF)",
+      cvBtn: "Curriculum Vitae (PDF)",
     },
   },
   nl: {
     nav: {
       overview: "Overzicht",
+      cv: "CV",
       workExperience: "Werkervaring",
       education: "Opleiding",
       about: "Over mij",
@@ -597,37 +592,46 @@ export const translations: Record<Language, TranslationDictionary> = {
       year: "Casper Hildebrand • 2026",
       cvDownload: "CV (PDF)",
     },
+    cv: {
+      title: "Curriculum Vitae",
+      subtitle: "Enkelzijdig ATS-Formaat • Full-Stack & Gedistribueerde Systemen",
+      openNewTab: "Openen in nieuw tabblad",
+      downloadPdf: "Download PDF",
+      mobilePrompt: "Bekijk je dit op mobiel? Open op volledig scherm voor de beste leeservaring.",
+      viewFullscreen: "Bekijk PDF op volledig scherm",
+    },
     intro: {
-      heroTitle: "Software engineer voor hoog-volume betaalinfrastructuur bij Tikkie.",
+      heroTitle: "Full-stack engineer voor hoog-volume betaalinfrastructuur bij Tikkie.",
       bioParagraph1:
-        "Ik ontwikkel betaalinfrastructuur voor Tikkie Zakelijk (ABN AMRO): veerkrachtige settlement flows en high-throughput API's voor miljoenen Nederlandse transacties.",
+        "Full-stack software engineer bij Tikkie (ABN AMRO), gespecialiseerd in veerkrachtige settlement workflows en event-driven merchant API's voor miljoenen Nederlandse transacties.",
       bioParagraph2:
         "Dubbele Master aan de TU Delft in Computer Science (Data Science) en Science Education. Scriptieonderzoek naar telemetrie van 175k cursisten. Mede-oprichter van Bitsized.",
       bioParagraph3: "",
       exploreWork: "Bekijk werkervaring",
       exploreEdu: "Opleidingen & Titels",
-      getInTouch: "Neem contact op →",
+      getInTouch: "Neem contact op",
       downloadCv: "Download CV (PDF)",
+      viewCv: "Curriculum Vitae",
       featuredHeading: "Uitgewerkt Werk",
       featuredSubtitle: "",
       tikkieTag: "Productiesystemen",
       tikkieTitle: "Tikkie Zakelijk",
       tikkieSubtitle: "Merchant Settlement & Betaalrails",
       tikkieDescription:
-        "Veerkrachtige zakelijke betaalinfrastructuur voor miljoenen Nederlandse transacties: fouttolerante settlement-pipelines, partner-API's en hoge beschikbaarheid.",
+        "Hoog-concurrency betaalinfrastructuur voor Tikkie Zakelijk: idempotente partner-endpoints, veerkrachtige settlement pipelines en realtime transactietelemetrie.",
       tikkieLink: "Bekijk werkervaring →",
       thesisTag: "TU Delft · Onderzoek",
       thesisTitle: "Debugging the Divide: 174.988 Cursisten",
       thesisSubtitle: "Telemetrie & Beroepsmatige Motivatie",
       thesisDescription:
-        "Empirisch onderzoek naar genderverschillen in TU Delft informatica-MOOCs. Vrouwen starten met +16,7 pp hogere loopbaandoelen dan mannen, die primair voor de hobby meedoen.",
+        "Grootschalig telemetrie-onderzoek naar clickstream-logs en gedragstrajecten van 174.988 Open edX cursisten via k-means clustering en regressieanalyse in Python/Pandas.",
       thesisLink: "Bekijk onderzoeksdata →",
       thesisSkills: ["k-Means Clustering", "Clickstream Telemetrie", "Python / Pandas"],
       bitsizedTag: "Mede-oprichter & Lead Engineer",
       bitsizedTitle: "Bitsized",
       bitsizedSubtitle: "Interactieve Code Execution Engine",
       bitsizedDescription:
-        "In-browser code execution sandboxes en interactieve informatica-curriculumtools ontwikkeld voor Nederlandse middelbare scholen.",
+        "In-browser code-executie sandboxes en interactieve curriculumtools ontworpen voor informaticasecties in het Nederlands voortgezet onderwijs.",
       bitsizedLink: "Bekijk ervaring →",
     },
     dataExplorer: {
@@ -709,22 +713,74 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Heden",
           current: true,
           category: "engineering",
-          text: "• **Betaalinfrastructuur**: Ontwikkeling van zakelijke betaalinfrastructuur voor duizenden bedrijven en miljoenen transacties via Tikkie Zakelijk.\n• **API Betrouwbaarheid**: Bouwen van veerkrachtige settlement-pipelines, partner-integraties en zero-downtime releases.\n• **Merchant Dashboards**: Ontwikkeling van zakelijke dashboards met React, TypeScript en AWS cloudarchitectuur.",
+          text: "• **Betaalinfrastructuur**: Ontwikkeling van zakelijke betaalrails voor duizenden bedrijven en miljoenen realtime transacties via Tikkie Zakelijk.\n• **API Betrouwbaarheid**: Ontwerp van fouttolerante settlement workflows, idempotente partner-API's en veerkrachtige transactionele pipelines.\n• **Merchant Telemetrie**: Bouw van zakelijke analyseportalen met React, TypeScript, Node.js en AWS serverless infrastructuur.",
           skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Fintech Schaal"],
         },
         {
-          title: "Software Engineer | Young Talent",
+          title: "Software Engineer -- Distributed Systems Fellowship",
           subtitle: "Harvest",
           image: {
             uri: "harvest.svg",
-            alt: "Harvest Young Talent",
+            alt: "Harvest Fellowship",
           },
           startDate: "feb 2026",
           endDate: "Heden",
           current: true,
           category: "engineering",
-          text: "• **Gedistribueerde Architectuur**: Selectief engineering fellowship parallel aan productiewerk bij Tikkie.\n• **Resilience Engineering**: Tweewekelijkse intensieve labs over event-driven architecturen, foutisolatie en concurrency.",
-          skills: ["Gedistribueerde Systemen", "Softwarearchitectuur", "Leiderschap"],
+          text: "• **Distributed Systems Fellowship**: Geavanceerde engineering-labs parallel aan productie bij Tikkie.\n• **Resilience Engineering**: Diepgaande labs over event-driven architecturen, foutisolatie, backpressure strategieën en concurrency.",
+          skills: ["Gedistribueerde Systemen", "Softwarearchitectuur", "Resilience Engineering"],
+        },
+        {
+          title: "Platform Mede-oprichter & Lead Engineer",
+          subtitle: "Bitsized",
+          image: {
+            uri: "bitsized.jpg",
+            alt: "Bitsized",
+          },
+          startDate: "jan 2023",
+          endDate: "feb 2025",
+          category: "engineering",
+          text: "Mede-oprichter van een interactief programmeerplatform geadopteerd door informaticasecties in het Nederlands voortgezet onderwijs. Geïsoleerde in-browser code-executie sandboxes, realtime code-evaluatie en curriculumbeheer gebouwd.",
+          skills: ["TypeScript", "React", "Node.js", "Docker", "Sandboxed Execution"],
+        },
+        {
+          title: "Software Analyst & Consultant",
+          subtitle: "Netcompany",
+          image: {
+            uri: "netcompany.jpg",
+            alt: "Netcompany",
+          },
+          startDate: "sep 2021",
+          endDate: "jun 2022",
+          category: "engineering",
+          text: "Herontwerp van datamigraties en enterprise-specificaties voor Nederlandse overheidsinstanties (Vervangingsfonds & Participatiefonds), en full-stack software ontwikkeld voor vastgoed-energiemodellering.",
+          skills: ["Systeemanalyse", "Full Stack Ontwikkeling", "Overheids-IT"],
+        },
+        {
+          title: "Software Developer (Backend & Frontend)",
+          subtitle: "Bexter",
+          image: {
+            uri: "bexter.jpg",
+            alt: "Bexter",
+          },
+          startDate: "sep 2019",
+          endDate: "mei 2021",
+          category: "engineering",
+          text: "Backend services ontwikkeld en webportalen gemoderniseerd voor TrackOnline, een enterprise asset logistiek platform voor meermalige supply chain ladingdragers.",
+          skills: ["Backend Ontwikkeling", "Frontend Engineering", "JavaScript", "Logistieke Systemen"],
+        },
+        {
+          title: "Developer",
+          subtitle: "Muziekweb",
+          image: {
+            uri: "muziekweb.jpg",
+            alt: "Muziekweb",
+          },
+          startDate: "mei 2020",
+          endDate: "jul 2020",
+          category: "engineering",
+          text: "Geautomatiseerde data-ingestie pipeline gebouwd die 100k+ discografie-records via de Discogs API verifieerde en importeerde.",
+          skills: ["Python", "REST APIs", "Data Ingestie Pipeline"],
         },
         {
           title: "Docent Informatica",
@@ -749,45 +805,6 @@ export const translations: Record<Language, TranslationDictionary> = {
           skills: ["Computerarchitectuur", "HTML/CSS", "Didactiek"],
         },
         {
-          title: "Platform Mede-oprichter & Engineer",
-          subtitle: "Bitsized",
-          image: {
-            uri: "bitsized.jpg",
-            alt: "Bitsized",
-          },
-          startDate: "jan 2023",
-          endDate: "feb 2025",
-          category: "engineering",
-          text: "Mede-oprichter van een interactief programmeerplatform voor middelbare scholieren. Bouw van een in-browser code-executieomgeving en docentcurriculum-tools samen met medestudenten van de TU Delft.",
-          skills: ["React", "Node.js", "Educatief Platform", "Productontwikkeling"],
-        },
-        {
-          title: "Software Analyst",
-          subtitle: "Netcompany",
-          image: {
-            uri: "netcompany.jpg",
-            alt: "Netcompany",
-          },
-          startDate: "feb 2022",
-          endDate: "jun 2022",
-          category: "engineering",
-          text: "Herontwerp van datamigraties en technische specificaties voor publieke enterprise-applicaties (Vervangingsfonds, Participatiefonds).",
-          skills: ["Systeemanalyse", "Requirements Engineering", "Overheids-IT"],
-        },
-        {
-          title: "Software Consultant",
-          subtitle: "Netcompany",
-          image: {
-            uri: "netcompany.jpg",
-            alt: "Netcompany",
-          },
-          startDate: "sep 2021",
-          endDate: "feb 2022",
-          category: "engineering",
-          text: "Full-stack rekentools ontwikkeld voor duurzaamheidsstatistieken en milieuregels voor vastgoedeigenaren.",
-          skills: ["Softwareontwikkeling", "Overheids-IT", "Duurzaamheidsdata"],
-        },
-        {
           title: "Opleidingscommissie BSc Technische Informatica",
           subtitle: "Technische Universiteit Delft",
           image: {
@@ -801,32 +818,6 @@ export const translations: Record<Language, TranslationDictionary> = {
           skills: ["Onderwijskwaliteit", "Curriculumevaluatie"],
         },
         {
-          title: "Frontend Developer",
-          subtitle: "Bexter",
-          image: {
-            uri: "bexter.jpg",
-            alt: "Bexter",
-          },
-          startDate: "mrt 2020",
-          endDate: "mei 2021",
-          category: "engineering",
-          text: "Onderhoud en ontwikkeling van frontend-functionaliteiten over de drie webportalen en dashboards van Bexter.",
-          skills: ["Frontend Engineering", "JavaScript", "Webportalen"],
-        },
-        {
-          title: "Developer",
-          subtitle: "Muziekweb",
-          image: {
-            uri: "muziekweb.jpg",
-            alt: "Muziekweb",
-          },
-          startDate: "mei 2020",
-          endDate: "jul 2020",
-          category: "engineering",
-          text: "Geautomatiseerde data-ingestie pipeline gebouwd die 100k+ discografie-records via de Discogs API verifieerde en importeerde.",
-          skills: ["Discogs API", "Data-inname", "UI Verificatie"],
-        },
-        {
           title: "Docent Informatica",
           subtitle: "Pieter Groen",
           image: {
@@ -836,21 +827,8 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "aug 2020",
           endDate: "jan 2021",
           category: "education",
-          text: "Informaticaonderwijs verzorgd voor middelbare scholieren: basisprincipes programmeren (variabelen, functies, algoritmen) en grafisch programmeren in Tinkercad.",
-          skills: ["Inleidende Informatica", "Algoritmen", "Tinkercad"],
-        },
-        {
-          title: "Junior Software Developer",
-          subtitle: "Bexter",
-          image: {
-            uri: "bexter.jpg",
-            alt: "Bexter",
-          },
-          startDate: "sep 2019",
-          endDate: "mrt 2020",
-          category: "engineering",
-          text: "Backend-ontwikkeling aan TrackOnline, een asset management platform voor meermalige logistieke ladingdragers zoals rolcontainers en dollies.",
-          skills: ["Backend Ontwikkeling", "Asset Management", "Logistieke Systemen"],
+          text: "Informaticaonderwijs verzorgd voor middelbare scholieren: basisprincipes programmeren (variabelen, functies, algoritmen) en visuele logica.",
+          skills: ["Inleidende Informatica", "Algoritmen", "Visuele Logica"],
         },
         {
           title: "Studentambassadeur & Student-assistent",
@@ -871,7 +849,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       title: "Opleiding & Onderzoek",
       intro:
         "Dubbele Master aan de Technische Universiteit Delft in Computer Science (Data Science specialisatie) en Science Education & Communication, inclusief uitwisseling aan het KTH Royal Institute of Technology in Stockholm.",
-      thesisTitle: "Academische Mijlpalen",
+      thesisTitle: "Academische Titels & Diploma's",
       to: "tot",
       items: [
         {
@@ -970,19 +948,19 @@ export const translations: Record<Language, TranslationDictionary> = {
             "Schaken traint strategisch rekenen, discipline in kandidaat-zetten en structurele patroonherkenning onder tijdsdruk.",
         },
         {
-          title: "Developer Ervaring & Tooling",
-          subtitle: "Ontwikkelsnelheid & Verificatie",
+          title: "Modulaire Synthesizers & Audio",
+          subtitle: "Signaalverwerking & Sound Design",
           description:
-            "Lokale tools, build-optimalisaties en automatische verificatie die de feedbackcyclus van het team meetbaar verkorten.",
+            "Onderzoek naar geluidssynthese en signaalroutering. Het patchen van analoge en digitale synthesizers weerspiegelt gedistribueerde architecturen: discrete knooppunten, expliciete signaalcontracten, feedbackloops en deterministische transformaties.",
         },
       ],
     },
     outreach: {
       heading: "Samen robuuste systemen bouwen.",
       subheading:
-        "Beschikbaar voor staff engineering, fintech architectuur en technisch advies.",
+        "Beschikbaar voor gesprekken over backend systemen, gedistribueerde architectuur en fintech platform engineering.",
       emailBtn: "E-mail Casper",
-      cvBtn: "Download Volledig CV (PDF)",
+      cvBtn: "Curriculum Vitae (PDF)",
     },
   },
 };

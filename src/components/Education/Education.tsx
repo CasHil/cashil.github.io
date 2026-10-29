@@ -15,17 +15,19 @@ export default function Education() {
         </p>
       </div>
 
-      <div className="pt-2">
-        <DataExplorer headingLevel="h2" />
-      </div>
-
-      <div className="pt-10 border-t border-zinc-200/80 dark:border-white/10 space-y-6">
+      {/* Academic Credentials & Degrees (Immediate Recruiter Verification) */}
+      <div className="space-y-6">
         <div>
           <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-zinc-950 dark:text-white">
             {t.education.thesisTitle}
           </h2>
         </div>
         <Timeline data={t.education.items} />
+      </div>
+
+      {/* Research Telemetry Deep Dive */}
+      <div className="pt-10 border-t border-zinc-200/80 dark:border-white/10">
+        <DataExplorer headingLevel="h2" />
       </div>
     </div>
   );

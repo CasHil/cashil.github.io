@@ -40,17 +40,16 @@ function Masthead() {
         </Link>
 
         {/* Action Controls & Social */}
-        <div className="flex items-center gap-2 sm:gap-3 self-start sm:self-auto">
-          {/* CV Direct Download Pill */}
-          <a
-            href="/cv/Casper_Hildebrand_CV.pdf"
-            download="Casper_Hildebrand_CV.pdf"
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 self-start sm:self-auto">
+          {/* CV Route Pill */}
+          <Link
+            to="/cv"
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-medium border border-zinc-300 dark:border-zinc-700 hover:border-emerald-600 dark:hover:border-emerald-400 text-zinc-700 dark:text-zinc-300 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
-            title="Download Casper's CV as PDF"
+            title="View Casper's Curriculum Vitae"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
             <span>{t.sidebar.cvDownload}</span>
-          </a>
+          </Link>
 
           <span className="hidden sm:inline-block h-4 w-[1px] bg-zinc-200 dark:bg-white/10" aria-hidden="true" />
 
@@ -154,15 +153,14 @@ function AppContent() {
                   <span>{t.outreach.emailBtn}</span>
                   <span className="font-mono" aria-hidden="true">→</span>
                 </a>
-                <a
-                  href="/cv/Casper_Hildebrand_CV.pdf"
-                  download="Casper_Hildebrand_CV.pdf"
+                <Link
+                  to="/cv"
                   className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-zinc-300 dark:border-zinc-700 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors"
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                   <span>{t.outreach.cvBtn}</span>
-                  <span className="font-mono text-zinc-400" aria-hidden="true">↓</span>
-                </a>
+                  <span className="font-mono text-zinc-400" aria-hidden="true">→</span>
+                </Link>
               </div>
             </div>
           </section>
