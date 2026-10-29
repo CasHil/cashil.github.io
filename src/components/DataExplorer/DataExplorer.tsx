@@ -101,22 +101,22 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
         </div>
       </div>
 
-      {/* Tab Navigation (Fluid Organic Pill Switcher) */}
-      <div className="flex items-center gap-1.5 border-b border-zinc-200/80 dark:border-white/10 pb-3">
+      {/* Tab Navigation (Editorial Tab Switcher) */}
+      <div className="flex items-center gap-6 border-b border-zinc-200/80 dark:border-white/10 pb-2">
         <button
           type="button"
           onClick={() => setActiveTab("motivations")}
-          className={`relative px-4 py-2.5 min-h-[44px] text-xs sm:text-sm font-medium rounded-full transition-colors duration-200 ${
+          className={`relative pb-2 text-xs sm:text-sm font-medium transition-colors ${
             activeTab === "motivations"
-              ? "text-zinc-950 dark:text-white"
-              : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100"
+              ? "text-zinc-950 dark:text-white font-semibold"
+              : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
           }`}
         >
-          <span className="relative z-10">{d.tabMotivations}</span>
+          <span>{d.tabMotivations}</span>
           {activeTab === "motivations" && (
             <motion.div
-              layoutId="dataExplorerTabPill"
-              className="absolute inset-0 rounded-full bg-zinc-200/80 dark:bg-zinc-800/90 shadow-sm"
+              layoutId="dataExplorerTabIndicator"
+              className="absolute -bottom-[9px] left-0 right-0 h-[2px] bg-emerald-600 dark:bg-emerald-400"
               transition={{ type: "spring", stiffness: 400, damping: 32 }}
             />
           )}
@@ -124,17 +124,17 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
         <button
           type="button"
           onClick={() => setActiveTab("clusters")}
-          className={`relative px-4 py-2.5 min-h-[44px] text-xs sm:text-sm font-medium rounded-full transition-colors duration-200 ${
+          className={`relative pb-2 text-xs sm:text-sm font-medium transition-colors ${
             activeTab === "clusters"
-              ? "text-zinc-950 dark:text-white"
-              : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100"
+              ? "text-zinc-950 dark:text-white font-semibold"
+              : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
           }`}
         >
-          <span className="relative z-10">{d.tabClusters}</span>
+          <span>{d.tabClusters}</span>
           {activeTab === "clusters" && (
             <motion.div
-              layoutId="dataExplorerTabPill"
-              className="absolute inset-0 rounded-full bg-zinc-200/80 dark:bg-zinc-800/90 shadow-sm"
+              layoutId="dataExplorerTabIndicator"
+              className="absolute -bottom-[9px] left-0 right-0 h-[2px] bg-emerald-600 dark:bg-emerald-400"
               transition={{ type: "spring", stiffness: 400, damping: 32 }}
             />
           )}
@@ -257,10 +257,10 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
                   </span>
                 </div>
                 <div className="pt-0.5">
-                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-mono font-medium bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-400 border border-zinc-200/50 dark:border-white/5">
+                  <div className="flex items-center gap-1.5 text-xs font-mono text-zinc-600 dark:text-zinc-400">
                     <span className={`w-1.5 h-1.5 rounded-full ${cluster.indicatorColor}`} />
-                    {cluster.behavior}
-                  </span>
+                    <span>{cluster.behavior}</span>
+                  </div>
                 </div>
                 <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-normal">
                   {cluster.description}
@@ -269,7 +269,7 @@ export default function DataExplorer({ headingLevel = "h3" }: DataExplorerProps)
             ))}
           </div>
 
-          <div className="border-l-2 border-zinc-400 dark:border-zinc-600 pl-4 py-1 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-[58ch]">
+          <div className="border-l-2 border-emerald-600 dark:border-emerald-500 bg-emerald-50/40 dark:bg-emerald-950/20 pl-4 py-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-[58ch]">
             <strong className="text-zinc-900 dark:text-white font-semibold">{d.methodologyTitle}</strong>{" "}
             {d.methodologyText}
           </div>

@@ -39,9 +39,12 @@ export default function TimelineItem({ data }: TimelineItemProps) {
             {data.startDate} {toLabel} {data.endDate}
           </span>
           {data.current && (
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-mono font-medium bg-emerald-500/10 dark:bg-emerald-500/15 text-emerald-800 dark:text-emerald-400 border border-emerald-500/20">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-              {currentLabel}
+            <span className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-800 dark:text-emerald-400 font-medium">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
+              </span>
+              <span>{currentLabel}</span>
             </span>
           )}
         </div>
@@ -78,17 +81,20 @@ export default function TimelineItem({ data }: TimelineItemProps) {
         )
       )}
 
-      {/* Tech Stack / Skills (Tactile Micro-Pills) */}
+      {/* Tech Stack / Skills (Typographic Stack Stream) */}
       {data.skills && data.skills.length > 0 && (
-        <div className="flex flex-wrap items-center gap-1.5 pt-1.5">
-          {data.skills.map((skill) => (
-            <span
-              key={skill}
-              className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono bg-zinc-100 dark:bg-zinc-800/70 text-zinc-600 dark:text-zinc-300 border border-zinc-200/50 dark:border-white/5 hover:border-zinc-300 dark:hover:border-white/20 transition-colors"
-            >
-              {skill}
-            </span>
-          ))}
+        <div className="pt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 font-mono text-xs">
+          <span className="text-zinc-600 dark:text-zinc-400 uppercase tracking-widest text-[10px] font-semibold">
+            Stack:
+          </span>
+          <span className="text-zinc-700 dark:text-zinc-300">
+            {data.skills.map((skill, idx) => (
+              <span key={skill}>
+                {idx > 0 && <span className="mx-1.5 text-emerald-600/40 dark:text-emerald-400/40">·</span>}
+                <span className="hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">{skill}</span>
+              </span>
+            ))}
+          </span>
         </div>
       )}
     </article>

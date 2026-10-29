@@ -20,7 +20,7 @@ export default function Cv() {
             href="/cv/Casper_Hildebrand_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-medium text-xs sm:text-sm hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors shadow-xs"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-md bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-medium text-xs sm:text-sm hover:bg-emerald-800 dark:hover:bg-emerald-300 dark:hover:text-zinc-950 transition-colors shadow-xs"
           >
             <span>{t.cv.openNewTab}</span>
             <span className="font-mono" aria-hidden="true">↗</span>
@@ -28,7 +28,7 @@ export default function Cv() {
           <a
             href="/cv/Casper_Hildebrand_CV.pdf"
             download="Casper_Hildebrand_CV.pdf"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-zinc-300 dark:border-zinc-700 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-md border border-zinc-300 dark:border-zinc-700 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-emerald-600 dark:hover:border-emerald-400 transition-colors"
           >
             <span>{t.cv.downloadPdf}</span>
             <span className="font-mono text-zinc-400" aria-hidden="true">↓</span>
@@ -71,7 +71,7 @@ export default function Cv() {
                   href="/cv/Casper_Hildebrand_CV.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 text-xs font-medium"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 text-xs font-medium hover:bg-emerald-800 dark:hover:bg-emerald-300 transition-colors"
                 >
                   {t.cv.openNewTab} ↗
                 </a>

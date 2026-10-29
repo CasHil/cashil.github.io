@@ -40,10 +40,10 @@ export default function Header({
                 to={item.to}
                 onClick={handleClick}
                 className={({ isActive }) =>
-                  `relative px-2.5 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm font-medium rounded-full transition-colors duration-200 inline-block ${
+                  `relative px-2.5 sm:px-3 py-1.5 text-xs sm:text-sm font-medium transition-colors duration-150 inline-block rounded-md ${
                     isActive
-                      ? "text-zinc-950 dark:text-white"
-                      : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100"
+                      ? "text-zinc-950 dark:text-white font-semibold"
+                      : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100 hover:bg-zinc-100/60 dark:hover:bg-zinc-800/50"
                   }`
                 }
               >
@@ -52,8 +52,8 @@ export default function Header({
                     <span className="relative z-10">{item.label}</span>
                     {isActive && (
                       <motion.div
-                        layoutId="activeNavPill"
-                        className="absolute inset-0 rounded-full bg-zinc-200/80 dark:bg-zinc-800/90 shadow-sm"
+                        layoutId="activeNavIndicator"
+                        className="absolute bottom-0 left-2 right-2 h-[2px] bg-emerald-600 dark:bg-emerald-400"
                         transition={{ type: "spring", stiffness: 400, damping: 32 }}
                       />
                     )}
