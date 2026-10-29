@@ -160,7 +160,7 @@ export default function WorkExperience() {
 
                   <div className="flex items-center gap-2.5 self-end sm:self-auto shrink-0">
                     <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono font-medium uppercase tracking-wider bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-400 border border-zinc-200/50 dark:border-white/5">
-                      {item.category === "engineering" ? "Systems" : "Pedagogy"}
+                      {item.category === "engineering" ? "Engineering" : "Education"}
                     </span>
                     <span className={`inline-flex items-center justify-center h-5 w-5 rounded-full bg-zinc-100 dark:bg-zinc-800/80 text-zinc-500 dark:text-zinc-400 border border-zinc-200/50 dark:border-white/5 text-xs font-mono transition-transform duration-200 ${isExpanded ? "rotate-45" : "rotate-0"}`}>
                       +

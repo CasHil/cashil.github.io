@@ -150,17 +150,10 @@ export interface TranslationDictionary {
     paragraph1: string;
     paragraph2: string;
     paragraph3: string;
-    principlesHeading: string;
-    principles: {
-      number: string;
-      title: string;
-      description: string;
-    }[];
     beyondHeading: string;
     beyondSubtitle: string;
     interests: {
       title: string;
-      subtitle: string;
       description: string;
     }[];
   };
@@ -189,28 +182,28 @@ export const translations: Record<Language, TranslationDictionary> = {
       coreDomainsLabel: "Core Domains",
       coreDomains: [
         "Full Stack Engineering",
-        "Fintech & Payment Flows",
+        "Web & Payment APIs",
         "TypeScript, React, Node.js",
         "AWS, PostgreSQL, Cloud",
-        "Data Science & Analytics",
+        "Data Analytics",
       ],
       year: "Casper Hildebrand • 2026",
       cvDownload: "CV (PDF)",
     },
     cv: {
       title: "Curriculum Vitae",
-      subtitle: "Single-Page ATS Format • Full-Stack & Distributed Systems",
+      subtitle: "Single-Page ATS Format • Full-Stack Software Engineer",
       openNewTab: "Open in New Tab",
       downloadPdf: "Download PDF",
       mobilePrompt: "Viewing on a mobile device? Open fullscreen for the optimal reading experience.",
       viewFullscreen: "View Fullscreen PDF",
     },
     intro: {
-      heroTitle: "Full-stack engineer building high-throughput merchant payment rails at Tikkie.",
+      heroTitle: "Full-stack software engineer building payment services and web applications at Tikkie.",
       bioParagraph1:
-        "Full-stack software engineer at Tikkie (ABN AMRO) specializing in resilient payment settlement workflows and event-driven merchant APIs powering millions of Dutch transactions.",
+        "Full-stack software engineer at Tikkie (ABN AMRO), developing merchant payment APIs and business portals used across the Netherlands.",
       bioParagraph2:
-        "Double Master's from TU Delft in Computer Science (Data Science) and Science Education. Thesis researched clickstream telemetry across 175k learners. Co-founded Bitsized.",
+        "Double Master's from TU Delft in Computer Science (Data Science) and Science Education. Co-founded Bitsized, built software for the public sector, and published research analyzing 175k online learners.",
       bioParagraph3: "",
       exploreWork: "Explore Work Experience",
       exploreEdu: "Education & Degrees",
@@ -221,22 +214,22 @@ export const translations: Record<Language, TranslationDictionary> = {
       featuredSubtitle: "",
       tikkieTag: "Production Systems",
       tikkieTitle: "Tikkie Business",
-      tikkieSubtitle: "Merchant Settlement & Payment Rails",
+      tikkieSubtitle: "Merchant Payment Services & Portals",
       tikkieDescription:
-        "High-concurrency merchant payment rails for Tikkie Business: idempotent partner endpoints, resilient settlement pipelines, and real-time transaction telemetry.",
+        "Merchant payment APIs and business dashboards for Tikkie Business: idempotent partner endpoints, payment status webhooks, and reporting tools for Dutch enterprises.",
       tikkieLink: "View career history →",
       thesisTag: "TU Delft · Research",
       thesisTitle: "Debugging the Divide: 174,988 CS MOOC Learners",
-      thesisSubtitle: "Clickstream Telemetry & Vocational Motivation",
+      thesisSubtitle: "Student Engagement & Learning Patterns",
       thesisDescription:
-        "Large-scale telemetry study analyzing clickstream logs and engagement trajectories across 174,988 Open edX learners using k-means clustering and statistical regression in Python/Pandas.",
+        "Large-scale study analyzing learning patterns and engagement trajectories across 174,988 Open edX students using clustering and statistical regression in Python and Pandas.",
       thesisLink: "Explore research telemetry →",
-      thesisSkills: ["k-Means Clustering", "Clickstream Telemetry", "Python / Pandas"],
+      thesisSkills: ["Python", "Pandas", "Scikit-learn", "Open edX"],
       bitsizedTag: "Co-Founder & Lead Engineer",
       bitsizedTitle: "Bitsized",
       bitsizedSubtitle: "Interactive Code Execution Engine",
       bitsizedDescription:
-        "Architected isolated browser-based execution sandboxes and interactive curriculum tooling adopted by Dutch secondary school CS departments.",
+        "Browser-based execution sandboxes and interactive curriculum tools adopted by Dutch secondary school computer science departments.",
       bitsizedLink: "View experience →",
     },
     dataExplorer: {
@@ -296,16 +289,16 @@ export const translations: Record<Language, TranslationDictionary> = {
     workExperience: {
       title: "Work Experience",
       intro:
-        "Production fintech infrastructure at Tikkie, cloud architecture, browser sandboxes, and computer science pedagogy.",
+        "Software engineering at Tikkie, cloud architecture, browser sandboxes, and computer science education.",
       currentBadge: "Current",
       to: "to",
       filterAll: "All Roles",
       filterEngineering: "Engineering & Systems",
-      filterEducation: "Pedagogy & Leadership",
-      primaryHeading: "Primary Experience",
-      primarySubtitle: "High-throughput fintech and product systems",
-      archiveHeading: "Archive & Trajectory",
-      archiveSubtitle: "Full chronological index across systems, consulting, and pedagogy",
+      filterEducation: "Education & Teaching",
+      primaryHeading: "Featured Experience",
+      primarySubtitle: "Production software and platforms",
+      archiveHeading: "Prior Experience",
+      archiveSubtitle: "Chronological history across engineering, consulting, and education",
       items: [
         {
           title: "Full Stack Software Engineer",
@@ -318,11 +311,11 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Present",
           current: true,
           category: "engineering",
-          text: "• **Merchant Infrastructure**: Engineered merchant payment rails powering thousands of Dutch enterprises and millions of real-time transactions for Tikkie Business.\n• **API Reliability**: Designed fault-tolerant payment settlement workflows, idempotent partner APIs, and resilient transactional pipelines.\n• **Merchant Telemetry**: Developed merchant analytics portals with React, TypeScript, Node.js, and AWS serverless infrastructure.",
-          skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Fintech Scale"],
+          text: "• **Merchant Infrastructure**: Engineered merchant payment endpoints and services powering thousands of Dutch enterprises.\n• **API Reliability**: Implemented idempotent payment processing workflows, partner webhooks, and automated error recovery routines.\n• **Merchant Portals**: Developed merchant analytics dashboards and reporting portals with React, TypeScript, Node.js, and AWS serverless infrastructure.",
+          skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL"],
         },
         {
-          title: "Software Engineer -- Distributed Systems Fellowship",
+          title: "Software Engineer – Talent Program",
           subtitle: "Harvest",
           image: {
             uri: "harvest.svg",
@@ -332,8 +325,8 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Present",
           current: true,
           category: "engineering",
-          text: "• **Distributed Systems Fellowship**: Advanced engineering labs parallel to production at Tikkie.\n• **Resilience Engineering**: Deep dives into event-driven design, fault isolation, backpressure strategies, and high-concurrency systems.",
-          skills: ["Distributed Systems", "Software Architecture", "Resilience Engineering"],
+          text: "• Engineering development program running alongside production work at Tikkie.\n• Completed practical modules covering cloud architecture, event-driven design, and system reliability.",
+          skills: ["Cloud Architecture", "Distributed Systems", "Event-Driven Design"],
         },
         {
           title: "Platform Co-Founder & Lead Engineer",
@@ -346,10 +339,10 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Feb 2025",
           category: "engineering",
           text: "Co-founded an interactive educational coding platform adopted by Dutch secondary school CS departments. Engineered isolated in-browser code execution sandboxes, real-time code evaluation, and teacher assignment management tooling.",
-          skills: ["TypeScript", "React", "Node.js", "Docker", "Sandboxed Execution"],
+          skills: ["TypeScript", "React", "Node.js", "Docker"],
         },
         {
-          title: "Software Analyst & Consultant",
+          title: "IT Consultant & Software Analyst",
           subtitle: "Netcompany",
           image: {
             uri: "netcompany.jpg",
@@ -358,11 +351,11 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Sep 2021",
           endDate: "Jun 2022",
           category: "engineering",
-          text: "Re-architected enterprise data migration workflows and specifications for Dutch public sector enterprise systems (Vervangingsfonds & Participatiefonds), and built full-stack commercial property energy modeling tools.",
-          skills: ["Systems Analysis", "Full Stack Development", "Public Sector IT"],
+          text: "Engineered ETL data migration workflows and technical specifications for Dutch public sector enterprise systems (Vervangingsfonds & Participatiefonds), and built full-stack commercial property energy modeling tools.",
+          skills: ["C# / .NET", "SQL Server", "Data Migration"],
         },
         {
-          title: "Software Developer (Backend & Frontend)",
+          title: "Software Developer",
           subtitle: "Bexter",
           image: {
             uri: "bexter.jpg",
@@ -371,11 +364,11 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Sep 2019",
           endDate: "May 2021",
           category: "engineering",
-          text: "Engineered backend services and modernized responsive web portals for TrackOnline, an enterprise asset logistics platform managing reusable supply chain containers.",
-          skills: ["Backend Development", "Frontend Engineering", "JavaScript", "Logistics Systems"],
+          text: "Engineered backend services and modernized responsive web portals for TrackOnline, an enterprise asset logistics platform managing reusable supply chain packaging.",
+          skills: ["C# / .NET", "JavaScript", "REST APIs", "Relational Databases"],
         },
         {
-          title: "Developer",
+          title: "Software Developer",
           subtitle: "Muziekweb",
           image: {
             uri: "muziekweb.jpg",
@@ -385,7 +378,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Jul 2020",
           category: "engineering",
           text: "Automated data ingestion pipeline reconciling 100k+ discography records via the Discogs API with verification UI.",
-          skills: ["Python", "REST APIs", "Data Ingestion Pipeline"],
+          skills: ["Python", "REST APIs", "Data Pipelines"],
         },
         {
           title: "Computer Science Teacher",
@@ -393,8 +386,8 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Feb 2025",
           endDate: "Jul 2025",
           category: "education",
-          text: "Directed the CS department across 10 cohorts (~200 students), designing graduation examination standards and mentoring capstone software engineering projects.",
-          skills: ["CS Pedagogy", "Curriculum Design", "Examination Standards"],
+          text: "Taught computer science across senior cohorts (~200 students), designing graduation examination standards and mentoring student software projects.",
+          skills: ["Computer Science Education", "Algorithms"],
         },
         {
           title: "Computer Science Teacher",
@@ -406,11 +399,11 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Aug 2024",
           endDate: "Jan 2025",
           category: "education",
-          text: "Taught computer architecture, digital logic, and web foundations (HTML/CSS) for the Master's in Science Education teaching practicum.",
-          skills: ["Computer Architecture", "HTML/CSS", "Pedagogy"],
+          text: "Taught computer architecture, digital logic, and web foundations (HTML/CSS) for the Master's teaching practicum.",
+          skills: ["Computer Architecture", "HTML/CSS"],
         },
         {
-          title: "BSc CS&E Board of Studies Member",
+          title: "Board of Studies Member (BSc CS&E)",
           subtitle: "Delft University of Technology",
           image: {
             uri: "tudelft.jpg",
@@ -419,8 +412,8 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Oct 2021",
           endDate: "Jun 2022",
           category: "education",
-          text: "Evaluated and structured curriculum improvements for the Bachelor's in Computer Science & Engineering in a monthly advisory panel with professors and student representatives.",
-          skills: ["Curriculum Quality", "Academic Governance"],
+          text: "Evaluated and advised on curriculum quality and course improvements for the Bachelor in Computer Science & Engineering alongside faculty and student representatives.",
+          skills: ["Curriculum Evaluation"],
         },
         {
           title: "Computer Science Teacher",
@@ -432,11 +425,11 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Aug 2020",
           endDate: "Jan 2021",
           category: "education",
-          text: "Taught high school computer science cohorts introductory programming principles (variables, control flow, functions, basic algorithms) and visual logic.",
-          skills: ["Introductory CS", "Algorithms", "Visual Logic"],
+          text: "Taught introductory programming principles (variables, control flow, functions, basic data structures) to high school students.",
+          skills: ["Algorithms", "Programming Fundamentals"],
         },
         {
-          title: "Student Ambassador & Teaching Assistant",
+          title: "Teaching Assistant & Student Ambassador",
           subtitle: "Delft University of Technology",
           image: {
             uri: "tudelft.jpg",
@@ -445,8 +438,8 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Oct 2018",
           endDate: "Feb 2025",
           category: "education",
-          text: "Mentored undergraduate computer science cohorts in algorithms, software testing, and object-oriented programming. Represented CS&E at open days and hosted 40+ shadow students.",
-          skills: ["Algorithms", "Software Testing", "Code Review", "Mentorship"],
+          text: "Mentored undergraduate students in algorithms, software testing, and object-oriented programming. Guided prospective students during university open days.",
+          skills: ["Algorithms", "Software Testing", "Java / OOP", "Code Review"],
         },
       ],
     },
@@ -467,7 +460,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Sep 2021",
           endDate: "May 2024",
           text: "Specialized in data science, distributed algorithms, and machine learning. Master's Thesis: 'Debugging the Divide: Exploring Men’s and Women’s Motivations and Engagement in Computer Science MOOCs', analyzing clickstream and survey data across 174,988 learners.",
-          skills: ["Data Science", "Machine Learning", "Statistical Modeling", "k-Means Clustering", "Python"],
+          skills: ["Data Science", "Machine Learning", "Statistical Modeling", "Python", "Pandas"],
         },
         {
           title: "MSc Science Education & Communication",
@@ -479,7 +472,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Sep 2021",
           endDate: "May 2024",
           text: "Completed pedagogy, instructional system design, and communication theory alongside the CS Master's. Qualified with a formal Dutch first-degree teaching certification in Computer Science.",
-          skills: ["Instructional Design", "Computer Science Pedagogy", "Curriculum Development", "Communication"],
+          skills: ["Instructional Design", "Computer Science Education"],
         },
         {
           title: "Exchange Studies in Computer Science",
@@ -491,7 +484,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Aug 2022",
           endDate: "Jan 2023",
           text: "Master's exchange semester focusing on advanced machine learning algorithms, visualization, and human-computer interaction in Stockholm, Sweden.",
-          skills: ["Machine Learning", "Information Visualization", "HCI"],
+          skills: ["Machine Learning", "Information Visualization", "Human-Computer Interaction"],
         },
         {
           title: "BSc Computer Science & Engineering",
@@ -508,62 +501,38 @@ export const translations: Record<Language, TranslationDictionary> = {
       ],
     },
     about: {
-      title: "About & Engineering Philosophy",
+      title: "About",
       paragraph1:
-        "I believe the best software engineering is defined by clarity: clear domain models, resilient API contracts, and predictable operational boundaries. At Tikkie, I build financial rails where correctness and zero downtime are table stakes.",
+        "I am a full-stack software engineer based in Amsterdam, currently working at Tikkie (ABN AMRO). I build merchant-facing payment services and business portals where reliability, security, and clear data models matter every day.",
       paragraph2:
-        "Holding dual Master's degrees in Computer Science and Science Education gives me a distinctive approach to engineering teams: I treat system architecture and technical communication as the same discipline. Great engineers don't just write robust code; they write crisp documentation, mentor relentlessly, and build shared mental models.",
+        "With a double Master's degree from TU Delft in Computer Science and Science Education, I bridge technical depth with clear communication. In software teams, I prioritize readable code, well-typed API boundaries, thorough reviews, and accessible documentation.",
       paragraph3:
-        "Outside production, I study distributed systems, play electric bass, and analyze chess endgames—disciplines rooted in rhythm, invariants, and eliminating unnecessary noise.",
-      principlesHeading: "Engineering Principles",
-      principles: [
-        {
-          number: "01",
-          title: "Invariants Over Assumptions",
-          description:
-            "Payment networks and distributed systems fail in creative ways. We enforce strict transactional boundaries, idempotent state transitions, and explicit failure modes over optimistic happy paths.",
-        },
-        {
-          number: "02",
-          title: "Communication is System Architecture",
-          description:
-            "A system's long-term resilience is bounded by how well the team understands it. Crisp interfaces, typed schemas, and lucid documentation prevent architectural drift far better than verbal consensus.",
-        },
-        {
-          number: "03",
-          title: "Simplicity Under Pressure",
-          description:
-            "Avoid premature abstraction. The most robust operational components are small, deterministic, thoroughly tested, and trivial to reason about during a 2 AM production incident.",
-        },
-      ],
-      beyondHeading: "Beyond the Terminal",
+        "Prior to Tikkie, I co-founded Bitsized (an interactive coding sandbox for secondary education), worked as an IT consultant on public sector data systems, and taught computer science in high schools.",
+      beyondHeading: "Outside of Work",
       beyondSubtitle:
-        "Disciplines and creative pursuits that inform how I approach focus, rhythm, and complex systems.",
+        "Interests and creative pursuits outside software engineering.",
       interests: [
         {
           title: "Bass Guitar",
-          subtitle: "Groove, Rhythm & Tone",
           description:
-            "Playing electric bass guitar has been my primary creative outlet for years. The bassist anchors the ensemble: locking into the pocket, eliminating timing drift, and establishing harmonic foundation.",
+            "Playing electric bass has been my main creative outlet for years. I enjoy playing in bands, locking into a groove, and holding down the low end.",
         },
         {
           title: "Chess",
-          subtitle: "Tactics & Invariant Strategy",
           description:
-            "Studying classical opening theory and tactical calculation. Chess rewards patience, disciplined calculation of candidate moves, and strict consideration of downstream consequences.",
+            "I enjoy studying classical opening theory, solving tactical puzzles, and playing rapid games online.",
         },
         {
-          title: "Modular Synthesizers & Audio",
-          subtitle: "Signal Processing & Sound Design",
+          title: "Synthesizers & Audio",
           description:
-            "Exploring sound synthesis and signal routing. Patching analog and digital synthesizers mirrors distributed architecture: discrete nodes, explicit signal contracts, feedback loops, and deterministic transformations.",
+            "In my spare time, I experiment with hardware and software synthesizers, sound design, and audio production.",
         },
       ],
     },
     outreach: {
-      heading: "Building resilient systems together.",
+      heading: "Get in touch.",
       subheading:
-        "Available for backend systems, distributed architecture, and fintech platform engineering discussions.",
+        "Feel free to reach out for software engineering roles, project collaboration, or just a quick chat.",
       emailBtn: "Email Casper",
       cvBtn: "Curriculum Vitae (PDF)",
     },
@@ -584,28 +553,28 @@ export const translations: Record<Language, TranslationDictionary> = {
       coreDomainsLabel: "Expertises",
       coreDomains: [
         "Full Stack Softwareontwikkeling",
-        "Fintech & Betaalinfrastructuur",
+        "Web- & Betaaldiensten",
         "TypeScript, React, Node.js",
         "AWS, PostgreSQL, Cloud",
-        "Data Science & Analytics",
+        "Data Analytics",
       ],
       year: "Casper Hildebrand • 2026",
       cvDownload: "CV (PDF)",
     },
     cv: {
       title: "Curriculum Vitae",
-      subtitle: "Enkelzijdig ATS-Formaat • Full-Stack & Gedistribueerde Systemen",
+      subtitle: "Enkelzijdig ATS-Formaat • Full-Stack Software Engineer",
       openNewTab: "Openen in nieuw tabblad",
       downloadPdf: "Download PDF",
       mobilePrompt: "Bekijk je dit op mobiel? Open op volledig scherm voor de beste leeservaring.",
       viewFullscreen: "Bekijk PDF op volledig scherm",
     },
     intro: {
-      heroTitle: "Full-stack engineer voor hoog-volume betaalinfrastructuur bij Tikkie.",
+      heroTitle: "Full-stack software engineer voor zakelijke betaaldiensten en webapplicaties bij Tikkie.",
       bioParagraph1:
-        "Full-stack software engineer bij Tikkie (ABN AMRO), gespecialiseerd in veerkrachtige settlement workflows en event-driven merchant API's voor miljoenen Nederlandse transacties.",
+        "Full-stack software engineer bij Tikkie (ABN AMRO), waar ik werk aan zakelijke betaal-API's en portals voor ondernemers in Nederland.",
       bioParagraph2:
-        "Dubbele Master aan de TU Delft in Computer Science (Data Science) en Science Education. Scriptieonderzoek naar telemetrie van 175k cursisten. Mede-oprichter van Bitsized.",
+        "Dubbele Master aan de TU Delft in Technische Informatica en Didactiek. Mede-oprichter van Bitsized, ervaring in de publieke sector en auteur van onderzoek onder 175k online cursisten.",
       bioParagraph3: "",
       exploreWork: "Bekijk werkervaring",
       exploreEdu: "Opleidingen & Titels",
@@ -616,22 +585,22 @@ export const translations: Record<Language, TranslationDictionary> = {
       featuredSubtitle: "",
       tikkieTag: "Productiesystemen",
       tikkieTitle: "Tikkie Zakelijk",
-      tikkieSubtitle: "Merchant Settlement & Betaalrails",
+      tikkieSubtitle: "Zakelijke Betaaldiensten & Portals",
       tikkieDescription:
-        "Hoog-concurrency betaalinfrastructuur voor Tikkie Zakelijk: idempotente partner-endpoints, veerkrachtige settlement pipelines en realtime transactietelemetrie.",
+        "Betaal-API's en dashboards voor Tikkie Zakelijk: idempotente partner-endpoints, webhook-notificaties en rapportagetools voor ondernemers.",
       tikkieLink: "Bekijk werkervaring →",
       thesisTag: "TU Delft · Onderzoek",
       thesisTitle: "Debugging the Divide: 174.988 Cursisten",
-      thesisSubtitle: "Telemetrie & Beroepsmatige Motivatie",
+      thesisSubtitle: "Betrokkenheid & Leerpatronen",
       thesisDescription:
-        "Grootschalig telemetrie-onderzoek naar clickstream-logs en gedragstrajecten van 174.988 Open edX cursisten via k-means clustering en regressieanalyse in Python/Pandas.",
+        "Grootschalig onderzoek naar leerpatronen en betrokkenheid onder 174.988 Open edX-cursisten via clustering en regressieanalyse in Python en Pandas.",
       thesisLink: "Bekijk onderzoeksdata →",
-      thesisSkills: ["k-Means Clustering", "Clickstream Telemetrie", "Python / Pandas"],
+      thesisSkills: ["Python", "Pandas", "Scikit-learn", "Open edX"],
       bitsizedTag: "Mede-oprichter & Lead Engineer",
       bitsizedTitle: "Bitsized",
       bitsizedSubtitle: "Interactieve Code Execution Engine",
       bitsizedDescription:
-        "In-browser code-executie sandboxes en interactieve curriculumtools ontworpen voor informaticasecties in het Nederlands voortgezet onderwijs.",
+        "In-browser code-executie sandboxes en interactieve lesmaterialen ontworpen voor informaticasecties in het voortgezet onderwijs.",
       bitsizedLink: "Bekijk ervaring →",
     },
     dataExplorer: {
@@ -691,16 +660,16 @@ export const translations: Record<Language, TranslationDictionary> = {
     workExperience: {
       title: "Werkervaring",
       intro:
-        "Fintech-infrastructuur bij Tikkie, cloudarchitectuur, browser sandboxes en informatica-didactiek.",
+        "Softwareontwikkeling bij Tikkie, cloudarchitectuur, browser sandboxes en informaticaonderwijs.",
       currentBadge: "Huidig",
       to: "tot",
       filterAll: "Alle Functies",
       filterEngineering: "Engineering & Systemen",
-      filterEducation: "Onderwijs & Leiderschap",
-      primaryHeading: "Primaire Ervaring",
-      primarySubtitle: "Hoog-volume fintech en platform architecturen",
-      archiveHeading: "Carrière Archief",
-      archiveSubtitle: "Volledig chronologisch overzicht over engineering, consulting en onderwijs",
+      filterEducation: "Onderwijs & Didactiek",
+      primaryHeading: "Uitgelichte Ervaring",
+      primarySubtitle: "Productiesoftware en platforms",
+      archiveHeading: "Eerdere Ervaring",
+      archiveSubtitle: "Chronologisch overzicht van functies in softwareontwikkeling, consultancy en onderwijs",
       items: [
         {
           title: "Full Stack Software Engineer",
@@ -713,11 +682,11 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Heden",
           current: true,
           category: "engineering",
-          text: "• **Betaalinfrastructuur**: Ontwikkeling van zakelijke betaalrails voor duizenden bedrijven en miljoenen realtime transacties via Tikkie Zakelijk.\n• **API Betrouwbaarheid**: Ontwerp van fouttolerante settlement workflows, idempotente partner-API's en veerkrachtige transactionele pipelines.\n• **Merchant Telemetrie**: Bouw van zakelijke analyseportalen met React, TypeScript, Node.js en AWS serverless infrastructuur.",
-          skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Fintech Schaal"],
+          text: "• **Zakelijke Infrastructuur**: Ontwikkeling van zakelijke betaal-API's en diensten voor duizenden Nederlandse ondernemers.\n• **API-Betrouwbaarheid**: Implementatie van idempotente betaalprocessen, partner-webhooks en foutafhandeling.\n• **Ondernemersportals**: Bouw van dashboards en rapportagetools met React, TypeScript, Node.js en AWS serverless infrastructuur.",
+          skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL"],
         },
         {
-          title: "Software Engineer -- Distributed Systems Fellowship",
+          title: "Software Engineer – Talent Program",
           subtitle: "Harvest",
           image: {
             uri: "harvest.svg",
@@ -727,8 +696,8 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Heden",
           current: true,
           category: "engineering",
-          text: "• **Distributed Systems Fellowship**: Geavanceerde engineering-labs parallel aan productie bij Tikkie.\n• **Resilience Engineering**: Diepgaande labs over event-driven architecturen, foutisolatie, backpressure strategieën en concurrency.",
-          skills: ["Gedistribueerde Systemen", "Softwarearchitectuur", "Resilience Engineering"],
+          text: "• Professioneel ontwikkelprogramma parallel aan werkzaamheden bij Tikkie.\n• Praktijkgerichte modules afgerond in cloudarchitectuur, event-driven design en systeembetrouwbaarheid.",
+          skills: ["Cloud Architecture", "Distributed Systems", "Event-Driven Design"],
         },
         {
           title: "Platform Mede-oprichter & Lead Engineer",
@@ -740,11 +709,11 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "jan 2023",
           endDate: "feb 2025",
           category: "engineering",
-          text: "Mede-oprichter van een interactief programmeerplatform geadopteerd door informaticasecties in het Nederlands voortgezet onderwijs. Geïsoleerde in-browser code-executie sandboxes, realtime code-evaluatie en curriculumbeheer gebouwd.",
-          skills: ["TypeScript", "React", "Node.js", "Docker", "Sandboxed Execution"],
+          text: "Mede-oprichter van een interactief programmeerplatform voor informaticasecties in het voortgezet onderwijs. Verantwoordelijk voor browser-gebaseerde code-sandboxes, realtime evaluatie en tools voor docenten.",
+          skills: ["TypeScript", "React", "Node.js", "Docker"],
         },
         {
-          title: "Software Analyst & Consultant",
+          title: "IT Consultant & Software Analyst",
           subtitle: "Netcompany",
           image: {
             uri: "netcompany.jpg",
@@ -753,11 +722,11 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "sep 2021",
           endDate: "jun 2022",
           category: "engineering",
-          text: "Herontwerp van datamigraties en enterprise-specificaties voor Nederlandse overheidsinstanties (Vervangingsfonds & Participatiefonds), en full-stack software ontwikkeld voor vastgoed-energiemodellering.",
-          skills: ["Systeemanalyse", "Full Stack Ontwikkeling", "Overheids-IT"],
+          text: "Ontwikkeling van datamigraties en technische specificaties voor publieke organisaties (Vervangingsfonds & Participatiefonds), en bouw van full-stack energielabel-modelleringstools voor commercieel vastgoed.",
+          skills: ["C# / .NET", "SQL Server", "Data Migration"],
         },
         {
-          title: "Software Developer (Backend & Frontend)",
+          title: "Software Developer",
           subtitle: "Bexter",
           image: {
             uri: "bexter.jpg",
@@ -766,11 +735,11 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "sep 2019",
           endDate: "mei 2021",
           category: "engineering",
-          text: "Backend services ontwikkeld en webportalen gemoderniseerd voor TrackOnline, een enterprise asset logistiek platform voor meermalige supply chain ladingdragers.",
-          skills: ["Backend Ontwikkeling", "Frontend Engineering", "JavaScript", "Logistieke Systemen"],
+          text: "Ontwikkeling van backend-services en modernisering van webportals voor TrackOnline, een platform voor emballage- en logistiekbeheer.",
+          skills: ["C# / .NET", "JavaScript", "REST APIs", "Relational Databases"],
         },
         {
-          title: "Developer",
+          title: "Software Developer",
           subtitle: "Muziekweb",
           image: {
             uri: "muziekweb.jpg",
@@ -779,8 +748,8 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "mei 2020",
           endDate: "jul 2020",
           category: "engineering",
-          text: "Geautomatiseerde data-ingestie pipeline gebouwd die 100k+ discografie-records via de Discogs API verifieerde en importeerde.",
-          skills: ["Python", "REST APIs", "Data Ingestie Pipeline"],
+          text: "Geautomatiseerde data-ingestie pipeline die meer dan 100.000 discografie-records synchroniseerde via de Discogs API met een verificatie-interface.",
+          skills: ["Python", "REST APIs", "Data Pipelines"],
         },
         {
           title: "Docent Informatica",
@@ -788,8 +757,8 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "feb 2025",
           endDate: "jul 2025",
           category: "education",
-          text: "Leiding over de informaticasectie over 10 klassen (~200 leerlingen), verantwoordelijk voor examennormen en begeleiding van profielwerkstukken.",
-          skills: ["Informatica Didactiek", "Curriculumontwikkeling", "Exameneisen"],
+          text: "Informaticaonderwijs verzorgd voor eindexamenklassen (~200 leerlingen), exameneisen opgesteld en softwareprojecten begeleid.",
+          skills: ["Informaticaonderwijs", "Algoritmen"],
         },
         {
           title: "Docent Informatica",
@@ -801,11 +770,11 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "aug 2024",
           endDate: "jan 2025",
           category: "education",
-          text: "Lesgegeven in computerarchitectuur, digitale logica en webfundamenten (HTML/CSS) voor het praktijkdeel van de masteropleiding tot eerstegraads docent.",
-          skills: ["Computerarchitectuur", "HTML/CSS", "Didactiek"],
+          text: "Lesgegeven in computerarchitectuur, digitale logica en webfundamenten (HTML/CSS) tijdens het docentschapspracticum van de Master.",
+          skills: ["Computerarchitectuur", "HTML/CSS"],
         },
         {
-          title: "Opleidingscommissie BSc Technische Informatica",
+          title: "Opleidingscommissie (BSc Technische Informatica)",
           subtitle: "Technische Universiteit Delft",
           image: {
             uri: "tudelft.jpg",
@@ -814,8 +783,8 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "okt 2021",
           endDate: "jun 2022",
           category: "education",
-          text: "Maandelijkse kwaliteitsbewaking en curriculumverbetering van het bachelorprogramma Technische Informatica met hoogleraren en studenten.",
-          skills: ["Onderwijskwaliteit", "Curriculumevaluatie"],
+          text: "Geëvalueerd en geadviseerd over curriculumverbeteringen voor de Bachelor Technische Informatica in een maandelijks overleg met docenten en studenten.",
+          skills: ["Curriculumevaluatie"],
         },
         {
           title: "Docent Informatica",
@@ -827,8 +796,8 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "aug 2020",
           endDate: "jan 2021",
           category: "education",
-          text: "Informaticaonderwijs verzorgd voor middelbare scholieren: basisprincipes programmeren (variabelen, functies, algoritmen) en visuele logica.",
-          skills: ["Inleidende Informatica", "Algoritmen", "Visuele Logica"],
+          text: "Introductie in programmeren gegeven (variabelen, control flow, functies, basisdatastructuren) aan middelbare scholieren.",
+          skills: ["Algoritmen", "Programmeerbasis"],
         },
         {
           title: "Studentambassadeur & Student-assistent",
@@ -840,8 +809,8 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "okt 2018",
           endDate: "feb 2025",
           category: "education",
-          text: "Studenten begeleid bij algoritmen, software testing en objectgeoriënteerd programmeren. Vertegenwoordiger van de opleidingen tijdens open dagen en meeloopdagen voor 40+ scholieren.",
-          skills: ["Algoritmen", "Software Testing", "Code Review", "Mentoraat"],
+          text: "Ondersteuning van bachelorstudenten bij vakken over algoritmen, software testing en OOP. Voorlichting gegeven aan studiekiezers tijdens open dagen.",
+          skills: ["Algoritmen", "Software Testing", "Java / OOP", "Code Review"],
         },
       ],
     },
@@ -862,7 +831,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "sep 2021",
           endDate: "mei 2024",
           text: "Gespecialiseerd in data science, gedistribueerde algoritmen en machine learning. Masterscriptie: 'Debugging the Divide: Exploring Men’s and Women’s Motivations and Engagement in Computer Science MOOCs', met een analyse van klik- en enquêtegegevens van 174.988 cursisten.",
-          skills: ["Data Science", "Machine Learning", "Statistiek", "k-Means Clustering", "Python"],
+          skills: ["Data Science", "Machine Learning", "Statistiek", "Python", "Pandas"],
         },
         {
           title: "MSc Science Education & Communication",
@@ -874,7 +843,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "sep 2021",
           endDate: "mei 2024",
           text: "Didactiek, onderwijsontwerp en communicatiewetenschap gevolgd parallel aan de CS Master. Afgerond met een formele Nederlandse eerstegraads onderwijsbevoegdheid voor het schoolvak Informatica.",
-          skills: ["Onderwijsontwerp", "Informatica Didactiek", "Curriculumontwikkeling", "Communicatie"],
+          skills: ["Onderwijsontwerp", "Informaticaonderwijs"],
         },
         {
           title: "Masteruitwisseling Computer Science",
@@ -886,7 +855,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "aug 2022",
           endDate: "jan 2023",
           text: "Uitwisselingssemester gericht op geavanceerde machine learning algoritmen, datavisualisatie en mens-computer interactie in Stockholm, Zweden.",
-          skills: ["Machine Learning", "Informatievisualisatie", "HCI"],
+          skills: ["Machine Learning", "Informatievisualisatie", "Mens-Computer Interactie"],
         },
         {
           title: "BSc Technische Informatica",
@@ -903,62 +872,38 @@ export const translations: Record<Language, TranslationDictionary> = {
       ],
     },
     about: {
-      title: "Over mij & Engineering Filosofie",
+      title: "Over mij",
       paragraph1:
-        "De beste software engineering wordt gekenmerkt door helderheid: scherpe domeinmodellen, veerkrachtige API-contracten en voorspelbare operationele grenzen. Bij Tikkie bouw ik aan financiële rails waar correctheid en zero downtime de standaard zijn.",
+        "Ik ben een full-stack software engineer in Amsterdam, momenteel werkzaam bij Tikkie (ABN AMRO). Ik bouw aan zakelijke betaaldiensten en portals voor ondernemers, waar betrouwbaarheid, security en duidelijke datamodellen dagelijks centraal staan.",
       paragraph2:
-        "Mijn dubbele Master in Computer Science en Science Education geeft mij een duidelijke voorsprong in engineering teams: ik zie systeemarchitectuur en technische communicatie als één discipline. Goede engineers schrijven niet alleen robuuste code; ze schrijven heldere documentatie, begeleiden collega's en bouwen gedeelde mentale modellen.",
+        "Dankzij mijn dubbele Master aan de TU Delft in Technische Informatica en Didactiek combineer ik technische diepgang met heldere communicatie. Binnen softwareteams hecht ik veel waarde aan leesbare code, goed getypte API's, grondige reviews en duidelijke documentatie.",
       paragraph3:
-        "Buiten productie verdiep ik me in gedistribueerde systemen, speel ik elektrische basgitaar en analyseer ik schaakeindspelen—disciplines die draaien om ritme, invarianten en het elimineren van ruis.",
-      principlesHeading: "Engineering Principes",
-      principles: [
-        {
-          number: "01",
-          title: "Invarianten Boven Aannames",
-          description:
-            "Betaalnetwerken en gedistribueerde systemen falen onverwacht. We bouwen strikte transactionele grenzen, idempotente statusovergangen en expliciete foutafhandeling in plaats van te hopen op het 'happy path'.",
-        },
-        {
-          number: "02",
-          title: "Communicatie is Systeemarchitectuur",
-          description:
-            "De betrouwbaarheid van een systeem wordt begrensd door het begrip binnen het team. Scherpe interfaces, getypte schema's en heldere documentatie voorkomen architectonische erosie.",
-        },
-        {
-          number: "03",
-          title: "Eenvoud Onder Druk",
-          description:
-            "Vermijd overmatige abstracties. De meest robuuste onderdelen zijn klein, deterministisch, grondig getest en intuïtief te doorgronden tijdens een nachtelijke productie-storing.",
-        },
-      ],
-      beyondHeading: "Buiten de Terminal",
+        "Vóór Tikkie richtte ik Bitsized op (een interactieve programmeer-sandbox voor het voortgezet onderwijs), werkte ik als IT-consultant aan datasystemen in de publieke sector en gaf ik informatica op de middelbare school.",
+      beyondHeading: "Buiten het werk",
       beyondSubtitle:
-        "Disciplines en creatieve bezigheden die invloed hebben op hoe ik denk over focus, ritme en complexe systemen.",
+        "Interesses en creatieve bezigheden buiten softwareontwikkeling.",
       interests: [
         {
           title: "Basgitaar",
-          subtitle: "Groove, Timing & Harmonisch Fundament",
           description:
-            "De bassist verankert de band: timing bewaren, harmonische stabiliteit bieden en zorgen dat complexe arrangementen natuurlijk blijven aanvoelen.",
+            "Elektrische basgitaar spelen is al jaren mijn favoriete creatieve uitlaatklep. Ik speel graag in bands, leg het fundament en bewaak het ritme.",
         },
         {
           title: "Schaken",
-          subtitle: "Structurele Invarianten & Eindspelen",
           description:
-            "Schaken traint strategisch rekenen, discipline in kandidaat-zetten en structurele patroonherkenning onder tijdsdruk.",
+            "Ik verdiep me graag in klassieke openingstheorie, het oplossen van tactische puzzels en snelschaakpartijen online.",
         },
         {
-          title: "Modulaire Synthesizers & Audio",
-          subtitle: "Signaalverwerking & Sound Design",
+          title: "Synthesizers & Audio",
           description:
-            "Onderzoek naar geluidssynthese en signaalroutering. Het patchen van analoge en digitale synthesizers weerspiegelt gedistribueerde architecturen: discrete knooppunten, expliciete signaalcontracten, feedbackloops en deterministische transformaties.",
+            "In mijn vrije tijd experimenteer ik met analoge en digitale synthesizers, geluidsontwerp en audioproductie.",
         },
       ],
     },
     outreach: {
-      heading: "Samen robuuste systemen bouwen.",
+      heading: "Contact opnemen.",
       subheading:
-        "Beschikbaar voor gesprekken over backend systemen, gedistribueerde architectuur en fintech platform engineering.",
+        "Neem gerust contact op voor software engineering functies, samenwerking of een kennismaking.",
       emailBtn: "E-mail Casper",
       cvBtn: "Curriculum Vitae (PDF)",
     },
