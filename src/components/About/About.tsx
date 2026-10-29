@@ -15,32 +15,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* Engineering Principles */}
-      <div className="pt-8 border-t border-zinc-200 dark:border-white/10 space-y-6">
-        <div>
-          <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-zinc-950 dark:text-white">
-            {t.about.principlesHeading}
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {t.about.principles.map((p) => (
-            <div key={p.number} className="space-y-2 border-t border-zinc-200 dark:border-zinc-800 pt-3">
-              <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400">
-                {p.number}
-              </span>
-              <h3 className="text-sm font-bold text-zinc-950 dark:text-white">
-                {p.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                {p.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Beyond the Terminal */}
+      {/* Outside of Work */}
       <div className="pt-8 border-t border-zinc-200 dark:border-white/10 space-y-6">
         <div>
           <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">
@@ -57,14 +32,9 @@ export default function About() {
               key={item.title}
               className="pt-6 first:pt-0 space-y-1.5"
             >
-              <div>
-                <h3 className="text-base sm:text-lg font-bold text-zinc-900 dark:text-white">
-                  {item.title}
-                </h3>
-                <p className="text-xs font-mono font-semibold text-emerald-700 dark:text-emerald-400">
-                  {item.subtitle}
-                </p>
-              </div>
+              <h3 className="text-base sm:text-lg font-bold text-zinc-900 dark:text-white">
+                {item.title}
+              </h3>
               <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[58ch]">
                 {item.description}
               </p>
@@ -75,3 +45,4 @@ export default function About() {
     </div>
   );
 }
+

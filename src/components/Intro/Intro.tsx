@@ -5,8 +5,8 @@ import "./Intro.css";
 export default function Intro() {
   const { t } = useLanguage();
 
-  const tikkieSkills = ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Fintech Scale"];
-  const bitsizedSkills = ["TypeScript", "React", "Node.js", "Docker", "Sandboxed Execution"];
+  const tikkieSkills = ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL"];
+  const bitsizedSkills = ["TypeScript", "React", "Node.js", "Docker"];
 
   return (
     <div className="space-y-16">
