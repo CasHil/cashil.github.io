@@ -10,7 +10,7 @@ export default function Cv() {
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 border-b border-zinc-200/80 dark:border-white/10">
         <div>
           <Heading title={t.cv.title} size="h1" />
-          <p className="text-xs sm:text-sm font-mono text-zinc-600 dark:text-zinc-400 mt-1">
+          <p className="text-xs sm:text-sm font-normal text-zinc-500 dark:text-zinc-400 mt-1">
             {t.cv.subtitle}
           </p>
         </div>

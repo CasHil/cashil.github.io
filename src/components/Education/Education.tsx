@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Heading from "../Heading/Heading";
 import Timeline from "../Timeline/Timeline";
 import DataExplorer from "../DataExplorer/DataExplorer";
@@ -5,6 +6,15 @@ import { useLanguage } from "../../context/LanguageContext";
 
 export default function Education() {
   const { t } = useLanguage();
+
+  useEffect(() => {
+    if (window.location.hash === "#telemetry") {
+      const el = document.getElementById("telemetry");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
 
   return (
     <div className="space-y-12">
@@ -26,7 +36,7 @@ export default function Education() {
       </div>
 
       {/* Research Telemetry Deep Dive */}
-      <div className="pt-10 border-t border-zinc-200/80 dark:border-white/10">
+      <div id="telemetry" className="pt-10 border-t border-zinc-200/80 dark:border-white/10 scroll-mt-8">
         <DataExplorer headingLevel="h2" />
       </div>
 

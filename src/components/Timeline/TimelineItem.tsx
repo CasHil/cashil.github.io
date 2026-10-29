@@ -24,9 +24,9 @@ export default function TimelineItem({ data }: TimelineItemProps) {
             />
           )}
           <div>
-            <h2 className="text-base sm:text-lg font-bold text-zinc-950 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors leading-tight">
+            <h3 className="text-base sm:text-lg font-bold text-zinc-950 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors leading-tight">
               {data.title}
-            </h2>
+            </h3>
             <p className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-400 mt-0.5">
               {data.subtitle}
             </p>
@@ -83,11 +83,11 @@ export default function TimelineItem({ data }: TimelineItemProps) {
 
       {/* Tech Stack / Skills (Typographic Stack Stream) */}
       {data.skills && data.skills.length > 0 && (
-        <div className="pt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 font-mono text-xs">
-          <span className="text-zinc-600 dark:text-zinc-400 uppercase tracking-widest text-[10px] font-semibold">
+        <div className="pt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-xs">
+          <span className="font-sans text-zinc-500 dark:text-zinc-400 font-medium">
             Stack:
           </span>
-          <span className="text-zinc-700 dark:text-zinc-300">
+          <span className="font-mono text-zinc-700 dark:text-zinc-300">
             {data.skills.map((skill, idx) => (
               <span key={skill}>
                 {idx > 0 && <span className="mx-1.5 text-emerald-600/40 dark:text-emerald-400/40">·</span>}

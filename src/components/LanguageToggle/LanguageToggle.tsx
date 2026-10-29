@@ -8,7 +8,7 @@ export default function LanguageToggle() {
     <div
       role="group"
       aria-label="Language selection"
-      className="relative inline-flex items-center text-xs font-mono rounded-full bg-zinc-200/60 dark:bg-zinc-800/60 p-0.5 border border-zinc-200/80 dark:border-white/10"
+      className="relative inline-flex items-center text-[11px] font-sans font-semibold tracking-wide rounded-full bg-zinc-200/60 dark:bg-zinc-800/60 p-0.5 border border-zinc-200/80 dark:border-white/10"
     >
       <button
         type="button"
