@@ -9,9 +9,9 @@
 ## 1. Global Navigation & Masthead
 
 ### 1.1 Identity & Masthead
-- **Avatar + Live Status Indicator**:
-  - *Goal*: Provide immediate human authenticity; the subtle green pulse indicates active industry employment at Tikkie (ABN AMRO).
-  - *Rule*: Keep minimal. Tooltip explicitly states "Building Tikkie Business".
+- **Avatar**:
+  - *Goal*: Provide immediate human authenticity with a refined double-ring photographic frame.
+  - *Rule*: Never use pulsing green dots or artificial "live" indicators. Professional posture is established through clean typography and verified engineering accomplishments.
 - **Name (`Casper Hildebrand`)**:
   - *Goal*: Establish candidate identity in bold Instrument Sans.
 - **Role (`Full-Stack Engineer · Tikkie`)**:
@@ -40,19 +40,20 @@
 - **Bio Paragraph 2 (Foundational Rigor & 0-to-1 Proven Track Record)**:
   - *Goal*: Anchor the dual foundation: entrepreneurial execution (Bitsized browser sandboxes) + academic research depth (TU Delft Double MSc, 175k telemetry analysis).
 - **CTAs (Strict 2-CTA Hierarchy)**:
-  - *Primary*: Direct access to CV (`Curriculum Vitae →`).
+  - *Primary*: Direct access to CV (`Curriculum Vitae →`). Zero green dots.
   - *Secondary*: Deep dive into production systems (`Explore Work Experience →`).
 
 ### 2.2 Selected Work Showcase
-- *Goal*: Showcase three distinct pillars of Casper's background without overwhelm.
-- *Strict Ordering & Taxonomy*:
-  1. **Item 1: Tikkie Business (`Fintech · Payments`)**:
+- *Goal*: Showcase three distinct pillars of Casper's background without overwhelm in tactile editorial panels.
+- *Visual Design*: Elevated cards (`bg-white/60 dark:bg-zinc-900/40 backdrop-blur-xs border border-zinc-200/80 dark:border-white/[0.08] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)]`) that catch subtle ambient topographic glow.
+- *Strict Ordering & Grounded Provenance*:
+  1. **Item 1: Tikkie Business (`ABN AMRO · 2026 – Present`)**:
      - *Goal*: Proof of high-volume financial infrastructure, reliability, and enterprise partner integrations.
-  2. **Item 2: Bitsized (`EdTech · Co-Founder`)**:
+  2. **Item 2: Bitsized (`Co-Founder & Lead Engineer · 2023 – 2025`)**:
      - *Goal*: Proof of 0-to-1 systems engineering (isolated browser code execution engine adopted by real schools). Promoted ahead of the thesis to prioritize shipped software.
-  3. **Item 3: Debugging the Divide (`Data Science · Research`)**:
+  3. **Item 3: Debugging the Divide (`TU Delft MSc Thesis · 2024`)**:
      - *Goal*: Proof of quantitative research depth, large-scale dataset modeling (174,988 learners), and Python/Pandas telemetry.
-- *Tag Rule*: Every overline badge must follow a consistent `[Domain] · [Role/Output]` syntax in clean proportional sans (no all-caps monospace "PRODUCTION SYSTEMS" filler).
+- *Tag Rule*: Every overline badge must follow a grounded provenance syntax `[Entity] · [Timeline/Status]` in clean proportional sans (no vague marketing labels like "EdTech · Co-Founder" or "Production Systems").
 - *Subtitle Rule*: Subtitles must provide distinct technical metadata, never restate the card title.
 
 ---
@@ -62,26 +63,26 @@
 ### 3.1 Overview & Intro
 - *Goal*: State the range of engineering ownership cleanly before the timeline starts.
 
-### 3.2 Categorization Architecture
-- **Section 1: Software Engineering** (formerly "Featured Experience"):
-  - *Goal*: Showcase pure software development, infrastructure, consulting, and systems engineering in reverse-chronological order.
-  - *Items*:
-    - **Tikkie (ABN AMRO)**: Merchant infrastructure, idempotency, webhook reliability, React/Node.js/AWS.
-    - **Harvest Talent Program**: Advanced cloud architecture, event-driven design, and system reliability alongside Tikkie.
-    - **Bitsized**: In-browser execution sandboxing, AST evaluation, education tooling.
-    - **Netcompany**: Enterprise data migration (ETL) and energy simulation tooling in C#/.NET and SQL Server.
-    - **TrackOnline (Bexter)**: Supply chain logistics backend and web portals.
-    - **Muziekweb**: Automated data ingestion pipelines (Discogs API, Python).
-- **Section 2: Teaching & Academic Work** (formerly "Prior Experience"):
-  - *Goal*: Group pedagogical and university roles separately so recruiters do not confuse teaching practicums with a career change.
-  - *Items*:
-    - **CSG De Lage Waard** & **Stanislascollege**: High school CS curriculum & senior exams.
-    - **Board of Studies (TU Delft)**: Curriculum evaluation and faculty oversight for BSc CS&E.
-    - **Teaching Assistant (TU Delft)**: Algorithms, OOP, and software testing instruction.
+### 3.2 Progressive Disclosure Architecture
+To prevent cognitive overload while remaining 100% complete, experience is structured into core visibility and accessible disclosure drawers:
+- **Core Engineering (Always Visible)**:
+  - **Tikkie (ABN AMRO)**: Merchant infrastructure, idempotency, webhook reliability, React/Node.js/AWS.
+  - **Harvest Talent Program**: Advanced cloud architecture, event-driven design, and system reliability alongside Tikkie.
+  - **Bitsized**: In-browser execution sandboxing, AST evaluation, education tooling.
+  - **Netcompany**: Enterprise data migration (ETL) and energy simulation tooling in C#/.NET and SQL Server.
+- **Foundational Engineering Drawer (Progressive Disclosure)**:
+  - *Trigger*: `Show prior engineering roles (2)`
+  - *Summary*: Foundational software development and data pipelines at Bexter and Muziekweb (2019–2021).
+  - *Items*: TrackOnline (Bexter) and Muziekweb.
+- **Academic & Teaching Drawer (Progressive Disclosure)**:
+  - *Trigger*: `Show academic & leadership timeline (5)`
+  - *Badge*: `5 Positions · 2018–2025`
+  - *Summary*: Computer science pedagogy across secondary education, undergraduate algorithms instruction at TU Delft, and curriculum quality governance on the BSc CS&E Board of Studies.
+  - *Items*: CSG De Lage Waard, Stanislascollege, TU Delft Board of Studies, TU Delft Algorithms TA, TU Delft Foundations TA.
 
 ### 3.3 Semantic & Typographic Hierarchy
 - *Job Titles*: Must be semantically coded as `<h3>` nested under the `<h2>` section headers.
-- *Tech Stacks*: Clean `text-xs font-medium` for label, keeping technologies in clear monospaced or badge tokens.
+- *Status Badges*: Current roles display static, high-contrast `CURRENT` / `HUIDIG` typographic badges without green dots or animations.
 
 ---
 
@@ -91,6 +92,7 @@
 - *Goal*: Connect the academic credentials with the tangible research output.
 - **Component 1: Research & Telemetry (`DataExplorer`)**:
   - *Goal*: Surface the interactive research visualization (gender motivations, k-means clusters across 174,988 learners) prominently, directly reachable via deep-link from the Overview page (`#telemetry`).
+  - *Data Presentation*: Behavioral cluster names and descriptions use grounded plain language (e.g. `Drop-off after week 1`, `Consistent weekly submissions`, `Video lectures only, no submissions`) rather than academic buzzword jargon.
 - **Section 2: Academic Degrees**:
   - *MSc Computer Science (Data Science)* · TU Delft
   - *MSc Science Education & Communication* · TU Delft (First-degree teaching qualification)
@@ -108,12 +110,13 @@
   - Mentoring junior and mid-level engineers.
 
 ### 5.2 Outside of Work ("Outside the Terminal")
-- *Goal*: Authentic personal grounding (Electric Bass Guitar, Chess tactics, Synthesizers & Sound Design).
-- *Rule*: Keep descriptions concise, active, and jargon-free. No unnecessary filler subtitles.
+- *Goal*: Authentic personal grounding.
+- *Strict Whitelist*: Electric Bass Guitar and Chess.
+- *Strict Blacklist*: Synthesizers and electronic music production are strictly forbidden.
 
 ---
 
 ## 6. Curriculum Vitae Page (`/cv`)
 
 - *Goal*: Provide instant in-browser viewing and 1-click download of the 1-page ATS-compliant PDF resume.
-- *Rule*: Subtitle must cleanly state professional credentials (`Full-Stack Software Engineer · Amsterdam, Netherlands`), avoiding self-referential resume-compliance jargon like "Single-Page ATS Format".
+- *Rule*: Subtitle must cleanly state professional credentials (`Full-Stack Software Engineer · Amsterdam, Netherlands`), avoiding self-referential resume-compliance jargon like "Single-Page ATS Format". Zero green dots on CTA buttons.

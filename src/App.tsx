@@ -16,18 +16,11 @@ function Masthead() {
         {/* Identity */}
         <Link to="/" className="group flex items-center gap-3.5 focus:outline-none">
           <div className="relative shrink-0">
-            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-emerald-500/30 via-teal-500/20 to-transparent blur-sm opacity-60 group-hover:opacity-100 transition-opacity" />
             <img
               src="/images/profile.webp"
               alt="Casper Hildebrand"
-              className="relative h-11 w-11 rounded-full object-cover ring-1 ring-zinc-300 dark:ring-white/20 transition-transform duration-200 group-hover:scale-105"
+              className="relative h-11 w-11 rounded-full object-cover ring-1 ring-zinc-300/80 dark:ring-white/20 ring-offset-2 ring-offset-canvas transition-transform duration-300 group-hover:scale-105"
             />
-            <span
-              className="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-canvas"
-              title="Building Tikkie Business"
-            >
-              <span className="h-2 w-2 rounded-full bg-emerald-500 ring-2 ring-canvas" />
-            </span>
           </div>
           <div>
             <div className="font-display font-bold text-base sm:text-lg text-zinc-900 dark:text-white tracking-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
@@ -100,13 +93,37 @@ function AppContent() {
 
   return (
     <div className="relative min-h-screen bg-canvas text-zinc-900 dark:text-gray-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-800 dark:selection:text-emerald-300 transition-colors">
-      {/* Ambient Organic Aura Mesh */}
+      {/* Bespoke Organic Topographic Contour Layer */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+        className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-35 dark:opacity-20"
         aria-hidden="true"
       >
-        <div className="absolute -top-36 left-1/2 -translate-x-1/2 w-[720px] h-[440px] bg-gradient-to-tr from-emerald-500/10 via-teal-400/8 to-transparent rounded-[45%_55%_65%_35%/50%_60%_40%_50%] blur-3xl animate-organic-aura dark:from-emerald-500/15 dark:via-teal-400/10" />
-        <div className="absolute top-1/3 -right-32 w-[520px] h-[520px] bg-gradient-to-bl from-teal-500/8 via-emerald-600/6 to-transparent rounded-[60%_40%_50%_50%/40%_50%_60%_50%] blur-3xl animate-organic-aura-alt dark:from-teal-500/12 dark:via-emerald-600/8" />
+        <svg
+          className="absolute -top-24 right-0 w-[840px] h-[840px] text-zinc-400/30 dark:text-zinc-600/25 stroke-current"
+          viewBox="0 0 800 800"
+          fill="none"
+        >
+          <path
+            d="M100 200 C 250 120, 420 280, 580 180 C 700 100, 780 160, 850 220"
+            strokeWidth="1"
+            strokeDasharray="4 8"
+          />
+          <path
+            d="M50 320 C 200 240, 380 400, 560 300 C 680 230, 760 280, 850 340"
+            strokeWidth="1.2"
+          />
+          <path
+            d="M0 450 C 180 360, 340 520, 540 430 C 660 370, 740 410, 850 470"
+            strokeWidth="1"
+            strokeDasharray="2 6"
+          />
+          <path
+            d="M-50 580 C 150 500, 310 640, 520 560 C 650 510, 730 550, 850 600"
+            strokeWidth="1.2"
+          />
+        </svg>
+        {/* Warm subtle ambient radial gradient */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-amber-500/[0.03] via-emerald-500/[0.02] to-transparent blur-3xl pointer-events-none" />
       </div>
 
       <BrowserRouter>
@@ -122,8 +139,9 @@ function AppContent() {
           <Masthead />
           <Body />
 
-          {/* Clean Editorial Footer */}
-          <footer className="mt-16 pt-8 pb-12 border-t border-zinc-200/80 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+          {/* Clean Editorial Footer with Tapered Gradient Divider */}
+          <div className="mt-16 h-[1px] w-full bg-gradient-to-r from-transparent via-zinc-300/80 dark:via-zinc-700/80 to-transparent" aria-hidden="true" />
+          <footer className="pt-8 pb-12 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-zinc-500 dark:text-zinc-400">
             <div>
               {t.sidebar.year}
             </div>

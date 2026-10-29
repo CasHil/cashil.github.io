@@ -112,6 +112,16 @@ export interface TranslationDictionary {
     primarySubtitle: string;
     archiveHeading: string;
     archiveSubtitle: string;
+    earlyEngineeringTitle: string;
+    earlyEngineeringSubtitle: string;
+    showEarlyEngineering: string;
+    hideEarlyEngineering: string;
+    academicHeading: string;
+    academicBadge: string;
+    academicSummary: string;
+    showAcademic: string;
+    hideAcademic: string;
+    collapseBottom: string;
     items: {
       title: string;
       subtitle: string;
@@ -121,6 +131,7 @@ export interface TranslationDictionary {
       text: string;
       skills: string[];
       category?: "engineering" | "education";
+      tier?: "featured" | "foundational";
       image?: {
         uri: string;
         alt: string;
@@ -201,7 +212,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     intro: {
       heroTitle: "Full-stack software engineer building payment services and web applications at Tikkie.",
       bioParagraph1:
-        "At Tikkie (ABN AMRO), I build merchant-facing payment infrastructure, idempotent settlement APIs, and real-time business portals supporting thousands of enterprise merchants.",
+        "At Tikkie (ABN AMRO), I build payment infrastructure, idempotent settlement APIs, and real-time merchant portals used daily by thousands of Dutch businesses.",
       bioParagraph2:
         "Double Master's from TU Delft in Computer Science (Data Science) and Science Education. Co-founded Bitsized, built software for the public sector, and published research analyzing 175k online learners.",
       bioParagraph3: "",
@@ -212,28 +223,28 @@ export const translations: Record<Language, TranslationDictionary> = {
       viewCv: "Curriculum Vitae",
       featuredHeading: "Selected Work",
       featuredSubtitle: "",
-      tikkieTag: "Fintech · Payments",
+      tikkieTag: "ABN AMRO · 2026 – Present",
       tikkieTitle: "Tikkie Business",
-      tikkieSubtitle: "Enterprise Payment APIs & Business Portals",
+      tikkieSubtitle: "Payment APIs & Merchant Portals",
       tikkieDescription:
-        "Merchant payment APIs and business dashboards for Tikkie Business: idempotent partner endpoints, payment status webhooks, and reporting tools for Dutch enterprises.",
+        "High-throughput payment APIs and merchant portals. Built idempotent settlement workflows, partner webhook infrastructure, and financial reporting tools processing millions in transactions across Dutch enterprises.",
       tikkieLink: "View role details →",
-      thesisTag: "Data Science · Research",
-      thesisTitle: "Debugging the Divide: 174,988 CS MOOC Learners",
-      thesisSubtitle: "Clickstream Telemetry & Behavioral Clustering",
+      thesisTag: "TU Delft MSc Thesis · 2024",
+      thesisTitle: "Debugging the Divide",
+      thesisSubtitle: "Clickstream Telemetry & Engagement Clustering across 175k Learners",
       thesisDescription:
-        "Large-scale study analyzing learning patterns and engagement trajectories across 174,988 Open edX students using clustering and statistical regression in Python and Pandas.",
+        "Analyzed learning patterns and dropout dynamics across 14 computer science MOOC runs on Open edX. Built unsupervised clustering pipelines (k-means) and regression models in Python to quantify retention differences between men and women.",
       thesisLink: "Explore research telemetry →",
       thesisSkills: ["Python", "Pandas", "Scikit-learn", "Open edX"],
-      bitsizedTag: "EdTech · Co-Founder",
+      bitsizedTag: "Co-Founder & Lead Engineer · 2023 – 2025",
       bitsizedTitle: "Bitsized",
-      bitsizedSubtitle: "In-Browser Execution Sandboxes & CS Curricula",
+      bitsizedSubtitle: "In-Browser Execution Sandboxes for CS Education",
       bitsizedDescription:
-        "Browser-based execution sandboxes and interactive curriculum tools adopted by Dutch secondary school computer science departments.",
+        "Browser-based code sandboxes and automated evaluation environments adopted by Dutch secondary school computer science departments. Built client-side test runners, interactive exercises, and teacher management tooling.",
       bitsizedLink: "View platform details →",
     },
     dataExplorer: {
-      badge: "TU Delft • 2024",
+      badge: "TU Delft · 2024",
       title: "Debugging the Divide · Telemetry",
       subtitle:
         "Telemetry analysis of 174,988 learners across 14 TU Delft Computer Science MOOC runs.",
@@ -241,42 +252,42 @@ export const translations: Record<Language, TranslationDictionary> = {
       statLearnersValue: "174,988",
       statRuns: "Course iterations",
       statCourses: "TU Delft MOOCs",
-      statIntent: "Women career intent",
-      statIntentValue: "+16.7 pp",
-      tabMotivations: "1. Motivations by Gender",
-      tabClusters: "2. Engagement Clusters (k-Means)",
+      statIntent: "Career transition gap (women vs. men)",
+      statIntentValue: "+16.7%",
+      tabMotivations: "Enrollment Intent by Gender",
+      tabClusters: "Engagement Clusters (k-Means)",
       womenLabel: "Women",
       menLabel: "Men",
       motivations: {
         careerLabel: "Career Advancement & Transition",
-        careerDelta: "+16.7 pp for women",
+        careerDelta: "+16.7% for women (58.2% vs. 41.5%)",
         careerExplanation:
           "Women enrolled with explicit vocational intent to transition into tech roles or upskill for promotions.",
         leisureLabel: "Hobby, Curiosity & Leisure",
-        leisureDelta: "+21.0 pp for men",
+        leisureDelta: "+21.0% for men (38.7% vs. 17.7%)",
         leisureExplanation:
           "Men were more than twice as likely to engage as recreational learners without immediate vocational stakes.",
         degreeLabel: "Formal Degree & Coursework Prep",
-        degreeDelta: "+4.3 pp for women",
+        degreeDelta: "+4.3% for women (24.1% vs. 19.8%)",
         degreeExplanation:
           "Enrollment as supplementary study material alongside formal university degree coursework.",
       },
       researchTakeawayTitle: "Key Finding:",
       researchTakeawayText:
-        "Women enrolled with high vocational urgency (+16.7 pp career transition), whereas men engaged recreationally (+21.0 pp hobby). Early course onboarding must scaffold explicit career pathways.",
+        "Women predominantly enrolled for career mobility (+16.7%), while men participated as a casual hobby (+21.0%). Retaining female learners requires early course onboarding that connects assignments directly to industry job skills rather than assuming recreational interest.",
       clusters: {
         completersName: "Completers",
-        completersBehavior: "High submission density",
+        completersBehavior: "Consistent weekly submissions",
         completersDesc:
-          "Consistent weekly engagement, 90%+ problem attempts, active forum participation.",
-        auditorsName: "Auditors & Viewers",
-        auditorsBehavior: "High video / Low assessment",
+          "Submitted >90% of assignments on schedule and actively participated in course forums.",
+        auditorsName: "Auditors",
+        auditorsBehavior: "Video lectures only, no submissions",
         auditorsDesc:
-          "Systematic lecture video viewing and resource downloads with minimal graded submissions.",
-        samplersName: "Samplers & Drop-ins",
-        samplersBehavior: "Front-loaded exploration",
+          "Watched lectures and downloaded course materials systematically, but completed zero graded problem sets.",
+        samplersName: "Samplers",
+        samplersBehavior: "Drop-off after week 1",
         samplersDesc:
-          "High activity during initial weeks or specific technical modules before disengaging.",
+          "Enrolled and explored initial modules, but stopped submitting work before week 3.",
       },
       methodologyTitle: "Methodology:",
       methodologyText:
@@ -299,6 +310,18 @@ export const translations: Record<Language, TranslationDictionary> = {
       primarySubtitle: "",
       archiveHeading: "Teaching & Academic Work",
       archiveSubtitle: "",
+      earlyEngineeringTitle: "Prior Roles & University Internships",
+      earlyEngineeringSubtitle:
+        "Foundational software development and data pipelines at Bexter and Muziekweb (2019–2021).",
+      showEarlyEngineering: "Show prior engineering roles (2)",
+      hideEarlyEngineering: "Hide prior engineering roles",
+      academicHeading: "Academic Teaching & University Leadership",
+      academicBadge: "5 Positions · 2018–2025",
+      academicSummary:
+        "Computer science pedagogy across secondary education, undergraduate algorithms instruction at TU Delft, and curriculum quality governance on the BSc CS&E Board of Studies.",
+      showAcademic: "Show academic & leadership timeline (5)",
+      hideAcademic: "Hide academic timeline",
+      collapseBottom: "Collapse academic section ↑",
       items: [
         {
           title: "Full Stack Software Engineer",
@@ -311,6 +334,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Present",
           current: true,
           category: "engineering",
+          tier: "featured",
           text: "• **Merchant Infrastructure**: Engineered high-throughput payment endpoints and settlement pipelines processing merchant transactions across thousands of Dutch businesses.\n• **API Reliability**: Implemented idempotent payment processing workflows, partner webhooks, and automated error recovery routines.\n• **Merchant Portals**: Developed merchant analytics dashboards and reporting portals with React, TypeScript, Node.js, and AWS serverless infrastructure.",
           skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL"],
         },
@@ -325,11 +349,12 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Present",
           current: true,
           category: "engineering",
-          text: "• Engineering talent program running alongside production work at Tikkie, focusing on distributed systems design, event-driven architecture, and cloud reliability patterns.",
+          tier: "featured",
+          text: "Engineering talent program running alongside production work at Tikkie, focusing on distributed systems design, event-driven architecture, and cloud reliability patterns.",
           skills: ["Cloud Architecture", "Distributed Systems", "Event-Driven Design"],
         },
         {
-          title: "Platform Co-Founder & Lead Engineer",
+          title: "Co-Founder & Lead Engineer",
           subtitle: "Bitsized",
           image: {
             uri: "bitsized.webp",
@@ -338,6 +363,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Jan 2023",
           endDate: "Feb 2025",
           category: "engineering",
+          tier: "featured",
           text: "Co-founded an interactive educational coding platform adopted by Dutch secondary school CS departments. Engineered isolated in-browser code execution sandboxes, real-time code evaluation, and teacher assignment management tooling.",
           skills: ["TypeScript", "React", "Node.js", "Docker"],
         },
@@ -351,6 +377,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Sep 2021",
           endDate: "Jun 2022",
           category: "engineering",
+          tier: "featured",
           text: "Engineered ETL data migration workflows and technical specifications for Dutch public sector enterprise systems (Vervangingsfonds & Participatiefonds), and built full-stack commercial property energy modeling tools.",
           skills: ["C# / .NET", "SQL Server", "Data Migration"],
         },
@@ -364,6 +391,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "Sep 2019",
           endDate: "May 2021",
           category: "engineering",
+          tier: "foundational",
           text: "Engineered backend services and modernized responsive web portals for TrackOnline, an enterprise asset logistics platform managing reusable supply chain packaging.",
           skills: ["C# / .NET", "JavaScript", "REST APIs", "Relational Databases"],
         },
@@ -377,6 +405,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "May 2020",
           endDate: "Jul 2020",
           category: "engineering",
+          tier: "foundational",
           text: "Automated data ingestion pipeline reconciling 100k+ discography records via the Discogs API with verification UI.",
           skills: ["Python", "REST APIs", "Data Pipelines"],
         },
@@ -521,11 +550,6 @@ export const translations: Record<Language, TranslationDictionary> = {
           description:
             "I enjoy studying classical opening theory, solving tactical puzzles, and playing rapid games online.",
         },
-        {
-          title: "Synthesizers & Audio",
-          description:
-            "In my spare time, I experiment with hardware and software synthesizers, sound design, and audio production.",
-        },
       ],
     },
     outreach: {
@@ -571,7 +595,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     intro: {
       heroTitle: "Full-stack software engineer voor zakelijke betaaldiensten en webapplicaties bij Tikkie.",
       bioParagraph1:
-        "Bij Tikkie (ABN AMRO) ontwikkel ik zakelijke betaalinfrastructuur, idempotente API-koppelingen en dashboards voor duizenden Nederlandse ondernemers.",
+        "Bij Tikkie (ABN AMRO) ontwikkel ik betaalinfrastructuur, idempotente settlement-API's en dashboards voor duizenden Nederlandse ondernemers.",
       bioParagraph2:
         "Dubbele Master aan de TU Delft in Technische Informatica en Didactiek. Mede-oprichter van Bitsized, ervaring in de publieke sector en auteur van onderzoek onder 175k online cursisten.",
       bioParagraph3: "",
@@ -582,28 +606,28 @@ export const translations: Record<Language, TranslationDictionary> = {
       viewCv: "Curriculum Vitae",
       featuredHeading: "Uitgewerkt Werk",
       featuredSubtitle: "",
-      tikkieTag: "Fintech · Betalingen",
+      tikkieTag: "ABN AMRO · 2026 – Heden",
       tikkieTitle: "Tikkie Zakelijk",
-      tikkieSubtitle: "Enterprise Betaal-API's & Ondernemersportals",
+      tikkieSubtitle: "Betaal-API's & Ondernemersportals",
       tikkieDescription:
-        "Betaal-API's en dashboards voor Tikkie Zakelijk: idempotente partner-endpoints, webhook-notificaties en rapportagetools voor ondernemers.",
+        "Bedrijfskritische betaal-API's en dashboards voor Tikkie Zakelijk: bouw van idempotente settlement-workflows, partner-webhooks en financiële rapportagetools voor duizenden ondernemers.",
       tikkieLink: "Bekijk functiedetails →",
-      thesisTag: "Data Science · Onderzoek",
-      thesisTitle: "Debugging the Divide: 174.988 Cursisten",
-      thesisSubtitle: "Klikstream-telemetrie & Gedragsclustering",
+      thesisTag: "TU Delft Masterscriptie · 2024",
+      thesisTitle: "Debugging the Divide",
+      thesisSubtitle: "Klikstream-telemetrie & clustering over 175.000 cursisten",
       thesisDescription:
-        "Grootschalig onderzoek naar leerpatronen en betrokkenheid onder 174.988 Open edX-cursisten via clustering en regressieanalyse in Python en Pandas.",
+        "Onderzoek naar leerpatronen en uitvaldynamiek over 14 edities van TU Delft computer science MOOCs op Open edX. Bouwde clustering-pipelines (k-means) en regressiemodellen in Python om retentieverschillen tussen mannen en vrouwen te kwantificeren.",
       thesisLink: "Bekijk onderzoeksdata →",
       thesisSkills: ["Python", "Pandas", "Scikit-learn", "Open edX"],
-      bitsizedTag: "EdTech · Mede-oprichter",
+      bitsizedTag: "Mede-oprichter & Lead Engineer · 2023 – 2025",
       bitsizedTitle: "Bitsized",
-      bitsizedSubtitle: "In-Browser Execution Sandboxes & Lesmateriaal",
+      bitsizedSubtitle: "In-Browser Sandboxes voor Informaticaonderwijs",
       bitsizedDescription:
-        "In-browser code-executie sandboxes en interactieve lesmaterialen ontworpen voor informaticasecties in het voortgezet onderwijs.",
+        "Browser-gebaseerde code-sandboxes en realtime evaluatie-omgevingen voor informaticasecties in het voortgezet onderwijs. Ontwikkelde client-side test-runners, automatische opgave-evaluatie en docententools.",
       bitsizedLink: "Bekijk platformdetails →",
     },
     dataExplorer: {
-      badge: "TU Delft • 2024",
+      badge: "TU Delft · 2024",
       title: "Debugging the Divide · Telemetrie",
       subtitle:
         "Telemetrie-analyse van 174.988 cursisten over 14 TU Delft Computer Science MOOC-edities.",
@@ -611,42 +635,42 @@ export const translations: Record<Language, TranslationDictionary> = {
       statLearnersValue: "174.988",
       statRuns: "Cursusedities",
       statCourses: "TU Delft MOOCs",
-      statIntent: "Vrouwen loopbaanfocus",
-      statIntentValue: "+16,7 pp",
-      tabMotivations: "1. Motivaties naar Geslacht",
-      tabClusters: "2. Gedragsclusters (k-Means)",
+      statIntent: "Loopbaangroei (vrouwen vs. mannen)",
+      statIntentValue: "+16,7%",
+      tabMotivations: "Instroommotivaties naar Geslacht",
+      tabClusters: "Gedragsclusters (k-Means)",
       womenLabel: "Vrouwen",
       menLabel: "Mannen",
       motivations: {
         careerLabel: "Loopbaangroei & Baanswitch",
-        careerDelta: "+16,7 pp bij vrouwen",
+        careerDelta: "+16,7% bij vrouwen (58,2% vs. 41,5%)",
         careerExplanation:
-          "Vrouwen schreven zich in met een expliciet beroepsdoel: instromen in de techsector of doorgroeien in hun functie.",
+          "Vrouwen schreven zich in met een expliciet doel: instromen in de techsector of doorgroeien in hun functie.",
         leisureLabel: "Hobby, Nieuwsgierigheid & Vrije tijd",
-        leisureDelta: "+21,0 pp bij mannen",
+        leisureDelta: "+21,0% bij mannen (38,7% vs. 17,7%)",
         leisureExplanation:
-          "Mannen namen meer dan twee keer zo vaak deel uit recreatieve interesse zonder direct professioneel belang.",
+          "Mannen namen ruim twee keer zo vaak deel uit recreatieve interesse zonder direct loopbaandoel.",
         degreeLabel: "Universitaire Voorbereiding & Studie",
-        degreeDelta: "+4,3 pp bij vrouwen",
+        degreeDelta: "+4,3% bij vrouwen (24,1% vs. 19,8%)",
         degreeExplanation:
           "Deelname ter ondersteuning van een formele universitaire bachelor- of masteropleiding.",
       },
       researchTakeawayTitle: "Kerninzicht:",
       researchTakeawayText:
-        "Vrouwen starten met een hoge beroepsmatige urgentie (+16,7 pp loopbaanswitch), terwijl mannen recreatief deelnemen (+21,0 pp hobby). Cursus-onboarding dient gerichte loopbaanpaden te bieden.",
+        "Vrouwen startten met een sterke loopbaanfocus (+16,7% carrièreswitch), terwijl mannen cursussen vaker als vrijblijvende hobby volgden (+21,0%). Om vrouwelijke cursisten te behouden, moet de onboarding vanaf week één direct aansluiten op concrete praktijkvaardigheden.",
       clusters: {
         completersName: "Afronders",
-        completersBehavior: "Hoge inleverfrequentie",
+        completersBehavior: "Consistente wekelijkse inlevering",
         completersDesc:
-          "Consistente wekelijkse inzet, 90%+ opgaven ingeleverd en actieve bijdragen op het forum.",
-        auditorsName: "Toehoorders & Kijkers",
-        auditorsBehavior: "Veel video / Weinig toetsen",
+          "Leverde meer dan 90% van de opgaven op tijd in en nam actief deel aan discussieforums.",
+        auditorsName: "Toehoorders",
+        auditorsBehavior: "Alleen videocolleges, geen opgaven",
         auditorsDesc:
-          "Systematisch bekijken van videocolleges en downloads zonder deelname aan becijferde toetsen.",
-        samplersName: "Verkenners & Oriënteerders",
-        samplersBehavior: "Kortstondige verkenning",
+          "Bekeken systematisch videocolleges en downloads, maar maakten geen becijferde opgaven.",
+        samplersName: "Verkenners",
+        samplersBehavior: "Uitval na week 1",
         samplersDesc:
-          "Hoge activiteit in de eerste collegeweken of bij specifieke modules, waarna de deelname stopt.",
+          "Startte in de introductieweken, maar leverde na week twee geen opgaven meer in.",
       },
       methodologyTitle: "Methodologie:",
       methodologyText:
@@ -669,6 +693,18 @@ export const translations: Record<Language, TranslationDictionary> = {
       primarySubtitle: "",
       archiveHeading: "Onderwijs & Academisch Werk",
       archiveSubtitle: "",
+      earlyEngineeringTitle: "Eerdere Functies & Stages",
+      earlyEngineeringSubtitle:
+        "Softwareontwikkeling en datapipelines bij Bexter en Muziekweb (2019–2021).",
+      showEarlyEngineering: "Bekijk eerdere engineering functies (2)",
+      hideEarlyEngineering: "Verberg eerdere engineering functies",
+      academicHeading: "Onderwijs & Academisch Leiderschap",
+      academicBadge: "5 Posities · 2018–2025",
+      academicSummary:
+        "Informaticaonderwijs in het voortgezet onderwijs, algoritmenonderwijs aan de TU Delft en kwaliteitsbewaking van het curriculum in de Opleidingscommissie BSc Technische Informatica.",
+      showAcademic: "Bekijk academische & onderwijservaring (5)",
+      hideAcademic: "Verberg onderwijservaring",
+      collapseBottom: "Klap onderwijssectie in ↑",
       items: [
         {
           title: "Full Stack Software Engineer",
@@ -681,6 +717,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Heden",
           current: true,
           category: "engineering",
+          tier: "featured",
           text: "• **Zakelijke Infrastructuur**: Ontwikkeling van bedrijfskritische betaal-endpoints en verwerkingspipelines voor duizenden aangesloten ondernemingen.\n• **API-Betrouwbaarheid**: Implementatie van idempotente betaalprocessen, partner-webhooks en foutafhandeling.\n• **Ondernemersportals**: Bouw van dashboards en rapportagetools met React, TypeScript, Node.js en AWS serverless infrastructuur.",
           skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL"],
         },
@@ -695,11 +732,12 @@ export const translations: Record<Language, TranslationDictionary> = {
           endDate: "Heden",
           current: true,
           category: "engineering",
+          tier: "featured",
           text: "• Professioneel ontwikkelprogramma parallel aan productiewerkzaamheden bij Tikkie, gericht op gedistribueerde systeemarchitectuur, event-driven design en cloudbetrouwbaarheid.",
           skills: ["Cloud Architecture", "Distributed Systems", "Event-Driven Design"],
         },
         {
-          title: "Platform Mede-oprichter & Lead Engineer",
+          title: "Co-Founder & Lead Engineer",
           subtitle: "Bitsized",
           image: {
             uri: "bitsized.webp",
@@ -708,6 +746,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "jan 2023",
           endDate: "feb 2025",
           category: "engineering",
+          tier: "featured",
           text: "Mede-oprichter van een interactief programmeerplatform voor informaticasecties in het voortgezet onderwijs. Verantwoordelijk voor browser-gebaseerde code-sandboxes, realtime evaluatie en tools voor docenten.",
           skills: ["TypeScript", "React", "Node.js", "Docker"],
         },
@@ -721,6 +760,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "sep 2021",
           endDate: "jun 2022",
           category: "engineering",
+          tier: "featured",
           text: "Ontwikkeling van datamigraties en technische specificaties voor publieke organisaties (Vervangingsfonds & Participatiefonds), en bouw van full-stack energielabel-modelleringstools voor commercieel vastgoed.",
           skills: ["C# / .NET", "SQL Server", "Data Migration"],
         },
@@ -734,6 +774,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "sep 2019",
           endDate: "mei 2021",
           category: "engineering",
+          tier: "foundational",
           text: "Ontwikkeling van backend-services en modernisering van webportals voor TrackOnline, een platform voor emballage- en logistiekbeheer.",
           skills: ["C# / .NET", "JavaScript", "REST APIs", "Relational Databases"],
         },
@@ -747,6 +788,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           startDate: "mei 2020",
           endDate: "jul 2020",
           category: "engineering",
+          tier: "foundational",
           text: "Geautomatiseerde data-ingestie pipeline die meer dan 100.000 discografie-records synchroniseerde via de Discogs API met een verificatie-interface.",
           skills: ["Python", "REST APIs", "Data Pipelines"],
         },
@@ -890,11 +932,6 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Schaken",
           description:
             "Ik verdiep me graag in klassieke openingstheorie, het oplossen van tactische puzzels en snelschaakpartijen online.",
-        },
-        {
-          title: "Synthesizers & Audio",
-          description:
-            "In mijn vrije tijd experimenteer ik met analoge en digitale synthesizers, geluidsontwerp en audioproductie.",
         },
       ],
     },

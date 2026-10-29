@@ -15,4 +15,5 @@ export interface TimelineItemData {
   location?: string;
   link?: string;
   category?: "engineering" | "education";
+  tier?: "featured" | "foundational";
 }
