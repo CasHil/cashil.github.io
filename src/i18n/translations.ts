@@ -304,7 +304,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Full Stack Software Engineer",
           subtitle: "Tikkie (ABN AMRO)",
           image: {
-            uri: "tikkie.svg",
+            uri: "tikkie.webp",
             alt: "Tikkie (ABN AMRO)",
           },
           startDate: "Mar 2026",
@@ -318,7 +318,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Software Engineer – Talent Program",
           subtitle: "Harvest",
           image: {
-            uri: "harvest.svg",
+            uri: "harvest.webp",
             alt: "Harvest Fellowship",
           },
           startDate: "Feb 2026",
@@ -332,7 +332,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Platform Co-Founder & Lead Engineer",
           subtitle: "Bitsized",
           image: {
-            uri: "bitsized.jpg",
+            uri: "bitsized.webp",
             alt: "Bitsized",
           },
           startDate: "Jan 2023",
@@ -345,7 +345,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "IT Consultant & Software Analyst",
           subtitle: "Netcompany",
           image: {
-            uri: "netcompany.jpg",
+            uri: "netcompany.webp",
             alt: "Netcompany",
           },
           startDate: "Sep 2021",
@@ -358,7 +358,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Software Developer",
           subtitle: "Bexter",
           image: {
-            uri: "bexter.jpg",
+            uri: "bexter.webp",
             alt: "Bexter",
           },
           startDate: "Sep 2019",
@@ -371,7 +371,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Software Developer",
           subtitle: "Muziekweb",
           image: {
-            uri: "muziekweb.jpg",
+            uri: "muziekweb.webp",
             alt: "Muziekweb",
           },
           startDate: "May 2020",
@@ -393,7 +393,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Computer Science Teacher",
           subtitle: "Stanislascollege",
           image: {
-            uri: "sgl.jpg",
+            uri: "sgl.webp",
             alt: "Stanislascollege",
           },
           startDate: "Aug 2024",
@@ -406,7 +406,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Board of Studies Member (BSc CS&E)",
           subtitle: "Delft University of Technology",
           image: {
-            uri: "tudelft.jpg",
+            uri: "tudelft.webp",
             alt: "TU Delft",
           },
           startDate: "Oct 2021",
@@ -419,7 +419,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Computer Science Teacher",
           subtitle: "Pieter Groen",
           image: {
-            uri: "pietergroen.jpg",
+            uri: "pietergroen.webp",
             alt: "Pieter Groen",
           },
           startDate: "Aug 2020",
@@ -432,7 +432,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Teaching Assistant & Student Ambassador",
           subtitle: "Delft University of Technology",
           image: {
-            uri: "tudelft.jpg",
+            uri: "tudelft.webp",
             alt: "TU Delft",
           },
           startDate: "Oct 2018",
@@ -454,7 +454,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "MSc Computer Science (Data Science)",
           subtitle: "Delft University of Technology",
           image: {
-            uri: "tudelft.jpg",
+            uri: "tudelft.webp",
             alt: "TU Delft",
           },
           startDate: "Sep 2021",
@@ -466,7 +466,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "MSc Science Education & Communication",
           subtitle: "Delft University of Technology",
           image: {
-            uri: "tudelft.jpg",
+            uri: "tudelft.webp",
             alt: "TU Delft",
           },
           startDate: "Sep 2021",
@@ -478,7 +478,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Exchange Studies in Computer Science",
           subtitle: "KTH Royal Institute of Technology, Stockholm",
           image: {
-            uri: "kth.png",
+            uri: "kth.webp",
             alt: "KTH Royal Institute of Technology",
           },
           startDate: "Aug 2022",
@@ -490,7 +490,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "BSc Computer Science & Engineering",
           subtitle: "Delft University of Technology",
           image: {
-            uri: "tudelft.jpg",
+            uri: "tudelft.webp",
             alt: "TU Delft",
           },
           startDate: "Sep 2017",
@@ -675,7 +675,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Full Stack Software Engineer",
           subtitle: "Tikkie (ABN AMRO)",
           image: {
-            uri: "tikkie.svg",
+            uri: "tikkie.webp",
             alt: "Tikkie (ABN AMRO)",
           },
           startDate: "mrt 2026",
@@ -689,7 +689,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Software Engineer – Talent Program",
           subtitle: "Harvest",
           image: {
-            uri: "harvest.svg",
+            uri: "harvest.webp",
             alt: "Harvest Fellowship",
           },
           startDate: "feb 2026",
@@ -703,7 +703,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Platform Mede-oprichter & Lead Engineer",
           subtitle: "Bitsized",
           image: {
-            uri: "bitsized.jpg",
+            uri: "bitsized.webp",
             alt: "Bitsized",
           },
           startDate: "jan 2023",
@@ -716,7 +716,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "IT Consultant & Software Analyst",
           subtitle: "Netcompany",
           image: {
-            uri: "netcompany.jpg",
+            uri: "netcompany.webp",
             alt: "Netcompany",
           },
           startDate: "sep 2021",
@@ -729,7 +729,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Software Developer",
           subtitle: "Bexter",
           image: {
-            uri: "bexter.jpg",
+            uri: "bexter.webp",
             alt: "Bexter",
           },
           startDate: "sep 2019",
@@ -742,7 +742,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Software Developer",
           subtitle: "Muziekweb",
           image: {
-            uri: "muziekweb.jpg",
+            uri: "muziekweb.webp",
             alt: "Muziekweb",
           },
           startDate: "mei 2020",
@@ -764,7 +764,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Docent Informatica",
           subtitle: "Stanislascollege",
           image: {
-            uri: "sgl.jpg",
+            uri: "sgl.webp",
             alt: "Stanislascollege",
           },
           startDate: "aug 2024",
@@ -777,7 +777,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Opleidingscommissie (BSc Technische Informatica)",
           subtitle: "Technische Universiteit Delft",
           image: {
-            uri: "tudelft.jpg",
+            uri: "tudelft.webp",
             alt: "TU Delft",
           },
           startDate: "okt 2021",
@@ -790,7 +790,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Docent Informatica",
           subtitle: "Pieter Groen",
           image: {
-            uri: "pietergroen.jpg",
+            uri: "pietergroen.webp",
             alt: "Pieter Groen",
           },
           startDate: "aug 2020",
@@ -803,7 +803,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Studentambassadeur & Student-assistent",
           subtitle: "Technische Universiteit Delft",
           image: {
-            uri: "tudelft.jpg",
+            uri: "tudelft.webp",
             alt: "TU Delft",
           },
           startDate: "okt 2018",
@@ -825,7 +825,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "MSc Computer Science (Data Science)",
           subtitle: "Technische Universiteit Delft",
           image: {
-            uri: "tudelft.jpg",
+            uri: "tudelft.webp",
             alt: "TU Delft",
           },
           startDate: "sep 2021",
@@ -837,7 +837,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "MSc Science Education & Communication",
           subtitle: "Technische Universiteit Delft",
           image: {
-            uri: "tudelft.jpg",
+            uri: "tudelft.webp",
             alt: "TU Delft",
           },
           startDate: "sep 2021",
@@ -849,7 +849,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "Masteruitwisseling Computer Science",
           subtitle: "KTH Royal Institute of Technology, Stockholm",
           image: {
-            uri: "kth.png",
+            uri: "kth.webp",
             alt: "KTH Royal Institute of Technology",
           },
           startDate: "aug 2022",
@@ -861,7 +861,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           title: "BSc Technische Informatica",
           subtitle: "Technische Universiteit Delft",
           image: {
-            uri: "tudelft.jpg",
+            uri: "tudelft.webp",
             alt: "TU Delft",
           },
           startDate: "sep 2017",

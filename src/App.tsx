@@ -18,7 +18,7 @@ function Masthead() {
           <div className="relative shrink-0">
             <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-emerald-500/30 via-teal-500/20 to-transparent blur-sm opacity-60 group-hover:opacity-100 transition-opacity" />
             <img
-              src="/images/profile.jpg"
+              src="/images/profile.webp"
               alt="Casper Hildebrand"
               className="relative h-11 w-11 rounded-full object-cover ring-1 ring-zinc-300 dark:ring-white/20 transition-transform duration-200 group-hover:scale-105"
             />
