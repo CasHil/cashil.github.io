@@ -16,3 +16,8 @@
 - **Bilingual Parity**: Any copy added or modified in `src/i18n/translations.ts` must maintain 100% symmetry between `en` and `nl`.
 - **Typography & Accessibility**: Maintain minimum `text-xs` (12px) for UI copy to prevent `[tiny-text]` or `[undersized-ui-text]` violations in `impeccable detect`.
 - **ATS Single-Page CV**: Never allow `cv/Casper_Hildebrand_CV.tex` to spill onto page 2.
+
+## Safety & File System Guardrails
+- **Strict Deletion Boundary**: NEVER run deletion commands (`Remove-Item`, `del`, `rmdir`, `rm`) on files or directories outside the project root (`f:\Projects\cashil.github.io`) and temporary scratch locations (`$env:TEMP`, `.gemini/.../scratch`). Deletion of external files, system roots, or arbitrary user directories is strictly prohibited.
+- **Scoped Writes**: Agents must never mutate or write files outside the workspace repository, the `.gemini` agent state directory, or the designated OS temp folder.
+
