@@ -39,7 +39,7 @@ export default function TimelineItem({ data }: TimelineItemProps) {
             {data.startDate} {toLabel} {data.endDate}
           </span>
           {data.current && (
-            <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-sans font-semibold tracking-wider uppercase bg-zinc-200/70 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-300/60 dark:border-white/10">
+            <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-sans font-semibold tracking-wider uppercase bg-zinc-200/70 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-300/60 dark:border-white/10">
               {currentLabel}
             </span>
           )}

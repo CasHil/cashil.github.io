@@ -14,11 +14,19 @@ export default function Header({
   const { t } = useLanguage();
 
   const navItems = [
-    { to: "/", label: t.nav.overview },
-    { to: "/cv", label: t.nav.cv },
-    { to: "/work-experience", label: t.nav.workExperience },
-    { to: "/education", label: t.nav.education },
-    { to: "/about", label: t.nav.about },
+    { to: "/", label: <span>{t.nav.overview}</span> },
+    { to: "/cv", label: <span>{t.nav.cv}</span> },
+    {
+      to: "/work-experience",
+      label: (
+        <>
+          <span className="hidden sm:inline">{t.nav.workExperience}</span>
+          <span className="sm:hidden">{t.nav.workShort}</span>
+        </>
+      ),
+    },
+    { to: "/education", label: <span>{t.nav.education}</span> },
+    { to: "/about", label: <span>{t.nav.about}</span> },
   ];
 
   const isVertical = orientation === "vertical";
@@ -31,16 +39,16 @@ export default function Header({
           className={
             isVertical
               ? "flex flex-col space-y-1"
-              : "flex flex-wrap items-center gap-1 sm:gap-2"
+              : "flex flex-nowrap sm:flex-wrap items-center gap-1 sm:gap-1.5 overflow-x-auto sm:overflow-visible no-scrollbar -mx-2 px-2 sm:mx-0 sm:px-0"
           }
         >
           {navItems.map((item) => (
-            <li key={item.to}>
+            <li key={item.to} className="shrink-0">
               <NavLink
                 to={item.to}
                 onClick={handleClick}
                 className={({ isActive }) =>
-                  `relative px-2.5 sm:px-3 py-1.5 text-xs sm:text-sm font-medium transition-colors duration-150 inline-block rounded-md ${
+                  `relative px-2 sm:px-3 py-1.5 text-xs sm:text-sm font-medium transition-colors duration-150 inline-block rounded-md shrink-0 whitespace-nowrap ${
                     isActive
                       ? "text-zinc-950 dark:text-white font-semibold"
                       : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100 hover:bg-zinc-100/60 dark:hover:bg-zinc-800/50"

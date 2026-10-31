@@ -50,6 +50,7 @@ export default function WorkExperience() {
             <DisclosureSection
               idPrefix="early-engineering"
               title={t.workExperience.earlyEngineeringTitle}
+              badge={t.workExperience.earlyEngineeringBadge}
               summary={t.workExperience.earlyEngineeringSubtitle}
               openLabel={t.workExperience.showEarlyEngineering}
               closeLabel={t.workExperience.hideEarlyEngineering}
@@ -81,14 +82,14 @@ export default function WorkExperience() {
       <div className="pt-8 border-t border-zinc-200/80 dark:border-white/10 flex flex-wrap items-center gap-3">
         <Link
           to="/cv"
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-medium text-xs sm:text-sm hover:bg-emerald-800 dark:hover:bg-emerald-300 dark:hover:text-zinc-950 transition-colors shadow-xs"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-medium text-xs sm:text-sm hover:bg-emerald-800 dark:hover:bg-emerald-300 dark:hover:text-zinc-950 transition-colors shadow-xs"
         >
           <span>{language === "nl" ? "Bekijk Curriculum Vitae" : "View Curriculum Vitae"}</span>
           <span className="font-mono text-zinc-400 dark:text-zinc-500" aria-hidden="true">→</span>
         </Link>
         <Link
           to="/education"
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-zinc-300 dark:border-zinc-700 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-emerald-600 dark:hover:border-emerald-400 transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-emerald-600 dark:hover:border-emerald-400 transition-colors"
         >
           <span>{language === "nl" ? "Opleiding & Onderzoek" : "Education & Research"}</span>
           <span className="font-mono text-zinc-400" aria-hidden="true">→</span>

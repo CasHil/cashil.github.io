@@ -5,6 +5,7 @@ export interface TranslationDictionary {
     overview: string;
     cv: string;
     workExperience: string;
+    workShort: string;
     education: string;
     about: string;
   };
@@ -113,6 +114,7 @@ export interface TranslationDictionary {
     archiveHeading: string;
     archiveSubtitle: string;
     earlyEngineeringTitle: string;
+    earlyEngineeringBadge: string;
     earlyEngineeringSubtitle: string;
     showEarlyEngineering: string;
     hideEarlyEngineering: string;
@@ -182,6 +184,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       overview: "Overview",
       cv: "CV",
       workExperience: "Work Experience",
+      workShort: "Work",
       education: "Education",
       about: "About",
     },
@@ -228,20 +231,20 @@ export const translations: Record<Language, TranslationDictionary> = {
       tikkieSubtitle: "Payment APIs & Merchant Portals",
       tikkieDescription:
         "High-throughput payment APIs and merchant portals. Built idempotent settlement workflows, partner webhook infrastructure, and financial reporting tools processing millions in transactions across Dutch enterprises.",
-      tikkieLink: "View role details →",
+      tikkieLink: "View role details",
       thesisTag: "TU Delft MSc Thesis · 2024",
       thesisTitle: "Debugging the Divide",
       thesisSubtitle: "Clickstream Telemetry & Engagement Clustering across 175k Learners",
       thesisDescription:
         "Analyzed learning patterns and dropout dynamics across 14 computer science MOOC runs on Open edX. Built unsupervised clustering pipelines (k-means) and regression models in Python to quantify retention differences between men and women.",
-      thesisLink: "Explore research telemetry →",
+      thesisLink: "Explore research telemetry",
       thesisSkills: ["Python", "Pandas", "Scikit-learn", "Open edX"],
       bitsizedTag: "Co-Founder & Lead Engineer · 2023 – 2025",
       bitsizedTitle: "Bitsized",
       bitsizedSubtitle: "In-Browser Execution Sandboxes for CS Education",
       bitsizedDescription:
         "Browser-based code sandboxes and automated evaluation environments adopted by Dutch secondary school computer science departments. Built client-side test runners, interactive exercises, and teacher management tooling.",
-      bitsizedLink: "View platform details →",
+      bitsizedLink: "View platform details",
     },
     dataExplorer: {
       badge: "TU Delft · 2024",
@@ -311,6 +314,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       archiveHeading: "Teaching & Academic Work",
       archiveSubtitle: "",
       earlyEngineeringTitle: "Prior Roles & University Internships",
+      earlyEngineeringBadge: "2 Roles · 2019–2021",
       earlyEngineeringSubtitle:
         "Foundational software development and data pipelines at Bexter and Muziekweb (2019–2021).",
       showEarlyEngineering: "Show prior engineering roles (2)",
@@ -565,6 +569,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       overview: "Overzicht",
       cv: "CV",
       workExperience: "Werkervaring",
+      workShort: "Werk",
       education: "Opleiding",
       about: "Over mij",
     },
@@ -611,20 +616,20 @@ export const translations: Record<Language, TranslationDictionary> = {
       tikkieSubtitle: "Betaal-API's & Ondernemersportals",
       tikkieDescription:
         "Bedrijfskritische betaal-API's en dashboards voor Tikkie Zakelijk: bouw van idempotente settlement-workflows, partner-webhooks en financiële rapportagetools voor duizenden ondernemers.",
-      tikkieLink: "Bekijk functiedetails →",
+      tikkieLink: "Bekijk functiedetails",
       thesisTag: "TU Delft Masterscriptie · 2024",
       thesisTitle: "Debugging the Divide",
       thesisSubtitle: "Klikstream-telemetrie & clustering over 175.000 cursisten",
       thesisDescription:
         "Onderzoek naar leerpatronen en uitvaldynamiek over 14 edities van TU Delft computer science MOOCs op Open edX. Bouwde clustering-pipelines (k-means) en regressiemodellen in Python om retentieverschillen tussen mannen en vrouwen te kwantificeren.",
-      thesisLink: "Bekijk onderzoeksdata →",
+      thesisLink: "Bekijk onderzoeksdata",
       thesisSkills: ["Python", "Pandas", "Scikit-learn", "Open edX"],
       bitsizedTag: "Mede-oprichter & Lead Engineer · 2023 – 2025",
       bitsizedTitle: "Bitsized",
       bitsizedSubtitle: "In-Browser Sandboxes voor Informaticaonderwijs",
       bitsizedDescription:
         "Browser-gebaseerde code-sandboxes en realtime evaluatie-omgevingen voor informaticasecties in het voortgezet onderwijs. Ontwikkelde client-side test-runners, automatische opgave-evaluatie en docententools.",
-      bitsizedLink: "Bekijk platformdetails →",
+      bitsizedLink: "Bekijk platformdetails",
     },
     dataExplorer: {
       badge: "TU Delft · 2024",
@@ -694,6 +699,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       archiveHeading: "Onderwijs & Academisch Werk",
       archiveSubtitle: "",
       earlyEngineeringTitle: "Eerdere Functies & Stages",
+      earlyEngineeringBadge: "2 Functies · 2019–2021",
       earlyEngineeringSubtitle:
         "Softwareontwikkeling en datapipelines bij Bexter en Muziekweb (2019–2021).",
       showEarlyEngineering: "Bekijk eerdere engineering functies (2)",
