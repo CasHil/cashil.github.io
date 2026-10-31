@@ -38,7 +38,7 @@ export default function DisclosureSection({
               {title}
             </h3>
             {badge && (
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-mono font-medium bg-zinc-200/70 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">
+              <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-mono font-medium bg-zinc-200/70 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-300/60 dark:border-white/10">
                 {badge}
               </span>
             )}
@@ -48,13 +48,13 @@ export default function DisclosureSection({
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-controls={contentId}
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded self-start sm:self-auto py-1"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-md self-start sm:self-auto py-1"
           >
             <span>{isOpen ? closeLabel : openLabel}</span>
             <motion.span
               animate={{ rotate: isOpen ? 180 : 0 }}
               transition={{ duration: 0.2 }}
-              className="inline-block text-[10px]"
+              className="inline-block text-xs"
               aria-hidden="true"
             >
               ▼
