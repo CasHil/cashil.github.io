@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Body from "./components/Body/Body";
@@ -9,22 +10,39 @@ import "./App.css";
 
 function Masthead() {
   const { t } = useLanguage();
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("casperhildebrand@gmail.com");
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    } catch {
+      // Fallback: mailto
+      window.location.href = "mailto:casperhildebrand@gmail.com";
+    }
+  };
 
   return (
-    <header className="pt-8 sm:pt-14 pb-8 space-y-6">
+    <header className="pt-8 sm:pt-12 pb-6 space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        {/* Identity */}
+        {/* Identity & Technical HUD */}
         <Link to="/" className="group flex items-center gap-3.5 focus:outline-none">
           <div className="relative shrink-0">
             <img
               src="/images/profile.webp"
               alt="Casper Hildebrand"
-              className="relative h-11 w-11 rounded-full object-cover ring-1 ring-zinc-300/80 dark:ring-white/20 ring-offset-2 ring-offset-canvas transition-transform duration-300 group-hover:scale-105"
+              className="relative h-12 w-12 rounded-full object-cover ring-1 ring-zinc-300/80 dark:ring-white/20 ring-offset-2 ring-offset-canvas transition-transform duration-300 group-hover:scale-105"
             />
           </div>
           <div>
-            <div className="font-display font-bold text-base sm:text-lg text-zinc-900 dark:text-white tracking-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
-              {t.sidebar.name}
+            <div className="flex items-center gap-2">
+              <span className="font-display font-bold text-base sm:text-lg text-zinc-900 dark:text-white tracking-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                {t.sidebar.name}
+              </span>
+              <span className="hidden sm:inline-block px-2 py-0.5 rounded text-[11px] font-mono text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200/80 dark:border-white/10" data-tabular>
+                {t.sidebar.timezone}
+              </span>
             </div>
             <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
               {t.sidebar.role}
@@ -33,14 +51,39 @@ function Masthead() {
         </Link>
 
         {/* Action Controls & Social */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-3 self-start sm:self-auto">
-          {/* Social Profiles with Accessible 44px Touch Targets */}
+        <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 self-start sm:self-auto">
+          {/* Quick Copy Email Interaction */}
+          <button
+            type="button"
+            onClick={handleCopyEmail}
+            className="group relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border border-zinc-200/80 dark:border-white/10 bg-white/70 dark:bg-zinc-900/60 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition-all shadow-xs min-h-[36px]"
+            title="Click to copy email address"
+            aria-label={copied ? t.sidebar.copiedEmail : t.sidebar.copyEmail}
+          >
+            {copied ? (
+              <>
+                <svg className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-emerald-700 dark:text-emerald-300 font-semibold">{t.sidebar.copiedEmail}</span>
+              </>
+            ) : (
+              <>
+                <svg className="w-3.5 h-3.5 text-zinc-400 group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                <span>{t.sidebar.copyEmail}</span>
+              </>
+            )}
+          </button>
+
+          {/* Social Profiles with Accessible Touch Targets */}
           <nav aria-label="Social Profiles" className="flex items-center text-zinc-500 dark:text-zinc-400">
             <a
               href="https://github.com/CasHil"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 sm:w-8 sm:h-8 flex items-center justify-center rounded-full hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-zinc-950 dark:hover:text-white transition-colors"
+              className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-zinc-950 dark:hover:text-white transition-colors"
               aria-label="GitHub profile"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -51,21 +94,11 @@ function Masthead() {
               href="https://www.linkedin.com/in/casper-hildebrand/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 sm:w-8 sm:h-8 flex items-center justify-center rounded-full hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-zinc-950 dark:hover:text-white transition-colors"
+              className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-zinc-950 dark:hover:text-white transition-colors"
               aria-label="LinkedIn profile"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-              </svg>
-            </a>
-            <a
-              href="mailto:casperhildebrand@gmail.com"
-              className="w-9 h-9 sm:w-8 sm:h-8 flex items-center justify-center rounded-full hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
-              aria-label="Email Casper"
-              title="casperhildebrand@gmail.com"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </a>
           </nav>

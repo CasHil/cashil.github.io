@@ -42,19 +42,19 @@ export default function Education() {
       </div>
 
       {/* Strict 2-CTA Hierarchy: 1 Primary + 1 Secondary */}
-      <div className="pt-8 border-t border-zinc-200/80 dark:border-white/10 flex flex-wrap items-center gap-3">
+      <div className="pt-8 border-t border-zinc-200/80 dark:border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <a
           href={t.dataExplorer.repositoryLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-semibold text-xs sm:text-sm shadow-sm hover:shadow-md hover:bg-emerald-800 dark:hover:bg-emerald-300 dark:hover:text-zinc-950 active:scale-[0.98] transition-all duration-150 ring-1 ring-zinc-900/10 dark:ring-white/20"
+          className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-semibold text-xs sm:text-sm shadow-sm hover:shadow-md hover:bg-emerald-800 dark:hover:bg-emerald-300 dark:hover:text-zinc-950 active:scale-[0.98] transition-all duration-150 ring-1 ring-zinc-900/10 dark:ring-white/20 min-h-[44px]"
         >
-          <span>{t.dataExplorer.repositoryText}</span>
+          <span>{t.dataExplorer.repositoryTextShort}</span>
           <span className="font-mono text-zinc-400 dark:text-zinc-500 transition-transform group-hover:translate-x-0.5" aria-hidden="true">↗</span>
         </a>
         <Link
           to="/cv"
-          className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-zinc-300/80 dark:border-white/15 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-emerald-600/50 dark:hover:border-emerald-400/50 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-[0.98] transition-all duration-150"
+          className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-zinc-300/80 dark:border-white/15 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-emerald-600/50 dark:hover:border-emerald-400/50 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-[0.98] transition-all duration-150 min-h-[44px]"
         >
           <span>{t.outreach.cvBtn}</span>
           <span className="font-mono text-zinc-400 transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>

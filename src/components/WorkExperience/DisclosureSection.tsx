@@ -48,7 +48,7 @@ export default function DisclosureSection({
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-controls={contentId}
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-md self-start sm:self-auto py-1"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-md self-start sm:self-auto py-2 sm:py-1 min-h-[36px]"
           >
             <span>{isOpen ? closeLabel : openLabel}</span>
             <motion.span
