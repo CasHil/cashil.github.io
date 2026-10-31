@@ -13,7 +13,7 @@ export default function LanguageToggle() {
       <button
         type="button"
         onClick={() => setLanguage("en")}
-        className={`relative z-10 px-2.5 py-0.5 font-semibold rounded-full transition-colors duration-200 ${
+        className={`relative z-10 px-3 py-1.5 sm:py-1 font-semibold rounded-full transition-colors duration-200 min-h-[32px] flex items-center justify-center ${
           language === "en"
             ? "text-zinc-950 dark:text-white"
             : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
@@ -34,7 +34,7 @@ export default function LanguageToggle() {
       <button
         type="button"
         onClick={() => setLanguage("nl")}
-        className={`relative z-10 px-2.5 py-0.5 font-semibold rounded-full transition-colors duration-200 ${
+        className={`relative z-10 px-3 py-1.5 sm:py-1 font-semibold rounded-full transition-colors duration-200 min-h-[32px] flex items-center justify-center ${
           language === "nl"
             ? "text-zinc-950 dark:text-white"
             : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"

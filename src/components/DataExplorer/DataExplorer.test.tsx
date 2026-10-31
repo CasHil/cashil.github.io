@@ -20,3 +20,20 @@ test("renders DataExplorer with initial metrics and handles tab switching", () =
   // Verify cluster content rendered
   expect(screen.getAllByText(/Completers|Afronders/i).length).toBeGreaterThan(0);
 });
+
+test("handles trajectory tab and week scrubber interaction", () => {
+  renderWithProviders(<DataExplorer />);
+
+  // Switch to Trajectory tab
+  const trajectoryTabBtn = screen.getByText(/Trajectory|Traject/i);
+  fireEvent.click(trajectoryTabBtn);
+
+  // Verify trajectory content is present
+  expect(screen.getByText(/Weekly Clickstream|Wekelijkse Klikstream/i)).toBeInTheDocument();
+
+  // Click on week 5
+  const week5Btn = screen.getByRole("button", { name: "W5" });
+  fireEvent.click(week5Btn);
+
+  expect(screen.getAllByText(/Week 5/i).length).toBeGreaterThan(0);
+});

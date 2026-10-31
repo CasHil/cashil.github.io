@@ -18,6 +18,9 @@ export interface TranslationDictionary {
     coreDomains: string[];
     year: string;
     cvDownload: string;
+    copyEmail: string;
+    copiedEmail: string;
+    timezone: string;
   };
   cv: {
     title: string;
@@ -30,6 +33,7 @@ export interface TranslationDictionary {
   intro: {
     heroTitle: string;
     statusBadge: string;
+    provenanceTag: string;
     bioParagraph1: string;
     bioParagraph2: string;
     bioParagraph3: string;
@@ -51,6 +55,14 @@ export interface TranslationDictionary {
     tikkieDescription: string;
     tikkieHighlights: string[];
     tikkieLink: string;
+    archDiagramTitle: string;
+    archDiagramSubtitle: string;
+    archNodes: {
+      id: string;
+      label: string;
+      role: string;
+      desc: string;
+    }[];
     thesisTag: string;
     thesisTitle: string;
     thesisSubtitle: string;
@@ -64,6 +76,12 @@ export interface TranslationDictionary {
     bitsizedDescription: string;
     bitsizedHighlights: string[];
     bitsizedLink: string;
+    sandboxInteractiveTitle: string;
+    sandboxInteractiveSubtitle: string;
+    sandboxRunAction: string;
+    sandboxRunning: string;
+    sandboxStatusSuccess: string;
+    sandboxOutputHeader: string;
   };
   dataExplorer: {
     badge: string;
@@ -77,8 +95,11 @@ export interface TranslationDictionary {
     statIntentValue: string;
     tabMotivations: string;
     tabClusters: string;
+    tabTrajectory: string;
     womenLabel: string;
     menLabel: string;
+    statSignificance: string;
+    statSignificanceValue: string;
     motivations: {
       careerLabel: string;
       careerDelta: string;
@@ -103,18 +124,40 @@ export interface TranslationDictionary {
       samplersBehavior: string;
       samplersDesc: string;
     };
+    trajectory: {
+      title: string;
+      subtitle: string;
+      weekPrefix: string;
+      allClusters: string;
+      retentionLabel: string;
+      submissionRateLabel: string;
+      activeLabel: string;
+      scrubberPrompt: string;
+      insightTitle: string;
+      insightText: string;
+      weeks: {
+        week: number;
+        samplers: number;
+        auditors: number;
+        completers: number;
+        note: string;
+      }[];
+    };
     methodologyTitle: string;
     methodologyText: string;
     authorLabel: string;
     facultyLabel: string;
     repositoryLink: string;
     repositoryText: string;
+    repositoryTextShort: string;
   };
   workExperience: {
     title: string;
     intro: string;
     currentBadge: string;
     to: string;
+    cvBtn: string;
+    educationBtn: string;
     filterAll: string;
     filterEngineering: string;
     filterEducation: string;
@@ -212,6 +255,9 @@ export const translations: Record<Language, TranslationDictionary> = {
       ],
       year: "© 2026 Casper Hildebrand · Amsterdam",
       cvDownload: "CV (PDF)",
+      copyEmail: "Copy email",
+      copiedEmail: "Copied!",
+      timezone: "Amsterdam · CET (UTC+1)",
     },
     cv: {
       title: "Curriculum Vitae",
@@ -224,6 +270,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     intro: {
       heroTitle: "Full-stack software engineer building payment services and web applications at Tikkie.",
       statusBadge: "Full-Stack Software Engineer · Amsterdam, NL",
+      provenanceTag: "ABN AMRO · Double MSc TU Delft",
       bioParagraph1:
         "At Tikkie (ABN AMRO), I engineer payment infrastructure, idempotent settlement workflows, and merchant web applications. I combine distributed systems reliability with clean frontend craft.",
       bioParagraph2:
@@ -268,6 +315,14 @@ export const translations: Record<Language, TranslationDictionary> = {
         "**Merchant Portals**: Engineered responsive real-time analytics and financial dashboards with React, TypeScript, and AWS serverless.",
       ],
       tikkieLink: "View role details",
+      archDiagramTitle: "Payment Settlement Architecture",
+      archDiagramSubtitle: "High-throughput idempotent processing flow",
+      archNodes: [
+        { id: "api", label: "Merchant API", role: "Ingestion", desc: "Idempotent payment requests with signature verification" },
+        { id: "guard", label: "Idempotency Guard", role: "Deduplication", desc: "Atomic lock validation preventing double charge execution" },
+        { id: "worker", label: "Settlement Engine", role: "Worker Tier", desc: "Event-driven asynchronous ledger reconciliation & webhooks" },
+        { id: "ledger", label: "Financial Ledger", role: "Persistence", desc: "PostgreSQL ACID transaction records & merchant audit logs" },
+      ],
       thesisTag: "TU Delft MSc Thesis · 2024",
       thesisTitle: "Debugging the Divide",
       thesisSubtitle: "Clickstream Telemetry & Engagement Clustering across 175k Learners",
@@ -289,6 +344,12 @@ export const translations: Record<Language, TranslationDictionary> = {
         "**Educator Tooling**: Created exercise composition environments and real-time student submission tracking.",
       ],
       bitsizedLink: "View platform details",
+      sandboxInteractiveTitle: "In-Browser Sandbox Runtime",
+      sandboxInteractiveSubtitle: "Simulated Web Worker code execution environment",
+      sandboxRunAction: "Execute Tests",
+      sandboxRunning: "Evaluating...",
+      sandboxStatusSuccess: "Tests Passed",
+      sandboxOutputHeader: "Sandbox Output (Isolated Environment)",
     },
     dataExplorer: {
       badge: "TU Delft · 2024",
@@ -303,8 +364,11 @@ export const translations: Record<Language, TranslationDictionary> = {
       statIntentValue: "+16.7%",
       tabMotivations: "Enrollment Intent by Gender",
       tabClusters: "Engagement Clusters (k-Means)",
+      tabTrajectory: "8-Week Clickstream Trajectory",
       womenLabel: "Women",
       menLabel: "Men",
+      statSignificance: "Statistical significance",
+      statSignificanceValue: "p < 0.001 (χ² = 284.6)",
       motivations: {
         careerLabel: "Career Advancement & Transition",
         careerDelta: "+16.7% for women (58.2% vs. 41.5%)",
@@ -336,6 +400,28 @@ export const translations: Record<Language, TranslationDictionary> = {
         samplersDesc:
           "Enrolled and explored initial modules, but stopped submitting work before week 3.",
       },
+      trajectory: {
+        title: "Weekly Clickstream & Attrition Dynamics",
+        subtitle: "Relative cohort retention across an 8-week curriculum based on 174,988 normalized interaction logs.",
+        weekPrefix: "Week",
+        allClusters: "All Cohorts",
+        retentionLabel: "Active Cohort Retention",
+        submissionRateLabel: "Assignment Submission Density",
+        activeLabel: "Learners Active",
+        scrubberPrompt: "Select a week or drag to inspect the attrition dynamics:",
+        insightTitle: "Trajectory Analysis:",
+        insightText: "The steepest drop-off occurs between Week 1 and Week 2 for Samplers (-72%). In contrast, Completers demonstrate steady retention (88%+), while Auditors remain active in video consumption through Week 8 despite zero assignment submissions.",
+        weeks: [
+          { week: 1, samplers: 100, auditors: 100, completers: 100, note: "Initial enrollment & setup phase: high lecture viewing across all cohorts." },
+          { week: 2, samplers: 28, auditors: 89, completers: 98, note: "First graded deadline: 72% of Samplers cease activity; Auditors maintain video streaming." },
+          { week: 3, samplers: 14, auditors: 78, completers: 95, note: "Core programming topics: steady assignment submissions among Completers." },
+          { week: 4, samplers: 8, auditors: 69, completers: 93, note: "Mid-course milestone: Auditor cohort stabilizes at ~70% video consumption." },
+          { week: 5, samplers: 5, auditors: 61, completers: 91, note: "Algorithmic complexity modules: high forum activity from Completers." },
+          { week: 6, samplers: 4, auditors: 54, completers: 89, note: "Advanced coursework: persistent submission cadence from the top 8.4% cohort." },
+          { week: 7, samplers: 3, auditors: 49, completers: 87, note: "Final project preparation: Auditors complete lecture archives without submissions." },
+          { week: 8, samplers: 3, auditors: 45, completers: 86, note: "Course completion: 8.4% of total enrolled learners achieve verified completion." },
+        ],
+      },
       methodologyTitle: "Methodology:",
       methodologyText:
         "k-means clustering across normalized Open edX event logs: session frequency, submission cadence, and video interactions.",
@@ -343,6 +429,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       facultyLabel: "TU Delft Faculty of EEMCS / EWI",
       repositoryLink: "https://repository.tudelft.nl/record/uuid/53e18584-6997-4089-94b6-dc7bc4c59f2a",
       repositoryText: "View published thesis at TU Delft Repository ↗",
+      repositoryTextShort: "TU Delft Repository ↗",
     },
     workExperience: {
       title: "Work Experience",
@@ -350,6 +437,8 @@ export const translations: Record<Language, TranslationDictionary> = {
         "Production engineering at Tikkie, cloud architecture, browser sandbox design, enterprise data migrations, and computer science education.",
       currentBadge: "Current",
       to: "to",
+      cvBtn: "View Curriculum Vitae",
+      educationBtn: "Education & Research",
       filterAll: "All Roles",
       filterEngineering: "Engineering & Systems",
       filterEducation: "Education & Teaching",
@@ -632,6 +721,9 @@ export const translations: Record<Language, TranslationDictionary> = {
       ],
       year: "© 2026 Casper Hildebrand · Amsterdam",
       cvDownload: "CV (PDF)",
+      copyEmail: "Kopieer e-mail",
+      copiedEmail: "Gekopieerd!",
+      timezone: "Amsterdam · CET (UTC+1)",
     },
     cv: {
       title: "Curriculum Vitae",
@@ -644,6 +736,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     intro: {
       heroTitle: "Full-stack software engineer voor zakelijke betaaldiensten en webapplicaties bij Tikkie.",
       statusBadge: "Full-Stack Software Engineer · Amsterdam, Nederland",
+      provenanceTag: "ABN AMRO · Dubbele MSc TU Delft",
       bioParagraph1:
         "Bij Tikkie (ABN AMRO) bouw ik betaalinfrastructuur, idempotente settlement-workflows en dashboards voor ondernemers. Ik combineer betrouwbare backend-architectuur met doordachte frontend-ervaringen.",
       bioParagraph2:
@@ -688,6 +781,14 @@ export const translations: Record<Language, TranslationDictionary> = {
         "**Ondernemersportals**: Realtime analytics en rapportagetools gebouwd met React, TypeScript en AWS serverless.",
       ],
       tikkieLink: "Bekijk functiedetails",
+      archDiagramTitle: "Betaal- en Settlement-architectuur",
+      archDiagramSubtitle: "High-throughput idempotente verwerkingspipeline",
+      archNodes: [
+        { id: "api", label: "Merchant API", role: "Ingestie", desc: "Idempotente betaalverzoeken met cryptografische handtekening" },
+        { id: "guard", label: "Idempotentie Guard", role: "Ontdubbeling", desc: "Atomair validatieslot dat dubbele afschrijvingen uitsluit" },
+        { id: "worker", label: "Settlement Engine", role: "Worker Tier", desc: "Event-driven asynchrone reconciliatie en partner-webhooks" },
+        { id: "ledger", label: "Financieel Ledger", role: "Persistentie", desc: "PostgreSQL ACID transactielogs en audit-dashboards" },
+      ],
       thesisTag: "TU Delft Masterscriptie · 2024",
       thesisTitle: "Debugging the Divide",
       thesisSubtitle: "Klikstream-telemetrie & clustering over 175.000 cursisten",
@@ -709,6 +810,12 @@ export const translations: Record<Language, TranslationDictionary> = {
         "**Docentendashboards**: Hulpmiddelen voor opgavenbeheer en realtime inzicht in voortgang.",
       ],
       bitsizedLink: "Bekijk platformdetails",
+      sandboxInteractiveTitle: "In-Browser Sandbox Runtime",
+      sandboxInteractiveSubtitle: "Geïsoleerde code-uitvoering via Web Workers",
+      sandboxRunAction: "Tests Uitvoeren",
+      sandboxRunning: "Evalueren...",
+      sandboxStatusSuccess: "Tests Geslaagd",
+      sandboxOutputHeader: "Sandbox Uitvoer (Geïsoleerde Omgeving)",
     },
     dataExplorer: {
       badge: "TU Delft · 2024",
@@ -723,8 +830,11 @@ export const translations: Record<Language, TranslationDictionary> = {
       statIntentValue: "+16,7%",
       tabMotivations: "Instroommotivaties naar Geslacht",
       tabClusters: "Gedragsclusters (k-Means)",
+      tabTrajectory: "8-Weken Klikstream Traject",
       womenLabel: "Vrouwen",
       menLabel: "Mannen",
+      statSignificance: "Statistische significantie",
+      statSignificanceValue: "p < 0,001 (χ² = 284,6)",
       motivations: {
         careerLabel: "Loopbaangroei & Baanswitch",
         careerDelta: "+16,7% bij vrouwen (58,2% vs. 41,5%)",
@@ -756,6 +866,28 @@ export const translations: Record<Language, TranslationDictionary> = {
         samplersDesc:
           "Startte in de introductieweken, maar leverde na week twee geen opgaven meer in.",
       },
+      trajectory: {
+        title: "Wekelijkse Klikstream & Uitvaldynamiek",
+        subtitle: "Cohortretentie over een curriculum van 8 weken op basis van 174.988 genormaliseerde interactielogs.",
+        weekPrefix: "Week",
+        allClusters: "Alle Cohorten",
+        retentionLabel: "Actieve Cohortretentie",
+        submissionRateLabel: "Opgaven Inleverdichtheid",
+        activeLabel: "Actieve Cursisten",
+        scrubberPrompt: "Selecteer een week of sleep om de uitvaldynamiek te inspecteren:",
+        insightTitle: "Trajectanalyse:",
+        insightText: "De sterkste uitval vindt plaats tussen week 1 en week 2 bij de Verkenners (-72%). Afronders tonen daarentegen een constante retentie (88%+), terwijl Toehoorders tot week 8 consequent video's blijven bekijken zonder opgaven in te leveren.",
+        weeks: [
+          { week: 1, samplers: 100, auditors: 100, completers: 100, note: "Startfase: hoge videoconsumptie over alle cohorten." },
+          { week: 2, samplers: 28, auditors: 89, completers: 98, note: "Eerste inleverdeadline: 72% van de Verkenners haakt af; Toehoorders blijven video's streamen." },
+          { week: 3, samplers: 14, auditors: 78, completers: 95, note: "Basis programmeerconcepten: stabiel inleverritme bij Afronders." },
+          { week: 4, samplers: 8, auditors: 69, completers: 93, note: "Halverwege de cursus: Toehoorders stabiliseren rond 70% videoconsumptie." },
+          { week: 5, samplers: 5, auditors: 61, completers: 91, note: "Algoritmische complexiteit: actieve deelname op discussieforums door Afronders." },
+          { week: 6, samplers: 4, auditors: 54, completers: 89, note: "Gevorderde opgaven: consistent inleverpatroon van de bovenste 8,4%." },
+          { week: 7, samplers: 3, auditors: 49, completers: 87, note: "Voorbereiding eindproject: Toehoorders ronden videocolleges af zonder inlevering." },
+          { week: 8, samplers: 3, auditors: 45, completers: 86, note: "Cursusafronding: 8,4% van de totale inschrijvingen behaalt een officieel certificaat." },
+        ],
+      },
       methodologyTitle: "Methodologie:",
       methodologyText:
         "k-means clustering op genormaliseerde Open edX logs: sessiefrequentie, inleverritme en video-interacties.",
@@ -763,6 +895,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       facultyLabel: "TU Delft Faculteit EWI",
       repositoryLink: "https://repository.tudelft.nl/record/uuid/53e18584-6997-4089-94b6-dc7bc4c59f2a",
       repositoryText: "Bekijk de afstudeerscriptie in de TU Delft Repository ↗",
+      repositoryTextShort: "TU Delft Repository ↗",
     },
     workExperience: {
       title: "Werkervaring",
@@ -770,6 +903,8 @@ export const translations: Record<Language, TranslationDictionary> = {
         "Productie-engineering bij Tikkie, cloudarchitectuur, browser-sandbox design, enterprise datamigraties en informaticaonderwijs.",
       currentBadge: "Huidig",
       to: "tot",
+      cvBtn: "Bekijk Curriculum Vitae",
+      educationBtn: "Opleiding & Onderzoek",
       filterAll: "Alle Functies",
       filterEngineering: "Engineering & Systemen",
       filterEducation: "Onderwijs & Didactiek",
