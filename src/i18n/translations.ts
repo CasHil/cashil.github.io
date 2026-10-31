@@ -29,9 +29,15 @@ export interface TranslationDictionary {
   };
   intro: {
     heroTitle: string;
+    statusBadge: string;
     bioParagraph1: string;
     bioParagraph2: string;
     bioParagraph3: string;
+    signals: {
+      tag: string;
+      title: string;
+      description: string;
+    }[];
     exploreWork: string;
     exploreEdu: string;
     getInTouch: string;
@@ -43,17 +49,20 @@ export interface TranslationDictionary {
     tikkieTitle: string;
     tikkieSubtitle: string;
     tikkieDescription: string;
+    tikkieHighlights: string[];
     tikkieLink: string;
     thesisTag: string;
     thesisTitle: string;
     thesisSubtitle: string;
     thesisDescription: string;
+    thesisHighlights: string[];
     thesisLink: string;
     thesisSkills: string[];
     bitsizedTag: string;
     bitsizedTitle: string;
     bitsizedSubtitle: string;
     bitsizedDescription: string;
+    bitsizedHighlights: string[];
     bitsizedLink: string;
   };
   dataExplorer: {
@@ -214,11 +223,34 @@ export const translations: Record<Language, TranslationDictionary> = {
     },
     intro: {
       heroTitle: "Full-stack software engineer building payment services and web applications at Tikkie.",
+      statusBadge: "Full-Stack Software Engineer · Amsterdam, NL",
       bioParagraph1:
-        "At Tikkie (ABN AMRO), I build payment infrastructure, idempotent settlement APIs, and real-time merchant portals used daily by thousands of Dutch businesses.",
+        "At Tikkie (ABN AMRO), I engineer payment infrastructure, idempotent settlement workflows, and merchant web applications. I combine distributed systems reliability with clean frontend craft.",
       bioParagraph2:
-        "Double Master's from TU Delft in Computer Science (Data Science) and Science Education. Co-founded Bitsized, built software for the public sector, and published research analyzing 175k online learners.",
+        "Double Master's graduate from TU Delft in Computer Science (Data Science) and Science Education. Former founder and published researcher analyzing large-scale learning telemetry.",
       bioParagraph3: "",
+      signals: [
+        {
+          tag: "Fintech Production",
+          title: "Tikkie (ABN AMRO)",
+          description: "High-throughput payment APIs & merchant portals processing enterprise volumes",
+        },
+        {
+          tag: "Academic Rigor",
+          title: "Double MSc · TU Delft",
+          description: "Computer Science (Data Science) & Didactics with first-degree accreditation",
+        },
+        {
+          tag: "0-to-1 Engineering",
+          title: "Co-Founder · Bitsized",
+          description: "Browser code execution sandboxes adopted by Dutch secondary CS programs",
+        },
+        {
+          tag: "Empirical Research",
+          title: "175k Learner Telemetry",
+          description: "Unsupervised k-means clustering & regression on Open edX student cohorts",
+        },
+      ],
       exploreWork: "Explore Work Experience",
       exploreEdu: "Education & Degrees",
       getInTouch: "Get in touch",
@@ -230,20 +262,32 @@ export const translations: Record<Language, TranslationDictionary> = {
       tikkieTitle: "Tikkie Business",
       tikkieSubtitle: "Payment APIs & Merchant Portals",
       tikkieDescription:
-        "High-throughput payment APIs and merchant portals. Built idempotent settlement workflows, partner webhook infrastructure, and financial reporting tools processing millions in transactions across Dutch enterprises.",
+        "Production payment APIs and merchant portals supporting thousands of enterprise businesses.",
+      tikkieHighlights: [
+        "**Payment Infrastructure**: Implemented idempotent settlement pipelines, partner webhooks, and automated reconciliation.",
+        "**Merchant Portals**: Engineered responsive real-time analytics and financial dashboards with React, TypeScript, and AWS serverless.",
+      ],
       tikkieLink: "View role details",
       thesisTag: "TU Delft MSc Thesis · 2024",
       thesisTitle: "Debugging the Divide",
       thesisSubtitle: "Clickstream Telemetry & Engagement Clustering across 175k Learners",
       thesisDescription:
-        "Analyzed learning patterns and dropout dynamics across 14 computer science MOOC runs on Open edX. Built unsupervised clustering pipelines (k-means) and regression models in Python to quantify retention differences between men and women.",
+        "Large-scale learning pattern and dropout dynamic analysis across 14 Open edX computer science MOOCs.",
+      thesisHighlights: [
+        "**Clustering Pipelines**: Unsupervised k-means clustering over interaction logs from 174,988 enrolled learners.",
+        "**Statistical Models**: Quantified gender enrollment motivation gaps and behavioral retention indicators in Python.",
+      ],
       thesisLink: "Explore research telemetry",
       thesisSkills: ["Python", "Pandas", "Scikit-learn", "Open edX"],
       bitsizedTag: "Co-Founder & Lead Engineer · 2023 – 2025",
       bitsizedTitle: "Bitsized",
       bitsizedSubtitle: "In-Browser Execution Sandboxes for CS Education",
       bitsizedDescription:
-        "Browser-based code sandboxes and automated evaluation environments adopted by Dutch secondary school computer science departments. Built client-side test runners, interactive exercises, and teacher management tooling.",
+        "In-browser execution sandboxes and automated evaluation tools adopted across Dutch CS departments.",
+      bitsizedHighlights: [
+        "**Browser Runtime**: Architected isolated browser sandboxes with instant test feedback and zero local environment setup.",
+        "**Educator Tooling**: Created exercise composition environments and real-time student submission tracking.",
+      ],
       bitsizedLink: "View platform details",
     },
     dataExplorer: {
@@ -599,11 +643,34 @@ export const translations: Record<Language, TranslationDictionary> = {
     },
     intro: {
       heroTitle: "Full-stack software engineer voor zakelijke betaaldiensten en webapplicaties bij Tikkie.",
+      statusBadge: "Full-Stack Software Engineer · Amsterdam, Nederland",
       bioParagraph1:
-        "Bij Tikkie (ABN AMRO) ontwikkel ik betaalinfrastructuur, idempotente settlement-API's en dashboards voor duizenden Nederlandse ondernemers.",
+        "Bij Tikkie (ABN AMRO) bouw ik betaalinfrastructuur, idempotente settlement-workflows en dashboards voor ondernemers. Ik combineer betrouwbare backend-architectuur met doordachte frontend-ervaringen.",
       bioParagraph2:
-        "Dubbele Master aan de TU Delft in Technische Informatica en Didactiek. Mede-oprichter van Bitsized, ervaring in de publieke sector en auteur van onderzoek onder 175k online cursisten.",
+        "Dubbele Master van de TU Delft in Technische Informatica en Didactiek. Voormalig mede-oprichter en onderzoeker naar grootschalige klikstream-telemetrie.",
       bioParagraph3: "",
+      signals: [
+        {
+          tag: "Fintech Productie",
+          title: "Tikkie (ABN AMRO)",
+          description: "High-throughput betaal-API's en dashboards voor duizenden ondernemers",
+        },
+        {
+          tag: "Academisch Fundament",
+          title: "Dubbele MSc · TU Delft",
+          description: "Technische Informatica (Data Science) & Didactiek met eerstegraads bevoegdheid",
+        },
+        {
+          tag: "0-naar-1 Bouwen",
+          title: "Mede-Oprichter · Bitsized",
+          description: "In-browser sandboxes voor programmeeronderwijs op Nederlandse scholen",
+        },
+        {
+          tag: "Empirisch Onderzoek",
+          title: "175k Cursisten Telemetrie",
+          description: "Unsupervised k-means clustering en regressiemodellen op Open edX data",
+        },
+      ],
       exploreWork: "Bekijk werkervaring",
       exploreEdu: "Opleidingen & Titels",
       getInTouch: "Neem contact op",
@@ -615,20 +682,32 @@ export const translations: Record<Language, TranslationDictionary> = {
       tikkieTitle: "Tikkie Zakelijk",
       tikkieSubtitle: "Betaal-API's & Ondernemersportals",
       tikkieDescription:
-        "Bedrijfskritische betaal-API's en dashboards voor Tikkie Zakelijk: bouw van idempotente settlement-workflows, partner-webhooks en financiële rapportagetools voor duizenden ondernemers.",
+        "Bedrijfskritische betaal-API's en dashboards voor duizenden ondernemers.",
+      tikkieHighlights: [
+        "**Betaalworkflows**: Idempotente settlement-pipelines, partner-webhooks en automatische reconciliatie.",
+        "**Ondernemersportals**: Realtime analytics en rapportagetools gebouwd met React, TypeScript en AWS serverless.",
+      ],
       tikkieLink: "Bekijk functiedetails",
       thesisTag: "TU Delft Masterscriptie · 2024",
       thesisTitle: "Debugging the Divide",
       thesisSubtitle: "Klikstream-telemetrie & clustering over 175.000 cursisten",
       thesisDescription:
-        "Onderzoek naar leerpatronen en uitvaldynamiek over 14 edities van TU Delft computer science MOOCs op Open edX. Bouwde clustering-pipelines (k-means) en regressiemodellen in Python om retentieverschillen tussen mannen en vrouwen te kwantificeren.",
+        "Onderzoek naar leerpatronen en uitvaldynamiek over 14 Open edX computer science MOOCs.",
+      thesisHighlights: [
+        "**Clustering Pipelines**: Unsupervised k-means clustering over interactielogs van 174.988 geregistreerde cursisten.",
+        "**Statistische Modellen**: Kwantificeerde instroommotivaties en gedragspatronen tussen mannen en vrouwen in Python.",
+      ],
       thesisLink: "Bekijk onderzoeksdata",
       thesisSkills: ["Python", "Pandas", "Scikit-learn", "Open edX"],
       bitsizedTag: "Mede-oprichter & Lead Engineer · 2023 – 2025",
       bitsizedTitle: "Bitsized",
       bitsizedSubtitle: "In-Browser Sandboxes voor Informaticaonderwijs",
       bitsizedDescription:
-        "Browser-gebaseerde code-sandboxes en realtime evaluatie-omgevingen voor informaticasecties in het voortgezet onderwijs. Ontwikkelde client-side test-runners, automatische opgave-evaluatie en docententools.",
+        "In-browser code-sandboxes en automatische evaluatie voor informatica-afdelingen in het VO.",
+      bitsizedHighlights: [
+        "**Browser Runtime**: Geïsoleerde code-omgevingen met directe testfeedback zonder lokale installaties.",
+        "**Docentendashboards**: Hulpmiddelen voor opgavenbeheer en realtime inzicht in voortgang.",
+      ],
       bitsizedLink: "Bekijk platformdetails",
     },
     dataExplorer: {

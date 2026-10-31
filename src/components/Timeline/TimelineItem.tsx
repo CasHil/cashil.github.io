@@ -77,20 +77,20 @@ export default function TimelineItem({ data }: TimelineItemProps) {
         )
       )}
 
-      {/* Tech Stack / Skills (Typographic Stack Stream) */}
+      {/* Tech Stack / Skills (Tactile Tech Chips) */}
       {data.skills && data.skills.length > 0 && (
-        <div className="pt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-xs">
-          <span className="font-sans text-zinc-500 dark:text-zinc-400 font-medium">
+        <div className="pt-2 flex flex-wrap items-center gap-1.5">
+          <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400 mr-1">
             Stack:
           </span>
-          <span className="font-mono text-zinc-700 dark:text-zinc-300">
-            {data.skills.map((skill, idx) => (
-              <span key={skill}>
-                {idx > 0 && <span className="mx-1.5 text-emerald-600/40 dark:text-emerald-400/40">·</span>}
-                <span className="hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">{skill}</span>
-              </span>
-            ))}
-          </span>
+          {data.skills.map((skill) => (
+            <span
+              key={skill}
+              className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-zinc-100/90 dark:bg-zinc-800/80 text-zinc-800 dark:text-zinc-200 border border-zinc-200/70 dark:border-white/10 hover:border-emerald-500/40 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
+            >
+              {skill}
+            </span>
+          ))}
         </div>
       )}
     </article>

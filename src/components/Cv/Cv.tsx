@@ -20,18 +20,18 @@ export default function Cv() {
             href="/cv/Casper_Hildebrand_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-medium text-xs sm:text-sm hover:bg-emerald-800 dark:hover:bg-emerald-300 dark:hover:text-zinc-950 transition-colors shadow-xs"
+            className="group inline-flex items-center gap-2 px-4.5 py-2 rounded-full bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-semibold text-xs sm:text-sm shadow-sm hover:shadow-md hover:bg-emerald-800 dark:hover:bg-emerald-300 dark:hover:text-zinc-950 active:scale-[0.98] transition-all duration-150 ring-1 ring-zinc-900/10 dark:ring-white/20"
           >
             <span>{t.cv.openNewTab}</span>
-            <span className="font-mono" aria-hidden="true">↗</span>
+            <span className="font-mono text-zinc-400 dark:text-zinc-500 transition-transform group-hover:translate-x-0.5" aria-hidden="true">↗</span>
           </a>
           <a
             href="/cv/Casper_Hildebrand_CV.pdf"
             download="Casper_Hildebrand_CV.pdf"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-emerald-600 dark:hover:border-emerald-400 transition-colors"
+            className="group inline-flex items-center gap-2 px-4.5 py-2 rounded-full border border-zinc-300/80 dark:border-white/15 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-emerald-600/50 dark:hover:border-emerald-400/50 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-[0.98] transition-all duration-150"
           >
             <span>{t.cv.downloadPdf}</span>
-            <span className="font-mono text-zinc-400" aria-hidden="true">↓</span>
+            <span className="font-mono text-zinc-400 transition-transform group-hover:translate-y-0.5" aria-hidden="true">↓</span>
           </a>
         </div>
       </div>
@@ -45,7 +45,7 @@ export default function Cv() {
             href="/cv/Casper_Hildebrand_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-700 dark:bg-emerald-400 text-white dark:text-zinc-950 font-semibold text-xs shrink-0 shadow-xs hover:bg-emerald-800 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-700 dark:bg-emerald-400 text-white dark:text-zinc-950 font-semibold text-xs shrink-0 shadow-xs hover:bg-emerald-800 active:scale-[0.98] transition-all"
           >
             <span>{t.cv.viewFullscreen}</span>
             <span className="font-mono" aria-hidden="true">↗</span>
